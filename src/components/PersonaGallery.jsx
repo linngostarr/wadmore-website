@@ -71,12 +71,16 @@ export default function PersonaGallery() {
   const activePersona = PERSONAS[activeIndex];
 
   return (
-    <div className="relative w-full max-w-xs lg:max-w-sm">
-      {/* Main image container */}
+    <div 
+      className="relative w-full"
+      style={{ 
+        maxWidth: "clamp(200px, 20vw + 100px, 320px)"
+      }}
+    >
+      {/* Main image container - scales with viewport */}
       <div 
-        className="relative rounded-3xl overflow-hidden"
+        className="relative"
         style={{ 
-          background: BRAND.cloud,
           aspectRatio: "4/5",
         }}
       >
@@ -86,13 +90,12 @@ export default function PersonaGallery() {
           style={{ 
             opacity: visible ? 1 : 0,
             transition: "opacity 1000ms ease-in-out",
-            paddingTop: "13%", /* Push image down from center */
           }}
         >
           <img
             src={activePersona.image}
             alt={activePersona.alt}
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-contain drop-shadow-lg"
           />
         </div>
       </div>

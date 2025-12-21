@@ -52,7 +52,7 @@ export default function Families() {
 
 function Hero() {
   return (
-    <section className="min-h-[90vh] flex items-center relative overflow-hidden">
+    <section className="min-h-[70vh] flex items-center relative overflow-hidden">
       {/* Warm gradient background */}
       <div 
         className="absolute inset-0"
@@ -75,7 +75,7 @@ function Hero() {
         }}
       />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left: Content */}
           <div>
@@ -96,26 +96,26 @@ function Hero() {
             </div>
             
             <h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Understand how your child{" "}
+              Understand your child's{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.teal }}
               >
-                thinks.
+                development.
                 <svg 
-                  className="absolute -bottom-2 left-0 w-full" 
-                  height="10" 
-                  viewBox="0 0 200 10" 
+                  className="absolute -bottom-1 left-0 w-full" 
+                  height="6" 
+                  viewBox="0 0 200 6" 
                   preserveAspectRatio="none"
                 >
                   <path 
-                    d="M0 8 Q50 2, 100 5 T200 4" 
+                    d="M0 5 Q50 1, 100 3 T200 2" 
                     fill="none" 
                     stroke={BRAND.teal} 
-                    strokeWidth="3" 
+                    strokeWidth="2" 
                     strokeLinecap="round"
                     opacity="0.35"
                   />
@@ -124,7 +124,7 @@ function Hero() {
             </h1>
             
             <p 
-              className="text-xl md:text-2xl leading-relaxed mb-10 max-w-xl"
+              className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
               Not labels. Not comparisons. Not blame. Wadmore shows you your child's 
@@ -258,7 +258,7 @@ function WhyItMattersSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            When you understand how your child thinks, everything changes.
+            When you understand your child's cognitive development, everything changes.
           </p>
         </div>
         
@@ -350,7 +350,7 @@ function EightDomainsSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            Wadmore measures how your child thinks across eight research-grounded 
+            Wadmore measures cognitive development across eight research-grounded 
             cognitive domains — giving you the complete picture.
           </p>
         </div>
@@ -409,7 +409,7 @@ function ProfilePreviewSection() {
               style={{ color: BRAND.steel }}
             >
               No jargon. No percentiles without context. Just clear, actionable 
-              understanding of how your child thinks — written in plain language you can use.
+              understanding of your child's cognitive development — written in plain language you can use.
             </p>
             
             <div className="space-y-4">
@@ -861,7 +861,7 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to understand how your child thinks?
+          Ready to understand your child's cognitive development?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90"

@@ -1,7 +1,6 @@
 // src/pages/About.jsx
 // Wadmore About - Our story, mission, and the team behind the platform
-// 
-// Brand anchor: Indigo (#384275) - trust, intelligence, gravitas
+// Language: Cognitive development focus
 
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
@@ -12,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const BRAND = {
   indigo: "#384275",
+  indigoDark: "#2a3259",
   slate: "#2C2D33",
   cloud: "#F7F8FA",
   dove: "#E4E7EB",
@@ -42,52 +42,54 @@ export default function About() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   HERO
+   HERO - Responsive design
    ══════════════════════════════════════════════════════════════ */
 
 function Hero() {
   return (
-    <section 
-      className="min-h-[60vh] flex items-center relative overflow-hidden"
-      style={{ background: BRAND.cloud }}
-    >
-      {/* Subtle gradient accent */}
+    <section className="relative overflow-hidden" style={{ background: BRAND.cloud }}>
+      {/* Decorative orbs */}
       <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{ 
-          background: `radial-gradient(ellipse at 30% 0%, ${BRAND.indigo}10, transparent 50%), radial-gradient(ellipse at 100% 100%, ${BRAND.teal}08, transparent 40%)` 
-        }}
+        className="absolute top-0 left-[20%] w-[40vw] max-w-[500px] aspect-square pointer-events-none opacity-25"
+        style={{ background: `radial-gradient(circle at center, ${BRAND.indigo}15, transparent 60%)` }}
+      />
+      <div 
+        className="absolute bottom-0 right-[10%] w-[30vw] max-w-[400px] aspect-square pointer-events-none opacity-20"
+        style={{ background: `radial-gradient(circle at center, ${BRAND.teal}12, transparent 60%)` }}
       />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-[clamp(3rem,8vh,5rem)] relative z-10 w-full">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
             style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, color: BRAND.slate }}
           >
-            <span 
-              className="w-2 h-2 rounded-full"
-              style={{ background: BRAND.indigo }}
-            />
+            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
             About Wadmore
           </div>
           
-          {/* Main headline */}
+          {/* Main headline - fluid typography */}
           <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-6"
-            style={{ color: BRAND.slate }}
+            className="font-semibold leading-tight tracking-tight mb-5"
+            style={{ 
+              color: BRAND.slate,
+              fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
+            }}
           >
-            Transforming how we understand{" "}
-            <span style={{ color: BRAND.indigo }}>human thinking.</span>
+            Understanding{" "}
+            <span style={{ color: BRAND.indigo }}>cognitive development.</span>
           </h1>
           
           <p 
-            className="text-xl leading-relaxed"
-            style={{ color: BRAND.steel }}
+            className="leading-relaxed max-w-2xl"
+            style={{ 
+              color: BRAND.steel,
+              fontSize: "clamp(1.1rem, 1vw + 0.5rem, 1.25rem)"
+            }}
           >
             Wadmore was founded on a simple belief: everyone deserves to understand 
-            how they think, and that understanding should lead to growth — not labels.
+            their cognitive development, and that understanding should lead to growth — not labels.
           </p>
         </div>
       </div>
@@ -101,12 +103,12 @@ function Hero() {
 
 function MissionSection() {
   return (
-    <section className="py-20 md:py-28" style={{ background: BRAND.white }}>
+    <section className="py-16 md:py-24" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div 
-              className="text-sm font-medium uppercase tracking-wider mb-4"
+              className="text-sm font-semibold uppercase tracking-wider mb-4"
               style={{ color: BRAND.indigo }}
             >
               Our Mission
@@ -118,16 +120,16 @@ function MissionSection() {
               Thinking, understood.
             </h2>
             <p 
-              className="text-lg mb-6"
+              className="text-lg mb-5 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
               We're building the world's most advanced cognitive profiling platform — 
-              one that reveals how people think, not just what they know. Our goal is 
-              to make deep cognitive understanding accessible to everyone: families, 
-              schools, and organisations.
+              one that reveals cognitive development across eight domains and fifteen 
+              developmental bands. Our goal is to make deep cognitive understanding 
+              accessible to everyone: families, schools, and organisations.
             </p>
             <p 
-              className="text-lg"
+              className="text-lg leading-relaxed"
               style={{ color: BRAND.steel }}
             >
               Traditional assessments have focused on deficits, comparisons, and 
@@ -137,15 +139,15 @@ function MissionSection() {
           </div>
           
           <div 
-            className="rounded-2xl p-8 md:p-12"
+            className="rounded-2xl p-8 md:p-10"
             style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
           >
-            <div className="space-y-8">
+            <div className="space-y-6">
               {[
                 {
                   number: "01",
                   title: "Understand",
-                  description: "Reveal how thinking actually works — across 8 cognitive domains and 15 developmental bands",
+                  description: "Reveal cognitive development across 8 domains and 15 developmental bands",
                 },
                 {
                   number: "02",
@@ -160,7 +162,7 @@ function MissionSection() {
               ].map((item) => (
                 <div key={item.number} className="flex gap-4">
                   <div 
-                    className="text-2xl font-bold"
+                    className="text-2xl font-bold flex-shrink-0"
                     style={{ color: BRAND.indigo }}
                   >
                     {item.number}
@@ -172,7 +174,7 @@ function MissionSection() {
                     >
                       {item.title}
                     </div>
-                    <div style={{ color: BRAND.steel }}>
+                    <div className="text-base" style={{ color: BRAND.steel }}>
                       {item.description}
                     </div>
                   </div>
@@ -192,11 +194,11 @@ function MissionSection() {
 
 function StorySection() {
   return (
-    <section className="py-20 md:py-28" style={{ background: BRAND.cloud }}>
+    <section className="py-16 md:py-24" style={{ background: BRAND.cloud }}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl mx-auto">
           <div 
-            className="text-sm font-medium uppercase tracking-wider mb-4 text-center"
+            className="text-sm font-semibold uppercase tracking-wider mb-4 text-center"
             style={{ color: BRAND.indigo }}
           >
             Our Story
@@ -208,45 +210,25 @@ function StorySection() {
             Born from frustration with the status quo
           </h2>
           
-          <div className="space-y-6" style={{ color: BRAND.steel }}>
-            <p className="text-lg">
+          <div className="space-y-5" style={{ color: BRAND.steel }}>
+            <p className="text-lg leading-relaxed">
               After years working in educational assessment, the founder of Wadmore 
               saw the same pattern repeat: students reduced to percentile ranks, 
               teachers drowning in data without actionable insights, and families 
               left confused by reports full of jargon.
             </p>
             
-            <p className="text-lg">
+            <p className="text-lg leading-relaxed">
               Traditional cognitive assessments — CogAT, WISC, CAT4 — were designed 
               decades ago. They're expensive, culturally biased, deficit-focused, 
-              and tell you almost nothing about how to actually help someone grow.
+              and produce reports that sit in filing cabinets rather than driving 
+              meaningful change.
             </p>
             
-            <p className="text-lg">
-              Meanwhile, personality tests and wellness apps went the other direction: 
-              engaging and accessible, but lacking scientific rigour. You couldn't 
-              trust the results for anything important.
-            </p>
-            
-            <div 
-              className="p-6 rounded-xl my-8"
-              style={{ background: BRAND.white, borderLeft: `4px solid ${BRAND.indigo}` }}
-            >
-              <p 
-                className="text-xl italic"
-                style={{ color: BRAND.slate }}
-              >
-                "What if we could have both? Rigorous science and genuine accessibility. 
-                Deep insights and practical actions. A platform that celebrates how 
-                people think differently, rather than ranking them against each other."
-              </p>
-            </div>
-            
-            <p className="text-lg">
-              That question became Wadmore. Built from the ground up with modern 
-              psychometric methods, bias-aware design, and a relentless focus on 
-              what actually matters: helping people understand and develop their 
-              cognitive strengths.
+            <p className="text-lg leading-relaxed">
+              Wadmore was created to do things differently: to build assessment 
+              that's grounded in modern cognitive science, designed for fairness, 
+              focused on strengths, and genuinely useful for the people who need it.
             </p>
           </div>
         </div>
@@ -262,43 +244,49 @@ function StorySection() {
 function ValuesSection() {
   const values = [
     {
-      title: "Strength-based",
-      description: "We lead with what's working. Every profile starts with strengths, and every insight points toward growth — not deficits.",
       icon: StrengthIcon,
+      title: "Strength-based",
+      description: "We lead with what's working. Growth areas are opportunities, not deficits.",
+      color: BRAND.teal,
     },
     {
-      title: "Scientifically rigorous",
-      description: "Our methodology meets or exceeds professional psychometric standards. IRT calibration, DIF analysis, and continuous validation.",
       icon: ScienceIcon,
+      title: "Research-grounded",
+      description: "Every domain and construct is backed by established cognitive science.",
+      color: BRAND.cerulean,
     },
     {
-      title: "Genuinely accessible",
-      description: "World-class assessment shouldn't require a psychology degree to understand or a corporate budget to afford.",
       icon: AccessibleIcon,
+      title: "Accessible",
+      description: "Deep cognitive understanding shouldn't require a psychology degree to interpret.",
+      color: BRAND.violet,
     },
     {
-      title: "Bias-aware",
-      description: "Every item undergoes fairness analysis. We don't just avoid bias — we actively test for it across gender, language, and background.",
       icon: FairnessIcon,
+      title: "Fair by design",
+      description: "Bias testing, DIF analysis, and inclusive design are built in from the start.",
+      color: BRAND.indigo,
     },
     {
-      title: "Action-oriented",
-      description: "Insights without actions are just data. Every Wadmore profile connects understanding to specific next steps.",
       icon: ActionIcon,
+      title: "Actionable",
+      description: "360 constructs connect to specific interventions — not generic advice.",
+      color: BRAND.golden,
     },
     {
-      title: "Privacy-first",
-      description: "Cognitive data is sensitive. We collect only what's needed, protect it rigorously, and never sell or share it.",
       icon: PrivacyIcon,
+      title: "Privacy-first",
+      description: "Your data belongs to you. We're committed to ethical data practices.",
+      color: BRAND.slate,
     },
   ];
 
   return (
-    <section className="py-20 md:py-28" style={{ background: BRAND.white }}>
+    <section className="py-16 md:py-24" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div 
-            className="text-sm font-medium uppercase tracking-wider mb-4"
+            className="text-sm font-semibold uppercase tracking-wider mb-4"
             style={{ color: BRAND.indigo }}
           >
             Our Values
@@ -309,39 +297,39 @@ function ValuesSection() {
           >
             What we believe
           </h2>
-          <p 
-            className="text-lg"
-            style={{ color: BRAND.steel }}
-          >
-            These principles guide every decision we make — from item development 
-            to report design to pricing.
+          <p className="text-lg" style={{ color: BRAND.steel }}>
+            These principles guide every decision we make — from assessment design 
+            to reporting to how we work with schools and families.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {values.map((value) => (
-            <div 
-              key={value.title}
-              className="p-6 rounded-xl"
-              style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
-            >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {values.map((value) => {
+            const Icon = value.icon;
+            return (
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: `${BRAND.indigo}10` }}
+                key={value.title}
+                className="group p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
               >
-                <value.icon color={BRAND.indigo} />
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: `${value.color}12` }}
+                >
+                  <Icon color={value.color} />
+                </div>
+                <h3 
+                  className="font-semibold text-lg mb-2"
+                  style={{ color: BRAND.slate }}
+                >
+                  {value.title}
+                </h3>
+                <p className="text-base" style={{ color: BRAND.steel }}>
+                  {value.description}
+                </p>
               </div>
-              <h3 
-                className="font-semibold text-lg mb-2"
-                style={{ color: BRAND.slate }}
-              >
-                {value.title}
-              </h3>
-              <p style={{ color: BRAND.steel }}>
-                {value.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -354,17 +342,17 @@ function ValuesSection() {
 
 function FounderSection() {
   return (
-    <section className="py-20 md:py-28" style={{ background: BRAND.cloud }}>
+    <section className="py-16 md:py-24" style={{ background: BRAND.cloud }}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
           {/* Photo placeholder */}
           <div 
-            className="aspect-square max-w-md mx-auto lg:mx-0 rounded-2xl flex items-center justify-center"
+            className="aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl flex items-center justify-center"
             style={{ background: BRAND.dove }}
           >
             <div className="text-center p-8">
               <div 
-                className="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold"
+                className="w-28 h-28 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold"
                 style={{ background: BRAND.indigo, color: BRAND.white }}
               >
                 MW
@@ -377,7 +365,7 @@ function FounderSection() {
           
           <div>
             <div 
-              className="text-sm font-medium uppercase tracking-wider mb-4"
+              className="text-sm font-semibold uppercase tracking-wider mb-4"
               style={{ color: BRAND.indigo }}
             >
               The Founder
@@ -389,37 +377,37 @@ function FounderSection() {
               Matt Wadmore
             </h2>
             <div 
-              className="text-lg mb-6"
+              className="text-lg font-medium mb-6"
               style={{ color: BRAND.indigo }}
             >
               Founder & CEO
             </div>
             
             <div className="space-y-4" style={{ color: BRAND.steel }}>
-              <p>
+              <p className="text-base leading-relaxed">
                 Matt brings over 15 years of experience in educational assessment, 
                 including roles as a school principal and senior positions in 
                 assessment technology. He's seen firsthand how traditional testing 
                 fails students, teachers, and families.
               </p>
-              <p>
+              <p className="text-base leading-relaxed">
                 His background spans psychometric development, educational leadership, 
                 and technology implementation — a unique combination that informs 
                 Wadmore's approach to building assessment that actually works.
               </p>
-              <p>
+              <p className="text-base leading-relaxed">
                 Matt holds qualifications in education and educational psychology, 
                 and is passionate about making cognitive science accessible to everyone 
                 who can benefit from it.
               </p>
             </div>
             
-            <div className="flex gap-4 mt-8">
+            <div className="flex gap-4 mt-6">
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
               >
                 <LinkedInIcon color={BRAND.slate} />
@@ -439,18 +427,27 @@ function FounderSection() {
 function CTASection() {
   return (
     <section 
-      className="py-20 md:py-28"
-      style={{ background: BRAND.indigo }}
+      className="py-20 md:py-28 relative overflow-hidden"
+      style={{ background: `linear-gradient(135deg, ${BRAND.indigo} 0%, ${BRAND.indigoDark} 100%)` }}
     >
-      <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
+      {/* Decorative pattern */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-10"
+        style={{ 
+          backgroundImage: `radial-gradient(circle at center, white 1.5px, transparent 1.5px)`,
+          backgroundSize: "40px 40px"
+        }}
+      />
+      
+      <div className="max-w-4xl mx-auto px-6 md:px-8 text-center relative z-10">
         <h2 
-          className="text-3xl md:text-4xl font-semibold mb-4"
+          className="text-3xl md:text-4xl font-semibold mb-5"
           style={{ color: BRAND.white }}
         >
-          Ready to see thinking differently?
+          Ready to understand cognitive development?
         </h2>
         <p 
-          className="text-lg mb-8 opacity-90"
+          className="text-lg mb-10 opacity-90 max-w-2xl mx-auto"
           style={{ color: BRAND.white }}
         >
           Explore how Wadmore can help you understand cognitive strengths — 
@@ -460,29 +457,29 @@ function CTASection() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/families"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold transition-all hover:scale-105"
-            style={{ background: BRAND.teal, color: BRAND.white }}
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+            style={{ background: BRAND.teal, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.teal}40` }}
           >
             For Families
           </Link>
           <Link
             to="/schools"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold transition-all hover:scale-105"
-            style={{ background: BRAND.cerulean, color: BRAND.white }}
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+            style={{ background: BRAND.cerulean, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.cerulean}40` }}
           >
             For Schools
           </Link>
           <Link
             to="/professional"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold transition-all hover:scale-105"
-            style={{ background: BRAND.violet, color: BRAND.white }}
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+            style={{ background: BRAND.violet, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.violet}40` }}
           >
             For Professional
           </Link>
         </div>
         
         <div 
-          className="mt-12 pt-8"
+          className="mt-10 pt-8"
           style={{ borderTop: "1px solid rgba(255,255,255,0.2)" }}
         >
           <Link

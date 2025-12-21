@@ -72,7 +72,7 @@ export default function Schools() {
 
 function Hero() {
   return (
-    <section className="min-h-[90vh] flex items-center relative overflow-hidden">
+    <section className="min-h-[70vh] flex items-center relative overflow-hidden">
       {/* Rich gradient background */}
       <div 
         className="absolute inset-0"
@@ -99,19 +99,7 @@ function Hero() {
         }}
       />
       
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(${BRAND.indigo} 1px, transparent 1px),
-            linear-gradient(90deg, ${BRAND.indigo} 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px"
-        }}
-      />
-      
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20 relative z-10 w-full">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-20 items-center">
           {/* Left: Content */}
           <div>
@@ -133,7 +121,7 @@ function Hero() {
             
             {/* Headline */}
             <h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
               See the{" "}
@@ -144,31 +132,31 @@ function Hero() {
                 whole
                 {/* Underline accent */}
                 <svg 
-                  className="absolute -bottom-2 left-0 w-full" 
-                  height="8" 
-                  viewBox="0 0 200 8" 
+                  className="absolute -bottom-1 left-0 w-full" 
+                  height="6" 
+                  viewBox="0 0 200 6" 
                   preserveAspectRatio="none"
                 >
                   <path 
-                    d="M0 7 Q50 0, 100 4 T200 3" 
+                    d="M0 5 Q50 1, 100 3 T200 2" 
                     fill="none" 
                     stroke={BRAND.cerulean} 
-                    strokeWidth="3" 
+                    strokeWidth="2" 
                     strokeLinecap="round"
                     opacity="0.4"
                   />
                 </svg>
               </span>
-              <br />student.
+              {" "}student.
             </h1>
             
             <p 
-              className="text-xl md:text-2xl leading-relaxed mb-10 max-w-xl"
+              className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
               Not just grades, behaviour, or test scores. Wadmore reveals{" "}
-              <strong style={{ color: BRAND.slate }}>how each student thinks</strong> across 
-              eight cognitive domains — enabling informed differentiation, meaningful 
+              <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
+              eight domains — enabling informed differentiation, meaningful 
               support conversations, and confident pathway decisions.
             </p>
             
