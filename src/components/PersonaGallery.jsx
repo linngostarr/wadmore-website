@@ -1,6 +1,7 @@
 // src/components/PersonaGallery.jsx
 // Cycling persona display for Wadmore homepage hero
 // Shows diverse individuals representing different user types
+// Full fade out, then fade in (no cross-fade)
 
 import { useState, useEffect, useRef } from "react";
 
@@ -27,77 +28,102 @@ const PERSONAS = [
   { id: "executive", image: seniorLeader, alt: "Executive" },
 ];
 
-/* ══════════════════════════════════════════════════════════════
-   BRAND COLORS
-   ══════════════════════════════════════════════════════════════ */
-
-const BRAND = {
-  cloud: "#F7F8FA",
-};
+const FADE_DURATION = 800; // ms for fade in/out
+const DISPLAY_DURATION = 3000; // ms to show each image
 
 /* ══════════════════════════════════════════════════════════════
    PERSONA GALLERY COMPONENT
-   Full fade out, then fade in sequence
+   Sequence: fade out → change image → fade in
+   All images preloaded and kept in DOM to prevent loading flicker
    ══════════════════════════════════════════════════════════════ */
 
 export default function PersonaGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const intervalRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const loadedCount = useRef(0);
+  const timeoutRef = useRef(null);
 
+  // Preload all images on mount
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      // Fade out
-      setVisible(false);
-      
-      // After fade out completes, change image and fade in
-      setTimeout(() => {
-        setActiveIndex((prev) => {
-          const next = prev + 1;
-          return next >= PERSONAS.length ? 0 : next;
-        });
-        setVisible(true);
-      }, 1000); // Wait for fade out to complete
-      
-    }, 4000); // Total cycle time
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
+    PERSONAS.forEach((persona) => {
+      const img = new Image();
+      img.onload = () => {
+        loadedCount.current += 1;
+        if (loadedCount.current === PERSONAS.length) {
+          setImagesLoaded(true);
+        }
+      };
+      img.src = persona.image;
+    });
   }, []);
 
-  const activePersona = PERSONAS[activeIndex];
+  // Animation cycle
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
+    const runCycle = () => {
+      // Step 1: Fade out
+      setIsVisible(false);
+
+      // Step 2: After fade out complete, change image
+      timeoutRef.current = setTimeout(() => {
+        setActiveIndex((prev) => (prev + 1) % PERSONAS.length);
+
+        // Step 3: Fade in
+        // Small delay to ensure DOM has updated before fading in
+        requestAnimationFrame(() => {
+          setIsVisible(true);
+        });
+      }, FADE_DURATION);
+    };
+
+    // Start the cycle after display duration
+    const intervalId = setInterval(runCycle, DISPLAY_DURATION + FADE_DURATION * 2);
+
+    return () => {
+      clearInterval(intervalId);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [imagesLoaded]);
 
   return (
     <div 
       className="relative w-full"
       style={{ 
-        maxWidth: "clamp(200px, 20vw + 100px, 320px)"
+        maxWidth: "clamp(200px, 20vw + 100px, 320px)",
+        opacity: imagesLoaded ? 1 : 0,
+        transition: "opacity 500ms ease-in-out",
       }}
     >
-      {/* Main image container - scales with viewport */}
+      {/* Container with fixed aspect ratio */}
       <div 
         className="relative"
-        style={{ 
-          aspectRatio: "4/5",
-        }}
+        style={{ aspectRatio: "4/5" }}
       >
-        {/* Persona image with fade */}
-        <div 
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ 
-            opacity: visible ? 1 : 0,
-            transition: "opacity 1000ms ease-in-out",
-          }}
-        >
-          <img
-            src={activePersona.image}
-            alt={activePersona.alt}
-            className="w-full h-auto object-contain drop-shadow-lg"
-          />
-        </div>
+        {/* All persona images stacked - prevents loading flicker */}
+        {PERSONAS.map((persona, index) => (
+          <div
+            key={persona.id}
+            className="absolute inset-0 flex items-center justify-center"
+            style={{
+              // Only the active image can be visible, controlled by isVisible
+              opacity: index === activeIndex && isVisible ? 1 : 0,
+              transition: `opacity ${FADE_DURATION}ms ease-in-out`,
+              pointerEvents: index === activeIndex ? "auto" : "none",
+            }}
+          >
+            <img
+              src={persona.image}
+              alt={persona.alt}
+              className="w-full h-auto object-contain drop-shadow-lg"
+              loading="eager"
+              fetchpriority={index === 0 ? "high" : "low"}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
