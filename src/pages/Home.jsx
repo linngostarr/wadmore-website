@@ -64,21 +64,96 @@ const CLUSTERS = {
 };
 
 const BANDS = [
-  { id: 1, name: "Foundational", short: "Beginning capabilities" },
-  { id: 2, name: "Early Operational", short: "Independence emerging" },
-  { id: 3, name: "Consolidating", short: "Confident in familiar contexts" },
-  { id: 4, name: "Transitional", short: "Managing complexity" },
-  { id: 5, name: "Emerging Abstract", short: "Strategic approaches developing" },
-  { id: 6, name: "Early Formal", short: "Independent abstract reasoning" },
-  { id: 7, name: "Advanced Abstract", short: "Sophisticated integration" },
-  { id: 8, name: "Sophisticated", short: "Optimising processes" },
-  { id: 9, name: "Advanced Reasoning", short: "Systematic approaches" },
-  { id: 10, name: "Applied Expertise", short: "Professional application" },
-  { id: 11, name: "Mastery", short: "Multi-context sophistication" },
-  { id: 12, name: "Advanced Expertise", short: "Innovative frameworks" },
-  { id: 13, name: "Specialised", short: "Field-advancing capability" },
-  { id: 14, name: "Paradigm-Advancing", short: "Cross-disciplinary mastery" },
-  { id: 15, name: "Peak Capability", short: "Highest achievement" },
+  { 
+    id: 1, 
+    name: "Foundational Development", 
+    description: "Beginning cognitive capabilities requiring significant external support and modeling. Concrete, immediate, context-dependent thinking.",
+    typical: "Early childhood",
+  },
+  { 
+    id: 2, 
+    name: "Early Operational Thinking", 
+    description: "Developing independence in familiar contexts. Beginning to internalize cognitive strategies. Concrete operational thinking emerging.",
+    typical: "Early primary years",
+  },
+  { 
+    id: 3, 
+    name: "Consolidating Foundations", 
+    description: "Independent performance in familiar domains. Beginning transfer of learned strategies. Concrete operational thinking consolidating.",
+    typical: "Primary school",
+  },
+  { 
+    id: 4, 
+    name: "Transitional Complexity", 
+    description: "Managing increased cognitive demands. Strategic thinking emerging. Beginning abstract thinking in supported contexts.",
+    typical: "Upper primary",
+  },
+  { 
+    id: 5, 
+    name: "Emerging Abstract Thinking", 
+    description: "Metacognitive awareness developing. Strategic cognitive control emerging. Formal operational thinking beginning.",
+    typical: "Early secondary",
+  },
+  { 
+    id: 6, 
+    name: "Early Formal Operations", 
+    description: "Independent abstract thinking. Strategic self-regulation established. Complex problem-solving capability developing.",
+    typical: "Secondary school",
+  },
+  { 
+    id: 7, 
+    name: "Advanced Abstract Thinking", 
+    description: "Sophisticated cognitive integration. Transfer across domains. Meta-strategic thinking established.",
+    typical: "Senior secondary",
+  },
+  { 
+    id: 8, 
+    name: "Cognitive Sophistication", 
+    description: "Cross-domain integration. Optimization of cognitive processes. Advanced academic reasoning capability.",
+    typical: "Post-secondary",
+  },
+  { 
+    id: 9, 
+    name: "Advanced Reasoning", 
+    description: "Systematic approaches to novel problems. Integration of multiple knowledge domains. Strategic expertise developing.",
+    typical: "Tertiary / early career",
+  },
+  { 
+    id: 10, 
+    name: "Applied Expertise", 
+    description: "Professional-level capability. Sophisticated application across contexts. Entry-level domain expertise.",
+    typical: "Professional entry",
+  },
+  { 
+    id: 11, 
+    name: "Mastery", 
+    description: "Multi-context sophistication. Advanced professional expertise. Leadership-level cognitive capability.",
+    typical: "Experienced professional",
+  },
+  { 
+    id: 12, 
+    name: "Advanced Expertise", 
+    description: "Innovative framework development. Cross-disciplinary integration. Expert-level capability.",
+    typical: "Senior professional",
+  },
+  { 
+    id: 13, 
+    name: "Specialised Excellence", 
+    description: "Field-advancing capability. Original contribution to domain knowledge. Thought leadership emerging.",
+    typical: "Domain specialist",
+  },
+  { 
+    id: 14, 
+    name: "Paradigm-Advancing", 
+    description: "Cross-disciplinary mastery. Methodological innovation. Recognition as authority in specialised domains.",
+    typical: "Recognised authority",
+  },
+  { 
+    id: 15, 
+    name: "Peak Capability", 
+    description: "Highest levels of human cognitive achievement. Groundbreaking contribution. Paradigm-shifting insight.",
+    typical: "Exceptional achievement",
+  },
 ];
 
 const AUDIENCES = {
@@ -315,33 +390,42 @@ function BandsSection() {
         </div>
         
         <div className="rounded-2xl overflow-hidden mb-10" style={{ background: BRAND.cloud, boxShadow: `0 15px 40px ${BRAND.indigo}05` }}>
+          {/* Band selector bar */}
           <div className="flex">
             {BANDS.map((b) => {
               const isActive = b.id === activeBand;
               const bandColor = BAND_COLORS[b.id - 1];
               const textColor = BAND_TEXT[b.id - 1];
               return (
-                <button key={b.id} onClick={() => setActiveBand(b.id)} className="flex-1 h-16 md:h-20 transition-all duration-300 relative group" style={{ background: bandColor, transform: isActive ? "scaleY(1.15)" : "scaleY(1)", transformOrigin: "bottom", zIndex: isActive ? 10 : 1 }}>
+                <button key={b.id} onClick={() => setActiveBand(b.id)} className="flex-1 h-14 md:h-16 transition-all duration-300 relative group" style={{ background: bandColor, transform: isActive ? "scaleY(1.2)" : "scaleY(1)", transformOrigin: "bottom", zIndex: isActive ? 10 : 1 }}>
                   <span className={`absolute inset-0 flex items-center justify-center text-xs md:text-sm font-bold transition-opacity duration-200 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'}`} style={{ color: textColor }}>{b.id}</span>
                   {isActive && <span className="absolute -bottom-2 left-1/2 -translate-x-1/2" style={{ width: 0, height: 0, borderLeft: "8px solid transparent", borderRight: "8px solid transparent", borderTop: `8px solid ${bandColor}` }} />}
                 </button>
               );
             })}
           </div>
+          
+          {/* Band detail panel */}
           <div className="p-6 md:p-8" style={{ background: BRAND.white }}>
-            <div className="flex flex-wrap items-center gap-3 mb-2">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="text-2xl md:text-3xl font-bold" style={{ color: BRAND.slate }}>Band {band.id}</span>
               <span className="px-3 py-1.5 rounded-full text-sm font-semibold" style={{ background: BAND_COLORS[band.id - 1], color: BAND_TEXT[band.id - 1] }}>{band.name}</span>
+              <span className="px-3 py-1.5 rounded-lg text-xs font-medium" style={{ background: BRAND.cloud, color: BRAND.steel }}>{band.typical}</span>
             </div>
-            <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>{band.short}</p>
+            <p className="text-base md:text-lg leading-relaxed mb-5" style={{ color: BRAND.steel }}>{band.description}</p>
+            <Link to="/science" className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{ color: BRAND.indigo }}>
+              See detailed construct breakdowns
+              <ArrowIcon />
+            </Link>
           </div>
         </div>
         
+        {/* Supporting cards */}
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { title: "Capability, not comparison", desc: "Bands describe what someone can do — not how they rank.", color: BRAND.teal },
-            { title: "Development is the goal", desc: "Every band shows current position and what comes next.", color: BRAND.cerulean },
-            { title: "Grounded in theory", desc: "Piagetian and neo-Piagetian developmental stages.", color: BRAND.violet },
+            { title: "Capability, not comparison", desc: "Bands describe what someone can do — not how they rank against peers.", color: BRAND.teal },
+            { title: "Development is the goal", desc: "Every band shows current capabilities and illuminates the path forward.", color: BRAND.cerulean },
+            { title: "Grounded in theory", desc: "Aligned to Piagetian and neo-Piagetian developmental stages.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="p-5 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style={{ background: `${item.color}15` }}>
