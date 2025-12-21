@@ -1,13 +1,387 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+
+/* ✅ Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────
+   Wadmore design tokens – blue / violet / indigo
+   ────────────────────────────────────────────── */
+
+:root {
+  --wd-ink: #111322;
+  --wd-muted: #707487;
+  --wd-bg: #f4f5f9;
+  --wd-surface: #ffffff;
+  --wd-border: #dde1ec;
+
+  /* Core brand spectrum */
+  --wd-accent: #4c63d9;       /* Indigo */
+  --wd-accent-soft: #e2e5ff;  /* Light indigo wash */
+  --wd-pillar: #7e5bef;       /* Violet */
+  --wd-deep: #15192c;         /* Deep ink */
+
+  --wd-radius-card: 16px;
+  --wd-shadow-soft: 0 18px 45px rgba(10, 18, 46, 0.08);
+  --wd-shadow-subtle: 0 8px 24px rgba(10, 18, 46, 0.06);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Base page background + typography */
+body {
+  @apply text-sm md:text-base;
+  color: var(--wd-ink);
+  background-color: var(--wd-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ──────────────────────────────────────────────
+   Layout shells
+   ────────────────────────────────────────────── */
+
+.section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.section-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Hero background – subtle cool, analytical */
+.wd-hero {
+  background:
+    radial-gradient(circle at 0% 0%, #e3ebff 0, transparent 46%),
+    radial-gradient(circle at 100% 0%, #e7e9ff 0, transparent 46%),
+    linear-gradient(180deg, #f7f8fc 0, #f1f3f8 100%);
+}
+
+/* ──────────────────────────────────────────────
+   Typography helpers
+   ────────────────────────────────────────────── */
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--wd-muted);
+}
+
+.section-title {
+  margin-top: 0.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--wd-ink);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.85rem;
+  }
+}
+
+.section-subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--wd-muted);
+  max-width: 34rem;
+}
+
+/* Chip + dot (used in hero) */
+.wd-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--wd-deep);
+  background-color: #e9ecff;
+  border: 1px solid rgba(76, 99, 217, 0.25);
+}
+
+.wd-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background-color: var(--wd-accent);
+}
+
+/* ──────────────────────────────────────────────
+   Cards
+   ────────────────────────────────────────────── */
+
+.card {
+  border-radius: var(--wd-radius-card);
+  background-color: var(--wd-surface);
+  border: 1px solid var(--wd-border);
+  box-shadow: var(--wd-shadow-subtle);
+}
+
+/* Audience cards with subtle left accent */
+.audience-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.audience-card::before {
+  content: "";
+  position: absolute;
+  inset-y: 0.9rem;
+  left: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    var(--wd-accent),
+    var(--wd-pillar)
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Buttons – flat, clinical
+   ────────────────────────────────────────────── */
+
+.btn-primary,
+.btn-secondary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border-width: 1px;
+  border-style: solid;
+  transition: all 0.18s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--wd-deep);
+  color: #ffffff;
+  border-color: var(--wd-deep);
+}
+
+.btn-primary:hover {
+  background-color: #0c1020;
+  border-color: #0c1020;
+  box-shadow: var(--wd-shadow-soft);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--wd-deep);
+  border-color: rgba(28, 34, 65, 0.18);
+}
+
+.btn-secondary:hover {
+  background-color: #f5f6fd;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--wd-deep);
+  border-color: transparent;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(21, 25, 44, 0.04);
+}
+
+/* Deep section (final CTA) – now flat, no gradient */
+.wd-section-deep {
+  background-color: var(--wd-deep);
+  color: white;
+}
+
+/* ──────────────────────────────────────────────
+   Domain accordion styles
+   ────────────────────────────────────────────── */
+
+.domain-accordion {
+  margin-top: 0.25rem;
+}
+
+.domain-acc-item {
+  border-radius: 14px;
+  border: 1px solid var(--wd-border);
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(10, 18, 46, 0.03);
+  padding: 0.4rem 0.65rem;
+}
+
+.domain-acc-item + .domain-acc-item {
+  margin-top: 0.35rem;
+}
+
+/* Open state highlighting – indigo toned */
+.domain-acc-item--open {
+  border-color: rgba(76, 99, 217, 0.6);
+  background-color: rgba(226, 229, 255, 0.7);
+}
+
+.domain-acc-header {
+  width: 100%;
+  display: flex;
+  padding: 0.45rem 0.4rem;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.domain-acc-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--wd-ink);
+}
+
+.domain-acc-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--wd-muted);
+}
+
+.domain-acc-toggle {
+  font-size: 1rem;
+  color: var(--wd-muted);
+  margin-left: 0.5rem;
+}
+
+.domain-acc-body {
+  padding: 0.4rem 0.4rem 0.6rem 2.1rem;
+  border-top: 1px solid rgba(223, 226, 234, 0.75);
+  margin-top: 0.25rem;
+}
+
+.domain-acc-summary {
+  font-size: 0.8rem;
+  color: var(--wd-muted);
+  margin-bottom: 0.6rem;
+}
+
+/* Meta rows inside domain dropdown */
+.domain-acc-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.domain-acc-meta-item {
+  font-size: 0.7rem;
+}
+
+.meta-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--wd-muted);
+  margin-bottom: 0.1rem;
+}
+
+.meta-value {
+  color: var(--wd-ink);
+}
+
+/* Band indicator row */
+.domain-acc-bands {
+  margin-top: 0.25rem;
+}
+
+.bands-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--wd-muted);
+  margin-bottom: 0.2rem;
+}
+
+.bands-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.bands-segment {
+  height: 0.35rem;
+  border-radius: 999px;
+}
+
+/* Soft → deeper indigo spectrum */
+.bands-segment--low {
+  background: #d5dbff;
+}
+
+.bands-segment--mid {
+  background: #9ba8ff;
+}
+
+.bands-segment--high {
+  background: #1c2252;
+}
+
+.bands-text {
+  font-size: 0.7rem;
+  color: var(--wd-muted);
+}
+
+/* ──────────────────────────────────────────────
+   Utility text / colour helpers
+   ────────────────────────────────────────────── */
+
+.text-wd-ink {
+  color: var(--wd-ink);
+}
+
+.text-wd-muted {
+  color: var(--wd-muted);
+}
+
+.text-wd-deep {
+  color: var(--wd-deep);
+}
+
+.text-wd-accent {
+  color: var(--wd-accent);
+}
+
+.bg-wd-accent-soft {
+  background-color: var(--wd-accent-soft);
+}
+
+/* Small pills / badges (Science tags, etc.) */
+.wd-pill-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background-color: rgba(76, 99, 217, 0.06);
+  color: var(--wd-accent);
+  border: 1px solid rgba(76, 99, 217, 0.35);
 }

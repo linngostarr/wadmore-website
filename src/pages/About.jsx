@@ -1,0 +1,582 @@
+// src/pages/About.jsx
+// Wadmore About - Our story, mission, and the team behind the platform
+// 
+// Brand anchor: Indigo (#384275) - trust, intelligence, gravitas
+
+import Layout from "../components/Layout";
+import { Link } from "react-router-dom";
+
+/* ══════════════════════════════════════════════════════════════
+   WADMORE BRAND COLOURS
+   ══════════════════════════════════════════════════════════════ */
+
+const BRAND = {
+  indigo: "#384275",
+  slate: "#2C2D33",
+  cloud: "#F7F8FA",
+  dove: "#E4E7EB",
+  steel: "#6C7A96",
+  teal: "#3CB7AC",
+  cerulean: "#5B8BF7",
+  violet: "#786CFF",
+  white: "#ffffff",
+  sage: "#A4D4AE",
+  golden: "#F5C542",
+};
+
+/* ══════════════════════════════════════════════════════════════
+   MAIN COMPONENT
+   ══════════════════════════════════════════════════════════════ */
+
+export default function About() {
+  return (
+    <Layout>
+      <Hero />
+      <MissionSection />
+      <StorySection />
+      <ValuesSection />
+      <FounderSection />
+      <CTASection />
+    </Layout>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════════ */
+
+function Hero() {
+  return (
+    <section 
+      className="min-h-[60vh] flex items-center relative overflow-hidden"
+      style={{ background: BRAND.cloud }}
+    >
+      {/* Subtle gradient accent */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ 
+          background: `radial-gradient(ellipse at 30% 0%, ${BRAND.indigo}10, transparent 50%), radial-gradient(ellipse at 100% 100%, ${BRAND.teal}08, transparent 40%)` 
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-10 w-full">
+        <div className="max-w-3xl">
+          {/* Eyebrow */}
+          <div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8"
+            style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, color: BRAND.slate }}
+          >
+            <span 
+              className="w-2 h-2 rounded-full"
+              style={{ background: BRAND.indigo }}
+            />
+            About Wadmore
+          </div>
+          
+          {/* Main headline */}
+          <h1 
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-6"
+            style={{ color: BRAND.slate }}
+          >
+            Transforming how we understand{" "}
+            <span style={{ color: BRAND.indigo }}>human thinking.</span>
+          </h1>
+          
+          <p 
+            className="text-xl leading-relaxed"
+            style={{ color: BRAND.steel }}
+          >
+            Wadmore was founded on a simple belief: everyone deserves to understand 
+            how they think, and that understanding should lead to growth — not labels.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MISSION
+   ══════════════════════════════════════════════════════════════ */
+
+function MissionSection() {
+  return (
+    <section className="py-20 md:py-28" style={{ background: BRAND.white }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div 
+              className="text-sm font-medium uppercase tracking-wider mb-4"
+              style={{ color: BRAND.indigo }}
+            >
+              Our Mission
+            </div>
+            <h2 
+              className="text-3xl md:text-4xl font-semibold mb-6"
+              style={{ color: BRAND.slate }}
+            >
+              Thinking, understood.
+            </h2>
+            <p 
+              className="text-lg mb-6"
+              style={{ color: BRAND.steel }}
+            >
+              We're building the world's most advanced cognitive profiling platform — 
+              one that reveals how people think, not just what they know. Our goal is 
+              to make deep cognitive understanding accessible to everyone: families, 
+              schools, and organisations.
+            </p>
+            <p 
+              className="text-lg"
+              style={{ color: BRAND.steel }}
+            >
+              Traditional assessments have focused on deficits, comparisons, and 
+              gatekeeping. Wadmore takes a different path: strength-based profiling 
+              that empowers growth and celebrates cognitive diversity.
+            </p>
+          </div>
+          
+          <div 
+            className="rounded-2xl p-8 md:p-12"
+            style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
+          >
+            <div className="space-y-8">
+              {[
+                {
+                  number: "01",
+                  title: "Understand",
+                  description: "Reveal how thinking actually works — across 8 cognitive domains and 15 developmental bands",
+                },
+                {
+                  number: "02",
+                  title: "Empower",
+                  description: "Provide actionable insights that lead to real growth, not just scores and labels",
+                },
+                {
+                  number: "03",
+                  title: "Include",
+                  description: "Design for fairness from the start — eliminating bias, not perpetuating it",
+                },
+              ].map((item) => (
+                <div key={item.number} className="flex gap-4">
+                  <div 
+                    className="text-2xl font-bold"
+                    style={{ color: BRAND.indigo }}
+                  >
+                    {item.number}
+                  </div>
+                  <div>
+                    <div 
+                      className="font-semibold text-lg mb-1"
+                      style={{ color: BRAND.slate }}
+                    >
+                      {item.title}
+                    </div>
+                    <div style={{ color: BRAND.steel }}>
+                      {item.description}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   OUR STORY
+   ══════════════════════════════════════════════════════════════ */
+
+function StorySection() {
+  return (
+    <section className="py-20 md:py-28" style={{ background: BRAND.cloud }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="max-w-3xl mx-auto">
+          <div 
+            className="text-sm font-medium uppercase tracking-wider mb-4 text-center"
+            style={{ color: BRAND.indigo }}
+          >
+            Our Story
+          </div>
+          <h2 
+            className="text-3xl md:text-4xl font-semibold mb-8 text-center"
+            style={{ color: BRAND.slate }}
+          >
+            Born from frustration with the status quo
+          </h2>
+          
+          <div className="space-y-6" style={{ color: BRAND.steel }}>
+            <p className="text-lg">
+              After years working in educational assessment, the founder of Wadmore 
+              saw the same pattern repeat: students reduced to percentile ranks, 
+              teachers drowning in data without actionable insights, and families 
+              left confused by reports full of jargon.
+            </p>
+            
+            <p className="text-lg">
+              Traditional cognitive assessments — CogAT, WISC, CAT4 — were designed 
+              decades ago. They're expensive, culturally biased, deficit-focused, 
+              and tell you almost nothing about how to actually help someone grow.
+            </p>
+            
+            <p className="text-lg">
+              Meanwhile, personality tests and wellness apps went the other direction: 
+              engaging and accessible, but lacking scientific rigour. You couldn't 
+              trust the results for anything important.
+            </p>
+            
+            <div 
+              className="p-6 rounded-xl my-8"
+              style={{ background: BRAND.white, borderLeft: `4px solid ${BRAND.indigo}` }}
+            >
+              <p 
+                className="text-xl italic"
+                style={{ color: BRAND.slate }}
+              >
+                "What if we could have both? Rigorous science and genuine accessibility. 
+                Deep insights and practical actions. A platform that celebrates how 
+                people think differently, rather than ranking them against each other."
+              </p>
+            </div>
+            
+            <p className="text-lg">
+              That question became Wadmore. Built from the ground up with modern 
+              psychometric methods, bias-aware design, and a relentless focus on 
+              what actually matters: helping people understand and develop their 
+              cognitive strengths.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   VALUES
+   ══════════════════════════════════════════════════════════════ */
+
+function ValuesSection() {
+  const values = [
+    {
+      title: "Strength-based",
+      description: "We lead with what's working. Every profile starts with strengths, and every insight points toward growth — not deficits.",
+      icon: StrengthIcon,
+    },
+    {
+      title: "Scientifically rigorous",
+      description: "Our methodology meets or exceeds professional psychometric standards. IRT calibration, DIF analysis, and continuous validation.",
+      icon: ScienceIcon,
+    },
+    {
+      title: "Genuinely accessible",
+      description: "World-class assessment shouldn't require a psychology degree to understand or a corporate budget to afford.",
+      icon: AccessibleIcon,
+    },
+    {
+      title: "Bias-aware",
+      description: "Every item undergoes fairness analysis. We don't just avoid bias — we actively test for it across gender, language, and background.",
+      icon: FairnessIcon,
+    },
+    {
+      title: "Action-oriented",
+      description: "Insights without actions are just data. Every Wadmore profile connects understanding to specific next steps.",
+      icon: ActionIcon,
+    },
+    {
+      title: "Privacy-first",
+      description: "Cognitive data is sensitive. We collect only what's needed, protect it rigorously, and never sell or share it.",
+      icon: PrivacyIcon,
+    },
+  ];
+
+  return (
+    <section className="py-20 md:py-28" style={{ background: BRAND.white }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div 
+            className="text-sm font-medium uppercase tracking-wider mb-4"
+            style={{ color: BRAND.indigo }}
+          >
+            Our Values
+          </div>
+          <h2 
+            className="text-3xl md:text-4xl font-semibold mb-4"
+            style={{ color: BRAND.slate }}
+          >
+            What we believe
+          </h2>
+          <p 
+            className="text-lg"
+            style={{ color: BRAND.steel }}
+          >
+            These principles guide every decision we make — from item development 
+            to report design to pricing.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {values.map((value) => (
+            <div 
+              key={value.title}
+              className="p-6 rounded-xl"
+              style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
+            >
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                style={{ background: `${BRAND.indigo}10` }}
+              >
+                <value.icon color={BRAND.indigo} />
+              </div>
+              <h3 
+                className="font-semibold text-lg mb-2"
+                style={{ color: BRAND.slate }}
+              >
+                {value.title}
+              </h3>
+              <p style={{ color: BRAND.steel }}>
+                {value.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FOUNDER
+   ══════════════════════════════════════════════════════════════ */
+
+function FounderSection() {
+  return (
+    <section className="py-20 md:py-28" style={{ background: BRAND.cloud }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Photo placeholder */}
+          <div 
+            className="aspect-square max-w-md mx-auto lg:mx-0 rounded-2xl flex items-center justify-center"
+            style={{ background: BRAND.dove }}
+          >
+            <div className="text-center p-8">
+              <div 
+                className="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold"
+                style={{ background: BRAND.indigo, color: BRAND.white }}
+              >
+                MW
+              </div>
+              <div className="text-sm" style={{ color: BRAND.steel }}>
+                Founder photo
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div 
+              className="text-sm font-medium uppercase tracking-wider mb-4"
+              style={{ color: BRAND.indigo }}
+            >
+              The Founder
+            </div>
+            <h2 
+              className="text-3xl md:text-4xl font-semibold mb-2"
+              style={{ color: BRAND.slate }}
+            >
+              Matt Wadmore
+            </h2>
+            <div 
+              className="text-lg mb-6"
+              style={{ color: BRAND.indigo }}
+            >
+              Founder & CEO
+            </div>
+            
+            <div className="space-y-4" style={{ color: BRAND.steel }}>
+              <p>
+                Matt brings over 15 years of experience in educational assessment, 
+                including roles as a school principal and senior positions in 
+                assessment technology. He's seen firsthand how traditional testing 
+                fails students, teachers, and families.
+              </p>
+              <p>
+                His background spans psychometric development, educational leadership, 
+                and technology implementation — a unique combination that informs 
+                Wadmore's approach to building assessment that actually works.
+              </p>
+              <p>
+                Matt holds qualifications in education and educational psychology, 
+                and is passionate about making cognitive science accessible to everyone 
+                who can benefit from it.
+              </p>
+            </div>
+            
+            <div className="flex gap-4 mt-8">
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+              >
+                <LinkedInIcon color={BRAND.slate} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CTA
+   ══════════════════════════════════════════════════════════════ */
+
+function CTASection() {
+  return (
+    <section 
+      className="py-20 md:py-28"
+      style={{ background: BRAND.indigo }}
+    >
+      <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
+        <h2 
+          className="text-3xl md:text-4xl font-semibold mb-4"
+          style={{ color: BRAND.white }}
+        >
+          Ready to see thinking differently?
+        </h2>
+        <p 
+          className="text-lg mb-8 opacity-90"
+          style={{ color: BRAND.white }}
+        >
+          Explore how Wadmore can help you understand cognitive strengths — 
+          for yourself, your family, your students, or your team.
+        </p>
+        
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            to="/families"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold transition-all hover:scale-105"
+            style={{ background: BRAND.teal, color: BRAND.white }}
+          >
+            For Families
+          </Link>
+          <Link
+            to="/schools"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold transition-all hover:scale-105"
+            style={{ background: BRAND.cerulean, color: BRAND.white }}
+          >
+            For Schools
+          </Link>
+          <Link
+            to="/professional"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold transition-all hover:scale-105"
+            style={{ background: BRAND.violet, color: BRAND.white }}
+          >
+            For Professional
+          </Link>
+        </div>
+        
+        <div 
+          className="mt-12 pt-8"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.2)" }}
+        >
+          <Link
+            to="/science"
+            className="inline-flex items-center gap-2 text-base font-medium opacity-90 hover:opacity-100 transition-opacity"
+            style={{ color: BRAND.white }}
+          >
+            Learn about our methodology
+            <ArrowIcon />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ICONS
+   ══════════════════════════════════════════════════════════════ */
+
+function ArrowIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8.707 3.293a1 1 0 00-1.414 1.414L9.586 7H3a1 1 0 100 2h6.586l-2.293 2.293a1 1 0 101.414 1.414l4-4a1 1 0 000-1.414l-4-4z" />
+    </svg>
+  );
+}
+
+function StrengthIcon({ color }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+    </svg>
+  );
+}
+
+function ScienceIcon({ color }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 3H15M12 3V8M12 8L6 21H18L12 8Z" />
+      <circle cx="12" cy="14" r="1" fill={color} />
+      <circle cx="9" cy="17" r="1" fill={color} />
+      <circle cx="15" cy="17" r="1" fill={color} />
+    </svg>
+  );
+}
+
+function AccessibleIcon({ color }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="8" r="2" />
+      <path d="M12 10V14" />
+      <path d="M9 18L12 14L15 18" />
+    </svg>
+  );
+}
+
+function FairnessIcon({ color }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3V21" />
+      <path d="M5 6L12 3L19 6" />
+      <path d="M5 6V10C5 11 6 12 8 12" />
+      <path d="M19 6V10C19 11 18 12 16 12" />
+      <circle cx="8" cy="15" r="3" />
+      <circle cx="16" cy="15" r="3" />
+    </svg>
+  );
+}
+
+function ActionIcon({ color }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12,6 12,12 16,14" />
+    </svg>
+  );
+}
+
+function PrivacyIcon({ color }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <circle cx="12" cy="16" r="1" fill={color} />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ color }) {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill={color}>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  );
+}
