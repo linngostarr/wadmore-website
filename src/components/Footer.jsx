@@ -41,41 +41,12 @@ export default function Footer() {
               ═══════════════════════════════════════════════════════ */}
           <div className="md:col-span-5 space-y-6">
             {/* Logo */}
-            <Link to="/" className="inline-flex items-center gap-3 group">
-              <div 
-                className="h-10 w-10 rounded-xl flex items-center justify-center"
-                style={{ background: "rgba(255,255,255,0.15)" }}
-              >
-                <svg 
-                  viewBox="0 0 32 32" 
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke={BRAND.white}
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="16" cy="8" r="4" fill={BRAND.white} opacity="0.9" />
-                  <circle cx="9" cy="20" r="3" fill={BRAND.white} opacity="0.7" />
-                  <circle cx="23" cy="20" r="3" fill={BRAND.white} opacity="0.7" />
-                  <circle cx="16" cy="26" r="2.5" fill={BRAND.white} opacity="0.5" />
-                  <line x1="16" y1="12" x2="10" y2="17" opacity="0.6" />
-                  <line x1="16" y1="12" x2="22" y2="17" opacity="0.6" />
-                  <line x1="9" y1="23" x2="14" y2="25" opacity="0.4" />
-                  <line x1="23" y1="23" x2="18" y2="25" opacity="0.4" />
-                </svg>
-              </div>
-              <div>
-                <div className="text-xl font-semibold text-white">
-                  Wadmore
-                </div>
-                <div 
-                  className="text-[10px] font-medium tracking-[0.12em] uppercase"
-                  style={{ color: "rgba(255,255,255,0.6)" }}
-                >
-                  Thinking, Understood
-                </div>
-              </div>
+            <Link to="/" className="inline-flex items-center group">
+              <img 
+                src="/assets/logo-inverse.png" 
+                alt="Wadmore - Thinking, Understood" 
+                className="h-20 w-auto"
+              />
             </Link>
             
             <p 
