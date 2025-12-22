@@ -189,13 +189,15 @@ const AUDIENCES = {
 export default function Home() {
   return (
     <Layout>
-      <Hero />
-      <ResearchSection />
-      <DomainsSection />
-      <BandsSection />
-      <AudienceSection />
-      <DifferenceSection />
-      <CTASection />
+      <div className="overflow-x-hidden">
+        <Hero />
+        <ResearchSection />
+        <DomainsSection />
+        <BandsSection />
+        <AudienceSection />
+        <DifferenceSection />
+        <CTASection />
+      </div>
     </Layout>
   );
 }
@@ -390,16 +392,16 @@ function BandsSection() {
         </div>
         
         <div className="rounded-2xl overflow-hidden mb-10" style={{ background: BRAND.cloud, boxShadow: `0 15px 40px ${BRAND.indigo}05` }}>
-          {/* Band selector bar */}
-          <div className="flex">
+          {/* Band selector bar - overflow-hidden prevents horizontal scroll */}
+          <div className="flex overflow-hidden">
             {BANDS.map((b) => {
               const isActive = b.id === activeBand;
               const bandColor = BAND_COLORS[b.id - 1];
               const textColor = BAND_TEXT[b.id - 1];
               return (
-                <button key={b.id} onClick={() => setActiveBand(b.id)} className="flex-1 h-14 md:h-16 transition-all duration-300 relative group" style={{ background: bandColor, transform: isActive ? "scaleY(1.2)" : "scaleY(1)", transformOrigin: "bottom", zIndex: isActive ? 10 : 1 }}>
-                  <span className={`absolute inset-0 flex items-center justify-center text-xs md:text-sm font-bold transition-opacity duration-200 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'}`} style={{ color: textColor }}>{b.id}</span>
-                  {isActive && <span className="absolute -bottom-2 left-1/2 -translate-x-1/2" style={{ width: 0, height: 0, borderLeft: "8px solid transparent", borderRight: "8px solid transparent", borderTop: `8px solid ${bandColor}` }} />}
+                <button key={b.id} onClick={() => setActiveBand(b.id)} className="flex-1 min-w-0 h-14 md:h-16 transition-all duration-300 relative group" style={{ background: bandColor, transform: isActive ? "scaleY(1.2)" : "scaleY(1)", transformOrigin: "bottom", zIndex: isActive ? 10 : 1 }}>
+                  <span className={`absolute inset-0 flex items-center justify-center text-[10px] md:text-sm font-bold transition-opacity duration-200 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'}`} style={{ color: textColor }}>{b.id}</span>
+                  {isActive && <span className="absolute -bottom-2 left-1/2 -translate-x-1/2" style={{ width: 0, height: 0, borderLeft: "6px solid transparent", borderRight: "6px solid transparent", borderTop: `6px solid ${bandColor}` }} />}
                 </button>
               );
             })}
