@@ -209,16 +209,16 @@ function Hero() {
       <div className="absolute top-20 right-[10%] w-[40vw] max-w-[500px] aspect-square pointer-events-none opacity-30" style={{ background: `radial-gradient(circle at center, ${BRAND.teal}20, transparent 60%)` }} />
       <div className="absolute bottom-0 left-[5%] w-[30vw] max-w-[400px] aspect-square pointer-events-none opacity-25" style={{ background: `radial-gradient(circle at center, ${BRAND.violet}15, transparent 60%)` }} />
       
-      {/* Responsive padding: scales with viewport but has min/max bounds */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-[clamp(2rem,5vh,3.5rem)] relative z-10 w-full">
+      {/* Mobile-optimized padding */}
+      <div className="max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-[clamp(2rem,5vh,3.5rem)] relative z-10 w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-[clamp(2rem,4vw,4rem)] items-center">
           <div>
             {/* Fluid typography: scales smoothly between breakpoints */}
             <h1 
-              className="font-semibold leading-[0.95] tracking-tight mb-[clamp(1rem,2vh,1.5rem)]" 
+              className="font-semibold leading-[0.95] tracking-tight mb-4 md:mb-[clamp(1rem,2vh,1.5rem)]" 
               style={{ 
                 color: BRAND.slate,
-                fontSize: "clamp(2.5rem, 5vw + 1rem, 4rem)"
+                fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)"
               }}
             >
               Thinking,
@@ -232,10 +232,10 @@ function Hero() {
             </h1>
             
             <p 
-              className="leading-relaxed mb-[clamp(1.25rem,3vh,2rem)] max-w-xl" 
+              className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)] max-w-xl" 
               style={{ 
                 color: BRAND.steel,
-                fontSize: "clamp(1rem, 1vw + 0.5rem, 1.25rem)"
+                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
               }}
             >
               Wadmore maps <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
@@ -243,14 +243,19 @@ function Hero() {
               Strength-based profiles for schools, families, and organisations.
             </p>
             
-            <div className="flex flex-wrap gap-2.5 md:gap-3">
-              <Link to="/about" className="group inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.02]" style={{ background: `linear-gradient(135deg, ${BRAND.indigo} 0%, ${BRAND.indigoDark} 100%)`, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.indigo}35` }}>
+            {/* Mobile: stacked CTAs. Desktop: inline row */}
+            <div className="space-y-3 md:space-y-0 md:flex md:flex-wrap md:gap-3">
+              {/* Primary CTA - full width on mobile */}
+              <Link to="/about" className="group flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:py-3 rounded-full text-base md:text-sm font-semibold transition-all duration-300 hover:scale-[1.02] w-full md:w-auto" style={{ background: `linear-gradient(135deg, ${BRAND.indigo} 0%, ${BRAND.indigoDark} 100%)`, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.indigo}35` }}>
                 Discover Wadmore
                 <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
               </Link>
-              <Link to="/schools" className="inline-flex items-center px-4 md:px-5 py-2.5 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
-              <Link to="/families" className="inline-flex items-center px-4 md:px-5 py-2.5 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
-              <Link to="/professional" className="inline-flex items-center px-4 md:px-5 py-2.5 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.violet, color: BRAND.white }}>Professional</Link>
+              {/* Secondary CTAs - row on mobile, inline on desktop */}
+              <div className="flex gap-2 md:contents">
+                <Link to="/schools" className="flex-1 md:flex-none inline-flex items-center justify-center px-4 md:px-5 py-3 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
+                <Link to="/families" className="flex-1 md:flex-none inline-flex items-center justify-center px-4 md:px-5 py-3 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
+                <Link to="/professional" className="flex-1 md:flex-none inline-flex items-center justify-center px-4 md:px-5 py-3 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.violet, color: BRAND.white }}>Professional</Link>
+              </div>
             </div>
           </div>
           
@@ -260,9 +265,9 @@ function Hero() {
           </div>
         </div>
         
-        {/* Stats bar: responsive padding and gap */}
+        {/* Stats bar: 2 columns on mobile, 4 on desktop */}
         <div 
-          className="mt-[clamp(1.5rem,4vh,2.5rem)] grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-5 md:py-6 px-5 md:px-8 rounded-2xl" 
+          className="mt-8 md:mt-[clamp(1.5rem,4vh,2.5rem)] grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 py-4 md:py-6 px-4 md:px-8 rounded-2xl" 
           style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 12px 35px ${BRAND.indigo}05` }}
         >
           {[
@@ -271,10 +276,10 @@ function Hero() {
             { value: "360", label: "Unique Constructs", sub: "Actionable precision" },
             { value: "α≥0.85", label: "Reliability Target", sub: "Psychometric rigour" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold mb-0.5" style={{ color: BRAND.indigo }}>{stat.value}</div>
-              <div className="text-xs font-semibold" style={{ color: BRAND.slate }}>{stat.label}</div>
-              <div className="text-xs hidden sm:block" style={{ color: BRAND.steel }}>{stat.sub}</div>
+            <div key={stat.label} className="text-center py-1">
+              <div className="text-xl md:text-3xl font-bold mb-0.5" style={{ color: BRAND.indigo }}>{stat.value}</div>
+              <div className="text-[11px] md:text-xs font-semibold" style={{ color: BRAND.slate }}>{stat.label}</div>
+              <div className="text-[10px] md:text-xs hidden sm:block" style={{ color: BRAND.steel }}>{stat.sub}</div>
             </div>
           ))}
         </div>
@@ -285,13 +290,13 @@ function Hero() {
 
 function ResearchSection() {
   return (
-    <section className="py-20 md:py-24" style={{ background: BRAND.white }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
+    <section className="py-12 md:py-20 lg:py-24" style={{ background: BRAND.white }}>
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: BRAND.indigo }}>Research Foundation</p>
-            <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>Grounded in cognitive science</h2>
-            <p className="text-lg leading-relaxed mb-6" style={{ color: BRAND.steel }}>
+            <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Research Foundation</p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Grounded in cognitive science</h2>
+            <p className="text-base md:text-lg leading-relaxed mb-5 md:mb-6" style={{ color: BRAND.steel }}>
               Wadmore's framework draws on decades of research into cognitive development. 
               Every domain reflects established science — not pop psychology or discredited "learning styles."
             </p>
@@ -300,20 +305,20 @@ function ResearchSection() {
             </Link>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
             {[
               { area: "Executive Functioning", researchers: "Diamond (2013)", insight: "Core to planning and self-regulation", color: BRAND.teal },
               { area: "Working Memory", researchers: "Baddeley & Hitch", insight: "The mental workspace for reasoning", color: BRAND.cerulean },
               { area: "Metacognition", researchers: "Hattie (2009)", insight: "Effect size d=0.69 for learning", color: BRAND.indigo },
               { area: "Growth Mindset", researchers: "Dweck (2006)", insight: "How belief shapes engagement", color: BRAND.violet },
             ].map((item) => (
-              <div key={item.area} className="group p-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}15` }}>
-                  <div className="w-2 h-2 rounded-full" style={{ background: item.color }} />
+              <div key={item.area} className="group p-3 md:p-4 rounded-xl transition-all duration-300 md:hover:-translate-y-1 md:hover:shadow-lg" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
+                <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}15` }}>
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full" style={{ background: item.color }} />
                 </div>
-                <h3 className="font-semibold text-sm mb-0.5" style={{ color: BRAND.slate }}>{item.area}</h3>
-                <p className="text-xs mb-1" style={{ color: item.color }}>{item.researchers}</p>
-                <p className="text-xs" style={{ color: BRAND.steel }}>{item.insight}</p>
+                <h3 className="font-semibold text-xs md:text-sm mb-0.5" style={{ color: BRAND.slate }}>{item.area}</h3>
+                <p className="text-[10px] md:text-xs mb-0.5 md:mb-1" style={{ color: item.color }}>{item.researchers}</p>
+                <p className="text-[10px] md:text-xs leading-snug" style={{ color: BRAND.steel }}>{item.insight}</p>
               </div>
             ))}
           </div>
@@ -327,42 +332,48 @@ function DomainsSection() {
   const [expanded, setExpanded] = useState(null);
   
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: BRAND.cloud }}>
+    <section className="py-12 md:py-20 lg:py-28 relative overflow-hidden" style={{ background: BRAND.cloud }}>
       <div className="absolute top-0 left-0 w-[500px] h-[500px] pointer-events-none opacity-40" style={{ background: `radial-gradient(circle at center, ${BRAND.cerulean}08, transparent 60%)`, transform: "translate(-30%, -30%)" }} />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-        <div className="max-w-2xl mb-12">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: BRAND.indigo }}>The Cognitive Framework</p>
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>Eight domains of cognitive development.</h2>
-          <p className="text-lg" style={{ color: BRAND.steel }}>
+      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+        <div className="max-w-2xl mb-8 md:mb-12">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>The Cognitive Framework</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Eight domains of cognitive development.</h2>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
             Every Wadmore profile maps development across these eight research-grounded domains. 
             Patterns emerge from the interplay between them.
           </p>
         </div>
         
-        <div className="flex flex-wrap gap-4 mb-8">
+        {/* Cluster legend - horizontal scroll on mobile */}
+        <div className="flex gap-4 mb-6 md:mb-8 overflow-x-auto pb-2 -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible">
           {Object.entries(CLUSTERS).map(([key, cluster]) => (
-            <div key={key} className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full" style={{ background: cluster.color }} />
-              <span className="text-sm font-medium" style={{ color: BRAND.slate }}>{cluster.name}</span>
+            <div key={key} className="flex items-center gap-2 flex-shrink-0">
+              <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full" style={{ background: cluster.color }} />
+              <span className="text-xs md:text-sm font-medium whitespace-nowrap" style={{ color: BRAND.slate }}>{cluster.name}</span>
             </div>
           ))}
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Domain cards - single column mobile, 2 col tablet, 4 col desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {DOMAINS.map((domain) => {
             const Icon = DomainIcons[domain.code];
             const isExpanded = expanded === domain.id;
             return (
-              <div key={domain.id} onClick={() => setExpanded(isExpanded ? null : domain.id)} className="rounded-xl p-5 cursor-pointer transition-all duration-300" style={{ background: BRAND.white, border: `2px solid ${isExpanded ? domain.color : BRAND.dove}`, boxShadow: isExpanded ? `0 15px 30px ${domain.color}12` : "none", transform: isExpanded ? "translateY(-2px)" : "translateY(0)" }}>
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300" style={{ background: `${domain.color}12`, color: domain.color, transform: isExpanded ? "scale(1.1)" : "scale(1)" }}>
-                  <div className="w-6 h-6"><Icon /></div>
+              <div key={domain.id} onClick={() => setExpanded(isExpanded ? null : domain.id)} className="rounded-xl p-4 md:p-5 cursor-pointer transition-all duration-300" style={{ background: BRAND.white, border: `2px solid ${isExpanded ? domain.color : BRAND.dove}`, boxShadow: isExpanded ? `0 15px 30px ${domain.color}12` : "none", transform: isExpanded ? "translateY(-2px)" : "translateY(0)" }}>
+                <div className="flex items-start gap-3 md:block">
+                  <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl flex items-center justify-center md:mb-4 flex-shrink-0 transition-transform duration-300" style={{ background: `${domain.color}12`, color: domain.color, transform: isExpanded ? "scale(1.1)" : "scale(1)" }}>
+                    <div className="w-5 h-5 md:w-6 md:h-6"><Icon /></div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="inline-block text-[10px] md:text-xs font-bold px-1.5 md:px-2 py-0.5 rounded mb-1 md:mb-2" style={{ background: `${domain.color}12`, color: domain.color }}>{domain.code}</span>
+                    <h3 className="text-sm md:text-base font-semibold mb-0.5 md:mb-1" style={{ color: BRAND.slate }}>{domain.name}</h3>
+                    <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>{domain.tagline}</p>
+                  </div>
                 </div>
-                <span className="inline-block text-xs font-bold px-2 py-0.5 rounded mb-2" style={{ background: `${domain.color}12`, color: domain.color }}>{domain.code}</span>
-                <h3 className="text-base font-semibold mb-1" style={{ color: BRAND.slate }}>{domain.name}</h3>
-                <p className="text-sm" style={{ color: BRAND.steel }}>{domain.tagline}</p>
                 {isExpanded && (
-                  <div className="mt-4 pt-4 flex items-center gap-2" style={{ borderTop: `1px solid ${BRAND.dove}` }}>
+                  <div className="mt-3 md:mt-4 pt-3 md:pt-4 flex items-center gap-2" style={{ borderTop: `1px solid ${BRAND.dove}` }}>
                     <span className="w-2 h-2 rounded-full" style={{ background: CLUSTERS[domain.cluster].color }} />
                     <span className="text-xs font-medium" style={{ color: BRAND.steel }}>{CLUSTERS[domain.cluster].name}</span>
                   </div>
@@ -380,20 +391,25 @@ function BandsSection() {
   const [activeBand, setActiveBand] = useState(7);
   const band = BANDS[activeBand - 1];
   
+  // Mobile swipe handlers
+  const handlePrev = () => setActiveBand((prev) => Math.max(1, prev - 1));
+  const handleNext = () => setActiveBand((prev) => Math.min(15, prev + 1));
+  
   return (
-    <section className="py-20 md:py-28" style={{ background: BRAND.white }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="max-w-2xl mb-12">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: BRAND.indigo }}>Developmental Framework</p>
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>Growth, not ranking.</h2>
-          <p className="text-lg" style={{ color: BRAND.steel }}>
+    <section className="py-12 md:py-20 lg:py-28" style={{ background: BRAND.white }}>
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="max-w-2xl mb-8 md:mb-12">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Developmental Framework</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Growth, not ranking.</h2>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
             Wadmore describes where someone is on a developmental continuum — and what growth looks like from there. No percentiles. No peer comparison.
           </p>
         </div>
         
-        <div className="rounded-2xl overflow-hidden mb-10" style={{ background: BRAND.cloud, boxShadow: `0 15px 40px ${BRAND.indigo}05` }}>
-          {/* Band selector bar - overflow-hidden prevents horizontal scroll */}
-          <div className="flex overflow-hidden">
+        <div className="rounded-2xl overflow-hidden mb-8 md:mb-10" style={{ background: BRAND.cloud, boxShadow: `0 15px 40px ${BRAND.indigo}05` }}>
+          
+          {/* DESKTOP: 15-bar selector (hidden on mobile) */}
+          <div className="hidden md:flex overflow-hidden">
             {BANDS.map((b) => {
               const isActive = b.id === activeBand;
               const bandColor = BAND_COLORS[b.id - 1];
@@ -407,14 +423,74 @@ function BandsSection() {
             })}
           </div>
           
-          {/* Band detail panel */}
-          <div className="p-6 md:p-8" style={{ background: BRAND.white }}>
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-2xl md:text-3xl font-bold" style={{ color: BRAND.slate }}>Band {band.id}</span>
-              <span className="px-3 py-1.5 rounded-full text-sm font-semibold" style={{ background: BAND_COLORS[band.id - 1], color: BAND_TEXT[band.id - 1] }}>{band.name}</span>
-              <span className="px-3 py-1.5 rounded-lg text-xs font-medium" style={{ background: BRAND.cloud, color: BRAND.steel }}>{band.typical}</span>
+          {/* MOBILE: Stepper navigation (hidden on desktop) */}
+          <div className="md:hidden">
+            {/* Progress bar showing position */}
+            <div className="flex h-2">
+              {BANDS.map((b) => (
+                <div 
+                  key={b.id} 
+                  className="flex-1 transition-opacity duration-300"
+                  style={{ 
+                    background: BAND_COLORS[b.id - 1],
+                    opacity: b.id <= activeBand ? 1 : 0.3
+                  }} 
+                />
+              ))}
             </div>
-            <p className="text-base md:text-lg leading-relaxed mb-5" style={{ color: BRAND.steel }}>{band.description}</p>
+            
+            {/* Stepper controls */}
+            <div className="flex items-center justify-between px-4 py-3" style={{ background: BRAND.white, borderBottom: `1px solid ${BRAND.dove}` }}>
+              <button 
+                onClick={handlePrev}
+                disabled={activeBand === 1}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all"
+                style={{ 
+                  background: activeBand === 1 ? BRAND.dove : BRAND.cloud,
+                  color: activeBand === 1 ? BRAND.steel : BRAND.slate,
+                  opacity: activeBand === 1 ? 0.5 : 1
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </button>
+              
+              <div className="flex items-center gap-2">
+                <span 
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold"
+                  style={{ background: BAND_COLORS[activeBand - 1], color: BAND_TEXT[activeBand - 1] }}
+                >
+                  {activeBand}
+                </span>
+                <span className="text-sm font-medium" style={{ color: BRAND.steel }}>of 15</span>
+              </div>
+              
+              <button 
+                onClick={handleNext}
+                disabled={activeBand === 15}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all"
+                style={{ 
+                  background: activeBand === 15 ? BRAND.dove : BRAND.cloud,
+                  color: activeBand === 15 ? BRAND.steel : BRAND.slate,
+                  opacity: activeBand === 15 ? 0.5 : 1
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          {/* Band detail panel */}
+          <div className="p-5 md:p-6 lg:p-8" style={{ background: BRAND.white }}>
+            <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
+              <span className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: BRAND.slate }}>Band {band.id}</span>
+              <span className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-semibold" style={{ background: BAND_COLORS[band.id - 1], color: BAND_TEXT[band.id - 1] }}>{band.name}</span>
+              <span className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg text-[10px] md:text-xs font-medium" style={{ background: BRAND.cloud, color: BRAND.steel }}>{band.typical}</span>
+            </div>
+            <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-5" style={{ color: BRAND.steel }}>{band.description}</p>
             <Link to="/science" className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{ color: BRAND.indigo }}>
               See detailed construct breakdowns
               <ArrowIcon />
@@ -423,18 +499,18 @@ function BandsSection() {
         </div>
         
         {/* Supporting cards */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {[
             { title: "Capability, not comparison", desc: "Bands describe what someone can do — not how they rank against peers.", color: BRAND.teal },
             { title: "Development is the goal", desc: "Every band shows current capabilities and illuminates the path forward.", color: BRAND.cerulean },
             { title: "Grounded in theory", desc: "Aligned to Piagetian and neo-Piagetian developmental stages.", color: BRAND.violet },
           ].map((item) => (
-            <div key={item.title} className="p-5 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
+            <div key={item.title} className="p-4 md:p-5 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style={{ background: `${item.color}15` }}>
                 <div className="w-2 h-2 rounded-full" style={{ background: item.color }} />
               </div>
-              <h3 className="font-semibold text-base mb-1" style={{ color: BRAND.slate }}>{item.title}</h3>
-              <p className="text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
+              <h3 className="font-semibold text-sm md:text-base mb-1" style={{ color: BRAND.slate }}>{item.title}</h3>
+              <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -448,47 +524,51 @@ function AudienceSection() {
   const audience = AUDIENCES[active];
   
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: BRAND.cloud }}>
+    <section className="py-12 md:py-20 lg:py-28 relative overflow-hidden" style={{ background: BRAND.cloud }}>
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] pointer-events-none opacity-30" style={{ background: `radial-gradient(circle at center, ${audience.color}15, transparent 60%)` }} />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12 items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: BRAND.indigo }}>Built for Your Context</p>
-            <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>One framework.<br />Three platforms.</h2>
-            <p className="text-base mb-8" style={{ color: BRAND.steel }}>The cognitive science stays consistent. The insights adapt to what matters most to you.</p>
+            <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Built for Your Context</p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>One framework.<br />Three platforms.</h2>
+            <p className="text-sm md:text-base mb-6 md:mb-8" style={{ color: BRAND.steel }}>The cognitive science stays consistent. The insights adapt to what matters most to you.</p>
             
-            <div className="space-y-2">
+            {/* Mobile: horizontal scrollable tabs. Desktop: vertical stack */}
+            <div className="flex gap-2 overflow-x-auto pb-2 -mx-5 px-5 lg:mx-0 lg:px-0 lg:flex-col lg:overflow-visible lg:space-y-2 lg:gap-0">
               {Object.entries(AUDIENCES).map(([key, aud]) => (
-                <button key={key} onClick={() => setActive(key)} className="w-full text-left px-5 py-4 rounded-xl transition-all duration-300" style={{ background: active === key ? BRAND.white : "transparent", border: active === key ? `2px solid ${aud.color}` : `2px solid transparent`, boxShadow: active === key ? `0 8px 25px ${aud.color}12` : "none" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform duration-300" style={{ background: `${aud.color}15`, transform: active === key ? "scale(1.1)" : "scale(1)" }}>
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: aud.color }} />
+                <button key={key} onClick={() => setActive(key)} className="flex-shrink-0 text-left px-4 lg:px-5 py-3 lg:py-4 rounded-xl transition-all duration-300" style={{ background: active === key ? BRAND.white : "transparent", border: active === key ? `2px solid ${aud.color}` : `2px solid transparent`, boxShadow: active === key ? `0 8px 25px ${aud.color}12` : "none" }}>
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-transform duration-300" style={{ background: `${aud.color}15`, transform: active === key ? "scale(1.1)" : "scale(1)" }}>
+                      <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full" style={{ background: aud.color }} />
                     </div>
-                    <span className="text-base font-semibold" style={{ color: active === key ? BRAND.slate : BRAND.steel }}>{aud.label}</span>
+                    <span className="text-sm lg:text-base font-semibold whitespace-nowrap" style={{ color: active === key ? BRAND.slate : BRAND.steel }}>{aud.label}</span>
                   </div>
                 </button>
               ))}
             </div>
           </div>
           
-          <div className="rounded-2xl p-8 md:p-10 relative overflow-hidden" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}05` }}>
-            <div className="absolute top-0 left-0 w-1.5 h-full" style={{ background: audience.color }} />
-            <div className="pl-4">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-2" style={{ color: BRAND.slate }}>{audience.headline}</h3>
-              <p className="text-base mb-4" style={{ color: audience.color }}>{audience.subhead}</p>
-              <p className="text-sm mb-8 leading-relaxed" style={{ color: BRAND.steel }}>{audience.body}</p>
-              <div className="grid grid-cols-2 gap-3 mb-8">
+          <div className="rounded-2xl p-5 md:p-8 lg:p-10 relative overflow-hidden" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}05` }}>
+            <div className="absolute top-0 left-0 w-1 md:w-1.5 h-full" style={{ background: audience.color }} />
+            <div className="pl-3 md:pl-4">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2" style={{ color: BRAND.slate }}>{audience.headline}</h3>
+              <p className="text-sm md:text-base mb-3 md:mb-4" style={{ color: audience.color }}>{audience.subhead}</p>
+              <p className="text-xs md:text-sm mb-6 md:mb-8 leading-relaxed" style={{ color: BRAND.steel }}>{audience.body}</p>
+              
+              {/* Features: single column on mobile, 2 columns on tablet+ */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 mb-6 md:mb-8">
                 {audience.points.map((point) => (
                   <div key={point} className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: `${audience.color}15` }}>
                       <CheckIcon color={audience.color} size={10} />
                     </div>
-                    <span className="text-sm" style={{ color: BRAND.slate }}>{point}</span>
+                    <span className="text-xs md:text-sm" style={{ color: BRAND.slate }}>{point}</span>
                   </div>
                 ))}
               </div>
-              <Link to={audience.link} className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.02]" style={{ background: `linear-gradient(135deg, ${audience.color} 0%, ${audience.color}dd 100%)`, color: BRAND.white, boxShadow: `0 6px 20px ${audience.color}30` }}>
+              
+              <Link to={audience.link} className="group inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.02]" style={{ background: `linear-gradient(135deg, ${audience.color} 0%, ${audience.color}dd 100%)`, color: BRAND.white, boxShadow: `0 6px 20px ${audience.color}30` }}>
                 Wadmore for {audience.label}
                 <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
               </Link>
@@ -502,32 +582,32 @@ function AudienceSection() {
 
 function DifferenceSection() {
   return (
-    <section className="py-20 md:py-28" style={{ background: BRAND.white }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: BRAND.indigo }}>Why Wadmore</p>
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>Assessment that serves growth.</h2>
-          <p className="text-lg" style={{ color: BRAND.steel }}>Wadmore was built for understanding and development — not sorting or labelling.</p>
+    <section className="py-12 md:py-20 lg:py-28" style={{ background: BRAND.white }}>
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Why Wadmore</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Assessment that serves growth.</h2>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built for understanding and development — not sorting or labelling.</p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {[
             { title: "Strength-based", desc: "Profiles lead with what's working. Growth areas framed as opportunities.", color: BRAND.teal },
             { title: "Developmentally progressive", desc: "Movement is the point. Every profile shows where and what's next.", color: BRAND.cerulean },
             { title: "Genuinely actionable", desc: "360 constructs connect to specific interventions — not generic advice.", color: BRAND.indigo },
             { title: "Psychometrically rigorous", desc: "IRT/Rasch-aligned measurement with professional reliability standards.", color: BRAND.violet },
           ].map((item) => (
-            <div key={item.title} className="group p-6 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: item.color }} />
+            <div key={item.title} className="group p-5 md:p-6 rounded-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
+                <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full" style={{ background: item.color }} />
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.slate }}>{item.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: BRAND.steel }}>{item.desc}</p>
+              <h3 className="text-base md:text-lg font-semibold mb-1.5 md:mb-2" style={{ color: BRAND.slate }}>{item.title}</h3>
+              <p className="text-xs md:text-sm leading-relaxed" style={{ color: BRAND.steel }}>{item.desc}</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-10 grid md:grid-cols-3 gap-5">
+        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {[
             { title: "Designed for fairness", desc: "DIF testing, bias review, and EALD-friendly design built in from the start." },
             { title: "Lifespan coverage", desc: "From early childhood through professional expertise — one coherent framework." },
@@ -537,7 +617,7 @@ function DifferenceSection() {
               <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: BRAND.sage }} />
               <div>
                 <h4 className="font-semibold text-sm mb-0.5" style={{ color: BRAND.slate }}>{item.title}</h4>
-                <p className="text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
+                <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
               </div>
             </div>
           ))}
@@ -549,28 +629,29 @@ function DifferenceSection() {
 
 function CTASection() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${BRAND.indigo} 0%, ${BRAND.indigoDark} 50%, #1a2040 100%)` }}>
+    <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${BRAND.indigo} 0%, ${BRAND.indigoDark} 50%, #1a2040 100%)` }}>
       <div className="absolute inset-0 pointer-events-none opacity-10" style={{ backgroundImage: `radial-gradient(circle at 30% 70%, ${BRAND.teal} 1px, transparent 1px), radial-gradient(circle at 70% 30%, ${BRAND.violet} 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
       
-      <div className="max-w-4xl mx-auto px-6 md:px-8 text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 leading-tight" style={{ color: BRAND.white }}>Ready to understand cognitive development?</h2>
-        <p className="text-lg md:text-xl mb-10 opacity-85 max-w-2xl mx-auto" style={{ color: BRAND.white }}>
+      <div className="max-w-4xl mx-auto px-5 md:px-8 text-center relative z-10">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 md:mb-6 leading-tight" style={{ color: BRAND.white }}>Ready to understand cognitive development?</h2>
+        <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 opacity-85 max-w-2xl mx-auto" style={{ color: BRAND.white }}>
           Discover how Wadmore maps development with scientific precision and genuine actionability.
         </p>
         
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link to="/schools" className="group inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.cerulean, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.cerulean}40` }}>
+        {/* Mobile: stacked full-width. Desktop: inline row */}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 md:gap-4">
+          <Link to="/schools" className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.cerulean, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.cerulean}40` }}>
             For Schools <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
           </Link>
-          <Link to="/families" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.teal, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.teal}40` }}>
+          <Link to="/families" className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.teal, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.teal}40` }}>
             For Families <ArrowIcon />
           </Link>
-          <Link to="/professional" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.violet, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.violet}40` }}>
+          <Link to="/professional" className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.violet, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.violet}40` }}>
             For Professional <ArrowIcon />
           </Link>
         </div>
         
-        <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+        <div className="mt-8 md:mt-10 pt-6 md:pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>
           <Link to="/science" className="inline-flex items-center gap-2 text-sm font-medium opacity-70 hover:opacity-100 transition-opacity" style={{ color: BRAND.white }}>
             Explore the science behind Wadmore <ArrowIcon />
           </Link>
