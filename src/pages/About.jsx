@@ -123,18 +123,19 @@ function MissionSection() {
               className="text-lg mb-5 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              We're building the world's most advanced cognitive profiling platform — 
-              one that reveals cognitive development across eight domains and fifteen 
-              developmental bands. Our goal is to make deep cognitive understanding 
-              accessible to everyone: families, schools, and organisations.
+              We're building a cognitive profiling platform that reveals <em>how</em> people 
+              think — not just what they know. Our framework maps development across eight 
+              cognitive domains and fifteen developmental bands, creating 360 unique 
+              constructs that describe the full spectrum of human cognitive capability.
             </p>
             <p 
               className="text-lg leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              Traditional assessments have focused on deficits, comparisons, and 
-              gatekeeping. Wadmore takes a different path: strength-based profiling 
-              that empowers growth and celebrates cognitive diversity.
+              Traditional assessments focus on deficits and peer comparison. Wadmore takes 
+              a fundamentally different approach: strength-based profiling that empowers 
+              growth, celebrates cognitive diversity, and provides genuinely actionable 
+              insights for schools, families, and organisations.
             </p>
           </div>
           
@@ -146,18 +147,18 @@ function MissionSection() {
               {[
                 {
                   number: "01",
-                  title: "Understand",
-                  description: "Reveal cognitive development across 8 domains and 15 developmental bands",
+                  title: "Map",
+                  description: "Reveal cognitive development across 8 domains — from abstract reasoning to metacognition to creativity",
                 },
                 {
                   number: "02",
-                  title: "Empower",
-                  description: "Provide actionable insights that lead to real growth, not just scores and labels",
+                  title: "Understand",
+                  description: "Place development on a 15-band continuum, showing current capabilities and what growth looks like",
                 },
                 {
                   number: "03",
-                  title: "Include",
-                  description: "Design for fairness from the start — eliminating bias, not perpetuating it",
+                  title: "Act",
+                  description: "Connect insights to specific, practical strategies for teachers, parents, and individuals",
                 },
               ].map((item) => (
                 <div key={item.number} className="flex gap-4">
@@ -207,28 +208,36 @@ function StorySection() {
             className="text-3xl md:text-4xl font-semibold mb-8 text-center"
             style={{ color: BRAND.slate }}
           >
-            Born from frustration with the status quo
+            Born from 17 years in assessment
           </h2>
           
           <div className="space-y-5" style={{ color: BRAND.steel }}>
             <p className="text-lg leading-relaxed">
-              After years working in educational assessment, the founder of Wadmore 
-              saw the same pattern repeat: students reduced to percentile ranks, 
-              teachers drowning in data without actionable insights, and families 
-              left confused by reports full of jargon.
+              After nearly two decades in educational assessment — as a school principal, 
+              Head of Global Assessment at Janison, and across countless conversations 
+              with teachers and families — one pattern became impossible to ignore.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Traditional cognitive assessments — CogAT, WISC, CAT4 — were designed 
-              decades ago. They're expensive, culturally biased, deficit-focused, 
-              and produce reports that sit in filing cabinets rather than driving 
-              meaningful change.
+              Traditional cognitive assessments tell you <em>what</em> someone knows. 
+              They rank students against peers, produce deficit-focused reports, and 
+              leave educators without the insights they actually need. Tools like CogAT, 
+              WISC, and CAT4 were designed for a different era — expensive, culturally 
+              biased, and focused on gatekeeping rather than growth.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Wadmore was created to do things differently: to build assessment 
-              that's grounded in modern cognitive science, designed for fairness, 
-              focused on strengths, and genuinely useful for the people who need it.
+              Wadmore asks a different question: <strong>how does someone think?</strong> 
+              We map cognitive development across eight domains — from abstract reasoning 
+              to executive functioning to metacognition — revealing the complete picture 
+              of how a person processes, regulates, and creates.
+            </p>
+            
+            <p className="text-lg leading-relaxed">
+              The result is strength-based profiling that empowers growth. Assessment 
+              designed for fairness from the start. Insights that teachers and parents 
+              can actually use. And a framework that spans the full lifespan — from early 
+              childhood through professional expertise.
             </p>
           </div>
         </div>
@@ -355,7 +364,7 @@ function FounderSection() {
                 className="w-28 h-28 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold"
                 style={{ background: BRAND.indigo, color: BRAND.white }}
               >
-                MW
+                ML
               </div>
               <div className="text-sm" style={{ color: BRAND.steel }}>
                 Founder photo
@@ -374,7 +383,7 @@ function FounderSection() {
               className="text-3xl md:text-4xl font-semibold mb-2"
               style={{ color: BRAND.slate }}
             >
-              Matt Wadmore
+              Matt Linn
             </h2>
             <div 
               className="text-lg font-medium mb-6"
@@ -385,26 +394,29 @@ function FounderSection() {
             
             <div className="space-y-4" style={{ color: BRAND.steel }}>
               <p className="text-base leading-relaxed">
-                Matt brings over 15 years of experience in educational assessment, 
-                including roles as a school principal and senior positions in 
-                assessment technology. He's seen firsthand how traditional testing 
-                fails students, teachers, and families.
+                Matt brings over 17 years of experience in educational assessment, 
+                including leadership roles as a school principal and Head of Global 
+                Assessment at Janison, one of Australia's leading assessment technology 
+                companies. He's worked across the full spectrum — from classroom teaching 
+                to enterprise-scale psychometric development.
               </p>
               <p className="text-base leading-relaxed">
-                His background spans psychometric development, educational leadership, 
-                and technology implementation — a unique combination that informs 
-                Wadmore's approach to building assessment that actually works.
+                Throughout his career, Matt has seen how traditional cognitive testing 
+                fails the people it's meant to serve: students labelled rather than 
+                understood, teachers given data without direction, and families left 
+                navigating systems that weren't designed with them in mind.
               </p>
               <p className="text-base leading-relaxed">
-                Matt holds qualifications in education and educational psychology, 
-                and is passionate about making cognitive science accessible to everyone 
-                who can benefit from it.
+                Wadmore represents the synthesis of that experience — combining rigorous 
+                psychometrics with genuine accessibility, and replacing deficit-focused 
+                profiling with strength-based developmental insights. Matt is passionate 
+                about making cognitive science practical and empowering for everyone.
               </p>
             </div>
             
             <div className="flex gap-4 mt-6">
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/in/mattlinn" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
