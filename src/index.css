@@ -6,6 +6,16 @@
 @tailwind utilities;
 
 /* ──────────────────────────────────────────────
+   Viewport overflow fix – prevents horizontal scroll on mobile
+   ────────────────────────────────────────────── */
+
+html, body, #root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ──────────────────────────────────────────────
    Wadmore design tokens – blue / violet / indigo
    ────────────────────────────────────────────── */
 

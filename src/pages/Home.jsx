@@ -189,7 +189,8 @@ const AUDIENCES = {
 export default function Home() {
   return (
     <Layout>
-      <div className="overflow-x-hidden">
+      {/* Prevent horizontal overflow on mobile - max-w-full ensures content doesn't exceed viewport */}
+      <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <ResearchSection />
         <DomainsSection />
@@ -251,10 +252,10 @@ function Hero() {
                 <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
               </Link>
               {/* Secondary CTAs - row on mobile, inline on desktop */}
-              <div className="flex gap-2 md:contents">
-                <Link to="/schools" className="flex-1 md:flex-none inline-flex items-center justify-center px-4 md:px-5 py-3 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
-                <Link to="/families" className="flex-1 md:flex-none inline-flex items-center justify-center px-4 md:px-5 py-3 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
-                <Link to="/professional" className="flex-1 md:flex-none inline-flex items-center justify-center px-4 md:px-5 py-3 md:py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.violet, color: BRAND.white }}>Professional</Link>
+              <div className="flex gap-2 md:contents overflow-hidden">
+                <Link to="/schools" className="flex-1 min-w-0 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
+                <Link to="/families" className="flex-1 min-w-0 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
+                <Link to="/professional" className="flex-1 min-w-0 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.violet, color: BRAND.white }}>Professional</Link>
               </div>
             </div>
           </div>
