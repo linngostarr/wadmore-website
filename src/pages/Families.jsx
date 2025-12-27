@@ -317,13 +317,13 @@ function WhyItMattersSection() {
 
 function EightDomainsSection() {
   const domains = [
-    { code: "AR", name: "Abstract Reasoning", desc: "Pattern recognition", color: BRAND.cerulean },
+    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems", color: BRAND.cerulean },
     { code: "LS", name: "Logical Sequencing", desc: "Step-by-step thinking", color: BRAND.cerulean },
     { code: "PS", name: "Processing Speed", desc: "Quick, accurate thinking", color: BRAND.cerulean },
-    { code: "MA", name: "Memory & Attention", desc: "Focus and recall", color: BRAND.indigo },
+    { code: "MA", name: "Memory & Attention", desc: "Holding information while working", color: BRAND.indigo },
     { code: "EF", name: "Executive Functioning", desc: "Planning and organisation", color: BRAND.teal },
-    { code: "MR", name: "Metacognition", desc: "Thinking about thinking", color: BRAND.teal },
-    { code: "CM", name: "Cognitive Confidence", desc: "Learning mindset", color: BRAND.violet },
+    { code: "MR", name: "Metacognition", desc: "Understanding and directing your thinking processes", color: BRAND.teal },
+    { code: "CM", name: "Cognitive Confidence", desc: "Persisting through challenge", color: BRAND.violet },
     { code: "CD", name: "Creativity", desc: "Original ideas", color: BRAND.violet },
   ];
 

@@ -47,14 +47,14 @@ const DomainIcons = {
 };
 
 const DOMAINS = [
-  { id: "abstract", code: "AR", name: "Abstract Reasoning", tagline: "Pattern recognition", cluster: "processing", color: BRAND.cerulean },
-  { id: "logical", code: "LS", name: "Logical Sequencing", tagline: "Sequential analysis", cluster: "processing", color: BRAND.cerulean },
-  { id: "speed", code: "PS", name: "Processing Speed", tagline: "Cognitive efficiency", cluster: "processing", color: BRAND.cerulean },
-  { id: "memory", code: "MA", name: "Memory & Attention", tagline: "Focus and recall", cluster: "processing", color: BRAND.indigo },
-  { id: "executive", code: "EF", name: "Executive Functioning", tagline: "Planning and flexibility", cluster: "regulation", color: BRAND.teal },
-  { id: "metacognition", code: "MR", name: "Metacognition", tagline: "Self-awareness in learning", cluster: "regulation", color: BRAND.teal },
-  { id: "confidence", code: "CM", name: "Cognitive Confidence", tagline: "Learning mindset", cluster: "regulation", color: BRAND.violet },
-  { id: "creativity", code: "CD", name: "Creativity", tagline: "Divergent production", cluster: "creative", color: BRAND.violet },
+  { id: "abstract", code: "AR", name: "Abstract Reasoning", tagline: "Solving novel problems", cluster: "processing", color: BRAND.cerulean },
+  { id: "logical", code: "LS", name: "Logical Sequencing", tagline: "Following and building arguments", cluster: "processing", color: BRAND.cerulean },
+  { id: "speed", code: "PS", name: "Processing Speed", tagline: "Thinking under time pressure", cluster: "processing", color: BRAND.cerulean },
+  { id: "memory", code: "MA", name: "Memory & Attention", tagline: "Holding information while working", cluster: "processing", color: BRAND.indigo },
+  { id: "executive", code: "EF", name: "Executive Functioning", tagline: "Planning, adapting, self-correcting", cluster: "regulation", color: BRAND.teal },
+  { id: "metacognition", code: "MR", name: "Metacognition", tagline: "Understanding and directing your thinking processes", cluster: "regulation", color: BRAND.teal },
+  { id: "confidence", code: "CM", name: "Cognitive Confidence", tagline: "Persisting through challenge", cluster: "regulation", color: BRAND.violet },
+  { id: "creativity", code: "CD", name: "Creativity", tagline: "Generating original ideas", cluster: "creative", color: BRAND.violet },
 ];
 
 const CLUSTERS = {
