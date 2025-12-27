@@ -298,8 +298,8 @@ function ResearchSection() {
             <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Research Foundation</p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Grounded in cognitive science</h2>
             <p className="text-base md:text-lg leading-relaxed mb-5 md:mb-6" style={{ color: BRAND.steel }}>
-              Wadmore's framework draws on decades of research into cognitive development. 
-              Every domain reflects established science — not pop psychology or discredited "learning styles."
+              Wadmore's framework draws on decades of peer-reviewed research into cognitive development. 
+              Every domain reflects established science with strong empirical foundations.
             </p>
             <Link to="/science" className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{ color: BRAND.indigo }}>
               Explore the research foundation <ArrowIcon />

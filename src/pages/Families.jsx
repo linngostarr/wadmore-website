@@ -127,8 +127,8 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Not labels. Not comparisons. Not blame. Wadmore shows you your child's 
-              unique cognitive strengths and growth areas — with{" "}
+              Wadmore shows you your child's unique cognitive strengths and growth 
+              areas — a complete picture across eight domains, with{" "}
               <strong style={{ color: BRAND.slate }}>clear guidance you can use</strong> at 
               home and in conversations with teachers.
             </p>

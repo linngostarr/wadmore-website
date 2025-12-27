@@ -132,10 +132,10 @@ function MissionSection() {
               className="text-lg leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              Traditional assessments focus on deficits and peer comparison. Wadmore takes 
-              a fundamentally different approach: strength-based profiling that empowers 
-              growth, celebrates cognitive diversity, and provides genuinely actionable 
-              insights for schools, families, and organisations.
+              Where traditional assessments rank and compare, Wadmore profiles and 
+              develops. Our strength-based approach celebrates cognitive diversity 
+              and provides genuinely actionable insights for schools, families, and 
+              organisations.
             </p>
           </div>
           
@@ -215,28 +215,29 @@ function StorySection() {
             <p className="text-lg leading-relaxed">
               After nearly two decades in educational assessment — as a school principal, 
               Head of Global Assessment at Janison, and across countless conversations 
-              with teachers and families — one pattern became impossible to ignore.
+              with teachers and families — one question kept emerging: what if we could 
+              understand <em>how</em> someone thinks, not just what they know?
             </p>
             
             <p className="text-lg leading-relaxed">
-              Traditional cognitive assessments tell you <em>what</em> someone knows. 
-              They rank students against peers, produce deficit-focused reports, and 
-              leave educators without the insights they actually need. Tools like CogAT, 
-              WISC, and CAT4 were designed for a different era — expensive, culturally 
-              biased, and focused on gatekeeping rather than growth.
+              Traditional cognitive assessments measure reasoning ability and produce 
+              percentile ranks — useful for comparison, but limited for development. 
+              Teachers and parents need more than scores. They need insight into 
+              cognitive processes, and practical strategies that actually help.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Wadmore asks a different question: <strong>how does someone think?</strong> 
-              We map cognitive development across eight domains — from abstract reasoning 
-              to executive functioning to metacognition — revealing the complete picture 
-              of how a person processes, regulates, and creates.
+              Wadmore takes a different approach. We map cognitive development across 
+              eight domains — from abstract reasoning to executive functioning to 
+              metacognition — revealing the complete picture of how a person processes, 
+              regulates, and creates. And we show what growth looks like from wherever 
+              you are.
             </p>
             
             <p className="text-lg leading-relaxed">
-              The result is strength-based profiling that empowers growth. Assessment 
-              designed for fairness from the start. Insights that teachers and parents 
-              can actually use. And a framework that spans the full lifespan — from early 
+              The result is strength-based profiling that empowers development. Assessment 
+              designed for fairness from the start. Insights that connect to specific 
+              interventions. And a framework that spans the full lifespan — from early 
               childhood through professional expertise.
             </p>
           </div>
@@ -401,16 +402,16 @@ function FounderSection() {
                 to enterprise-scale psychometric development.
               </p>
               <p className="text-base leading-relaxed">
-                Throughout his career, Matt has seen how traditional cognitive testing 
-                fails the people it's meant to serve: students labelled rather than 
-                understood, teachers given data without direction, and families left 
-                navigating systems that weren't designed with them in mind.
+                Throughout his career, Matt has focused on one question: how can 
+                assessment genuinely serve learning? How can we give teachers and 
+                families the insights they need to support cognitive development — 
+                not just scores, but actionable understanding?
               </p>
               <p className="text-base leading-relaxed">
-                Wadmore represents the synthesis of that experience — combining rigorous 
-                psychometrics with genuine accessibility, and replacing deficit-focused 
-                profiling with strength-based developmental insights. Matt is passionate 
-                about making cognitive science practical and empowering for everyone.
+                Wadmore is the answer. It combines rigorous psychometrics with genuine 
+                accessibility, strength-based developmental framing, and practical 
+                interventions. Matt is passionate about making cognitive science 
+                practical and empowering for everyone.
               </p>
             </div>
             
