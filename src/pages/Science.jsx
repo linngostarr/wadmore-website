@@ -145,10 +145,10 @@ function DomainsSection() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {[
-                { code: "AR", name: "Abstract Reasoning", desc: "Pattern recognition across contexts" },
-                { code: "LS", name: "Logical Sequencing", desc: "Building logical structures" },
-                { code: "PS", name: "Processing Speed", desc: "Efficient cognitive operations" },
-                { code: "MA", name: "Memory & Attention", desc: "Focus, encoding, retrieval" },
+                { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems" },
+                { code: "LS", name: "Logical Sequencing", desc: "Following and building arguments" },
+                { code: "PS", name: "Processing Speed", desc: "Thinking under time pressure" },
+                { code: "MA", name: "Memory & Attention", desc: "Holding information while working" },
               ].map((d) => (
                 <div key={d.code} className="p-4 rounded-lg transition-all duration-300 hover:shadow-md" style={{ background: BRAND.cloud }}>
                   <div className="text-xs font-bold mb-1.5 px-2 py-0.5 rounded inline-block" style={{ background: `${BRAND.cerulean}15`, color: BRAND.cerulean }}>{d.code}</div>
@@ -172,9 +172,9 @@ function DomainsSection() {
             </div>
             <div className="grid sm:grid-cols-3 gap-3">
               {[
-                { code: "EF", name: "Executive Functioning", desc: "Planning, flexibility, inhibition" },
-                { code: "MR", name: "Metacognition", desc: "Self-awareness in learning" },
-                { code: "CM", name: "Cognitive Confidence", desc: "Self-belief and persistence" },
+                { code: "EF", name: "Executive Functioning", desc: "Planning, adapting, self-correcting" },
+                { code: "MR", name: "Metacognition", desc: "Understanding and directing your thinking processes" },
+                { code: "CM", name: "Cognitive Confidence", desc: "Persisting through challenge" },
               ].map((d) => (
                 <div key={d.code} className="p-4 rounded-lg transition-all duration-300 hover:shadow-md" style={{ background: BRAND.cloud }}>
                   <div className="text-xs font-bold mb-1.5 px-2 py-0.5 rounded inline-block" style={{ background: `${BRAND.teal}15`, color: BRAND.teal }}>{d.code}</div>
@@ -200,7 +200,7 @@ function DomainsSection() {
               <div className="p-4 rounded-lg transition-all duration-300 hover:shadow-md" style={{ background: BRAND.cloud }}>
                 <div className="text-xs font-bold mb-1.5 px-2 py-0.5 rounded inline-block" style={{ background: `${BRAND.violet}15`, color: BRAND.violet }}>CD</div>
                 <div className="font-semibold text-sm mb-0.5" style={{ color: BRAND.slate }}>Creativity & Divergent Thinking</div>
-                <div className="text-xs" style={{ color: BRAND.steel }}>Generating novel ideas and solutions</div>
+                <div className="text-xs" style={{ color: BRAND.steel }}>Generating original ideas</div>
               </div>
             </div>
           </div>
