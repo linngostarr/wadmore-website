@@ -213,7 +213,7 @@ function Hero() {
       {/* Mobile-optimized padding */}
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-[clamp(2rem,5vh,3.5rem)] relative z-10 w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-[clamp(2rem,4vw,4rem)] items-center">
-          <div>
+          <div className="min-w-0">
             {/* Fluid typography: scales smoothly between breakpoints */}
             <h1 
               className="font-semibold leading-[0.95] tracking-tight mb-4 md:mb-[clamp(1rem,2vh,1.5rem)]" 
@@ -233,7 +233,7 @@ function Hero() {
             </h1>
             
             <p 
-              className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)] max-w-xl" 
+              className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
               style={{ 
                 color: BRAND.steel,
                 fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
@@ -252,10 +252,10 @@ function Hero() {
                 <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
               </Link>
               {/* Secondary CTAs - row on mobile, inline on desktop */}
-              <div className="flex gap-2 md:contents overflow-hidden">
-                <Link to="/schools" className="flex-1 min-w-0 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
-                <Link to="/families" className="flex-1 min-w-0 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
-                <Link to="/professional" className="flex-1 min-w-0 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg" style={{ background: BRAND.violet, color: BRAND.white }}>Professional</Link>
+              <div className="flex gap-2 md:contents">
+                <Link to="/schools" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
+                <Link to="/families" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
+                <Link to="/professional" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.violet, color: BRAND.white }}>Pro</Link>
               </div>
             </div>
           </div>
@@ -277,10 +277,10 @@ function Hero() {
             { value: "360", label: "Unique Constructs", sub: "Actionable precision" },
             { value: "α≥0.85", label: "Reliability Target", sub: "Psychometric rigour" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center py-1">
-              <div className="text-xl md:text-3xl font-bold mb-0.5" style={{ color: BRAND.indigo }}>{stat.value}</div>
-              <div className="text-[11px] md:text-xs font-semibold" style={{ color: BRAND.slate }}>{stat.label}</div>
-              <div className="text-[10px] md:text-xs hidden sm:block" style={{ color: BRAND.steel }}>{stat.sub}</div>
+            <div key={stat.label} className="text-center py-1 min-w-0">
+              <div className="text-xl md:text-3xl font-bold mb-0.5 truncate" style={{ color: BRAND.indigo }}>{stat.value}</div>
+              <div className="text-[11px] md:text-xs font-semibold truncate" style={{ color: BRAND.slate }}>{stat.label}</div>
+              <div className="text-[10px] md:text-xs hidden sm:block truncate" style={{ color: BRAND.steel }}>{stat.sub}</div>
             </div>
           ))}
         </div>
@@ -392,17 +392,17 @@ function CognitiveFrameworkSection() {
                 <button
                   key={key}
                   onClick={() => setActiveDomain(domains.findIndex(d => d.cluster === key))}
-                  className="flex-1 relative p-3 md:p-4 text-center transition-all duration-300"
+                  className="flex-1 min-w-0 relative p-3 md:p-4 text-center transition-all duration-300"
                   style={{ background: isActive ? cluster.color : 'transparent' }}
                 >
                   <div 
-                    className="text-xs md:text-sm font-semibold mb-0.5"
+                    className="text-[10px] md:text-sm font-semibold mb-0.5 truncate"
                     style={{ color: isActive ? BRAND.white : BRAND.slate }}
                   >
                     {cluster.name}
                   </div>
                   <div 
-                    className="text-[10px] md:text-xs hidden sm:block"
+                    className="text-[9px] md:text-xs hidden sm:block truncate"
                     style={{ color: isActive ? `${BRAND.white}cc` : BRAND.steel }}
                   >
                     {cluster.desc}
@@ -433,7 +433,7 @@ function CognitiveFrameworkSection() {
               <button
                 key={d.code}
                 onClick={() => setActiveDomain(idx)}
-                className="p-3 md:p-4 rounded-xl transition-all duration-300 text-center"
+                className="p-2.5 md:p-4 rounded-xl transition-all duration-300 text-center min-w-0"
                 style={{ 
                   background: isActive ? cluster.color : BRAND.cloud,
                   border: `1px solid ${isActive ? cluster.color : BRAND.dove}`,
@@ -448,7 +448,7 @@ function CognitiveFrameworkSection() {
                   {d.code}
                 </div>
                 <div 
-                  className="text-[10px] md:text-xs font-medium leading-tight mt-0.5 hidden md:block"
+                  className="text-[9px] md:text-xs font-medium leading-tight mt-0.5 hidden md:block truncate"
                   style={{ color: isActive ? `${BRAND.white}dd` : BRAND.steel }}
                 >
                   {d.name.split(' ')[0]}
@@ -464,25 +464,25 @@ function CognitiveFrameworkSection() {
           style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
         >
           <div 
-            className="px-5 md:px-6 py-4 flex items-center gap-4"
+            className="px-4 md:px-6 py-4 flex items-center gap-3 md:gap-4"
             style={{ background: `${clusterInfo.color}10`, borderBottom: `1px solid ${BRAND.dove}` }}
           >
             <div 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-sm md:text-base font-bold"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-sm md:text-base font-bold flex-shrink-0"
               style={{ background: clusterInfo.color, color: BRAND.white }}
             >
               {domain.code}
             </div>
-            <div>
-              <h3 className="font-semibold text-base md:text-lg" style={{ color: BRAND.slate }}>{domain.name}</h3>
-              <p className="text-xs md:text-sm" style={{ color: clusterInfo.color }}>{domain.tagline}</p>
+            <div className="min-w-0">
+              <h3 className="font-semibold text-base md:text-lg truncate" style={{ color: BRAND.slate }}>{domain.name}</h3>
+              <p className="text-xs md:text-sm truncate" style={{ color: clusterInfo.color }}>{domain.tagline}</p>
             </div>
           </div>
           
-          <div className="p-5 md:p-6">
+          <div className="p-4 md:p-6">
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               {/* Research foundation */}
-              <div className="p-4 rounded-xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+              <div className="p-4 rounded-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
                 <div className="text-[10px] md:text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.indigo }}>
                   Research Foundation
                 </div>
@@ -495,13 +495,13 @@ function CognitiveFrameworkSection() {
               </div>
               
               {/* Cluster info */}
-              <div className="p-4 rounded-xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+              <div className="p-4 rounded-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
                 <div className="text-[10px] md:text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.steel }}>
                   Cluster
                 </div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-3 h-3 rounded-full" style={{ background: clusterInfo.color }} />
-                  <span className="text-sm font-semibold" style={{ color: BRAND.slate }}>{clusterInfo.name}</span>
+                  <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: clusterInfo.color }} />
+                  <span className="text-sm font-semibold truncate" style={{ color: BRAND.slate }}>{clusterInfo.name}</span>
                 </div>
                 <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>
                   {clusterInfo.desc}
@@ -619,10 +619,10 @@ function BandsSection() {
           </div>
           
           {/* Band detail panel */}
-          <div className="p-5 md:p-6 lg:p-8" style={{ background: BRAND.white }}>
+          <div className="p-4 md:p-6 lg:p-8" style={{ background: BRAND.white }}>
             <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
               <span className="text-xl md:text-2xl lg:text-3xl font-bold" style={{ color: BRAND.slate }}>Band {band.id}</span>
-              <span className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-semibold" style={{ background: BAND_COLORS[band.id - 1], color: BAND_TEXT[band.id - 1] }}>{band.name}</span>
+              <span className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-full text-[10px] md:text-sm font-semibold" style={{ background: BAND_COLORS[band.id - 1], color: BAND_TEXT[band.id - 1] }}>{band.name}</span>
               <span className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg text-[10px] md:text-xs font-medium" style={{ background: BRAND.cloud, color: BRAND.steel }}>{band.typical}</span>
             </div>
             <p className="text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-5" style={{ color: BRAND.steel }}>{band.description}</p>
@@ -660,7 +660,7 @@ function ActionableSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Content */}
-          <div>
+          <div className="min-w-0">
             <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>
               From Profile to Practice
             </p>
@@ -683,7 +683,7 @@ function ActionableSection() {
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: `${item.color}15` }}>
                     <CheckIcon color={item.color} size={12} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="font-semibold text-sm" style={{ color: BRAND.slate }}>{item.title}:</span>{" "}
                     <span className="text-sm" style={{ color: BRAND.steel }}>{item.desc}</span>
                   </div>
@@ -697,9 +697,9 @@ function ActionableSection() {
           </div>
           
           {/* Right: Example guidance card */}
-          <div className="rounded-2xl overflow-hidden" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 15px 40px ${BRAND.indigo}06` }}>
-            <div className="px-5 md:px-6 py-4 flex items-center gap-3" style={{ background: `${BRAND.indigo}08`, borderBottom: `1px solid ${BRAND.dove}` }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: BRAND.indigo }}>
+          <div className="rounded-2xl overflow-hidden min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 15px 40px ${BRAND.indigo}06` }}>
+            <div className="px-4 md:px-6 py-4 flex items-center gap-3" style={{ background: `${BRAND.indigo}08`, borderBottom: `1px solid ${BRAND.dove}` }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: BRAND.indigo }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                   <polyline points="14 2 14 8 20 8" />
@@ -707,13 +707,13 @@ function ActionableSection() {
                   <line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: BRAND.indigo }}>Sample Profile Guidance</p>
                 <p className="text-xs" style={{ color: BRAND.steel }}>Executive Functioning · Band 5</p>
               </div>
             </div>
             
-            <div className="p-5 md:p-6 space-y-4">
+            <div className="p-4 md:p-6 space-y-4">
               <div className="p-4 rounded-xl" style={{ background: BRAND.cloud }}>
                 <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.teal }}>Current Capabilities</p>
                 <p className="text-sm" style={{ color: BRAND.slate }}>Plans multi-step projects with emerging independence; benefits from milestone scaffolding</p>
@@ -809,32 +809,32 @@ function DifferenceSection() {
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built for understanding and development — not sorting or labelling.</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {[
             { title: "Strength-based", desc: "Profiles lead with what's working. Growth areas framed as opportunities.", color: BRAND.teal },
-            { title: "Developmentally progressive", desc: "Movement is the point. Every profile shows where and what's next.", color: BRAND.cerulean },
-            { title: "Genuinely actionable", desc: "360 constructs connect to specific interventions — not generic advice.", color: BRAND.indigo },
-            { title: "Psychometrically rigorous", desc: "IRT/Rasch-aligned measurement with professional reliability standards.", color: BRAND.violet },
+            { title: "Developmental", desc: "Movement is the point. Every profile shows where and what's next.", color: BRAND.cerulean },
+            { title: "Actionable", desc: "360 constructs connect to specific interventions — not generic advice.", color: BRAND.indigo },
+            { title: "Rigorous", desc: "IRT/Rasch-aligned measurement with professional reliability standards.", color: BRAND.violet },
           ].map((item) => (
-            <div key={item.title} className="group p-5 md:p-6 rounded-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 md:mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
+            <div key={item.title} className="group p-4 md:p-6 rounded-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+              <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
                 <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full" style={{ background: item.color }} />
               </div>
-              <h3 className="text-base md:text-lg font-semibold mb-1.5 md:mb-2" style={{ color: BRAND.slate }}>{item.title}</h3>
-              <p className="text-xs md:text-sm leading-relaxed" style={{ color: BRAND.steel }}>{item.desc}</p>
+              <h3 className="text-sm md:text-lg font-semibold mb-1 md:mb-2" style={{ color: BRAND.slate }}>{item.title}</h3>
+              <p className="text-[11px] md:text-sm leading-relaxed" style={{ color: BRAND.steel }}>{item.desc}</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <div className="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {[
             { title: "Designed for fairness", desc: "DIF testing, bias review, and EALD-friendly design built in from the start." },
             { title: "Lifespan coverage", desc: "From early childhood through professional expertise — one coherent framework." },
             { title: "Australian-built", desc: "Local support, local data sovereignty, designed for Australian educational contexts." },
           ].map((item) => (
-            <div key={item.title} className="flex gap-3">
+            <div key={item.title} className="flex gap-3 min-w-0">
               <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: BRAND.sage }} />
-              <div>
+              <div className="min-w-0">
                 <h4 className="font-semibold text-sm mb-0.5" style={{ color: BRAND.slate }}>{item.title}</h4>
                 <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
               </div>
