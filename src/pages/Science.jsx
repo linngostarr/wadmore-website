@@ -747,84 +747,160 @@ function DevelopmentalFrameworkSection() {
    ══════════════════════════════════════════════════════════════ */
 
 function PsychometricSection() {
+  // Premium SVG icons for psychometric concepts
+  const CalibrationIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+      <path d="M16.24 7.76l1.42-1.42" />
+      <path d="M18 12h2" />
+      <path d="M12 18v2" />
+      <path d="M4 12h2" />
+    </svg>
+  );
+
+  const RubricIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M3 15h18" />
+      <path d="M9 3v18" />
+      <path d="M15 3v18" />
+    </svg>
+  );
+
+  const BalanceIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v18" />
+      <path d="M5 7l7-4 7 4" />
+      <path d="M5 7v2a2 2 0 002 2h0a2 2 0 002-2V7" />
+      <path d="M15 7v2a2 2 0 002 2h0a2 2 0 002-2V7" />
+      <rect x="8" y="18" width="8" height="3" rx="1" />
+    </svg>
+  );
+
+  const GlobeIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+    </svg>
+  );
+
+  const PrecisionIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="12" cy="12" r="7" />
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+    </svg>
+  );
+
+  const methods = [
+    { 
+      title: "Rasch model calibration", 
+      desc: "Items calibrated to difficulty parameters, enabling precise placement on the developmental continuum. Fit statistics ensure items perform as expected.",
+      Icon: CalibrationIcon,
+      color: BRAND.teal
+    },
+    { 
+      title: "Partial credit scoring", 
+      desc: "Multi-level rubrics (2–4 levels per item) capture nuanced responses. More information per item means fewer items needed for reliable measurement.",
+      Icon: RubricIcon,
+      color: BRAND.cerulean
+    },
+    { 
+      title: "DIF and bias testing", 
+      desc: "Differential Item Functioning analysis identifies items that behave differently across groups. Bias review panels ensure cultural and linguistic fairness.",
+      Icon: BalanceIcon,
+      color: BRAND.indigo
+    },
+    { 
+      title: "EALD-friendly design", 
+      desc: "Accessible to English as an Additional Language/Dialect learners. Reduced linguistic complexity without reducing cognitive demand.",
+      Icon: GlobeIcon,
+      color: BRAND.violet
+    },
+    { 
+      title: "Standard error reporting", 
+      desc: "Every score includes measurement precision. Users know how confident to be in each result — transparency built in.",
+      Icon: PrecisionIcon,
+      color: BRAND.slate
+    },
+  ];
+
   return (
     <section className="py-12 md:py-20 lg:py-24" style={{ background: BRAND.cloud }}>
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
+        
+        {/* Header */}
+        <div className="max-w-3xl mb-10 md:mb-12">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.indigo }}>Measurement Quality</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
+            Psychometric rigour
+          </h2>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
+            Wadmore applies modern psychometric methods to ensure measurement precision, fairness, and interpretability.
+          </p>
+        </div>
+        
+        {/* Two column layout */}
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-10">
+          
+          {/* Left: IRT explanation + specs */}
           <div>
-            <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.indigo }}>Measurement Quality</p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-              Psychometric rigour
-            </h2>
-            <p className="text-base md:text-lg mb-5" style={{ color: BRAND.steel }}>
-              Wadmore applies modern psychometric methods to ensure measurement precision, fairness, and interpretability.
-            </p>
-            
-            <div className="p-4 rounded-xl mb-5" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
-              <div className="text-sm font-semibold mb-2" style={{ color: BRAND.slate }}>Why IRT/Rasch?</div>
-              <p className="text-xs leading-relaxed" style={{ color: BRAND.steel }}>
+            <div className="p-5 md:p-6 rounded-2xl mb-5" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
+                <div className="text-base font-semibold" style={{ color: BRAND.slate }}>Why IRT/Rasch?</div>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.steel }}>
                 Item Response Theory places persons and items on a common scale. Unlike classical test theory, 
                 IRT enables adaptive testing, precise standard errors, and defensible score comparisons across 
                 different item sets — essential for developmental assessment.
               </p>
             </div>
             
-            <div className="space-y-3">
+            {/* Specifications grid */}
+            <div className="grid grid-cols-2 gap-3">
               {[
-                { label: "Domain reliability target", value: "α ≥ 0.85" },
-                { label: "Items per domain-band cell", value: "4–6 minimum" },
-                { label: "Scale range", value: "0–1000" },
-                { label: "Band width", value: "~67 scale points" },
+                { label: "Reliability target", value: "α ≥ 0.85", sub: "per domain" },
+                { label: "Items per cell", value: "4–6", sub: "domain × band" },
+                { label: "Scale range", value: "0–1000", sub: "Rasch logits" },
+                { label: "Band width", value: "~67", sub: "scale points" },
               ].map((item) => (
-                <div key={item.label} className="flex justify-between items-center p-3 rounded-lg" style={{ background: BRAND.white }}>
-                  <span className="text-sm" style={{ color: BRAND.steel }}>{item.label}</span>
-                  <span className="text-sm font-bold" style={{ color: BRAND.indigo }}>{item.value}</span>
+                <div key={item.label} className="p-4 rounded-xl text-center" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+                  <div className="text-2xl font-bold mb-1" style={{ color: BRAND.indigo }}>{item.value}</div>
+                  <div className="text-xs font-medium mb-0.5" style={{ color: BRAND.slate }}>{item.label}</div>
+                  <div className="text-[10px]" style={{ color: BRAND.steel }}>{item.sub}</div>
                 </div>
               ))}
             </div>
           </div>
           
-          <div className="space-y-4">
-            {[
-              { 
-                title: "Rasch model calibration", 
-                desc: "Items calibrated to difficulty parameters, enabling precise placement of persons on the developmental continuum. Fit statistics ensure items perform as expected.",
-                icon: "📐",
-                color: BRAND.teal
-              },
-              { 
-                title: "Partial credit scoring", 
-                desc: "Multi-level rubrics (2–4 levels per item) capture nuanced responses. More information per item means fewer items needed for reliable measurement.",
-                icon: "📊",
-                color: BRAND.cerulean
-              },
-              { 
-                title: "DIF and bias testing", 
-                desc: "Differential Item Functioning analysis identifies items that behave differently across groups. Bias review panels ensure cultural and linguistic fairness.",
-                icon: "⚖️",
-                color: BRAND.indigo
-              },
-              { 
-                title: "EALD-friendly design", 
-                desc: "Items designed for accessibility to English as an Additional Language or Dialect learners. Reduced linguistic complexity without reducing cognitive demand.",
-                icon: "🌏",
-                color: BRAND.violet
-              },
-              { 
-                title: "Standard error reporting", 
-                desc: "Every score includes measurement precision information. Users know how confident to be in each result.",
-                icon: "±",
-                color: BRAND.golden
-              },
-            ].map((item) => (
-              <div key={item.title} className="flex gap-4 p-5 rounded-xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+          {/* Right: Method cards */}
+          <div className="space-y-3">
+            {methods.map((item) => (
+              <div 
+                key={item.title} 
+                className="group flex gap-4 p-4 md:p-5 rounded-xl transition-all duration-300 hover:shadow-md" 
+                style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+              >
                 <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-xl"
-                  style={{ background: `${item.color}12` }}
+                  className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: `${item.color}10`, color: item.color }}
                 >
-                  {item.icon}
+                  <item.Icon />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="font-semibold text-sm mb-1" style={{ color: BRAND.slate }}>{item.title}</div>
                   <div className="text-xs leading-relaxed" style={{ color: BRAND.steel }}>{item.desc}</div>
                 </div>
