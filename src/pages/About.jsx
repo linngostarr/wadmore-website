@@ -31,12 +31,14 @@ const BRAND = {
 export default function About() {
   return (
     <Layout>
-      <Hero />
-      <MissionSection />
-      <StorySection />
-      <ValuesSection />
-      <FounderSection />
-      <CTASection />
+      <div className="w-full max-w-full overflow-x-hidden">
+        <Hero />
+        <MissionSection />
+        <StorySection />
+        <ValuesSection />
+        <FounderSection />
+        <CTASection />
+      </div>
     </Layout>
   );
 }
@@ -88,8 +90,8 @@ function Hero() {
               fontSize: "clamp(1.1rem, 1vw + 0.5rem, 1.25rem)"
             }}
           >
-            Wadmore was founded on a simple belief: everyone deserves to understand 
-            their cognitive development, and that understanding should lead to growth — not labels.
+            Wadmore was founded on a belief: everyone deserves to understand 
+            how they think, and that understanding should lead to growth — not labels.
           </p>
         </div>
       </div>
@@ -117,7 +119,7 @@ function MissionSection() {
               className="text-3xl md:text-4xl font-semibold mb-6"
               style={{ color: BRAND.slate }}
             >
-              Thinking, understood.
+              Profiles that guide action.
             </h2>
             <p 
               className="text-lg mb-5 leading-relaxed"
@@ -125,17 +127,25 @@ function MissionSection() {
             >
               We're building a cognitive profiling platform that reveals <em>how</em> people 
               think — not just what they know. Our framework maps development across eight 
-              cognitive domains and fifteen developmental bands, creating 360 unique 
-              constructs that describe the full spectrum of human cognitive capability.
+              domains and fifteen bands, creating 360 constructs that describe cognitive 
+              capability with genuine precision.
+            </p>
+            <p 
+              className="text-lg mb-5 leading-relaxed"
+              style={{ color: BRAND.steel }}
+            >
+              Where traditional assessments rank and compare, Wadmore profiles and guides. 
+              Our strength-based approach celebrates cognitive diversity and provides 
+              genuinely actionable insights for schools, families, and organisations.
             </p>
             <p 
               className="text-lg leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              Where traditional assessments rank and compare, Wadmore profiles and 
-              develops. Our strength-based approach celebrates cognitive diversity 
-              and provides genuinely actionable insights for schools, families, and 
-              organisations.
+              Every profile includes{" "}
+              <strong style={{ color: BRAND.indigo }}>research-grounded guidance</strong> — 
+              strategies linked to over 50 peer-reviewed sources across cognitive science 
+              and learning research. Because understanding thinking should lead to growth.
             </p>
           </div>
           
@@ -148,17 +158,17 @@ function MissionSection() {
                 {
                   number: "01",
                   title: "Map",
-                  description: "Reveal cognitive development across 8 domains — from abstract reasoning to metacognition to creativity",
+                  description: "Profile cognitive development across 8 domains with professional psychometric standards",
                 },
                 {
                   number: "02",
                   title: "Understand",
-                  description: "Place development on a 15-band continuum, showing current capabilities and what growth looks like",
+                  description: "Place development on a 15-band continuum, showing current capabilities and growth pathways",
                 },
                 {
                   number: "03",
-                  title: "Act",
-                  description: "Connect insights to specific, practical strategies for teachers, parents, and individuals",
+                  title: "Guide",
+                  description: "Connect insights to research-grounded strategies for teachers, parents, and learners",
                 },
               ].map((item) => (
                 <div key={item.number} className="flex gap-4">
@@ -222,8 +232,8 @@ function StorySection() {
             <p className="text-lg leading-relaxed">
               Traditional cognitive assessments measure reasoning ability and produce 
               percentile ranks — useful for comparison, but limited for development. 
-              Teachers and parents need more than scores. They need insight into 
-              cognitive processes, and practical strategies that actually help.
+              Teachers would ask: "This student is at the 62nd percentile. Now what?" 
+              The assessments had no answer.
             </p>
             
             <p className="text-lg leading-relaxed">
@@ -236,8 +246,8 @@ function StorySection() {
             
             <p className="text-lg leading-relaxed">
               The result is strength-based profiling that empowers development. Assessment 
-              designed for fairness from the start. Insights that connect to specific 
-              interventions. And a framework that spans the full lifespan — from early 
+              designed for fairness from the start. Insights connected to research-grounded 
+              strategies. And a framework that spans the full lifespan — from early 
               childhood through professional expertise.
             </p>
           </div>
@@ -262,7 +272,7 @@ function ValuesSection() {
     {
       icon: ScienceIcon,
       title: "Research-grounded",
-      description: "Every domain and construct is backed by established cognitive science.",
+      description: "Over 50 peer-reviewed sources. Every recommendation linked to established science.",
       color: BRAND.cerulean,
     },
     {
@@ -274,19 +284,19 @@ function ValuesSection() {
     {
       icon: FairnessIcon,
       title: "Fair by design",
-      description: "Bias testing, DIF analysis, and inclusive design are built in from the start.",
+      description: "Bias testing, DIF analysis, and inclusive design built in from the start.",
       color: BRAND.indigo,
     },
     {
       icon: ActionIcon,
       title: "Actionable",
-      description: "360 constructs connect to specific interventions — not generic advice.",
+      description: "360 constructs connect to specific strategies — not generic advice.",
       color: BRAND.golden,
     },
     {
       icon: PrivacyIcon,
       title: "Privacy-first",
-      description: "Your data belongs to you. We're committed to ethical data practices.",
+      description: "Your data belongs to you. Ethical data practices. Transparent governance.",
       color: BRAND.slate,
     },
   ];
@@ -398,20 +408,19 @@ function FounderSection() {
                 Matt brings over 17 years of experience in educational assessment, 
                 including leadership roles as a school principal and Head of Global 
                 Assessment at Janison, one of Australia's leading assessment technology 
-                companies. He's worked across the full spectrum — from classroom teaching 
+                companies. He's worked across the full spectrum—from classroom teaching 
                 to enterprise-scale psychometric development.
               </p>
               <p className="text-base leading-relaxed">
-                Throughout his career, Matt has focused on one question: how can 
-                assessment genuinely serve learning? How can we give teachers and 
-                families the insights they need to support cognitive development — 
-                not just scores, but actionable understanding?
+                Throughout his career, Matt kept encountering the same question from teachers: 
+                "This student scored at the 62nd percentile. Now what?" Traditional assessments 
+                measured and ranked—but never bridged to action.
               </p>
               <p className="text-base leading-relaxed">
-                Wadmore is the answer. It combines rigorous psychometrics with genuine 
-                accessibility, strength-based developmental framing, and practical 
-                interventions. Matt is passionate about making cognitive science 
-                practical and empowering for everyone.
+                Wadmore is the answer to that question. Every profile includes research-grounded 
+                guidance—specific strategies that tell teachers and parents what to do and why 
+                it works. Matt is passionate about making cognitive science practical and 
+                empowering for everyone who supports learning.
               </p>
             </div>
             

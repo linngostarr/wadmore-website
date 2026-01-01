@@ -33,15 +33,17 @@ const BRAND = {
 export default function Families() {
   return (
     <Layout>
-      <Hero />
-      <WhyItMattersSection />
-      <EightDomainsSection />
-      <ProfilePreviewSection />
-      <UseCasesSection />
-      <HowItWorksSection />
-      <PricingSection />
-      <FAQSection />
-      <CTASection />
+      <div className="w-full max-w-full overflow-x-hidden">
+        <Hero />
+        <WhyItMattersSection />
+        <EightDomainsSection />
+        <ProfilePreviewSection />
+        <UseCasesSection />
+        <HowItWorksSection />
+        <PricingSection />
+        <FAQSection />
+        <CTASection />
+      </div>
     </Layout>
   );
 }
@@ -128,9 +130,10 @@ function Hero() {
               style={{ color: BRAND.steel }}
             >
               Wadmore shows you your child's unique cognitive strengths and growth 
-              areas — a complete picture across eight domains, with{" "}
-              <strong style={{ color: BRAND.slate }}>clear guidance you can use</strong> at 
-              home and in conversations with teachers.
+              areas — a <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
+              eight domains, with clear guidance you can use at 
+              home and in conversations with teachers. Grounded in{" "}
+              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
             </p>
             
             {/* CTAs */}
@@ -316,24 +319,30 @@ function WhyItMattersSection() {
    ══════════════════════════════════════════════════════════════ */
 
 function EightDomainsSection() {
+  const clusters = {
+    processing: { name: "Cognitive Processing", color: BRAND.cerulean, desc: "How your child handles information" },
+    regulation: { name: "Cognitive Self-Regulation", color: BRAND.teal, desc: "How your child manages their thinking" },
+    creative: { name: "Creative Thinking", color: BRAND.violet, desc: "How your child generates ideas" },
+  };
+
   const domains = [
-    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems", color: BRAND.cerulean },
-    { code: "LS", name: "Logical Sequencing", desc: "Step-by-step thinking", color: BRAND.cerulean },
-    { code: "PS", name: "Processing Speed", desc: "Quick, accurate thinking", color: BRAND.cerulean },
-    { code: "MA", name: "Memory & Attention", desc: "Holding information while working", color: BRAND.indigo },
-    { code: "EF", name: "Executive Functioning", desc: "Planning and organisation", color: BRAND.teal },
-    { code: "MR", name: "Metacognition", desc: "Understanding and directing your thinking processes", color: BRAND.teal },
-    { code: "CM", name: "Cognitive Confidence", desc: "Persisting through challenge", color: BRAND.violet },
-    { code: "CD", name: "Creativity", desc: "Original ideas", color: BRAND.violet },
+    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems", cluster: "processing" },
+    { code: "LS", name: "Logical Sequencing", desc: "Step-by-step thinking", cluster: "processing" },
+    { code: "PS", name: "Processing Speed", desc: "Quick, accurate thinking", cluster: "processing" },
+    { code: "MA", name: "Memory & Attention", desc: "Holding information while working", cluster: "processing" },
+    { code: "EF", name: "Executive Functioning", desc: "Planning and organisation", cluster: "regulation" },
+    { code: "MR", name: "Metacognition", desc: "Awareness of thinking", cluster: "regulation" },
+    { code: "CM", name: "Cognitive Confidence", desc: "Persisting through challenge", cluster: "regulation" },
+    { code: "CD", name: "Creativity", desc: "Original ideas", cluster: "creative" },
   ];
 
   return (
     <section 
-      className="py-28 md:py-36 relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
       style={{ background: BRAND.cloud }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <p 
             className="text-sm font-semibold uppercase tracking-widest mb-5"
             style={{ color: BRAND.teal }}
@@ -341,41 +350,60 @@ function EightDomainsSection() {
             Complete Coverage
           </p>
           <h2 
-            className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
+            className="text-3xl md:text-4xl font-semibold leading-tight mb-5"
             style={{ color: BRAND.slate }}
           >
             Eight domains of thinking
           </h2>
           <p 
-            className="text-xl"
+            className="text-lg"
             style={{ color: BRAND.steel }}
           >
             Wadmore measures cognitive development across eight research-grounded 
-            cognitive domains — giving you the complete picture.
+            domains — giving you the complete picture, not just a single number.
           </p>
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {domains.map((domain) => (
-            <div
-              key={domain.code}
-              className="group p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
-            >
-              <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-bold mb-4 transition-transform duration-300 group-hover:scale-110"
-                style={{ background: `${domain.color}15`, color: domain.color }}
-              >
-                {domain.code}
-              </div>
-              <h3 className="font-semibold text-base mb-1" style={{ color: BRAND.slate }}>
-                {domain.name}
-              </h3>
-              <p className="text-sm" style={{ color: BRAND.steel }}>
-                {domain.desc}
-              </p>
+        {/* Cluster legend */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10">
+          {Object.entries(clusters).map(([key, cluster]) => (
+            <div key={key} className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full" style={{ background: cluster.color }} />
+              <span className="text-sm" style={{ color: BRAND.slate }}>
+                <strong>{cluster.name}</strong>
+              </span>
             </div>
           ))}
+        </div>
+        
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {domains.map((domain) => {
+            const cluster = clusters[domain.cluster];
+            return (
+              <div
+                key={domain.code}
+                className="group p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+              >
+                <div 
+                  className="w-11 h-11 rounded-xl flex items-center justify-center text-sm font-bold mb-3 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: `${cluster.color}15`, color: cluster.color }}
+                >
+                  {domain.code}
+                </div>
+                <h3 className="font-semibold text-sm mb-1" style={{ color: BRAND.slate }}>
+                  {domain.name}
+                </h3>
+                <p className="text-xs mb-2" style={{ color: BRAND.steel }}>
+                  {domain.desc}
+                </p>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full" style={{ background: cluster.color }} />
+                  <span className="text-[10px]" style={{ color: BRAND.steel }}>{cluster.name}</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

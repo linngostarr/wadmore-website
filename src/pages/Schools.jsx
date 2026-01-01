@@ -52,16 +52,18 @@ const DOMAINS = [
 export default function Schools() {
   return (
     <Layout>
-      <Hero />
-      <PilotBanner />
-      <WhyComprehensiveSection />
-      <DomainsShowcase />
-      <UseCasesSection />
-      <ForEducatorsSection />
-      <ActionabilitySection />
-      <EALDSection />
-      <PricingSection />
-      <CTASection />
+      <div className="w-full max-w-full overflow-x-hidden">
+        <Hero />
+        <PilotBanner />
+        <WhyComprehensiveSection />
+        <DomainsShowcase />
+        <UseCasesSection />
+        <ForEducatorsSection />
+        <ActionabilitySection />
+        <EALDSection />
+        <PricingSection />
+        <CTASection />
+      </div>
     </Layout>
   );
 }
@@ -157,7 +159,9 @@ function Hero() {
               Not just grades, behaviour, or test scores. Wadmore reveals{" "}
               <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
               eight domains — enabling informed differentiation, meaningful 
-              support conversations, and confident pathway decisions.
+              support conversations, and confident pathway decisions. Grounded in{" "}
+              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong> across 
+              cognitive science and learning research.
             </p>
             
             {/* CTAs */}
@@ -461,51 +465,101 @@ function WhyComprehensiveSection() {
    ══════════════════════════════════════════════════════════════ */
 
 function DomainsShowcase() {
+  const clusters = [
+    { 
+      key: "processing",
+      name: "Cognitive Processing", 
+      color: BRAND.cerulean, 
+      desc: "How students handle information",
+      domains: [
+        { code: "AR", name: "Abstract Reasoning" },
+        { code: "LS", name: "Logical Sequencing" },
+        { code: "PS", name: "Processing Speed" },
+        { code: "MA", name: "Memory & Attention" },
+      ]
+    },
+    { 
+      key: "regulation",
+      name: "Cognitive Self-Regulation", 
+      color: BRAND.teal, 
+      desc: "How students manage their thinking",
+      domains: [
+        { code: "EF", name: "Executive Functioning" },
+        { code: "MR", name: "Metacognition" },
+        { code: "CM", name: "Cognitive Confidence" },
+      ]
+    },
+    { 
+      key: "creative",
+      name: "Creative Thinking", 
+      color: BRAND.violet, 
+      desc: "How students generate ideas",
+      domains: [
+        { code: "CD", name: "Creativity" },
+      ]
+    },
+  ];
+
   return (
     <section 
-      className="py-20 relative overflow-hidden"
+      className="py-12 md:py-16 relative overflow-hidden"
       style={{ background: BRAND.cloud }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center mb-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
+        <div className="text-center mb-8 md:mb-10">
           <p 
-            className="text-sm font-semibold uppercase tracking-widest mb-4"
+            className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3"
             style={{ color: BRAND.indigo }}
           >
             Complete Coverage
           </p>
           <h2 
-            className="text-3xl md:text-4xl font-semibold mb-4"
+            className="text-2xl md:text-3xl font-semibold"
             style={{ color: BRAND.slate }}
           >
-            Eight domains of cognitive development
+            Eight domains across three clusters
           </h2>
         </div>
         
-        {/* Domain pills in a flowing layout */}
-        <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-          {DOMAINS.map((domain, i) => (
+        {/* Clusters with their domains */}
+        <div className="grid md:grid-cols-3 gap-4 md:gap-5">
+          {clusters.map((cluster) => (
             <div
-              key={domain.code}
-              className="group px-5 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
-              style={{ 
-                background: BRAND.white,
-                border: `1px solid ${BRAND.dove}`,
-              }}
+              key={cluster.key}
+              className="rounded-2xl overflow-hidden"
+              style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
             >
-              <div className="flex items-center gap-3">
-                <span 
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-transform duration-300 group-hover:scale-110"
-                  style={{ 
-                    background: `${domain.color}15`,
-                    color: domain.color
-                  }}
-                >
-                  {domain.code}
-                </span>
-                <span className="font-medium text-sm" style={{ color: BRAND.slate }}>
-                  {domain.name}
-                </span>
+              {/* Cluster header */}
+              <div 
+                className="px-5 py-4"
+                style={{ background: `${cluster.color}10`, borderBottom: `1px solid ${BRAND.dove}` }}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: cluster.color }} />
+                  <span className="text-sm font-semibold" style={{ color: BRAND.slate }}>{cluster.name}</span>
+                </div>
+                <p className="text-xs" style={{ color: BRAND.steel }}>{cluster.desc}</p>
+              </div>
+              
+              {/* Domains */}
+              <div className="p-4 space-y-2">
+                {cluster.domains.map((domain) => (
+                  <div 
+                    key={domain.code}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg"
+                    style={{ background: BRAND.cloud }}
+                  >
+                    <span 
+                      className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0"
+                      style={{ background: `${cluster.color}15`, color: cluster.color }}
+                    >
+                      {domain.code}
+                    </span>
+                    <span className="text-sm font-medium" style={{ color: BRAND.slate }}>
+                      {domain.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

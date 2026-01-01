@@ -33,13 +33,15 @@ const BRAND = {
 export default function Professional() {
   return (
     <Layout>
-      <Hero />
-      <CapabilitySection />
-      <UseCasesSection />
-      <TeamDynamicsSection />
-      <LifespanSection />
-      <PricingSection />
-      <CTASection />
+      <div className="w-full max-w-full overflow-x-hidden">
+        <Hero />
+        <CapabilitySection />
+        <UseCasesSection />
+        <TeamDynamicsSection />
+        <LifespanSection />
+        <PricingSection />
+        <CTASection />
+      </div>
     </Layout>
   );
 }
@@ -129,7 +131,9 @@ function Hero() {
               Great teams aren't accidental. Wadmore maps{" "}
               <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
               eight domains — so you can compose teams with complementary strengths, 
-              target development where it matters, and hire for genuine capability fit.
+              target development where it matters, and hire for genuine capability fit. 
+              The same rigorous framework trusted in education, grounded in{" "}
+              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
             </p>
             
             {/* CTAs */}
