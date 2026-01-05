@@ -24,14 +24,16 @@ const BRAND = {
 export default function Consulting() {
   return (
     <Layout>
-      <Hero />
-      <AudienceSection />
-      <ProgramsSection />
-      <WorkshopTopicsSection />
-      <DeliveryFormatsSection />
-      <OutcomesSection />
-      <TestimonialsSection />
-      <CTASection />
+      <div className="w-full max-w-full overflow-x-hidden">
+        <Hero />
+        <AudienceSection />
+        <ProgramsSection />
+        <WorkshopTopicsSection />
+        <DeliveryFormatsSection />
+        <OutcomesSection />
+        <TestimonialsSection />
+        <CTASection />
+      </div>
     </Layout>
   );
 }
@@ -53,9 +55,9 @@ function Hero() {
         style={{ background: `radial-gradient(circle at center, ${BRAND.indigo}12, transparent 60%)` }}
       />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-[clamp(3rem,8vh,5rem)] relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-20 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          <div>
+          <div className="min-w-0">
             <div 
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
               style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, color: BRAND.slate }}
@@ -72,11 +74,16 @@ function Hero() {
               }}
             >
               Build capability in{" "}
-              <span style={{ color: BRAND.violet }}>cognitive assessment.</span>
+              <span className="relative inline-block" style={{ color: BRAND.violet }}>
+                cognitive assessment.
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 380 8" preserveAspectRatio="none">
+                  <path d="M0 6 Q95 1, 190 4 T380 3" fill="none" stroke={BRAND.violet} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
+                </svg>
+              </span>
             </h1>
             
             <p 
-              className="leading-relaxed mb-7 max-w-xl"
+              className="leading-relaxed mb-7"
               style={{ 
                 color: BRAND.steel,
                 fontSize: "clamp(1.05rem, 1vw + 0.5rem, 1.25rem)"
@@ -107,7 +114,7 @@ function Hero() {
           </div>
           
           <div 
-            className="rounded-2xl p-7 lg:p-8"
+            className="rounded-2xl p-6 lg:p-8 min-w-0"
             style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 10px 30px ${BRAND.indigo}05` }}
           >
             <h3 className="font-semibold text-lg mb-5" style={{ color: BRAND.slate }}>
@@ -146,7 +153,7 @@ function Hero() {
                     >
                       <Icon color={BRAND.violet} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="font-medium" style={{ color: BRAND.slate }}>{item.title}</div>
                       <div className="text-sm" style={{ color: BRAND.steel }}>{item.desc}</div>
                     </div>

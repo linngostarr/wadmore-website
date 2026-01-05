@@ -60,39 +60,66 @@ function Hero() {
         style={{ background: `radial-gradient(circle at center, ${BRAND.teal}12, transparent 60%)` }}
       />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-[clamp(3rem,8vh,5rem)] relative z-10 w-full">
-        <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
-            style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, color: BRAND.slate }}
-          >
-            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
-            About Wadmore
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-20 relative z-10 w-full">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-center">
+          <div className="min-w-0">
+            {/* Eyebrow */}
+            <div 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
+              style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, color: BRAND.slate }}
+            >
+              <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
+              About Wadmore
+            </div>
+            
+            {/* Main headline - fluid typography with underline */}
+            <h1 
+              className="font-semibold leading-tight tracking-tight mb-5"
+              style={{ 
+                color: BRAND.slate,
+                fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
+              }}
+            >
+              Understanding{" "}
+              <span className="relative inline-block" style={{ color: BRAND.indigo }}>
+                thinking.
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 200 8" preserveAspectRatio="none">
+                  <path d="M0 6 Q50 1, 100 4 T200 3" fill="none" stroke={BRAND.indigo} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
+                </svg>
+              </span>
+            </h1>
+            
+            <p 
+              className="leading-relaxed"
+              style={{ 
+                color: BRAND.steel,
+                fontSize: "clamp(1.1rem, 1vw + 0.5rem, 1.25rem)"
+              }}
+            >
+              Wadmore was founded on a belief: everyone deserves to understand 
+              how they think, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth — not labels</strong>.
+            </p>
           </div>
           
-          {/* Main headline - fluid typography */}
-          <h1 
-            className="font-semibold leading-tight tracking-tight mb-5"
-            style={{ 
-              color: BRAND.slate,
-              fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
-            }}
-          >
-            Understanding{" "}
-            <span style={{ color: BRAND.indigo }}>cognitive development.</span>
-          </h1>
-          
-          <p 
-            className="leading-relaxed max-w-2xl"
-            style={{ 
-              color: BRAND.steel,
-              fontSize: "clamp(1.1rem, 1vw + 0.5rem, 1.25rem)"
-            }}
-          >
-            Wadmore was founded on a belief: everyone deserves to understand 
-            how they think, and that understanding should lead to growth — not labels.
-          </p>
+          {/* Right: Mission card */}
+          <div className="hidden lg:block">
+            <div className="rounded-2xl p-6 lg:p-8" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}08` }}>
+              <div className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: BRAND.indigo }}>Our Mission</div>
+              <p className="text-lg font-semibold mb-4 leading-snug" style={{ color: BRAND.slate }}>
+                Profiles that guide action.
+              </p>
+              <p className="text-sm leading-relaxed mb-5" style={{ color: BRAND.steel }}>
+                We're building cognitive profiling that reveals how people think — with research-grounded guidance for what to do next.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Strength-based", "Research-grounded", "Developmentally progressive"].map((tag) => (
+                  <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium" style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

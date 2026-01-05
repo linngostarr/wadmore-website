@@ -255,7 +255,7 @@ function Hero() {
               <div className="flex gap-2 md:contents">
                 <Link to="/schools" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.cerulean, color: BRAND.white }}>Schools</Link>
                 <Link to="/families" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.teal, color: BRAND.white }}>Families</Link>
-                <Link to="/professional" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.violet, color: BRAND.white }}>Pro</Link>
+                <Link to="/professional" className="flex-1 md:flex-none inline-flex items-center justify-center px-3 md:px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg truncate" style={{ background: BRAND.violet, color: BRAND.white }}>Professional</Link>
               </div>
             </div>
           </div>
@@ -290,231 +290,97 @@ function Hero() {
 }
 
 function CognitiveFrameworkSection() {
-  const [activeDomain, setActiveDomain] = useState(0);
-  
   const domains = [
-    { 
-      code: "AR", 
-      name: "Abstract Reasoning", 
-      cluster: "processing",
-      tagline: "Solving novel problems",
-      researchers: "Klauer, Gentner, Rittle-Johnson",
-      insight: "Pattern recognition and analogical transfer"
-    },
-    { 
-      code: "LS", 
-      name: "Logical Sequencing", 
-      cluster: "processing",
-      tagline: "Following and building arguments",
-      researchers: "Johnson-Laird, Evans, Stanovich",
-      insight: "Sequential reasoning and systematic thinking"
-    },
-    { 
-      code: "PS", 
-      name: "Processing Speed", 
-      cluster: "processing",
-      tagline: "Thinking under time pressure",
-      researchers: "Kail, Salthouse, Fry & Hale",
-      insight: "Cognitive efficiency and automaticity"
-    },
-    { 
-      code: "MA", 
-      name: "Memory & Attention", 
-      cluster: "processing",
-      tagline: "Holding information while working",
-      researchers: "Baddeley, Gathercole, Cowan",
-      insight: "Working memory and attentional control"
-    },
-    { 
-      code: "EF", 
-      name: "Executive Functioning", 
-      cluster: "regulation",
-      tagline: "Planning, adapting, self-correcting",
-      researchers: "Diamond, Miyake, Zelazo",
-      insight: "Inhibition, flexibility, and goal-directed behaviour"
-    },
-    { 
-      code: "MR", 
-      name: "Metacognition", 
-      cluster: "regulation",
-      tagline: "Understanding your thinking processes",
-      researchers: "Flavell, Veenman, Brown",
-      insight: "Monitoring and regulation of cognition"
-    },
-    { 
-      code: "CM", 
-      name: "Cognitive Confidence", 
-      cluster: "regulation",
-      tagline: "Persisting through challenge",
-      researchers: "Bandura, Schunk, Deci & Ryan",
-      insight: "Self-efficacy and intrinsic motivation"
-    },
-    { 
-      code: "CD", 
-      name: "Creativity", 
-      cluster: "creative",
-      tagline: "Generating original ideas",
-      researchers: "Amabile, Torrance, Scott",
-      insight: "Divergent thinking and originality"
-    },
+    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems without relying on prior knowledge", cluster: "processing" },
+    { code: "LS", name: "Logical Sequencing", desc: "Following chains of reasoning and cause-effect relationships", cluster: "processing" },
+    { code: "PS", name: "Processing Speed", desc: "Taking in information quickly and responding efficiently", cluster: "processing" },
+    { code: "MA", name: "Memory & Attention", desc: "Holding information in mind while working with it", cluster: "processing" },
+    { code: "EF", name: "Executive Functioning", desc: "Planning, staying focused, and adapting when needed", cluster: "regulation" },
+    { code: "MR", name: "Metacognition", desc: "Understanding how you think and choosing effective strategies", cluster: "regulation" },
+    { code: "CM", name: "Cognitive Confidence", desc: "Persisting through difficulty and believing you can improve", cluster: "regulation" },
+    { code: "CD", name: "Creativity", desc: "Generating original ideas and seeing unexpected connections", cluster: "creative" },
   ];
 
-  const clusters = {
-    processing: { name: "Cognitive Processing", color: BRAND.cerulean, desc: "How your mind handles information" },
-    regulation: { name: "Cognitive Self-Regulation", color: BRAND.teal, desc: "How you manage your thinking" },
-    creative: { name: "Creative Thinking", color: BRAND.violet, desc: "How you generate original ideas" },
+  const clusterColors = {
+    processing: BRAND.cerulean,
+    regulation: BRAND.teal,
+    creative: BRAND.violet,
   };
 
-  const domain = domains[activeDomain];
-  const clusterInfo = clusters[domain.cluster];
+  const clusterNames = {
+    processing: "Cognitive Processing",
+    regulation: "Self-Regulation", 
+    creative: "Creative Thinking",
+  };
 
   return (
-    <section className="pt-12 md:pt-20 lg:pt-28 pb-8 md:pb-12 lg:pb-16" style={{ background: BRAND.white }}>
+    <section className="pt-12 md:pt-20 lg:pt-28 pb-12 md:pb-20 lg:pb-28" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-8 md:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.indigo }}>The Cognitive Framework</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-            Eight domains, grounded in research
+            Eight domains of thinking
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore maps cognitive development across eight research-grounded domains — 
-            drawing on <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong> across cognitive science and learning research.
+            Wadmore profiles cognitive development across eight research-grounded domains, 
+            organised into three clusters.
           </p>
         </div>
 
-        {/* Cluster tabs */}
-        <div className="rounded-2xl overflow-hidden mb-6" style={{ background: BRAND.cloud, boxShadow: `0 10px 30px ${BRAND.indigo}05` }}>
-          <div className="flex">
-            {Object.entries(clusters).map(([key, cluster]) => {
-              const isActive = domain.cluster === key;
-              return (
-                <button
-                  key={key}
-                  onClick={() => setActiveDomain(domains.findIndex(d => d.cluster === key))}
-                  className="flex-1 min-w-0 relative p-3 md:p-4 text-center transition-all duration-300"
-                  style={{ background: isActive ? cluster.color : 'transparent' }}
-                >
-                  <div 
-                    className="text-[10px] md:text-sm font-semibold mb-0.5 truncate"
-                    style={{ color: isActive ? BRAND.white : BRAND.slate }}
-                  >
-                    {cluster.name}
-                  </div>
-                  <div 
-                    className="text-[9px] md:text-xs hidden sm:block truncate"
-                    style={{ color: isActive ? `${BRAND.white}cc` : BRAND.steel }}
-                  >
-                    {cluster.desc}
-                  </div>
-                  {isActive && (
-                    <span 
-                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-10" 
-                      style={{ 
-                        width: 0, height: 0, 
-                        borderLeft: "8px solid transparent", 
-                        borderRight: "8px solid transparent", 
-                        borderTop: `8px solid ${cluster.color}` 
-                      }} 
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </div>
+        {/* Cluster legend */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8 md:mb-10">
+          {Object.entries(clusterNames).map(([key, name]) => (
+            <div key={key} className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full" style={{ background: clusterColors[key] }} />
+              <span className="text-sm font-medium" style={{ color: BRAND.slate }}>{name}</span>
+            </div>
+          ))}
         </div>
-        
-        {/* Domain selector */}
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-2 mb-6">
-          {domains.map((d, idx) => {
-            const isActive = idx === activeDomain;
-            const cluster = clusters[d.cluster];
+
+        {/* Domain grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          {domains.map((domain) => {
+            const color = clusterColors[domain.cluster];
             return (
-              <button
-                key={d.code}
-                onClick={() => setActiveDomain(idx)}
-                className="p-2.5 md:p-4 rounded-xl transition-all duration-300 text-center min-w-0"
+              <div 
+                key={domain.code}
+                className="group p-4 md:p-5 rounded-2xl transition-all duration-300 hover:shadow-lg"
                 style={{ 
-                  background: isActive ? cluster.color : BRAND.cloud,
-                  border: `1px solid ${isActive ? cluster.color : BRAND.dove}`,
-                  transform: isActive ? 'scale(1.02)' : 'scale(1)',
-                  boxShadow: isActive ? `0 6px 20px ${cluster.color}25` : 'none'
+                  background: BRAND.cloud,
+                  border: `1px solid ${BRAND.dove}`,
                 }}
               >
+                {/* Code badge */}
                 <div 
-                  className="text-xs md:text-sm font-bold"
-                  style={{ color: isActive ? BRAND.white : cluster.color }}
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-sm md:text-base font-bold mb-3 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: color, color: BRAND.white }}
                 >
-                  {d.code}
+                  {domain.code}
                 </div>
-                <div 
-                  className="text-[9px] md:text-xs font-medium leading-tight mt-0.5 hidden md:block truncate"
-                  style={{ color: isActive ? `${BRAND.white}dd` : BRAND.steel }}
-                >
-                  {d.name.split(' ')[0]}
-                </div>
-              </button>
+                
+                {/* Name */}
+                <h3 className="font-semibold text-sm md:text-base mb-1.5" style={{ color: BRAND.slate }}>
+                  {domain.name}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-xs md:text-sm leading-relaxed" style={{ color: BRAND.steel }}>
+                  {domain.desc}
+                </p>
+              </div>
             );
           })}
         </div>
         
-        {/* Domain detail panel */}
-        <div 
-          className="rounded-2xl overflow-hidden"
-          style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
-        >
-          <div 
-            className="px-4 md:px-6 py-4 flex items-center gap-3 md:gap-4"
-            style={{ background: `${clusterInfo.color}10`, borderBottom: `1px solid ${BRAND.dove}` }}
-          >
-            <div 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-sm md:text-base font-bold flex-shrink-0"
-              style={{ background: clusterInfo.color, color: BRAND.white }}
-            >
-              {domain.code}
-            </div>
-            <div className="min-w-0">
-              <h3 className="font-semibold text-base md:text-lg truncate" style={{ color: BRAND.slate }}>{domain.name}</h3>
-              <p className="text-xs md:text-sm truncate" style={{ color: clusterInfo.color }}>{domain.tagline}</p>
-            </div>
-          </div>
-          
-          <div className="p-4 md:p-6">
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              {/* Research foundation */}
-              <div className="p-4 rounded-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
-                <div className="text-[10px] md:text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.indigo }}>
-                  Research Foundation
-                </div>
-                <div className="text-sm font-medium mb-2" style={{ color: clusterInfo.color }}>
-                  {domain.researchers}
-                </div>
-                <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>
-                  {domain.insight}
-                </p>
-              </div>
-              
-              {/* Cluster info */}
-              <div className="p-4 rounded-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
-                <div className="text-[10px] md:text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.steel }}>
-                  Cluster
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: clusterInfo.color }} />
-                  <span className="text-sm font-semibold truncate" style={{ color: BRAND.slate }}>{clusterInfo.name}</span>
-                </div>
-                <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>
-                  {clusterInfo.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         {/* Link to science page */}
-        <div className="mt-6 text-center">
-          <Link to="/science" className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{ color: BRAND.indigo }}>
-            Explore the full research foundation <ArrowIcon />
+        <div className="mt-8 md:mt-10 text-center">
+          <Link 
+            to="/science" 
+            className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" 
+            style={{ color: BRAND.indigo }}
+          >
+            Explore the research foundation <ArrowIcon />
           </Link>
         </div>
       </div>
@@ -744,20 +610,20 @@ function AudienceSection() {
     <section className="py-12 md:py-20 lg:py-28 relative overflow-hidden" style={{ background: BRAND.white }}>
       <div className="absolute bottom-0 right-0 w-[50vw] max-w-[400px] h-[50vw] max-h-[400px] pointer-events-none opacity-30" style={{ background: `radial-gradient(circle at center, ${audience.color}15, transparent 60%)` }} />
       
-      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12 items-start">
-          <div className="min-w-0">
+          <div className="min-w-0 w-full">
             <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Built for Your Context</p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>One framework.<br />Three platforms.</h2>
             <p className="text-sm md:text-base mb-6 md:mb-8" style={{ color: BRAND.steel }}>The cognitive science stays consistent. The insights adapt to what matters most to you.</p>
             
             {/* Mobile: horizontal scrollable tabs. Desktop: vertical stack */}
-            <div className="overflow-x-auto -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible">
-              <div className="flex gap-2 pb-2 lg:flex-col lg:space-y-2 lg:gap-0">
+            <div className="w-full overflow-x-auto -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible">
+              <div className="inline-flex gap-2 pb-2 lg:flex lg:flex-col lg:space-y-2 lg:gap-0 lg:w-full">
                 {Object.entries(AUDIENCES).map(([key, aud]) => (
                   <button key={key} onClick={() => setActive(key)} className="flex-shrink-0 text-left px-4 lg:px-5 py-3 lg:py-4 rounded-xl transition-all duration-300" style={{ background: active === key ? BRAND.cloud : "transparent", border: active === key ? `2px solid ${aud.color}` : `2px solid transparent`, boxShadow: active === key ? `0 8px 25px ${aud.color}12` : "none" }}>
                     <div className="flex items-center gap-2 lg:gap-3">
-                      <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-transform duration-300" style={{ background: `${aud.color}15`, transform: active === key ? "scale(1.1)" : "scale(1)" }}>
+                      <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-transform duration-300 flex-shrink-0" style={{ background: `${aud.color}15`, transform: active === key ? "scale(1.1)" : "scale(1)" }}>
                         <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full" style={{ background: aud.color }} />
                       </div>
                       <span className="text-sm lg:text-base font-semibold whitespace-nowrap" style={{ color: active === key ? BRAND.slate : BRAND.steel }}>{aud.label}</span>
@@ -768,18 +634,18 @@ function AudienceSection() {
             </div>
           </div>
           
-          <div className="rounded-2xl p-5 md:p-8 lg:p-10 relative overflow-hidden min-w-0" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}05` }}>
+          <div className="rounded-2xl p-5 md:p-8 lg:p-10 relative overflow-hidden min-w-0 w-full" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}05` }}>
             <div className="absolute top-0 left-0 w-1 md:w-1.5 h-full" style={{ background: audience.color }} />
-            <div className="pl-3 md:pl-4">
+            <div className="pl-3 md:pl-4 min-w-0">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2" style={{ color: BRAND.slate }}>{audience.headline}</h3>
               <p className="text-sm md:text-base mb-3 md:mb-4" style={{ color: audience.color }}>{audience.subhead}</p>
               <p className="text-xs md:text-sm mb-6 md:mb-8 leading-relaxed" style={{ color: BRAND.steel }}>{audience.body}</p>
               
-              {/* Features: single column on mobile, 2 columns on tablet+ */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 mb-6 md:mb-8">
+              {/* Features: single column on mobile */}
+              <div className="space-y-2.5 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 mb-6 md:mb-8">
                 {audience.points.map((point) => (
-                  <div key={point} className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: `${audience.color}15` }}>
+                  <div key={point} className="flex items-start gap-2 min-w-0">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: `${audience.color}15` }}>
                       <CheckIcon color={audience.color} size={10} />
                     </div>
                     <span className="text-xs md:text-sm" style={{ color: BRAND.slate }}>{point}</span>

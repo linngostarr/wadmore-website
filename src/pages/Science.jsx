@@ -49,45 +49,75 @@ function Hero() {
       <div className="absolute bottom-0 right-[10%] w-[30vw] max-w-[350px] aspect-square pointer-events-none opacity-20" style={{ background: `radial-gradient(circle at center, ${BRAND.cerulean}12, transparent 60%)` }} />
       
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-20 relative z-10 w-full">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ background: `${BRAND.white}90`, border: `1px solid ${BRAND.indigo}20` }}>
-            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
-            <span style={{ color: BRAND.slate }}>The Science</span>
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-center">
+          <div className="min-w-0">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ background: `${BRAND.white}90`, border: `1px solid ${BRAND.indigo}20` }}>
+              <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
+              <span style={{ color: BRAND.slate }}>The Science</span>
+            </div>
+            
+            <h1 
+              className="font-semibold leading-[1.08] tracking-tight mb-5"
+              style={{ 
+                color: BRAND.slate,
+                fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
+              }}
+            >
+              Rigorous{" "}
+              <span className="relative inline-block" style={{ color: BRAND.indigo }}>
+                methodology.
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 280 8" preserveAspectRatio="none">
+                  <path d="M0 6 Q70 1, 140 4 T280 3" fill="none" stroke={BRAND.indigo} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
+                </svg>
+              </span>
+              <br />
+              <span className="text-[0.85em]" style={{ color: BRAND.steel }}>Meaningful insights.</span>
+            </h1>
+            
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed" style={{ color: BRAND.steel }}>
+              Wadmore measures <strong style={{ color: BRAND.slate }}>cognitive development</strong> — 
+              the processes through which people reason, learn, and adapt. Our framework draws on 
+              50+ peer-reviewed sources across cognitive science, developmental psychology, and learning research.
+            </p>
           </div>
           
-          <h1 
-            className="font-semibold leading-[1.08] tracking-tight mb-5"
-            style={{ 
-              color: BRAND.slate,
-              fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
-            }}
-          >
-            Rigorous methodology.
-            <br />
-            <span style={{ color: BRAND.indigo }}>Meaningful insights.</span>
-          </h1>
-          
-          <p className="text-base md:text-lg lg:text-xl leading-relaxed mb-8" style={{ color: BRAND.steel }}>
-            Wadmore measures <strong style={{ color: BRAND.slate }}>cognitive development</strong> — 
-            the processes through which people reason, learn, and adapt. Our framework draws on 
-            50+ peer-reviewed sources across cognitive science, developmental psychology, and learning research.
-          </p>
-          
-          {/* Stats bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 md:p-6 rounded-2xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 12px 35px ${BRAND.indigo}05` }}>
-            {[
-              { value: "8", label: "Cognitive Domains", sub: "Complete coverage" },
-              { value: "15", label: "Developmental Bands", sub: "Growth continuum" },
-              { value: "360", label: "Unique Constructs", sub: "Precise profiling" },
-              { value: "53", label: "Primary Sources", sub: "Research-grounded" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold mb-0.5" style={{ color: BRAND.indigo }}>{stat.value}</div>
-                <div className="text-xs font-medium" style={{ color: BRAND.slate }}>{stat.label}</div>
-                <div className="text-[10px] hidden sm:block" style={{ color: BRAND.steel }}>{stat.sub}</div>
+          {/* Right: Stats card */}
+          <div className="hidden lg:block">
+            <div className="rounded-2xl p-6 lg:p-8" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}08` }}>
+              <div className="text-xs font-bold uppercase tracking-wider mb-5" style={{ color: BRAND.indigo }}>Framework at a glance</div>
+              <div className="space-y-4">
+                {[
+                  { value: "8", label: "Cognitive Domains", desc: "Complete coverage of thinking" },
+                  { value: "15", label: "Developmental Bands", desc: "Lifespan growth continuum" },
+                  { value: "360", label: "Unique Constructs", desc: "Precise, actionable profiling" },
+                  { value: "53", label: "Primary Sources", desc: "Peer-reviewed foundation" },
+                ].map((stat, i) => (
+                  <div key={stat.label} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: i === 0 ? `${BRAND.indigo}08` : BRAND.cloud }}>
+                    <div className="text-2xl font-bold w-12 text-center" style={{ color: BRAND.indigo }}>{stat.value}</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-semibold" style={{ color: BRAND.slate }}>{stat.label}</div>
+                      <div className="text-xs" style={{ color: BRAND.steel }}>{stat.desc}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+        </div>
+        
+        {/* Mobile stats bar */}
+        <div className="lg:hidden mt-8 grid grid-cols-2 gap-4 p-5 rounded-2xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 12px 35px ${BRAND.indigo}05` }}>
+          {[
+            { value: "8", label: "Domains" },
+            { value: "15", label: "Bands" },
+            { value: "360", label: "Constructs" },
+            { value: "53", label: "Sources" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-2xl font-bold mb-0.5" style={{ color: BRAND.indigo }}>{stat.value}</div>
+              <div className="text-xs font-medium" style={{ color: BRAND.slate }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
