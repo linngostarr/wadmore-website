@@ -617,20 +617,18 @@ function AudienceSection() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>One framework.<br />Three platforms.</h2>
             <p className="text-sm md:text-base mb-6 md:mb-8" style={{ color: BRAND.steel }}>The cognitive science stays consistent. The insights adapt to what matters most to you.</p>
             
-            {/* Mobile: horizontal scrollable tabs. Desktop: vertical stack */}
-            <div className="w-full overflow-x-auto -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible">
-              <div className="inline-flex gap-2 pb-2 lg:flex lg:flex-col lg:space-y-2 lg:gap-0 lg:w-full">
-                {Object.entries(AUDIENCES).map(([key, aud]) => (
-                  <button key={key} onClick={() => setActive(key)} className="flex-shrink-0 text-left px-4 lg:px-5 py-3 lg:py-4 rounded-xl transition-all duration-300" style={{ background: active === key ? BRAND.cloud : "transparent", border: active === key ? `2px solid ${aud.color}` : `2px solid transparent`, boxShadow: active === key ? `0 8px 25px ${aud.color}12` : "none" }}>
-                    <div className="flex items-center gap-2 lg:gap-3">
-                      <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-transform duration-300 flex-shrink-0" style={{ background: `${aud.color}15`, transform: active === key ? "scale(1.1)" : "scale(1)" }}>
-                        <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full" style={{ background: aud.color }} />
-                      </div>
-                      <span className="text-sm lg:text-base font-semibold whitespace-nowrap" style={{ color: active === key ? BRAND.slate : BRAND.steel }}>{aud.label}</span>
+            {/* Vertical stack on mobile, horizontal on tablet, vertical on desktop */}
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-2 lg:flex-col lg:gap-2">
+              {Object.entries(AUDIENCES).map(([key, aud]) => (
+                <button key={key} onClick={() => setActive(key)} className="text-left px-4 lg:px-5 py-3 lg:py-4 rounded-xl transition-all duration-300 w-full sm:flex-1 lg:w-full" style={{ background: active === key ? BRAND.cloud : "transparent", border: active === key ? `2px solid ${aud.color}` : `2px solid transparent`, boxShadow: active === key ? `0 8px 25px ${aud.color}12` : "none" }}>
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-transform duration-300 flex-shrink-0" style={{ background: `${aud.color}15`, transform: active === key ? "scale(1.1)" : "scale(1)" }}>
+                      <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full" style={{ background: aud.color }} />
                     </div>
-                  </button>
-                ))}
-              </div>
+                    <span className="text-sm lg:text-base font-semibold" style={{ color: active === key ? BRAND.slate : BRAND.steel }}>{aud.label}</span>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
           
