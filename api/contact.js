@@ -19,6 +19,7 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Send email via Resend
     await resend.emails.send({
       from: 'Wadmore <support@wadmore.com.au>',
       to: 'matt.linn@wadmore.com.au',
@@ -58,6 +59,34 @@ export default async function handler(req, res) {
         </div>
       `,
     });
+
+    // Create contact in HubSpot (if API key exists)
+    if (process.env.HUBSPOT_API_KEY) {
+      try {
+        await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.HUBSPOT_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            properties: {
+              email: email,
+              firstname: name.split(' ')[0],
+              lastname: name.split(' ').slice(1).join(' ') || '',
+              company: organisation || '',
+              message: message,
+              hs_lead_status: 'NEW',
+              lifecyclestage: 'lead',
+              wadmore_interest: audience || 'General',
+            },
+          }),
+        });
+      } catch (hubspotError) {
+        // Log but don't fail the request if HubSpot fails
+        console.error('HubSpot error:', hubspotError);
+      }
+    }
 
     res.status(200).json({ success: true });
   } catch (error) {
