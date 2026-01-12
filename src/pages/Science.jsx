@@ -87,7 +87,7 @@ function Hero() {
               <div className="text-xs font-bold uppercase tracking-wider mb-5" style={{ color: BRAND.indigo }}>Framework at a glance</div>
               <div className="space-y-4">
                 {[
-                  { value: "8", label: "Cognitive Domains", desc: "Complete coverage of thinking" },
+                  { value: "8", label: "Cognitive Domains", desc: "Complete coverage of thinking capability" },
                   { value: "15", label: "Developmental Bands", desc: "Lifespan growth continuum" },
                   { value: "360", label: "Unique Constructs", desc: "Precise, actionable profiling" },
                   { value: "53", label: "Primary Sources", desc: "Peer-reviewed foundation" },

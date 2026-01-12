@@ -1,5 +1,5 @@
 // src/pages/About.jsx
-// Wadmore About - Our story, mission, and the team behind the platform
+// Wadmore About - Our story, mission, and values
 // Language: Cognitive development focus
 
 import Layout from "../components/Layout";
@@ -36,7 +36,7 @@ export default function About() {
         <MissionSection />
         <StorySection />
         <ValuesSection />
-        <FounderSection />
+        <CredentialsSection />
         <CTASection />
       </div>
     </Layout>
@@ -97,7 +97,7 @@ function Hero() {
               }}
             >
               Wadmore was founded on a belief: everyone deserves to understand 
-              how they think, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth, not labels</strong>.
+              their thinking development, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth, not labels</strong>.
             </p>
           </div>
           
@@ -109,7 +109,7 @@ function Hero() {
                 Profiles that guide action.
               </p>
               <p className="text-sm leading-relaxed mb-5" style={{ color: BRAND.steel }}>
-                We're building cognitive profiling that reveals how people think, with research-grounded guidance for what to do next.
+                We're building cognitive profiling that reveals how people's thinking capability develops, with research-grounded guidance for what to do next.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Strength-based", "Research-grounded", "Developmentally progressive"].map((tag) => (
@@ -152,10 +152,10 @@ function MissionSection() {
               className="text-lg mb-5 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              We're building a cognitive profiling platform that reveals <em>how</em> people 
-              think, not just what they know. Our framework maps development across eight 
-              domains and fifteen bands, creating 360 constructs that describe cognitive 
-              capability with genuine precision.
+              We're building a cognitive profiling platform that reveals how people's 
+              thinking capability develops, not just what they know. Our framework maps 
+              development across eight domains and fifteen bands, creating 360 constructs 
+              that describe cognitive capability with genuine precision.
             </p>
             <p 
               className="text-lg mb-5 leading-relaxed"
@@ -245,37 +245,37 @@ function StorySection() {
             className="text-3xl md:text-4xl font-semibold mb-8 text-center"
             style={{ color: BRAND.slate }}
           >
-            Born from 17 years in assessment
+            Decades of assessment expertise
           </h2>
           
           <div className="space-y-5" style={{ color: BRAND.steel }}>
             <p className="text-lg leading-relaxed">
-              After nearly two decades in educational assessment, as a school principal, 
-              Head of Global Assessment at Janison, and across countless conversations 
-              with teachers and families, one question kept emerging: what if we could 
-              understand <em>how</em> someone thinks, not just what they know?
+              The Wadmore team brings decades of experience in cognitive assessment, 
+              having worked across some of the world's largest testing programmes. 
+              From national examinations to international assessments reaching millions 
+              of students, we've seen what works and what doesn't.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Traditional cognitive assessments measure reasoning ability and produce 
-              percentile ranks, useful for comparison, but limited for development. 
-              Teachers would ask: "This student is at the 62nd percentile. Now what?" 
-              The assessments had no answer.
+              One question kept emerging: <em>what if we could map how thinking 
+              capability develops, not just measure what someone knows?</em> Traditional 
+              cognitive assessments produce percentile ranks. Useful for comparison, 
+              but limited for development. Teachers would ask: "This student is at the 
+              62nd percentile. Now what?" The assessments had no answer.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Wadmore takes a different approach. We map cognitive development across 
+              Wadmore takes a different approach. We profile cognitive development across 
               eight domains, from abstract reasoning to executive functioning to 
-              metacognition, revealing the complete picture of how a person processes, 
-              regulates, and creates. And we show what growth looks like from wherever 
-              you are.
+              metacognition, revealing how a person processes, regulates, and creates. 
+              And we show what growth looks like from wherever you are.
             </p>
             
             <p className="text-lg leading-relaxed">
               The result is strength-based profiling that empowers development. Assessment 
               designed for fairness from the start. Insights connected to research-grounded 
-              strategies. And a framework that spans the full lifespan, from early 
-              childhood through professional expertise.
+              strategies. And a framework that spans the full developmental journey, from 
+              early childhood through professional expertise.
             </p>
           </div>
         </div>
@@ -384,83 +384,116 @@ function ValuesSection() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   FOUNDER
+   CREDENTIALS SECTION - Replacing Founder Section
    ══════════════════════════════════════════════════════════════ */
 
-function FounderSection() {
+function CredentialsSection() {
   return (
     <section className="py-16 md:py-24" style={{ background: BRAND.cloud }}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
-          {/* Photo placeholder */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div 
-            className="aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl flex items-center justify-center"
-            style={{ background: BRAND.dove }}
+            className="text-sm font-semibold uppercase tracking-wider mb-4"
+            style={{ color: BRAND.indigo }}
           >
-            <div className="text-center p-8">
+            Our Approach
+          </div>
+          <h2 
+            className="text-3xl md:text-4xl font-semibold mb-4"
+            style={{ color: BRAND.slate }}
+          >
+            Built on rigorous foundations
+          </h2>
+          <p className="text-lg" style={{ color: BRAND.steel }}>
+            Wadmore combines deep psychometric expertise with modern technology 
+            to deliver assessment that maps thinking development with scientific rigour and genuine utility.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              stat: "50+",
+              label: "Peer-reviewed sources",
+              desc: "Grounding every domain and construct",
+            },
+            {
+              stat: "8",
+              label: "Cognitive domains",
+              desc: "Complete coverage of thinking capability",
+            },
+            {
+              stat: "360",
+              label: "Constructs",
+              desc: "Precise developmental descriptors",
+            },
+            {
+              stat: "15",
+              label: "Developmental bands",
+              desc: "Mapping growth from foundation to expert",
+            },
+          ].map((item) => (
+            <div 
+              key={item.label}
+              className="text-center p-6 rounded-xl"
+              style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+            >
               <div 
-                className="w-28 h-28 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold"
-                style={{ background: BRAND.indigo, color: BRAND.white }}
+                className="text-4xl md:text-5xl font-bold mb-2"
+                style={{ color: BRAND.indigo }}
               >
-                ML
+                {item.stat}
+              </div>
+              <div 
+                className="font-semibold mb-1"
+                style={{ color: BRAND.slate }}
+              >
+                {item.label}
               </div>
               <div className="text-sm" style={{ color: BRAND.steel }}>
-                Founder photo
+                {item.desc}
               </div>
             </div>
-          </div>
-          
-          <div>
-            <div 
-              className="text-sm font-semibold uppercase tracking-wider mb-4"
-              style={{ color: BRAND.indigo }}
-            >
-              The Founder
-            </div>
-            <h2 
-              className="text-3xl md:text-4xl font-semibold mb-2"
-              style={{ color: BRAND.slate }}
-            >
-              Matt Linn
-            </h2>
-            <div 
-              className="text-lg font-medium mb-6"
-              style={{ color: BRAND.indigo }}
-            >
-              Founder & CEO
-            </div>
-            
-            <div className="space-y-4" style={{ color: BRAND.steel }}>
-              <p className="text-base leading-relaxed">
-                Matt brings over 17 years of experience in educational assessment, 
-                including leadership roles as a school principal and Head of Global 
-                Assessment at Janison, one of Australia's leading assessment technology 
-                companies. He's worked across the full spectrum—from classroom teaching 
-                to enterprise-scale psychometric development.
-              </p>
-              <p className="text-base leading-relaxed">
-                Throughout his career, Matt kept encountering the same question from teachers: 
-                "This student scored at the 62nd percentile. Now what?" Traditional assessments 
-                measured and ranked—but never bridged to action.
-              </p>
-              <p className="text-base leading-relaxed">
-                Wadmore is the answer to that question. Every profile includes research-grounded 
-                guidance—specific strategies that tell teachers and parents what to do and why 
-                it works. Matt is passionate about making cognitive science practical and 
-                empowering for everyone who supports learning.
-              </p>
-            </div>
-            
-            <div className="flex gap-4 mt-6">
-              <a 
-                href="https://linkedin.com/in/mattlinn" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+          ))}
+        </div>
+        
+        {/* Psychometric standards */}
+        <div 
+          className="mt-12 p-8 rounded-2xl"
+          style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 
+                className="text-xl font-semibold mb-4"
+                style={{ color: BRAND.slate }}
               >
-                <LinkedInIcon color={BRAND.slate} />
-              </a>
+                Professional psychometric standards
+              </h3>
+              <p className="text-base leading-relaxed" style={{ color: BRAND.steel }}>
+                Wadmore applies the same rigorous psychometric methodology used in 
+                high-stakes educational assessment. IRT/Rasch modelling, reliability 
+                analysis, DIF testing for fairness, and continuous calibration ensure 
+                every profile meets professional standards.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {[
+                "IRT/Rasch modelling",
+                "α ≥ 0.85 reliability",
+                "DIF analysis",
+                "Adaptive testing",
+                "Bias detection",
+                "Continuous calibration",
+              ].map((item) => (
+                <span 
+                  key={item}
+                  className="px-4 py-2 rounded-full text-sm font-medium"
+                  style={{ background: `${BRAND.indigo}08`, color: BRAND.indigo }}
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -523,7 +556,7 @@ function CTASection() {
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
             style={{ background: BRAND.violet, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.violet}40` }}
           >
-            For Professional
+            For Organisations
           </Link>
         </div>
         
@@ -615,14 +648,6 @@ function PrivacyIcon({ color }) {
       <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
       <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       <circle cx="12" cy="16" r="1" fill={color} />
-    </svg>
-  );
-}
-
-function LinkedInIcon({ color }) {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill={color}>
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
     </svg>
   );
 }

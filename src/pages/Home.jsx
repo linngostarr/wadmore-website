@@ -296,7 +296,7 @@ function CognitiveFrameworkSection() {
     { code: "PS", name: "Processing Speed", desc: "Taking in information quickly and responding efficiently", cluster: "processing" },
     { code: "MA", name: "Memory & Attention", desc: "Holding information in mind while working with it", cluster: "processing" },
     { code: "EF", name: "Executive Functioning", desc: "Planning, staying focused, and adapting when needed", cluster: "regulation" },
-    { code: "MR", name: "Metacognition", desc: "Understanding how you think and choosing effective strategies", cluster: "regulation" },
+    { code: "MR", name: "Metacognition", desc: "Awareness of your own thinking and ability to choose effective strategies", cluster: "regulation" },
     { code: "CM", name: "Cognitive Confidence", desc: "Persisting through difficulty and believing you can improve", cluster: "regulation" },
     { code: "CD", name: "Creativity", desc: "Generating original ideas and seeing unexpected connections", cluster: "creative" },
   ];
