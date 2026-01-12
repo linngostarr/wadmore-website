@@ -128,7 +128,7 @@ export default function Footer() {
                 className="text-sm"
                 style={{ color: "rgba(255,255,255,0.7)" }}
               >
-                Adelaide, South Australia
+                Proudly Australian 🇦🇺
               </li>
               <li>
                 <a 

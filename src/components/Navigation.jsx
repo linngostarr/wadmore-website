@@ -34,13 +34,34 @@ export default function Navigation() {
   const logoSrc = isHomepage ? "/assets/logo.png" : "/assets/logo-tagline.png";
 
   return (
-    <nav 
-      className="sticky top-0 z-50 backdrop-blur-md"
-      style={{ 
-        background: "rgba(255, 255, 255, 0.92)",
-        borderBottom: `1px solid ${BRAND.dove}`
-      }}
-    >
+    <div className="w-full max-w-full overflow-x-hidden">
+      {/* Launch Announcement Banner */}
+      <div 
+        className="w-full py-2.5 px-4 text-center text-sm font-medium"
+        style={{ 
+          background: BRAND.indigo, 
+          color: BRAND.white 
+        }}
+      >
+        <span className="opacity-90">Wadmore launches</span>{" "}
+        <strong>March 2026</strong>
+        <span className="opacity-90"> · </span>
+        <Link 
+          to="/contact" 
+          className="underline underline-offset-2 hover:opacity-80 transition-opacity"
+          style={{ color: BRAND.white }}
+        >
+          Register for early access
+        </Link>
+      </div>
+      
+      <nav 
+        className="sticky top-0 z-50 backdrop-blur-md"
+        style={{ 
+          background: "rgba(255, 255, 255, 0.92)",
+          borderBottom: `1px solid ${BRAND.dove}`
+        }}
+      >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
         
         {/* ═══════════════════════════════════════════════════════
@@ -71,14 +92,6 @@ export default function Navigation() {
             DESKTOP CTA
             ═══════════════════════════════════════════════════════ */}
         <div className="hidden items-center gap-3 md:flex">
-          <button 
-            className="px-4 py-2 text-sm font-medium rounded-lg transition-colors"
-            style={{ color: BRAND.steel }}
-            onMouseEnter={(e) => e.target.style.color = BRAND.slate}
-            onMouseLeave={(e) => e.target.style.color = BRAND.steel}
-          >
-            Sign in
-          </button>
           <Link 
             to="/contact" 
             className="px-5 py-2.5 text-sm font-semibold rounded-full transition-all hover:scale-[1.02]"
@@ -88,7 +101,7 @@ export default function Navigation() {
               boxShadow: `0 2px 8px ${BRAND.indigo}30`
             }}
           >
-            Get in touch
+            Register Interest
           </Link>
         </div>
 
@@ -154,15 +167,6 @@ export default function Navigation() {
               className="mt-4 pt-4 flex flex-col gap-3"
               style={{ borderTop: `1px solid ${BRAND.dove}` }}
             >
-              <button 
-                className="w-full py-3 text-sm font-medium rounded-xl transition-colors"
-                style={{ 
-                  background: BRAND.cloud, 
-                  color: BRAND.slate 
-                }}
-              >
-                Sign in
-              </button>
               <Link
                 to="/contact"
                 className="w-full py-3 text-sm font-semibold rounded-xl text-center transition-all"
@@ -172,13 +176,14 @@ export default function Navigation() {
                 }}
                 onClick={() => setMenuOpen(false)}
               >
-                Get in touch
+                Register Interest
               </Link>
             </div>
           </div>
         </div>
       )}
     </nav>
+    </div>
   );
 }
 
