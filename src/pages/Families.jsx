@@ -619,18 +619,10 @@ function HowItWorksSection() {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <div key={step.number} className="relative">
-              {/* Connector line */}
-              {index < steps.length - 1 && (
-                <div 
-                  className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5"
-                  style={{ background: BRAND.dove }}
-                />
-              )}
-              
+          {steps.map((step) => (
+            <div key={step.number}>
               <div 
-                className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 relative z-10"
+                className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6"
                 style={{ background: BRAND.teal, color: BRAND.white }}
               >
                 {step.number}
