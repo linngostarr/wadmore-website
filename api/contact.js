@@ -1,8 +1,22 @@
 import { Resend } from 'resend';
 
 export default async function handler(req, res) {
+  // Debug: Check if env var exists
+  console.log('API Key exists:', !!process.env.RESEND_API_KEY);
+  console.log('API Key starts with:', process.env.RESEND_API_KEY?.substring(0, 6));
+  
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ 
+      error: 'Method not allowed',
+      debug: {
+        hasKey: !!process.env.RESEND_API_KEY,
+        envKeys: Object.keys(process.env).filter(k => k.includes('RESEND'))
+      }
+    });
+  }
+
+  if (!process.env.RESEND_API_KEY) {
+    return res.status(500).json({ error: 'API key not configured' });
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
