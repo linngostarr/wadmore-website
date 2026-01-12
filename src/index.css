@@ -7,12 +7,31 @@
 
 /* ──────────────────────────────────────────────
    Viewport overflow fix – prevents horizontal scroll on mobile
+   iOS Safari requires additional properties
    ────────────────────────────────────────────── */
 
-html, body, #root {
+html {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  /* iOS Safari specific */
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  /* Prevent iOS bounce/overscroll from revealing overflow */
+  overscroll-behavior-x: none;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 /* ──────────────────────────────────────────────
