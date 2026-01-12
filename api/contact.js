@@ -63,7 +63,7 @@ export default async function handler(req, res) {
     // Create contact in HubSpot (if API key exists)
     if (process.env.HUBSPOT_API_KEY) {
       try {
-        await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+        const hubspotResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${process.env.HUBSPOT_API_KEY}`,
@@ -78,14 +78,23 @@ export default async function handler(req, res) {
               message: message,
               hs_lead_status: 'NEW',
               lifecyclestage: 'lead',
-              wadmore_interest: audience || 'General',
             },
           }),
         });
+        
+        const hubspotData = await hubspotResponse.json();
+        console.log('HubSpot status:', hubspotResponse.status);
+        console.log('HubSpot response:', JSON.stringify(hubspotData));
+        
+        if (!hubspotResponse.ok) {
+          console.error('HubSpot error:', hubspotData);
+        }
       } catch (hubspotError) {
         // Log but don't fail the request if HubSpot fails
         console.error('HubSpot error:', hubspotError);
       }
+    } else {
+      console.log('No HubSpot API key found');
     }
 
     res.status(200).json({ success: true });
