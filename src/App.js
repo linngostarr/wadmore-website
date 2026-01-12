@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Science from "./pages/Science";
@@ -12,17 +13,18 @@ import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <Router>
-<ScrollToTop /> 
+      <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/science" element={<Science />} />
         <Route path="/families" element={<Families />} />
         <Route path="/schools" element={<Schools />} />
-<Route path="/professional" element={<Professional />} />
-<Route path="/consulting" element={<Consulting />} />
+        <Route path="/professional" element={<Professional />} />
+        <Route path="/consulting" element={<Consulting />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
