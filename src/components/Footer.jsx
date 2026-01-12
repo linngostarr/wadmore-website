@@ -132,13 +132,13 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="mailto:hello@wadmore.com" 
+                  href="mailto:hello@wadmore.com.au" 
                   className="text-sm transition-colors"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                   onMouseEnter={(e) => e.target.style.color = BRAND.white}
                   onMouseLeave={(e) => e.target.style.color = "rgba(255,255,255,0.7)"}
                 >
-                  hello@wadmore.com
+                  hello@wadmore.com.au
                 </a>
               </li>
             </ul>

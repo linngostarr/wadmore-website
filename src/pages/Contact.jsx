@@ -427,11 +427,11 @@ export default function Contact() {
                     General enquiries
                   </h3>
                   <a 
-                    href="mailto:hello@wadmore.com"
+                    href="mailto:hello@wadmore.com.au"
                     className="text-base font-medium hover:underline transition-colors"
                     style={{ color: BRAND.indigo }}
                   >
-                    hello@wadmore.com
+                    hello@wadmore.com.au
                   </a>
                 </div>
                 <div>
@@ -442,11 +442,11 @@ export default function Contact() {
                     School partnerships
                   </h3>
                   <a 
-                    href="mailto:schools@wadmore.com"
+                    href="mailto:schools@wadmore.com.au"
                     className="text-base font-medium hover:underline transition-colors"
                     style={{ color: BRAND.indigo }}
                   >
-                    schools@wadmore.com
+                    schools@wadmore.com.au
                   </a>
                 </div>
               </div>

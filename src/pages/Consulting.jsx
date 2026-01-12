@@ -697,11 +697,11 @@ function CTASection() {
             <ArrowIcon />
           </Link>
           <a 
-            href="mailto:learning@wadmore.com"
+            href="mailto:learning@wadmore.com.au"
             className="inline-flex items-center px-8 py-4 rounded-full text-base font-semibold transition-colors"
             style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "1px solid rgba(255,255,255,0.3)" }}
           >
-            learning@wadmore.com
+            learning@wadmore.com.au
           </a>
         </div>
         
