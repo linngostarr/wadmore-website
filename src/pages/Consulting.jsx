@@ -31,7 +31,6 @@ export default function Consulting() {
         <WorkshopTopicsSection />
         <DeliveryFormatsSection />
         <OutcomesSection />
-        <TestimonialsSection />
         <CTASection />
       </div>
     </Layout>

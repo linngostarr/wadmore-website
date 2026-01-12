@@ -719,19 +719,13 @@ function CTASection() {
       <div className="max-w-4xl mx-auto px-5 md:px-8 text-center relative z-10">
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 md:mb-6 leading-tight" style={{ color: BRAND.white }}>Ready to understand cognitive development?</h2>
         <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 opacity-85 max-w-2xl mx-auto" style={{ color: BRAND.white }}>
-          Discover how Wadmore maps development with scientific precision and genuine actionability.
+          Launching March 2026. Register now for early access.
         </p>
         
         {/* Mobile: stacked full-width. Desktop: inline row */}
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 md:gap-4">
-          <Link to="/schools" className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.cerulean, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.cerulean}40` }}>
-            For Schools <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
-          </Link>
-          <Link to="/families" className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.teal, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.teal}40` }}>
-            For Families <ArrowIcon />
-          </Link>
-          <Link to="/professional" className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.violet, color: BRAND.white, boxShadow: `0 6px 25px ${BRAND.violet}40` }}>
-            For Professional <ArrowIcon />
+          <Link to="/contact" className="group inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{ background: BRAND.white, color: BRAND.indigo, boxShadow: "0 6px 25px rgba(0,0,0,0.2)" }}>
+            Register for Early Access <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
           </Link>
         </div>
         

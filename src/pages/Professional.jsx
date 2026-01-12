@@ -147,7 +147,7 @@ function Hero() {
                   boxShadow: `0 8px 30px ${BRAND.violet}35`
                 }}
               >
-                Request a Demo
+                Register Interest
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
@@ -679,7 +679,7 @@ function PricingSection() {
             className="text-sm font-semibold uppercase tracking-widest mb-5"
             style={{ color: BRAND.violet }}
           >
-            Pricing
+            Launch Pricing
           </p>
           <h2 
             className="text-4xl md:text-5xl font-semibold mb-6"
@@ -687,6 +687,13 @@ function PricingSection() {
           >
             Pricing that scales with your needs
           </h2>
+          <p 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
+            style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}
+          >
+            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
+            Available March 2026
+          </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
@@ -697,46 +704,33 @@ function PricingSection() {
               unit: "/person", 
               desc: "One-time assessment", 
               features: ["Complete 8-domain profile", "Individual development plan", "PDF & dashboard access", "Email support"],
-              featured: false
             },
             { 
               tier: "Team", 
               price: "$149", 
               unit: "/person", 
-              desc: "5-25 people", 
-              features: ["Everything in Individual", "Team cognitive map", "Collaboration insights", "Priority support", "Onboarding session"],
-              featured: true
+              desc: "5–25 people", 
+              features: ["Complete 8-domain profile", "Individual development plan", "Team cognitive map", "Collaboration insights", "Priority support"],
             },
             { 
               tier: "Enterprise", 
               price: "Custom", 
               unit: "", 
               desc: "25+ people", 
-              features: ["Everything in Team", "Organisation-wide analytics", "API integration", "Dedicated account manager", "Custom reporting"],
-              featured: false
+              features: ["Complete 8-domain profile", "Individual development plan", "Organisation-wide analytics", "Dedicated account manager", "Custom integrations"],
             },
           ].map((item) => (
             <div 
               key={item.tier}
-              className={`rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${item.featured ? 'lg:-mt-4 lg:mb-4' : ''}`}
+              className="rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               style={{ 
-                background: BRAND.cloud,
-                border: item.featured ? `2px solid ${BRAND.violet}` : `1px solid ${BRAND.dove}`,
-                boxShadow: item.featured ? `0 30px 60px ${BRAND.violet}12` : "none"
+                background: BRAND.white,
+                border: `1px solid ${BRAND.dove}`,
               }}
             >
-              {item.featured && (
-                <div 
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs font-bold"
-                  style={{ background: BRAND.violet, color: BRAND.white }}
-                >
-                  MOST POPULAR
-                </div>
-              )}
-              
               <div 
                 className="text-sm font-semibold uppercase tracking-wider mb-4"
-                style={{ color: item.featured ? BRAND.violet : BRAND.steel }}
+                style={{ color: BRAND.violet }}
               >
                 {item.tier}
               </div>
@@ -759,9 +753,9 @@ function PricingSection() {
                   <li key={feature} className="flex items-center gap-3">
                     <div 
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${item.featured ? BRAND.violet : BRAND.teal}15` }}
+                      style={{ background: `${BRAND.violet}15` }}
                     >
-                      <CheckIcon color={item.featured ? BRAND.violet : BRAND.teal} size={10} />
+                      <CheckIcon color={BRAND.violet} size={10} />
                     </div>
                     <span className="text-sm" style={{ color: BRAND.slate }}>
                       {feature}
@@ -776,7 +770,7 @@ function PricingSection() {
                   className="mt-8 block w-full text-center py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
                   style={{ background: BRAND.violet, color: BRAND.white }}
                 >
-                  Contact Us
+                  Register Interest
                 </Link>
               )}
             </div>
@@ -818,7 +812,7 @@ function CTASection() {
           className="text-xl md:text-2xl mb-12 opacity-90"
           style={{ color: BRAND.white }}
         >
-          Get objective cognitive data for better team decisions.
+          Launching March 2026. Register now for early access.
         </p>
         
         <div className="flex flex-wrap justify-center gap-5">
@@ -831,7 +825,7 @@ function CTASection() {
               boxShadow: "0 8px 30px rgba(0,0,0,0.15)"
             }}
           >
-            Request a Demo
+            Register Interest
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               <ArrowIcon />
             </span>

@@ -90,7 +90,6 @@ function Hero() {
                   { value: "8", label: "Cognitive Domains", desc: "Complete coverage of thinking capability" },
                   { value: "15", label: "Developmental Bands", desc: "Lifespan growth continuum" },
                   { value: "360", label: "Unique Constructs", desc: "Precise, actionable profiling" },
-                  { value: "53", label: "Primary Sources", desc: "Peer-reviewed foundation" },
                 ].map((stat, i) => (
                   <div key={stat.label} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: i === 0 ? `${BRAND.indigo}08` : BRAND.cloud }}>
                     <div className="text-2xl font-bold w-12 text-center" style={{ color: BRAND.indigo }}>{stat.value}</div>
@@ -106,12 +105,11 @@ function Hero() {
         </div>
         
         {/* Mobile stats bar */}
-        <div className="lg:hidden mt-8 grid grid-cols-2 gap-4 p-5 rounded-2xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 12px 35px ${BRAND.indigo}05` }}>
+        <div className="lg:hidden mt-8 grid grid-cols-3 gap-4 p-5 rounded-2xl" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 12px 35px ${BRAND.indigo}05` }}>
           {[
             { value: "8", label: "Domains" },
             { value: "15", label: "Bands" },
             { value: "360", label: "Constructs" },
-            { value: "53", label: "Sources" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl font-bold mb-0.5" style={{ color: BRAND.indigo }}>{stat.value}</div>
@@ -411,7 +409,7 @@ function DomainsResearchSection() {
         {/* Bottom note */}
         <div className="mt-6 text-center">
           <p className="text-sm" style={{ color: BRAND.steel }}>
-            Wadmore's framework draws on <strong style={{ color: BRAND.slate }}>53 peer-reviewed sources</strong> across cognitive science, developmental psychology, and learning research.
+            Wadmore's framework draws on <strong style={{ color: BRAND.slate }}>peer-reviewed research</strong> across cognitive science, developmental psychology, and learning research.
           </p>
         </div>
       </div>

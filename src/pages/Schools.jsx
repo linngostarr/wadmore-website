@@ -175,7 +175,7 @@ function Hero() {
                   boxShadow: `0 8px 30px ${BRAND.cerulean}35`
                 }}
               >
-                Request a Demo
+                Register for 2026 Pilot
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
@@ -216,9 +216,9 @@ function Hero() {
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
                 { value: "8", label: "Cognitive Domains", desc: "Complete coverage" },
+                { value: "15", label: "Developmental Bands", desc: "Growth continuum" },
                 { value: "360", label: "Constructs", desc: "Actionable precision" },
                 { value: "α≥0.85", label: "Reliability", desc: "Psychometric rigour" },
-                { value: "25-45", label: "Minutes", desc: "Adaptive, efficient" },
               ].map((stat, i) => (
                 <div 
                   key={stat.label}
@@ -1095,47 +1095,34 @@ function PricingSection() {
               price: "$20", 
               unit: "/student", 
               desc: "Up to 200 students", 
-              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Email support"],
-              featured: false
+              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Priority support"],
             },
             { 
               tier: "Medium School", 
               price: "$18", 
               unit: "/student", 
-              desc: "201-500 students", 
-              features: ["Everything in Small", "Cohort analytics", "Priority support", "PD workshop (1 session)"],
-              featured: true
+              desc: "201–500 students", 
+              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Cohort analytics", "Priority support"],
             },
             { 
               tier: "Large / System", 
               price: "$15", 
               unit: "/student", 
               desc: "500+ students", 
-              features: ["Everything in Medium", "System-wide analytics", "Dedicated account manager", "Custom integrations"],
-              featured: false
+              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "System-wide analytics", "Dedicated account manager", "Priority support"],
             },
           ].map((item) => (
             <div 
               key={item.tier}
-              className={`rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${item.featured ? 'lg:-mt-4 lg:mb-4' : ''}`}
+              className="rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               style={{ 
-                background: item.featured ? BRAND.white : BRAND.cloud,
-                border: item.featured ? `2px solid ${BRAND.cerulean}` : `1px solid ${BRAND.dove}`,
-                boxShadow: item.featured ? `0 30px 60px ${BRAND.cerulean}15` : "none"
+                background: BRAND.white,
+                border: `1px solid ${BRAND.dove}`,
               }}
             >
-              {item.featured && (
-                <div 
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs font-bold"
-                  style={{ background: BRAND.cerulean, color: BRAND.white }}
-                >
-                  MOST POPULAR
-                </div>
-              )}
-              
               <div 
                 className="text-sm font-semibold uppercase tracking-wider mb-4"
-                style={{ color: item.featured ? BRAND.cerulean : BRAND.steel }}
+                style={{ color: BRAND.cerulean }}
               >
                 {item.tier}
               </div>
@@ -1167,11 +1154,9 @@ function PricingSection() {
                   <li key={feature} className="flex items-center gap-3">
                     <div 
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ 
-                        background: item.featured ? `${BRAND.cerulean}15` : `${BRAND.teal}15`
-                      }}
+                      style={{ background: `${BRAND.cerulean}15` }}
                     >
-                      <CheckIcon color={item.featured ? BRAND.cerulean : BRAND.teal} size={10} />
+                      <CheckIcon color={BRAND.cerulean} size={10} />
                     </div>
                     <span className="text-sm" style={{ color: BRAND.slate }}>
                       {feature}
@@ -1210,7 +1195,7 @@ function PricingSection() {
               boxShadow: `0 8px 30px ${BRAND.cerulean}30`
             }}
           >
-            Request a Quote
+            Register Interest
             <ArrowIcon />
           </Link>
         </div>
@@ -1264,7 +1249,7 @@ function CTASection() {
               boxShadow: "0 8px 30px rgba(0,0,0,0.15)"
             }}
           >
-            Request a Demo
+            Register for 2026 Pilot
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               <ArrowIcon />
             </span>
