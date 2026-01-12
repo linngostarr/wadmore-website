@@ -1228,7 +1228,7 @@ function CTASection() {
     <section 
       className="py-28 md:py-36 relative overflow-hidden"
       style={{ 
-        background: `linear-gradient(135deg, ${BRAND.cerulean} 0%, ${BRAND.ceruleanDark} 50%, ${BRAND.indigo} 100%)`
+        background: BRAND.cerulean
       }}
     >
       {/* Decorative elements */}
