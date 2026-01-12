@@ -130,7 +130,7 @@ function Hero() {
             >
               Great teams aren't accidental. Wadmore maps{" "}
               <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
-              eight domains — so you can compose teams with complementary strengths, 
+              eight domains, so you can compose teams with complementary strengths, 
               target development where it matters, and hire for genuine capability fit. 
               The same rigorous framework trusted in education, grounded in{" "}
               <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
@@ -272,7 +272,7 @@ function CapabilitySection() {
             >
               The result? <strong style={{ color: BRAND.slate }}>Data you can use for 
               real decisions</strong> about team composition, development priorities, 
-              and hiring — not just conversation starters.
+              and hiring, not just conversation starters.
             </p>
             
             <div className="space-y-4">
@@ -566,7 +566,7 @@ function LifespanSection() {
               style={{ color: BRAND.steel }}
             >
               Wadmore's 15-band framework extends from early capability through to 
-              expert-level mastery — making it relevant across entire careers, from 
+              expert-level mastery, making it relevant across entire careers, from 
               graduate hire to senior leadership.
             </p>
             <p 
@@ -655,7 +655,7 @@ function LifespanSection() {
               </div>
               <p className="text-sm" style={{ color: BRAND.slate }}>
                 Leverage strong analytical and metacognitive capabilities for strategic roles. 
-                Focus development on Executive Functioning — delegation frameworks and project 
+                Focus development on Executive Functioning, delegation frameworks and project 
                 management systems will support transition to executive level.
               </p>
             </div>

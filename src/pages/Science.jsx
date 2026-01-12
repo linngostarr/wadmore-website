@@ -75,7 +75,7 @@ function Hero() {
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl leading-relaxed" style={{ color: BRAND.steel }}>
-              Wadmore measures <strong style={{ color: BRAND.slate }}>cognitive development</strong> — 
+              Wadmore measures <strong style={{ color: BRAND.slate }}>cognitive development</strong>, 
               the processes through which people reason, learn, and adapt. Our framework draws on 
               50+ peer-reviewed sources across cognitive science, developmental psychology, and learning research.
             </p>
@@ -139,7 +139,7 @@ function DomainsResearchSection() {
       cluster: "processing",
       desc: "The ability to identify patterns, recognise relationships, and solve novel problems without relying on prior knowledge. Central to fluid intelligence and transfer of learning.",
       researchers: "Klauer (2008), Gentner (2003), Rittle-Johnson (2001)",
-      researchInsight: "Inductive reasoning — identifying rules from examples — is trainable through systematic practice. Klauer's meta-analysis demonstrates significant transfer effects when pattern recognition is explicitly taught. Analogical reasoning (Gentner) enables learning transfer across domains.",
+      researchInsight: "Inductive reasoning, identifying rules from examples, is trainable through systematic practice. Klauer's meta-analysis demonstrates significant transfer effects when pattern recognition is explicitly taught. Analogical reasoning (Gentner) enables learning transfer across domains.",
       keyConstructs: ["Pattern identification", "Rule induction", "Analogical transfer", "Novel problem-solving"]
     },
     { 
@@ -453,7 +453,7 @@ const BANDS = [
   { 
     id: 3, 
     name: "Consolidating Foundations", 
-    description: "Concrete operational thinking well-established with independent performance in familiar domains. Recognises complex patterns and logical relationships. Executive functions consolidating — follows rules consistently, maintains attention appropriately, switches tasks with minimal support. Beginning to transfer learned strategies across contexts.",
+    description: "Concrete operational thinking well-established with independent performance in familiar domains. Recognises complex patterns and logical relationships. Executive functions consolidating, follows rules consistently, maintains attention appropriately, switches tasks with minimal support. Beginning to transfer learned strategies across contexts.",
     typical: "Primary school",
     keyCharacteristics: ["Concrete operations consolidated", "Strategy transfer emerging", "Good self-regulation in familiar contexts", "Logical reasoning developing"]
   },
@@ -467,7 +467,7 @@ const BANDS = [
   { 
     id: 5, 
     name: "Emerging Abstract Thinking", 
-    description: "Metacognitive awareness developing — beginning to monitor and regulate own thinking. Formal operational thinking emerging with capacity for hypothetical reasoning in familiar domains. Plans multi-day projects with decreasing support. Self-efficacy beliefs consolidating. Critical period for establishing organisational habits and growth mindset.",
+    description: "Metacognitive awareness developing, beginning to monitor and regulate own thinking. Formal operational thinking emerging with capacity for hypothetical reasoning in familiar domains. Plans multi-day projects with decreasing support. Self-efficacy beliefs consolidating. Critical period for establishing organisational habits and growth mindset.",
     typical: "Early secondary",
     keyCharacteristics: ["Metacognition emerging", "Formal operations beginning", "Self-monitoring developing", "Motivational beliefs forming"]
   },
@@ -481,7 +481,7 @@ const BANDS = [
   { 
     id: 7, 
     name: "Advanced Abstract Thinking", 
-    description: "Sophisticated cognitive integration with transfer across domains. Meta-strategic thinking established — not just using strategies but selecting and adapting them based on task demands. Strong executive function approaching adult levels. Manages complex, long-term projects independently. Shows resilient self-efficacy and autonomous motivation.",
+    description: "Sophisticated cognitive integration with transfer across domains. Meta-strategic thinking established, not just using strategies but selecting and adapting them based on task demands. Strong executive function approaching adult levels. Manages complex, long-term projects independently. Shows resilient self-efficacy and autonomous motivation.",
     typical: "Senior secondary",
     keyCharacteristics: ["Cross-domain transfer", "Meta-strategic thinking", "Strong executive function", "Autonomous motivation"]
   },
@@ -537,7 +537,7 @@ const BANDS = [
   { 
     id: 15, 
     name: "Peak Capability", 
-    description: "Highest levels of human cognitive achievement with paradigm-shifting insight. Groundbreaking contribution that advances entire fields. Represents the upper bounds of measured capability — exceptional achievement reflecting both extensive expertise development and continued cognitive engagement at the frontier of human knowledge.",
+    description: "Highest levels of human cognitive achievement with paradigm-shifting insight. Groundbreaking contribution that advances entire fields. Represents the upper bounds of measured capability, exceptional achievement reflecting both extensive expertise development and continued cognitive engagement at the frontier of human knowledge.",
     typical: "Exceptional achievement",
     keyCharacteristics: ["Paradigm-shifting insight", "Groundbreaking contribution", "Frontier knowledge", "Exceptional achievement"]
   },
@@ -564,7 +564,7 @@ function DevelopmentalFrameworkSection() {
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
             Wadmore places cognitive development on a criterion-referenced continuum. Bands describe 
-            <strong style={{ color: BRAND.slate }}> capability</strong> — what someone can do — not how they compare to peers. 
+            <strong style={{ color: BRAND.slate }}> capability</strong>, what someone can do, not how they compare to peers. 
             Click any band to explore.
           </p>
         </div>
@@ -856,7 +856,7 @@ function PsychometricSection() {
     },
     { 
       title: "Standard error reporting", 
-      desc: "Every score includes measurement precision. Users know how confident to be in each result — transparency built in.",
+      desc: "Every score includes measurement precision. Users know how confident to be in each result, transparency built in.",
       Icon: PrecisionIcon,
       color: BRAND.slate
     },
@@ -895,7 +895,7 @@ function PsychometricSection() {
               <p className="text-sm leading-relaxed" style={{ color: BRAND.steel }}>
                 Item Response Theory places persons and items on a common scale. Unlike classical test theory, 
                 IRT enables adaptive testing, precise standard errors, and defensible score comparisons across 
-                different item sets — essential for developmental assessment.
+                different item sets, essential for developmental assessment.
               </p>
             </div>
             
@@ -960,11 +960,11 @@ function DifferentiationSection() {
             <p className="text-base" style={{ color: BRAND.steel }}>
               Learning styles (VAK) have been{" "}
               <strong style={{ color: BRAND.slate }}>thoroughly debunked by research</strong>{" "}
-              (Pashler et al., 2008). Wadmore measures actual cognitive processes using validated methods — not self-reported preferences.
+              (Pashler et al., 2008). Wadmore measures actual cognitive processes using validated methods, not self-reported preferences.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-5 mb-8">
             <div className="p-5 rounded-xl" style={{ background: `${BRAND.steel}06` }}>
               <div className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: BRAND.steel }}>
                 Wadmore is NOT
@@ -1005,6 +1005,20 @@ function DifferentiationSection() {
               </ul>
             </div>
           </div>
+          
+          {/* Beyond Traditional Testing - Research insight */}
+          <div className="p-5 md:p-6 rounded-xl" style={{ background: `${BRAND.indigo}06`, border: `1px solid ${BRAND.indigo}15` }}>
+            <h4 className="font-semibold text-base md:text-lg mb-3" style={{ color: BRAND.slate }}>
+              Beyond Traditional Testing
+            </h4>
+            <p className="text-sm md:text-base leading-relaxed" style={{ color: BRAND.steel }}>
+              Recent cognitive science research shows that sound thinking often emerges through 
+              rapid associative processes rather than extended deliberation. Wadmore measures both{" "}
+              <strong style={{ color: BRAND.slate }}>intuitive efficiency</strong> (semantic memory structure, 
+              associative retrieval) and <strong style={{ color: BRAND.slate }}>deliberate reasoning</strong> (executive function, 
+              metacognition), providing a complete picture that traditional reasoning-only tests miss.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -1027,7 +1041,7 @@ function EvidenceLinkedSection() {
             </h2>
             <p className="text-base md:text-lg mb-5" style={{ color: BRAND.steel }}>
               Most assessments tell you <em>where</em> someone is. Wadmore profiles include{" "}
-              <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong> — 
+              <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>, 
               strategies matched to developmental position and linked to their evidence base.
             </p>
             <p className="text-sm mb-6" style={{ color: BRAND.steel }}>

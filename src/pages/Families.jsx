@@ -130,7 +130,7 @@ function Hero() {
               style={{ color: BRAND.steel }}
             >
               Wadmore shows you your child's unique cognitive strengths and growth 
-              areas — a <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
+              areas, a <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
               eight domains, with clear guidance you can use at 
               home and in conversations with teachers. Grounded in{" "}
               <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
@@ -147,7 +147,7 @@ function Hero() {
                   boxShadow: `0 8px 30px ${BRAND.teal}35`
                 }}
               >
-                Get Started — $99
+                Get Started, $99
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
@@ -360,7 +360,7 @@ function EightDomainsSection() {
             style={{ color: BRAND.steel }}
           >
             Wadmore measures cognitive development across eight research-grounded 
-            domains — giving you the complete picture, not just a single number.
+            domains, giving you the complete picture, not just a single number.
           </p>
         </div>
         
@@ -437,7 +437,7 @@ function ProfilePreviewSection() {
               style={{ color: BRAND.steel }}
             >
               No jargon. No percentiles without context. Just clear, actionable 
-              understanding of your child's cognitive development — written in plain language you can use.
+              understanding of your child's cognitive development, written in plain language you can use.
             </p>
             
             <div className="space-y-4">
@@ -555,7 +555,7 @@ function UseCasesSection() {
           {[
             { title: "Homework struggles", desc: "Understand why homework is hard and find approaches that actually work for your child's cognitive profile." },
             { title: "School conversations", desc: "Transform parent-teacher meetings with objective cognitive data and shared vocabulary." },
-            { title: "Sibling differences", desc: "See why different children need different approaches — no comparison, just understanding." },
+            { title: "Sibling differences", desc: "See why different children need different approaches, no comparison, just understanding." },
             { title: "Activity matching", desc: "Choose extracurriculars, games, and learning activities that match cognitive strengths." },
             { title: "Building confidence", desc: "Build cognitive confidence with activities pitched at exactly the right level." },
             { title: "Tracking growth", desc: "Reassess annually to celebrate progress and adjust support strategies over time." },
@@ -784,7 +784,7 @@ function PricingSection() {
           <p className="text-sm" style={{ color: BRAND.slate }}>
             <strong>100% satisfaction guarantee.</strong>{" "}
             <span style={{ color: BRAND.steel }}>
-              If you don't find your profile valuable, we'll refund you — no questions asked.
+              If you don't find your profile valuable, we'll refund you, no questions asked.
             </span>
           </p>
         </div>
@@ -802,8 +802,8 @@ function FAQSection() {
   
   const faqs = [
     { question: "What ages is Wadmore suitable for?", answer: "Wadmore Families is designed for children aged 5-18. Our adaptive assessment automatically adjusts to your child's developmental level, ensuring an appropriate and engaging experience regardless of age." },
-    { question: "Is this an IQ test?", answer: "No. Wadmore measures cognitive development across eight domains — it's not designed to produce a single IQ score. We focus on how thinking develops, not ranking children against each other." },
-    { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information — their cognitive strengths and developmental areas — not subjective preferences." },
+    { question: "Is this an IQ test?", answer: "No. Wadmore measures cognitive development across eight domains, it's not designed to produce a single IQ score. We focus on how thinking develops, not ranking children against each other." },
+    { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information, their cognitive strengths and developmental areas, not subjective preferences." },
     { question: "How long does the assessment take?", answer: "Most children complete the assessment in 45-60 minutes. It's designed to be completed in one sitting, but can be paused if needed. The assessment is adaptive, so the length varies." },
     { question: "Will my child find it stressful?", answer: "We've designed Wadmore to be engaging rather than stressful. There's no time pressure on individual items, the difficulty adjusts to your child's level, and we use varied formats to maintain engagement." },
     { question: "Can I share results with my child's school?", answer: "Absolutely. Your profile includes a school conversation guide specifically designed to help you discuss your child's cognitive profile with teachers in productive ways." },
@@ -895,7 +895,7 @@ function CTASection() {
           className="text-xl md:text-2xl mb-12 opacity-90"
           style={{ color: BRAND.white }}
         >
-          Get the complete cognitive picture — strength-based, actionable, and designed for families.
+          Get the complete cognitive picture, strength-based, actionable, and designed for families.
         </p>
         
         <div className="flex flex-wrap justify-center gap-5">
@@ -908,7 +908,7 @@ function CTASection() {
               boxShadow: "0 8px 30px rgba(0,0,0,0.15)"
             }}
           >
-            Get Started — $99
+            Get Started, $99
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               <ArrowIcon />
             </span>

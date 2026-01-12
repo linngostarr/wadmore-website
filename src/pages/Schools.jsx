@@ -158,7 +158,7 @@ function Hero() {
             >
               Not just grades, behaviour, or test scores. Wadmore reveals{" "}
               <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
-              eight domains — enabling informed differentiation, meaningful 
+              eight domains, enabling informed differentiation, meaningful 
               support conversations, and confident pathway decisions. Grounded in{" "}
               <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong> across 
               cognitive science and learning research.
@@ -363,7 +363,7 @@ function WhyComprehensiveSection() {
               style={{ color: BRAND.steel }}
             >
               Research shows that Executive Functioning, Memory, Metacognition, 
-              and Cognitive Confidence are critical for academic success — often 
+              and Cognitive Confidence are critical for academic success, often 
               more predictive than reasoning alone. Wadmore measures all of them.
             </p>
             
@@ -386,7 +386,7 @@ function WhyComprehensiveSection() {
                 <p className="text-sm leading-relaxed" style={{ color: BRAND.steel }}>
                   A student shows strong Abstract Reasoning (Band 8) but weaker Executive 
                   Functioning (Band 5). Now you understand: they can solve complex problems 
-                  but struggle with planning and task management. The intervention is clear — 
+                  but struggle with planning and task management. The intervention is clear, 
                   <strong style={{ color: BRAND.slate }}> support organisation, not more reasoning practice.</strong>
                 </p>
               </div>
@@ -594,7 +594,7 @@ function UseCasesSection() {
     },
     { 
       title: "NCCD Evidence", 
-      desc: "Generate comprehensive cognitive profiles that provide robust evidence for NCCD documentation — including Executive Functioning and Memory data.",
+      desc: "Generate comprehensive cognitive profiles that provide robust evidence for NCCD documentation, including Executive Functioning and Memory data.",
       icon: DocumentIcon
     },
     { 
@@ -855,7 +855,7 @@ function ActionabilitySection() {
             className="text-xl max-w-2xl mx-auto"
             style={{ color: BRAND.steel }}
           >
-            Every construct connects to specific, evidence-based strategies — not generic advice.
+            Every construct connects to specific, evidence-based strategies, not generic advice.
           </p>
         </div>
         

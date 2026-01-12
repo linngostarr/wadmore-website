@@ -73,7 +73,7 @@ const BANDS = [
   { 
     id: 2, 
     name: "Early Operational Thinking", 
-    description: "Developing independence in familiar contexts. Beginning to internalize cognitive strategies. Concrete operational thinking emerging.",
+    description: "Developing independence in familiar contexts. Beginning to internalise cognitive strategies. Concrete operational thinking emerging.",
     typical: "Early primary years",
   },
   { 
@@ -109,7 +109,7 @@ const BANDS = [
   { 
     id: 8, 
     name: "Cognitive Sophistication", 
-    description: "Cross-domain integration. Optimization of cognitive processes. Advanced academic reasoning capability.",
+    description: "Cross-domain integration. Optimisation of cognitive processes. Advanced academic reasoning capability.",
     typical: "Post-secondary",
   },
   { 
@@ -162,7 +162,7 @@ const AUDIENCES = {
     color: BRAND.cerulean,
     headline: "See the whole student.",
     subhead: "Beyond grades, behaviour, or test scores.",
-    body: "Wadmore gives educators a developmental view of cognitive capabilities — enabling informed differentiation, meaningful support conversations, and confident pathway decisions.",
+    body: "Wadmore gives educators a developmental view of cognitive capabilities, enabling informed differentiation, meaningful support conversations, and confident pathway decisions.",
     points: ["Cognitive profiles across 8 domains", "Practical classroom strategies", "NCCD evidence documentation", "Cohort-level analytics"],
     link: "/schools",
   },
@@ -171,7 +171,7 @@ const AUDIENCES = {
     color: BRAND.teal,
     headline: "Understand your child's development.",
     subhead: "Without labels, comparison, or blame.",
-    body: "Wadmore helps you see your child's unique cognitive strengths and growth areas — with clear guidance you can use at home and in conversations with teachers.",
+    body: "Wadmore helps you see your child's unique cognitive strengths and growth areas, with clear guidance you can use at home and in conversations with teachers.",
     points: ["Strength-based profiles", "Plain language explanations", "Practical home activities", "School conversation guides"],
     link: "/families",
   },
@@ -180,7 +180,7 @@ const AUDIENCES = {
     color: BRAND.violet,
     headline: "Build cognitively diverse teams.",
     subhead: "Beyond personality preferences.",
-    body: "Wadmore reveals how your people approach complexity, collaboration, and change — enabling smarter team composition, targeted development, and better hiring decisions.",
+    body: "Wadmore reveals how your people approach complexity, collaboration, and change, enabling smarter team composition, targeted development, and better hiring decisions.",
     points: ["Individual cognitive profiles", "Team cognitive maps", "Collaboration insights", "Development priorities"],
     link: "/professional",
   },
@@ -403,7 +403,7 @@ function BandsSection() {
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Developmental Framework</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Growth, not ranking.</h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore describes where someone is on a developmental continuum — and what growth looks like from there. No percentiles. No peer comparison.
+            Wadmore describes where someone is on a developmental continuum, and what growth looks like from there.
           </p>
         </div>
         
@@ -502,7 +502,7 @@ function BandsSection() {
         {/* Supporting cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {[
-            { title: "Capability, not comparison", desc: "Bands describe what someone can do — not how they rank against peers.", color: BRAND.teal },
+            { title: "Capability, not comparison", desc: "Bands describe what someone can do, not how they rank against peers.", color: BRAND.teal },
             { title: "Development is the goal", desc: "Every band shows current capabilities and illuminates the path forward.", color: BRAND.cerulean },
             { title: "Grounded in theory", desc: "Aligned to Piagetian and neo-Piagetian developmental stages.", color: BRAND.violet },
           ].map((item) => (
@@ -535,7 +535,7 @@ function ActionableSection() {
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-5 md:mb-6" style={{ color: BRAND.steel }}>
               Understanding cognitive development matters most when it informs what happens next. 
-              Every Wadmore profile includes <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong> — 
+              Every Wadmore profile includes <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>: 
               strategies linked to established learning science, matched to developmental position.
             </p>
             
@@ -670,15 +670,15 @@ function DifferenceSection() {
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Why Wadmore</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Assessment that serves growth.</h2>
-          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built for understanding and development — not sorting or labelling.</p>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built for understanding and development.</p>
         </div>
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {[
             { title: "Strength-based", desc: "Profiles lead with what's working. Growth areas framed as opportunities.", color: BRAND.teal },
             { title: "Developmental", desc: "Movement is the point. Every profile shows where and what's next.", color: BRAND.cerulean },
-            { title: "Actionable", desc: "360 constructs connect to specific interventions — not generic advice.", color: BRAND.indigo },
-            { title: "Rigorous", desc: "IRT/Rasch-aligned measurement with professional reliability standards.", color: BRAND.violet },
+            { title: "Actionable", desc: "360 constructs connect to specific interventions, not generic advice.", color: BRAND.indigo },
+            { title: "Research-aligned", desc: "Built on current cognitive science. Intuition, memory, and self-regulation matter.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="group p-4 md:p-6 rounded-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
@@ -690,17 +690,18 @@ function DifferenceSection() {
           ))}
         </div>
         
-        <div className="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <div className="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           {[
-            { title: "Designed for fairness", desc: "DIF testing, bias review, and EALD-friendly design built in from the start." },
-            { title: "Lifespan coverage", desc: "From early childhood through professional expertise — one coherent framework." },
-            { title: "Australian-built", desc: "Local support, local data sovereignty, designed for Australian educational contexts." },
+            { title: "Psychometrically rigorous", desc: "IRT/Rasch-aligned measurement with α≥0.85 reliability." },
+            { title: "Designed for fairness", desc: "DIF testing, bias review, and EALD-friendly design." },
+            { title: "Lifespan coverage", desc: "Early childhood through professional expertise." },
+            { title: "Australian-built", desc: "Local support and data sovereignty." },
           ].map((item) => (
             <div key={item.title} className="flex gap-3 min-w-0">
               <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: BRAND.sage }} />
               <div className="min-w-0">
-                <h4 className="font-semibold text-sm mb-0.5" style={{ color: BRAND.slate }}>{item.title}</h4>
-                <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
+                <h4 className="font-semibold text-xs md:text-sm mb-0.5" style={{ color: BRAND.slate }}>{item.title}</h4>
+                <p className="text-[11px] md:text-xs" style={{ color: BRAND.steel }}>{item.desc}</p>
               </div>
             </div>
           ))}

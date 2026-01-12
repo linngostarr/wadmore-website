@@ -97,7 +97,7 @@ function Hero() {
               }}
             >
               Wadmore was founded on a belief: everyone deserves to understand 
-              how they think, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth — not labels</strong>.
+              how they think, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth, not labels</strong>.
             </p>
           </div>
           
@@ -109,7 +109,7 @@ function Hero() {
                 Profiles that guide action.
               </p>
               <p className="text-sm leading-relaxed mb-5" style={{ color: BRAND.steel }}>
-                We're building cognitive profiling that reveals how people think — with research-grounded guidance for what to do next.
+                We're building cognitive profiling that reveals how people think, with research-grounded guidance for what to do next.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Strength-based", "Research-grounded", "Developmentally progressive"].map((tag) => (
@@ -153,7 +153,7 @@ function MissionSection() {
               style={{ color: BRAND.steel }}
             >
               We're building a cognitive profiling platform that reveals <em>how</em> people 
-              think — not just what they know. Our framework maps development across eight 
+              think, not just what they know. Our framework maps development across eight 
               domains and fifteen bands, creating 360 constructs that describe cognitive 
               capability with genuine precision.
             </p>
@@ -170,7 +170,7 @@ function MissionSection() {
               style={{ color: BRAND.steel }}
             >
               Every profile includes{" "}
-              <strong style={{ color: BRAND.indigo }}>research-grounded guidance</strong> — 
+              <strong style={{ color: BRAND.indigo }}>research-grounded guidance</strong>, 
               strategies linked to over 50 peer-reviewed sources across cognitive science 
               and learning research. Because understanding thinking should lead to growth.
             </p>
@@ -250,23 +250,23 @@ function StorySection() {
           
           <div className="space-y-5" style={{ color: BRAND.steel }}>
             <p className="text-lg leading-relaxed">
-              After nearly two decades in educational assessment — as a school principal, 
+              After nearly two decades in educational assessment, as a school principal, 
               Head of Global Assessment at Janison, and across countless conversations 
-              with teachers and families — one question kept emerging: what if we could 
+              with teachers and families, one question kept emerging: what if we could 
               understand <em>how</em> someone thinks, not just what they know?
             </p>
             
             <p className="text-lg leading-relaxed">
               Traditional cognitive assessments measure reasoning ability and produce 
-              percentile ranks — useful for comparison, but limited for development. 
+              percentile ranks, useful for comparison, but limited for development. 
               Teachers would ask: "This student is at the 62nd percentile. Now what?" 
               The assessments had no answer.
             </p>
             
             <p className="text-lg leading-relaxed">
               Wadmore takes a different approach. We map cognitive development across 
-              eight domains — from abstract reasoning to executive functioning to 
-              metacognition — revealing the complete picture of how a person processes, 
+              eight domains, from abstract reasoning to executive functioning to 
+              metacognition, revealing the complete picture of how a person processes, 
               regulates, and creates. And we show what growth looks like from wherever 
               you are.
             </p>
@@ -274,7 +274,7 @@ function StorySection() {
             <p className="text-lg leading-relaxed">
               The result is strength-based profiling that empowers development. Assessment 
               designed for fairness from the start. Insights connected to research-grounded 
-              strategies. And a framework that spans the full lifespan — from early 
+              strategies. And a framework that spans the full lifespan, from early 
               childhood through professional expertise.
             </p>
           </div>
@@ -317,7 +317,7 @@ function ValuesSection() {
     {
       icon: ActionIcon,
       title: "Actionable",
-      description: "360 constructs connect to specific strategies — not generic advice.",
+      description: "360 constructs connect to specific strategies, not generic advice.",
       color: BRAND.golden,
     },
     {
@@ -345,7 +345,7 @@ function ValuesSection() {
             What we believe
           </h2>
           <p className="text-lg" style={{ color: BRAND.steel }}>
-            These principles guide every decision we make — from assessment design 
+            These principles guide every decision we make, from assessment design 
             to reporting to how we work with schools and families.
           </p>
         </div>
@@ -499,7 +499,7 @@ function CTASection() {
           className="text-lg mb-10 opacity-90 max-w-2xl mx-auto"
           style={{ color: BRAND.white }}
         >
-          Explore how Wadmore can help you understand cognitive strengths — 
+          Explore how Wadmore can help you understand cognitive strengths, 
           for yourself, your family, your students, or your team.
         </p>
         

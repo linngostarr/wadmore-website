@@ -141,7 +141,7 @@ function Hero() {
                 { 
                   icon: PenIcon, 
                   title: "Ongoing support", 
-                  desc: "Not a one-off event — we're here for the journey" 
+                  desc: "Not a one-off event, we're here for the journey" 
                 },
               ].map((item, index) => {
                 const Icon = item.icon;
