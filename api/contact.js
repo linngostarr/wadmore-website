@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const { name, email, organisation, message, audience } = req.body;
+  const { name, email, organisation, message, audience, marketingOptIn } = req.body;
 
   // Validation
   if (!name || !email || !message) {
@@ -48,6 +48,10 @@ export default async function handler(req, res) {
                 <td style="padding: 8px 0; color: #6C7A96;">Interested in</td>
                 <td style="padding: 8px 0; color: #2C2D33; font-weight: 500;">${audience || 'Not specified'}</td>
               </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #6C7A96;">Marketing</td>
+                <td style="padding: 8px 0; color: #2C2D33; font-weight: 500;">${marketingOptIn ? '✅ Opted in' : '❌ Not opted in'}</td>
+              </tr>
             </table>
             <hr style="border: none; border-top: 1px solid #E4E7EB; margin: 16px 0;" />
             <p style="color: #6C7A96; margin: 0 0 8px 0; font-size: 14px;">Message</p>
@@ -78,6 +82,7 @@ export default async function handler(req, res) {
               message: message,
               hs_lead_status: 'NEW',
               lifecyclestage: 'lead',
+              hs_legal_basis: marketingOptIn ? 'Legitimate interest – prospect/lead' : 'Not applicable',
             },
           }),
         });
@@ -88,6 +93,41 @@ export default async function handler(req, res) {
         
         if (!hubspotResponse.ok) {
           console.error('HubSpot error:', hubspotData);
+        }
+        
+        // Create follow-up task if contact was created successfully
+        if (hubspotResponse.ok && hubspotData.id) {
+          const dueDate = new Date();
+          dueDate.setDate(dueDate.getDate() + 1); // Due tomorrow
+          
+          const taskResponse = await fetch('https://api.hubapi.com/crm/v3/objects/tasks', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${process.env.HUBSPOT_API_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              properties: {
+                hs_task_subject: `Follow up: ${name} (${audience || 'General'})`,
+                hs_task_body: `New enquiry from website:\n\nOrganisation: ${organisation || 'Not provided'}\nInterest: ${audience || 'General'}\n\nMessage:\n${message}`,
+                hs_task_status: 'NOT_STARTED',
+                hs_task_priority: 'HIGH',
+                hs_timestamp: dueDate.toISOString(),
+              },
+              associations: [
+                {
+                  to: { id: hubspotData.id },
+                  types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 204 }]
+                }
+              ]
+            }),
+          });
+          
+          const taskData = await taskResponse.json();
+          console.log('Task status:', taskResponse.status);
+          if (!taskResponse.ok) {
+            console.error('Task error:', taskData);
+          }
         }
       } catch (hubspotError) {
         // Log but don't fail the request if HubSpot fails

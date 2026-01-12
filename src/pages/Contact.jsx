@@ -69,6 +69,7 @@ export default function Contact() {
     email: "",
     organisation: "",
     message: "",
+    marketingOptIn: false,
   });
   const [focusedField, setFocusedField] = useState(null);
   const [status, setStatus] = useState("idle"); // idle, sending, success, error
@@ -89,7 +90,7 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", organisation: "", message: "" });
+        setFormData({ name: "", email: "", organisation: "", message: "", marketingOptIn: false });
         setSelectedAudience(null);
       } else {
         setStatus("error");
@@ -366,6 +367,26 @@ export default function Contact() {
                       color: BRAND.slate,
                     }}
                   />
+                </div>
+
+                {/* Marketing opt-in */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="marketingOptIn"
+                    name="marketingOptIn"
+                    checked={formData.marketingOptIn}
+                    onChange={(e) => setFormData(prev => ({ ...prev, marketingOptIn: e.target.checked }))}
+                    className="mt-1 w-5 h-5 rounded cursor-pointer"
+                    style={{ accentColor: selectedColor }}
+                  />
+                  <label 
+                    htmlFor="marketingOptIn"
+                    className="text-sm cursor-pointer leading-relaxed"
+                    style={{ color: BRAND.steel }}
+                  >
+                    Keep me updated on Wadmore news, product launches, and cognitive science insights.
+                  </label>
                 </div>
               </div>
 
