@@ -69,7 +69,7 @@ export default function Contact() {
     email: "",
     organisation: "",
     message: "",
-    marketingOptIn: false,
+    marketingOptIn: true,
   });
   const [focusedField, setFocusedField] = useState(null);
   const [status, setStatus] = useState("idle"); // idle, sending, success, error
