@@ -1,18 +1,8 @@
 import { Resend } from 'resend';
 
 export default async function handler(req, res) {
-  // Debug: Check if env var exists
-  console.log('API Key exists:', !!process.env.RESEND_API_KEY);
-  console.log('API Key starts with:', process.env.RESEND_API_KEY?.substring(0, 6));
-  
   if (req.method !== 'POST') {
-    return res.status(405).json({ 
-      error: 'Method not allowed',
-      debug: {
-        hasKey: !!process.env.RESEND_API_KEY,
-        envKeys: Object.keys(process.env).filter(k => k.includes('RESEND'))
-      }
-    });
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   if (!process.env.RESEND_API_KEY) {

@@ -2,7 +2,7 @@
 // Contact page with audience selection for Wadmore
 // Uses Layout component, consistent BRAND colors, no external animation dependencies
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 
 /* ══════════════════════════════════════════════════════════════
@@ -108,6 +108,13 @@ export default function Contact() {
   const selectedColor = selectedAudience 
     ? AUDIENCES.find(a => a.id === selectedAudience)?.color 
     : BRAND.indigo;
+
+  // Scroll to top when success
+  useEffect(() => {
+    if (status === "success") {
+      window.scrollTo(0, 0);
+    }
+  }, [status]);
 
   // Success state
   if (status === "success") {
