@@ -153,7 +153,7 @@ function MissionSection() {
               style={{ color: BRAND.steel }}
             >
               We're building a cognitive profiling platform that reveals how people's 
-              thinking capability develops, not just what they know. Our framework maps 
+              thinking capability develops. Our framework maps 
               development across eight domains and fifteen bands, creating 360 constructs 
               that describe cognitive capability with genuine precision.
             </p>
@@ -258,7 +258,7 @@ function StorySection() {
             
             <p className="text-lg leading-relaxed">
               One question kept emerging: <em>what if we could map how thinking 
-              capability develops, not just measure what someone knows?</em> Traditional 
+              capability develops?</em> Traditional 
               cognitive assessments produce percentile ranks. Useful for comparison, 
               but limited for development. Teachers would ask: "This student is at the 
               62nd percentile. Now what?" The assessments had no answer.
