@@ -69,14 +69,25 @@ export default function Privacy() {
                   <li>Developmental band placements</li>
                 </ul>
 
-                <h4 style={{ color: BRAND.indigo }}>Child Information</h4>
+                <h4 style={{ color: BRAND.indigo }}>Child and Student Information</h4>
                 <p>
                   For users under 18 years of age, assessments are facilitated by parents/guardians 
-                  or authorised school administrators. We collect:
+                  or authorised school administrators.
                 </p>
+                <p><strong>Family accounts</strong> — we collect:</p>
                 <ul>
-                  <li>First name (or pseudonym where preferred)</li>
+                  <li>First name and surname</li>
+                  <li>Date of birth</li>
                   <li>Age or year level</li>
+                  <li>Assessment responses and results</li>
+                </ul>
+                <p><strong>School accounts</strong> — we may collect:</p>
+                <ul>
+                  <li>First name and surname</li>
+                  <li>Date of birth</li>
+                  <li>Age and year level</li>
+                  <li>Student ID (as provided by the school)</li>
+                  <li>Class or group information</li>
                   <li>Assessment responses and results</li>
                 </ul>
 

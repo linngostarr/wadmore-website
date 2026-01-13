@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Consulting from './pages/Consulting';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import FAQ from './pages/FAQ';
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
+        <Route path="/FAQ" element={<FAQ />} />
       </Routes>
       <Analytics />
     </Router>
