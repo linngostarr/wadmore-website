@@ -190,7 +190,7 @@ function Hero() {
                 { value: "8", label: "Cognitive Domains", desc: "Complete capability picture" },
                 { value: "15", label: "Developmental Bands", desc: "Graduate to expert" },
                 { value: "360", label: "Constructs", desc: "Granular insights" },
-                { value: "25min", label: "Assessment", desc: "Efficient, professional" },
+                { value: "<1hr", label: "Assessment", desc: "Efficient, professional" },
               ].map((stat) => (
                 <div key={stat.label} className="group">
                   <div 
