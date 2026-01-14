@@ -132,8 +132,7 @@ function Hero() {
               Wadmore describes how your child thinks as they engage with cognitive tasks. A{" "}
               <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
               eight domains, with clear guidance you can use at 
-              home and in conversations with teachers. These patterns are{" "}
-              <strong style={{ color: BRAND.slate }}>current, not fixed</strong>.
+              home and in conversations with teachers.
             </p>
             
             {/* CTAs */}
