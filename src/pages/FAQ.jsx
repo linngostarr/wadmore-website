@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 
 const BRAND = {
   indigo: "#384275",
@@ -25,23 +26,23 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: "What is Wadmore?",
-        a: "Wadmore is a cognitive profiling platform that reveals how thinking develops across eight domains and fifteen developmental bands. Unlike traditional tests that rank and compare, Wadmore provides strength-based profiles designed to support growth in schools, families, and organisations."
+        a: "Wadmore is a cognitive profiling platform that reveals how thinking appears when people engage with structured cognitive tasks. Unlike traditional tests that rank and compare, Wadmore provides strength-based profiles designed to support decisions in schools, families, and organisations."
       },
       {
         q: "How is Wadmore different from IQ tests or other cognitive assessments?",
-        a: "Traditional assessments like IQ tests produce a single score or percentile ranking. Wadmore takes a developmental approach—we map where someone is on a growth continuum across multiple cognitive domains, and provide actionable recommendations for development. We focus on strengths and growth pathways, not deficits or rankings."
+        a: "Traditional assessments like IQ tests produce a single score or percentile ranking. Wadmore takes a developmental approach: we describe patterns of thinking across multiple cognitive domains, and provide research-grounded guidance to inform decisions. We focus on strengths and current capabilities, not deficits or predictions."
       },
       {
         q: "What are the eight cognitive domains?",
-        a: "Wadmore assesses: Abstract Reasoning & Pattern Recognition, Logical Sequencing & Analytical Thinking, Processing Speed & Efficiency, Memory & Attention, Executive Functioning & Flexibility, Metacognition & Self-Regulation, Cognitive Confidence & Motivation, and Creativity & Divergent Thinking."
+        a: "Wadmore examines thinking across eight domains: how Abstract Reasoning appears in pattern recognition tasks, how Logical Sequencing manifests in structured reasoning, how Processing Speed is demonstrated under time constraints, how Memory & Attention function during complex tasks, how Executive Functioning shows in planning and adaptation, how Metacognition appears in strategy selection, how Cognitive Confidence influences approach to challenge, and how Creativity emerges in idea generation."
       },
       {
         q: "What are developmental bands?",
-        a: "Developmental bands describe stages of cognitive capability, from foundational (Band 1) to peak capability (Band 15). Rather than comparing you to others, bands show where you are on a developmental continuum and what growth looks like from there."
+        a: "Developmental bands describe stages of cognitive capability, from foundational (Band 1) to peak capability (Band 15). Rather than comparing you to others, bands show where you are on a developmental continuum and clarify plausible next steps for growth."
       },
       {
         q: "Is Wadmore a diagnostic tool?",
-        a: "No. Wadmore is a developmental profiling tool, not a diagnostic instrument. We don't diagnose learning disabilities, giftedness, or clinical conditions. If you have concerns about learning or development, please consult a qualified professional."
+        a: "No. Wadmore describes cognitive patterns as observed in specific tasks. It is not a diagnostic instrument and does not diagnose learning disabilities, giftedness, or clinical conditions. If you have concerns about learning or development, please consult a qualified professional."
       },
     ]
   },
@@ -64,15 +65,15 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "What do I get after the assessment?",
-        a: "You'll receive a comprehensive cognitive profile showing strengths and growth areas across all eight domains, your developmental band in each area, and practical recommendations for supporting development at home. Family accounts also show how family members' cognitive styles complement each other."
+        a: "You'll receive a comprehensive cognitive profile showing strengths and growth areas across all eight domains, your developmental band in each area, and practical guidance for supporting development at home. These patterns describe how your child approaches thinking tasks right now, and they can change with experience and support."
       },
       {
         q: "Can I share the results with my child's school?",
-        a: "Absolutely. Your profile includes guidance on discussing cognitive development with teachers. Many parents find this transforms their parent-teacher conversations by providing a shared language for understanding how their child thinks."
+        a: "Absolutely. Your profile includes guidance on discussing cognitive patterns with teachers. Many parents find this transforms their parent-teacher conversations by providing a shared language for understanding how their child thinks."
       },
       {
         q: "How often should we reassess?",
-        a: "For children and adolescents, we recommend reassessment every 12-18 months to track developmental progress. Adults may find value in reassessing every 2-3 years or during significant life transitions."
+        a: "For children and adolescents, we recommend reassessment every 12-18 months to track how patterns develop. Adults may find value in reassessing every 2-3 years or during significant life transitions."
       },
     ]
   },
@@ -83,15 +84,15 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: "How does Wadmore help teachers?",
-        a: "Wadmore gives teachers a developmental view of how each student thinks—enabling informed differentiation, meaningful support conversations, and confident pathway decisions. Class-level analytics help identify patterns and plan targeted interventions."
+        a: "Wadmore provides evidence about how each student thinks, supporting informed differentiation, meaningful support conversations, and confident pathway decisions. Class-level analytics help identify patterns to inform planning."
       },
       {
         q: "Can Wadmore be used for NCCD evidence?",
-        a: "Yes. Wadmore profiles provide documented evidence of cognitive functioning that can support NCCD (Nationally Consistent Collection of Data) submissions for students with disability. The developmental framework aligns with adjustment level documentation requirements."
+        a: "Yes. Wadmore profiles provide documented evidence of cognitive patterns that can support NCCD (Nationally Consistent Collection of Data) submissions for students with disability. The developmental framework aligns with adjustment level documentation requirements."
       },
       {
         q: "How does school administration work?",
-        a: "Schools receive hierarchical access: system administrators see cross-campus analytics, principals see whole-school profiles, and teachers see their class cognitive heatmaps with differentiation recommendations. Role-based permissions ensure appropriate access."
+        a: "Schools receive hierarchical access: system administrators see cross-campus analytics, principals see whole-school profiles, and teachers see their class cognitive patterns with evidence to inform differentiation decisions. Role-based permissions ensure appropriate access."
       },
       {
         q: "What's the assessment time for students?",
@@ -99,11 +100,11 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "Can we use Wadmore for gifted identification?",
-        a: "Wadmore can identify students demonstrating advanced cognitive development across domains. However, we take a strength-based approach—rather than labelling students as 'gifted' or 'not gifted', we show where each student's capabilities lie and how to support their continued growth."
+        a: "Wadmore can provide evidence about cognitive patterns across domains. However, we take a strength-based approach: rather than labelling students as 'gifted' or 'not gifted', we show where each student's capabilities lie and provide evidence to inform decisions about extension and support."
       },
       {
         q: "What training is provided for teachers?",
-        a: "We offer professional development packages covering interpretation of cognitive profiles, practical differentiation strategies, and using Wadmore data for learning support planning. Contact us for customised PD options."
+        a: "We offer professional development packages covering interpretation of cognitive evidence, translating profiles into classroom decisions, and using Wadmore data for learning support planning. Contact us for customised PD options."
       },
     ]
   },
@@ -114,23 +115,23 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: "How can Wadmore help our organisation?",
-        a: "Wadmore Professional reveals how your people approach complexity, collaboration, and change. This enables smarter team composition, targeted development programs, and data-informed decisions about roles and leadership development."
+        a: "Wadmore Professional reveals patterns in how your people approach complexity, collaboration, and change under cognitive demand. This provides evidence to support team composition decisions, development planning, and role discussions."
       },
       {
         q: "Is this like a personality test?",
-        a: "No. Personality tests describe preferences and traits. Wadmore measures cognitive capabilities—how people process information, solve problems, regulate their thinking, and generate ideas. This provides actionable insights for team effectiveness and development."
+        a: "No. Personality tests describe preferences and traits. Wadmore examines how cognitive patterns appear when people engage with specific tasks: how they process information, solve problems, regulate their thinking, and generate ideas. This provides evidence to inform decisions about team effectiveness and development."
       },
       {
         q: "How long does the professional assessment take?",
-        a: "Less than one hour. The assessment is designed to respect professionals' time while gathering meaningful cognitive data."
+        a: "Less than one hour. The assessment is designed to respect professionals' time while gathering meaningful cognitive evidence."
       },
       {
         q: "What team-level insights do you provide?",
-        a: "Team reports show collective cognitive strengths and gaps, communication style implications, optimal collaboration pairings, and recommendations for team development. Leaders can see how their team's cognitive diversity affects performance."
+        a: "Team reports show collective cognitive patterns, communication style implications, and evidence to inform collaboration and development decisions. Leaders can see how their team's cognitive diversity may affect dynamics."
       },
       {
         q: "Can Wadmore be used in recruitment?",
-        a: "Wadmore can inform hiring decisions by revealing candidates' cognitive strengths relative to role requirements. However, we recommend using Wadmore as one input among many, not as a sole selection criterion. We focus on capability development, not gatekeeping."
+        a: "Wadmore can inform hiring discussions by revealing candidates' cognitive patterns relative to role demands. We recommend using it to clarify role demands and development support, not as a pass/fail filter. We focus on capability development, not gatekeeping."
       },
     ]
   },
@@ -171,6 +172,7 @@ export default function FAQ() {
 
   return (
     <Layout>
+            <SEO {...PAGE_SEO.faq} />
       <div className="min-h-screen" style={{ background: BRAND.cloud }}>
         {/* Header */}
         <div style={{ background: BRAND.white, borderBottom: `1px solid ${BRAND.dove}` }}>

@@ -4,6 +4,7 @@
 
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 
 /* ══════════════════════════════════════════════════════════════
    WADMORE BRAND COLOURS
@@ -31,6 +32,7 @@ const BRAND = {
 export default function About() {
   return (
     <Layout>
+            <SEO {...PAGE_SEO.about} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <MissionSection />
@@ -106,10 +108,10 @@ function Hero() {
             <div className="rounded-2xl p-6 lg:p-8" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 20px 50px ${BRAND.indigo}08` }}>
               <div className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: BRAND.indigo }}>Our Mission</div>
               <p className="text-lg font-semibold mb-4 leading-snug" style={{ color: BRAND.slate }}>
-                Profiles that guide action.
+                Evidence that informs decisions.
               </p>
               <p className="text-sm leading-relaxed mb-5" style={{ color: BRAND.steel }}>
-                We're building cognitive profiling that reveals how people's thinking capability develops, with research-grounded guidance for what to do next.
+                We're building cognitive profiling that reveals how thinking appears when people engage with structured tasks, with research-grounded guidance to support professional decisions.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Strength-based", "Research-grounded", "Developmentally progressive"].map((tag) => (
@@ -146,15 +148,29 @@ function MissionSection() {
               className="text-3xl md:text-4xl font-semibold mb-6"
               style={{ color: BRAND.slate }}
             >
-              Profiles that guide action.
+              Evidence that informs decisions.
             </h2>
+            
+            {/* v1.1: Anchor line */}
+            <p 
+              className="text-xl font-medium leading-relaxed mb-6 p-5 rounded-xl"
+              style={{ 
+                color: BRAND.indigo,
+                background: `${BRAND.indigo}08`,
+                borderLeft: `4px solid ${BRAND.indigo}`
+              }}
+            >
+              Our aim is not to predict outcomes, but to make thinking visible enough 
+              to support better decisions.
+            </p>
+            
             <p 
               className="text-lg mb-5 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              We're building a cognitive profiling platform that reveals how people's 
-              thinking capability develops. Our framework maps 
-              development across eight domains and fifteen bands, creating 360 constructs 
+              We're building a cognitive profiling platform that reveals how people 
+              think as they engage with structured tasks. Our framework maps 
+              patterns across eight domains and fifteen bands, creating 360 constructs 
               that describe cognitive capability with genuine precision.
             </p>
             <p 

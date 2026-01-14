@@ -106,7 +106,7 @@ function Hero() {
                 className="relative inline-block"
                 style={{ color: BRAND.teal }}
               >
-                development.
+                thinking.
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
                   height="6" 
@@ -129,11 +129,11 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Wadmore shows you your child's unique cognitive strengths and growth 
-              areas, a <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
+              Wadmore describes how your child thinks as they engage with cognitive tasks. A{" "}
+              <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
               eight domains, with clear guidance you can use at 
-              home and in conversations with teachers. Grounded in{" "}
-              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
+              home and in conversations with teachers. These patterns are{" "}
+              <strong style={{ color: BRAND.slate }}>current, not fixed</strong>.
             </p>
             
             {/* CTAs */}
@@ -261,7 +261,9 @@ function WhyItMattersSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            When you understand your child's cognitive development, everything changes.
+            When you understand your child's cognitive patterns, everything changes. 
+            Thinking patterns are observed in context. They describe how your child 
+            approaches cognitive challenges right now, not permanent traits.
           </p>
         </div>
         

@@ -5,6 +5,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 
 const BRAND = {
   indigo: "#384275",
@@ -24,6 +25,7 @@ const BRAND = {
 export default function Consulting() {
   return (
     <Layout>
+            <SEO {...PAGE_SEO.consulting} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <AudienceSection />
@@ -82,16 +84,34 @@ function Hero() {
             </h1>
             
             <p 
-              className="leading-relaxed mb-7"
+              className="leading-relaxed mb-5"
               style={{ 
                 color: BRAND.steel,
                 fontSize: "clamp(1.05rem, 1vw + 0.5rem, 1.25rem)"
               }}
             >
-              Empower your educators, leaders, and support staff to understand 
-              cognitive development profiles and translate insights into meaningful action. 
-              Research-grounded, practically focused professional learning.
+              Build capability in interpreting cognitive evidence and translating 
+              profiles into informed professional decisions. Research-grounded, 
+              practically focused professional learning.
             </p>
+            
+            {/* v1.1: Safeguard statement */}
+            <div 
+              className="p-4 rounded-xl mb-7"
+              style={{ 
+                background: BRAND.white,
+                border: `1px solid ${BRAND.dove}`
+              }}
+            >
+              <p 
+                className="text-sm leading-relaxed"
+                style={{ color: BRAND.steel }}
+              >
+                <strong style={{ color: BRAND.slate }}>Important:</strong> Wadmore consulting 
+                supports interpretation and translation of cognitive evidence. It does not 
+                involve introducing proprietary teaching, coaching, or development programmes.
+              </p>
+            </div>
             
             <div className="flex flex-wrap gap-3">
               <Link 

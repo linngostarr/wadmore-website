@@ -5,6 +5,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 
 const BRAND = {
   indigo: "#384275",
@@ -24,6 +25,7 @@ const BRAND = {
 export default function Science() {
   return (
     <Layout>
+            <SEO {...PAGE_SEO.science} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <DomainsResearchSection />
@@ -75,8 +77,9 @@ function Hero() {
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl leading-relaxed" style={{ color: BRAND.steel }}>
-              Wadmore measures <strong style={{ color: BRAND.slate }}>cognitive development</strong>, 
-              the processes through which people reason, learn, and adapt. Our framework draws on 
+              Wadmore profiles how people think as they engage with{" "}
+              <strong style={{ color: BRAND.slate }}>structured cognitive tasks</strong>:
+              the processes through which they reason, plan, adapt, and reflect. Our framework draws on 
               50+ peer-reviewed sources across cognitive science, developmental psychology, and learning research.
             </p>
           </div>
@@ -872,6 +875,38 @@ function PsychometricSection() {
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
             Wadmore applies modern psychometric methods to ensure measurement precision, fairness, and interpretability.
+          </p>
+        </div>
+        
+        {/* v1.1: Methodology statements */}
+        <div className="p-6 rounded-xl mb-10" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
+          <h4 className="font-semibold text-lg mb-3" style={{ color: BRAND.slate }}>
+            Our methodological commitments
+          </h4>
+          
+          <p className="text-sm mb-4" style={{ color: BRAND.steel }}>
+            <strong style={{ color: BRAND.slate }}>Our reporting prioritises interpretability:</strong>{" "}
+            evidence is linked to clear constructs, bounded explanations, and optional next steps.
+          </p>
+          
+          <ul className="space-y-2 mb-4">
+            {[
+              "Association language for correlational evidence",
+              "Causal claims only where intervention research supports them",
+              "Effect sizes contextualised, not cherry-picked",
+              "Mechanisms explained, not just outcomes cited",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm" style={{ color: BRAND.steel }}>
+                <span style={{ color: BRAND.teal }} className="mt-0.5">✓</span>{item}
+              </li>
+            ))}
+          </ul>
+          
+          <p className="text-sm" style={{ color: BRAND.steel }}>
+            Wadmore does not aggregate unrelated tasks into single effect-size claims 
+            or treat broad labels such as "metacognition" as unified interventions. 
+            Cognitive patterns are interpreted within the contexts in which they are observed. 
+            Transfer is not assumed.
           </p>
         </div>
         

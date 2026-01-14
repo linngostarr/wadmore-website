@@ -6,7 +6,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
-
+import SEO, { PAGE_SEO } from '../components/SEO';
 /* ══════════════════════════════════════════════════════════════
    WADMORE BRAND COLOURS
    ══════════════════════════════════════════════════════════════ */
@@ -52,6 +52,7 @@ const DOMAINS = [
 export default function Schools() {
   return (
     <Layout>
+      <SEO {...PAGE_SEO.schools} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <PilotBanner />
@@ -157,11 +158,11 @@ function Hero() {
               style={{ color: BRAND.steel }}
             >
               Not just grades, behaviour, or test scores. Wadmore reveals{" "}
-              <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
-              eight domains, enabling informed differentiation, meaningful 
+              <strong style={{ color: BRAND.slate }}>patterns of thinking</strong> across 
+              eight domains as students engage with structured cognitive tasks. 
+              Evidence to support informed differentiation, meaningful 
               support conversations, and confident pathway decisions. Grounded in{" "}
-              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong> across 
-              cognitive science and learning research.
+              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
             </p>
             
             {/* CTAs */}
@@ -363,8 +364,8 @@ function WhyComprehensiveSection() {
               style={{ color: BRAND.steel }}
             >
               Research shows that Executive Functioning, Memory, Metacognition, 
-              and Cognitive Confidence are critical for academic success, often 
-              more predictive than reasoning alone. Wadmore measures all of them.
+              and Cognitive Confidence are associated with academic outcomes, often 
+              more strongly than reasoning alone. Wadmore makes these patterns visible.
             </p>
             
             {/* Example insight card */}
@@ -386,8 +387,9 @@ function WhyComprehensiveSection() {
                 <p className="text-sm leading-relaxed" style={{ color: BRAND.steel }}>
                   A student shows strong Abstract Reasoning (Band 8) but weaker Executive 
                   Functioning (Band 5). Now you understand: they can solve complex problems 
-                  but struggle with planning and task management. The intervention is clear, 
-                  <strong style={{ color: BRAND.slate }}> support organisation, not more reasoning practice.</strong>
+                  but struggle with planning and task management. This evidence can inform 
+                  professional decisions about
+                  <strong style={{ color: BRAND.slate }}> supporting organisation, not more reasoning practice.</strong>
                 </p>
               </div>
             </div>
@@ -399,7 +401,7 @@ function WhyComprehensiveSection() {
               { 
                 domain: "Executive Functioning", 
                 desc: "Planning, task management, cognitive flexibility", 
-                research: "Diamond (2013): EF predicts academic success",
+                research: "Diamond (2013): Associated with academic outcomes",
                 color: BRAND.teal
               },
               { 
@@ -411,7 +413,7 @@ function WhyComprehensiveSection() {
               { 
                 domain: "Metacognition", 
                 desc: "Self-awareness, learning strategies, self-monitoring", 
-                research: "Hattie (2009): d=0.69 effect size",
+                research: "Hattie (2009): Strong learning associations",
                 color: BRAND.indigo
               },
               { 
@@ -579,32 +581,32 @@ function UseCasesSection() {
   const cases = [
     { 
       title: "Differentiated Instruction", 
-      desc: "Understand the cognitive landscape of your classroom. Group students by thinking patterns and tailor instruction to how they actually learn.",
+      desc: "Understand the cognitive landscape of your classroom. Evidence about thinking patterns to inform your differentiation decisions.",
       icon: GridIcon
     },
     { 
       title: "Learning Support & Intervention", 
-      desc: "Move beyond observable behaviours to understand the cognitive factors driving learning challenges. Target interventions where they'll have the most impact.",
+      desc: "Move beyond observable behaviours to understand cognitive patterns relevant to learning challenges. Evidence to inform intervention planning.",
       icon: TargetIcon
     },
     { 
       title: "Gifted & Talented", 
-      desc: "Identify cognitive strengths across all eight domains. Support the whole student, not just academic performance.",
+      desc: "Identify cognitive strengths across all eight domains. Evidence to support decisions about extension and enrichment.",
       icon: StarIcon
     },
     { 
       title: "NCCD Evidence", 
-      desc: "Generate comprehensive cognitive profiles that provide robust evidence for NCCD documentation, including Executive Functioning and Memory data.",
+      desc: "Generate comprehensive cognitive profiles that provide documented evidence for NCCD submissions, including Executive Functioning and Memory data.",
       icon: DocumentIcon
     },
     { 
       title: "Career & Pathways", 
-      desc: "Help students understand their cognitive strengths and match them to potential pathways. Lifespan profiling from school through career.",
+      desc: "Help students understand their cognitive patterns to inform pathway conversations. Evidence for discussions, not predictions.",
       icon: PathIcon
     },
     { 
       title: "Parent Conversations", 
-      desc: "Transform parent-teacher meetings with objective, strength-based cognitive data. A shared language for discussing student development.",
+      desc: "Transform parent-teacher meetings with objective, strength-based cognitive evidence. A shared language for discussing development.",
       icon: ChatIcon
     },
   ];
@@ -623,7 +625,7 @@ function UseCasesSection() {
             className="text-4xl md:text-5xl font-semibold mb-4"
             style={{ color: BRAND.slate }}
           >
-            How schools use Wadmore
+            How schools use Wadmore evidence
           </h2>
         </div>
         
@@ -849,13 +851,13 @@ function ActionabilitySection() {
             className="text-4xl md:text-5xl font-semibold mb-4"
             style={{ color: BRAND.slate }}
           >
-            From insight to intervention
+            From evidence to professional decisions
           </h2>
           <p 
             className="text-xl max-w-2xl mx-auto"
             style={{ color: BRAND.steel }}
           >
-            Every construct connects to specific, evidence-based strategies, not generic advice.
+            Every construct connects to specific, research-grounded guidance.
           </p>
         </div>
         

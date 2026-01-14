@@ -6,6 +6,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 
 /* ══════════════════════════════════════════════════════════════
    WADMORE BRAND COLOURS
@@ -33,6 +34,7 @@ const BRAND = {
 export default function Professional() {
   return (
     <Layout>
+            <SEO {...PAGE_SEO.professional} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <CapabilitySection />
@@ -128,12 +130,11 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Great teams aren't accidental. Wadmore maps{" "}
-              <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
-              eight domains, so you can compose teams with complementary strengths, 
-              target development where it matters, and hire for genuine capability fit. 
-              The same rigorous framework trusted in education, grounded in{" "}
-              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
+              Great teams aren't accidental. Wadmore reveals{" "}
+              <strong style={{ color: BRAND.slate }}>patterns of thinking</strong> under 
+              cognitive demand: how your people approach problems, adapt to change, and 
+              work through challenges. Evidence to support reflection, coaching, and team 
+              composition decisions. The same rigorous framework trusted in education.
             </p>
             
             {/* CTAs */}
@@ -355,12 +356,12 @@ function UseCasesSection() {
   const [activeCase, setActiveCase] = useState(0);
   
   const cases = [
-    { title: "Team Formation", desc: "Build cognitively diverse teams with complementary strengths. Know where gaps exist before they become problems.", icon: GridIcon },
-    { title: "Leadership Development", desc: "Target development investments where they'll have the most impact. Move beyond generic leadership training.", icon: StarIcon },
-    { title: "Hiring & Selection", desc: "Add cognitive capability data to your selection process. Complement CVs and interviews with objective measurement.", icon: UsersIcon },
-    { title: "Change Management", desc: "Understand how your people process change and complexity. Tailor communication and support accordingly.", icon: RefreshIcon },
-    { title: "Succession Planning", desc: "Identify cognitive capabilities needed for future roles. Develop people toward specific requirements.", icon: TrendIcon },
-    { title: "Team Effectiveness", desc: "Diagnose why teams struggle. Often it's cognitive mismatch, not personality conflict.", icon: TargetIcon },
+    { title: "Team Formation", desc: "Evidence about cognitive diversity within teams. Understand where complementary strengths exist and where patterns overlap.", icon: GridIcon },
+    { title: "Leadership Development", desc: "Target development investments with evidence about thinking patterns. Move beyond generic leadership training.", icon: StarIcon },
+    { title: "Hiring & Selection", desc: "Add cognitive pattern evidence to your selection process. Supports discussion about role fit and development needs.", icon: UsersIcon },
+    { title: "Change Management", desc: "Understand how your people approach complexity and uncertainty. Evidence to inform communication and support strategies.", icon: RefreshIcon },
+    { title: "Succession Planning", desc: "Evidence about cognitive patterns to inform development planning. Support people toward specific capability areas.", icon: TrendIcon },
+    { title: "Team Effectiveness", desc: "Evidence to understand team dynamics. Patterns that may be relevant to collaboration and communication.", icon: TargetIcon },
   ];
   
   return (
@@ -370,7 +371,7 @@ function UseCasesSection() {
       style={{ background: BRAND.cloud }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <p 
             className="text-sm font-semibold uppercase tracking-widest mb-5"
             style={{ color: BRAND.violet }}
@@ -381,8 +382,28 @@ function UseCasesSection() {
             className="text-4xl md:text-5xl font-semibold mb-6"
             style={{ color: BRAND.slate }}
           >
-            How organisations use Wadmore
+            How organisations use Wadmore evidence
           </h2>
+        </div>
+        
+        {/* v1.1: Recruitment caveat - crisp ethical boundary */}
+        <div 
+          className="max-w-3xl mx-auto mb-12 p-5 rounded-xl"
+          style={{ 
+            background: BRAND.white,
+            border: `1px solid ${BRAND.dove}`
+          }}
+        >
+          <p 
+            className="text-sm leading-relaxed text-center"
+            style={{ color: BRAND.steel }}
+          >
+            <strong style={{ color: BRAND.slate }}>On recruitment:</strong> Wadmore 
+            can inform hiring discussions by revealing candidates' cognitive patterns 
+            relative to role demands. We recommend using it to clarify role demands 
+            and development support, <strong style={{ color: BRAND.slate }}>not as a 
+            pass/fail filter</strong>. We focus on capability development, not gatekeeping.
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
