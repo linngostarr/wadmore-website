@@ -4,7 +4,7 @@
 
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-
+import SEO, { PAGE_SEO } from '../components/SEO';
 /* ══════════════════════════════════════════════════════════════
    BRAND COLORS - Consistent with rest of site
    ══════════════════════════════════════════════════════════════ */
@@ -121,6 +121,7 @@ export default function Contact() {
   if (status === "success") {
     return (
       <Layout>
+              <SEO {...PAGE_SEO.contact} />
         <div className="w-full max-w-full overflow-x-hidden">
           <section className="min-h-[60vh] flex items-center justify-center" style={{ background: BRAND.cloud }}>
             <div className="max-w-md mx-auto px-5 text-center py-20">

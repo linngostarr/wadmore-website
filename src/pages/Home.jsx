@@ -6,6 +6,9 @@ import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import PersonaGallery from "../components/PersonaGallery";
+// Example: Home.jsx
+import SEO, { PAGE_SEO } from '../components/SEO';
+
 
 const BRAND = {
   indigo: "#384275",
@@ -162,25 +165,25 @@ const AUDIENCES = {
     color: BRAND.cerulean,
     headline: "See the whole student.",
     subhead: "Beyond grades, behaviour, or test scores.",
-    body: "Wadmore gives educators a developmental view of cognitive capabilities, enabling informed differentiation, meaningful support conversations, and confident pathway decisions.",
-    points: ["Cognitive profiles across 8 domains", "Practical classroom strategies", "NCCD evidence documentation", "Cohort-level analytics"],
+    body: "Wadmore provides a shared evidence base about thinking to support decisions at classroom, faculty, and school levels: differentiation, support planning, and extension.",
+    points: ["Cognitive profiles across 8 domains", "Evidence for professional decisions", "NCCD documentation support", "Cohort-level analytics"],
     link: "/schools",
   },
   families: {
     label: "Families",
     color: BRAND.teal,
-    headline: "Understand your child's development.",
-    subhead: "Without labels, comparison, or blame.",
-    body: "Wadmore helps you see your child's unique cognitive strengths and growth areas, with clear guidance you can use at home and in conversations with teachers.",
+    headline: "Understand your child's thinking.",
+    subhead: "Patterns that can change with experience and support.",
+    body: "Wadmore describes how your child thinks as they engage with cognitive tasks, with clear guidance you can use at home and in conversations with teachers. Current patterns, not fixed labels.",
     points: ["Strength-based profiles", "Plain language explanations", "Practical home activities", "School conversation guides"],
     link: "/families",
   },
   professional: {
     label: "Professional",
     color: BRAND.violet,
-    headline: "Build cognitively diverse teams.",
-    subhead: "Beyond personality preferences.",
-    body: "Wadmore reveals how your people approach complexity, collaboration, and change, enabling smarter team composition, targeted development, and better hiring decisions.",
+    headline: "Understand how your team thinks.",
+    subhead: "Evidence for decisions, not predictions.",
+    body: "Wadmore reveals patterns in how your people approach complexity, collaboration, and change under cognitive demand. Supports reflection, coaching, and development planning.",
     points: ["Individual cognitive profiles", "Team cognitive maps", "Collaboration insights", "Development priorities"],
     link: "/professional",
   },
@@ -189,6 +192,7 @@ const AUDIENCES = {
 export default function Home() {
   return (
     <Layout>
+         <SEO {...PAGE_SEO.home} />
       {/* Prevent horizontal overflow on mobile - max-w-full ensures content doesn't exceed viewport */}
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
@@ -239,9 +243,10 @@ function Hero() {
                 fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
               }}
             >
-              Wadmore maps <strong style={{ color: BRAND.slate }}>cognitive development</strong> across 
-              eight research-grounded domains and fifteen developmental bands. 
-              Strength-based profiles for schools, families, and organisations.
+              Wadmore profiles how people think as they engage with{" "}
+              <strong style={{ color: BRAND.slate }}>structured cognitive tasks</strong>, 
+              across eight research-grounded domains and fifteen developmental bands. 
+              Strength-based evidence for schools, families, and organisations.
             </p>
             
             {/* Mobile: stacked CTAs. Desktop: inline row */}
@@ -323,8 +328,8 @@ function CognitiveFrameworkSection() {
             Eight domains of thinking
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore profiles cognitive development across eight research-grounded domains, 
-            organised into three clusters.
+            Wadmore makes thinking visible through structured tasks, identifying patterns 
+            across eight research-grounded domains organised into three clusters.
           </p>
         </div>
 
@@ -403,7 +408,7 @@ function BandsSection() {
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Developmental Framework</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Growth, not ranking.</h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore describes where someone is on a developmental continuum, and what growth looks like from there.
+            Wadmore describes where someone is on a developmental continuum, showing current capabilities and clarifying plausible next steps for growth.
           </p>
         </div>
         
@@ -503,7 +508,7 @@ function BandsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {[
             { title: "Capability, not comparison", desc: "Bands describe what someone can do, not how they rank against peers.", color: BRAND.teal },
-            { title: "Development is the goal", desc: "Every band shows current capabilities and illuminates the path forward.", color: BRAND.cerulean },
+            { title: "Development is the goal", desc: "Every band shows current capabilities and clarifies plausible next steps.", color: BRAND.cerulean },
             { title: "Grounded in theory", desc: "Aligned to Piagetian and neo-Piagetian developmental stages.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="p-4 md:p-5 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
@@ -531,11 +536,11 @@ function ActionableSection() {
               From Profile to Practice
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>
-              Profiles that guide action
+              Evidence that informs decisions
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-5 md:mb-6" style={{ color: BRAND.steel }}>
-              Understanding cognitive development matters most when it informs what happens next. 
-              Every Wadmore profile includes <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>: 
+              Understanding cognitive patterns matters most when it informs professional decisions. 
+              Every Wadmore profile translates evidence into <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>: 
               strategies linked to established learning science, matched to developmental position.
             </p>
             
@@ -669,16 +674,16 @@ function DifferenceSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Why Wadmore</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Assessment that serves growth.</h2>
-          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built for understanding and development.</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Assessment that serves understanding.</h2>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built to make thinking visible, not to predict outcomes.</p>
         </div>
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {[
             { title: "Strength-based", desc: "Profiles lead with what's working. Growth areas framed as opportunities.", color: BRAND.teal },
-            { title: "Developmental", desc: "Movement is the point. Every profile shows where and what's next.", color: BRAND.cerulean },
-            { title: "Actionable", desc: "360 constructs connect to specific interventions, not generic advice.", color: BRAND.indigo },
-            { title: "Research-aligned", desc: "Built on current cognitive science. Intuition, memory, and self-regulation matter.", color: BRAND.violet },
+            { title: "Developmental", desc: "Shows where someone is on a continuum, and clarifies plausible next steps.", color: BRAND.cerulean },
+            { title: "Evidence-based", desc: "360 constructs connect to specific, research-grounded guidance.", color: BRAND.indigo },
+            { title: "Research-aligned", desc: "Built on current cognitive science. Memory, self-regulation, and reasoning.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="group p-4 md:p-6 rounded-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
@@ -717,7 +722,7 @@ function CTASection() {
       <div className="absolute inset-0 pointer-events-none opacity-10" style={{ backgroundImage: `radial-gradient(circle at 30% 70%, ${BRAND.teal} 1px, transparent 1px), radial-gradient(circle at 70% 30%, ${BRAND.violet} 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
       
       <div className="max-w-4xl mx-auto px-5 md:px-8 text-center relative z-10">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 md:mb-6 leading-tight" style={{ color: BRAND.white }}>Ready to understand cognitive development?</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 md:mb-6 leading-tight" style={{ color: BRAND.white }}>Ready to make thinking visible?</h2>
         <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 opacity-85 max-w-2xl mx-auto" style={{ color: BRAND.white }}>
           Launching March 2026. Register now for early access.
         </p>
