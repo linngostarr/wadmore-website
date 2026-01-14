@@ -4,7 +4,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
-import SEO, { PAGE_SEO } from '../components/SEO';
 
 const BRAND = {
   indigo: "#384275",
@@ -38,7 +37,7 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "What are developmental bands?",
-        a: "Developmental bands describe stages of cognitive capability, from foundational (Band 1) to peak capability (Band 15). Rather than comparing you to others, bands show where you are on a developmental continuum and clarify plausible next steps for growth."
+        a: "Developmental bands describe stages of cognitive capability, from foundational (Band 1) to peak capability (Band 15). Rather than comparing you to others, bands show where you are on a developmental continuum and clarify practical next steps for growth."
       },
       {
         q: "Is Wadmore a diagnostic tool?",
@@ -172,7 +171,6 @@ export default function FAQ() {
 
   return (
     <Layout>
-            <SEO {...PAGE_SEO.faq} />
       <div className="min-h-screen" style={{ background: BRAND.cloud }}>
         {/* Header */}
         <div style={{ background: BRAND.white, borderBottom: `1px solid ${BRAND.dove}` }}>

@@ -6,9 +6,6 @@ import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import PersonaGallery from "../components/PersonaGallery";
-// Example: Home.jsx
-import SEO, { PAGE_SEO } from '../components/SEO';
-
 
 const BRAND = {
   indigo: "#384275",
@@ -192,7 +189,6 @@ const AUDIENCES = {
 export default function Home() {
   return (
     <Layout>
-         <SEO {...PAGE_SEO.home} />
       {/* Prevent horizontal overflow on mobile - max-w-full ensures content doesn't exceed viewport */}
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
@@ -408,7 +404,7 @@ function BandsSection() {
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Developmental Framework</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Growth, not ranking.</h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore describes where someone is on a developmental continuum, showing current capabilities and clarifying plausible next steps for growth.
+            Wadmore describes where someone is on a developmental continuum, showing current capabilities and clarifying practical next steps for growth.
           </p>
         </div>
         
@@ -508,7 +504,7 @@ function BandsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {[
             { title: "Capability, not comparison", desc: "Bands describe what someone can do, not how they rank against peers.", color: BRAND.teal },
-            { title: "Development is the goal", desc: "Every band shows current capabilities and clarifies plausible next steps.", color: BRAND.cerulean },
+            { title: "Development is the goal", desc: "Every band shows current capabilities and clarifies practical next steps.", color: BRAND.cerulean },
             { title: "Grounded in theory", desc: "Aligned to Piagetian and neo-Piagetian developmental stages.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="p-4 md:p-5 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
@@ -681,7 +677,7 @@ function DifferenceSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {[
             { title: "Strength-based", desc: "Profiles lead with what's working. Growth areas framed as opportunities.", color: BRAND.teal },
-            { title: "Developmental", desc: "Shows where someone is on a continuum, and clarifies plausible next steps.", color: BRAND.cerulean },
+            { title: "Developmental", desc: "Shows where someone is on a continuum, and clarifies practical next steps.", color: BRAND.cerulean },
             { title: "Evidence-based", desc: "360 constructs connect to specific, research-grounded guidance.", color: BRAND.indigo },
             { title: "Research-aligned", desc: "Built on current cognitive science. Memory, self-regulation, and reasoning.", color: BRAND.violet },
           ].map((item) => (
