@@ -306,7 +306,7 @@ function PilotBanner() {
             <p className="text-sm" style={{ color: BRAND.slate }}>
               <strong>2026 Pilot Program:</strong>{" "}
               <span style={{ color: BRAND.steel }}>
-                Early adopter schools receive $10/student pricing and complimentary PD.
+                Early adopter schools receive $15/student pricing and complimentary PD.
               </span>
             </p>
           </div>
@@ -1086,7 +1086,7 @@ function PricingSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            AUD pricing. Local support. No surprises.
+            AUD pricing ex GST. Local support. No surprises.
           </p>
         </div>
         
@@ -1094,21 +1094,21 @@ function PricingSection() {
           {[
             { 
               tier: "Small School", 
-              price: "$20", 
+              price: "$25", 
               unit: "/student", 
               desc: "Up to 200 students", 
               features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Priority support"],
             },
             { 
               tier: "Medium School", 
-              price: "$18", 
+              price: "$22", 
               unit: "/student", 
               desc: "201–500 students", 
               features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Cohort analytics", "Priority support"],
             },
             { 
               tier: "Large / System", 
-              price: "$15", 
+              price: "$18", 
               unit: "/student", 
               desc: "500+ students", 
               features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "System-wide analytics", "Dedicated account manager", "Priority support"],
@@ -1181,7 +1181,7 @@ function PricingSection() {
           <p className="text-sm" style={{ color: BRAND.slate }}>
             <strong>2026 Pilot Program:</strong>{" "}
             <span style={{ color: BRAND.steel }}>
-              Early adopter schools receive <strong style={{ color: BRAND.slate }}>$10/student</strong> and 
+              Early adopter schools receive <strong style={{ color: BRAND.slate }}>$15/student</strong> and 
               complimentary professional development.
             </span>
           </p>
