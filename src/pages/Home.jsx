@@ -35,34 +35,6 @@ const BAND_TEXT = [
   "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff",
 ];
 
-const DomainIcons = {
-  AR: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="24" cy="12" r="6" /><circle cx="12" cy="36" r="6" /><circle cx="36" cy="36" r="6" /><line x1="24" y1="18" x2="15" y2="31" /><line x1="24" y1="18" x2="33" y2="31" /><line x1="18" y1="36" x2="30" y2="36" /></svg>),
-  LS: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 40 L8 32 L16 32 L16 24 L24 24 L24 16 L32 16 L32 8 L40 8" /><circle cx="8" cy="40" r="3" fill="currentColor" /><circle cx="40" cy="8" r="3" fill="currentColor" /></svg>),
-  PS: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M26 4 L12 24 L22 24 L20 44 L36 20 L26 20 Z" fill="currentColor" opacity="0.15" /><path d="M26 4 L12 24 L22 24 L20 44 L36 20 L26 20 Z" /></svg>),
-  MA: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="24" cy="24" r="20" opacity="0.3" /><circle cx="24" cy="24" r="14" opacity="0.5" /><circle cx="24" cy="24" r="8" /><circle cx="24" cy="24" r="3" fill="currentColor" /></svg>),
-  EF: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="24" cy="8" r="5" /><circle cx="12" cy="26" r="4" /><circle cx="36" cy="26" r="4" /><circle cx="6" cy="40" r="3" /><circle cx="18" cy="40" r="3" /><circle cx="30" cy="40" r="3" /><circle cx="42" cy="40" r="3" /><line x1="24" y1="13" x2="24" y2="18" /><line x1="24" y1="18" x2="12" y2="22" /><line x1="24" y1="18" x2="36" y2="22" /><line x1="12" y1="30" x2="6" y2="37" /><line x1="12" y1="30" x2="18" y2="37" /><line x1="36" y1="30" x2="30" y2="37" /><line x1="36" y1="30" x2="42" y2="37" /></svg>),
-  MR: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="24" cy="24" r="16" /><path d="M24 14 C30 14, 34 18, 34 24 C34 30, 30 34, 24 34" /><path d="M24 18 C27 18, 30 21, 30 24 C30 27, 27 30, 24 30" /><circle cx="24" cy="24" r="4" fill="currentColor" /><path d="M20 12 L24 8 L28 12" /></svg>),
-  CM: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="24" cy="20" r="12" /><path d="M16 44 L24 36 L32 44" /><path d="M18 20 L22 24 L30 16" /></svg>),
-  CD: () => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="24" cy="24" r="8" fill="currentColor" opacity="0.15" /><circle cx="24" cy="24" r="8" /><line x1="24" y1="4" x2="24" y2="12" /><line x1="24" y1="36" x2="24" y2="44" /><line x1="4" y1="24" x2="12" y2="24" /><line x1="36" y1="24" x2="44" y2="24" /></svg>),
-};
-
-const DOMAINS = [
-  { id: "abstract", code: "AR", name: "Abstract Reasoning", tagline: "Solving novel problems", cluster: "processing", color: BRAND.cerulean },
-  { id: "logical", code: "LS", name: "Logical Sequencing", tagline: "Following and building arguments", cluster: "processing", color: BRAND.cerulean },
-  { id: "speed", code: "PS", name: "Processing Speed", tagline: "Thinking under time pressure", cluster: "processing", color: BRAND.cerulean },
-  { id: "memory", code: "MA", name: "Memory & Attention", tagline: "Holding information while working", cluster: "processing", color: BRAND.indigo },
-  { id: "executive", code: "EF", name: "Executive Functioning", tagline: "Planning, adapting, self-correcting", cluster: "regulation", color: BRAND.teal },
-  { id: "metacognition", code: "MR", name: "Metacognition", tagline: "Understanding and directing your thinking processes", cluster: "regulation", color: BRAND.teal },
-  { id: "confidence", code: "CM", name: "Cognitive Confidence", tagline: "Persisting through challenge", cluster: "regulation", color: BRAND.violet },
-  { id: "creativity", code: "CD", name: "Creativity", tagline: "Generating original ideas", cluster: "creative", color: BRAND.violet },
-];
-
-const CLUSTERS = {
-  processing: { name: "Cognitive Processing", color: BRAND.cerulean },
-  regulation: { name: "Cognitive Self-Regulation", color: BRAND.teal },
-  creative: { name: "Creative Thinking", color: BRAND.violet },
-};
-
 const BANDS = [
   { 
     id: 1, 

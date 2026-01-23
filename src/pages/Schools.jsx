@@ -31,21 +31,6 @@ const BRAND = {
 };
 
 /* ══════════════════════════════════════════════════════════════
-   DOMAIN DATA
-   ══════════════════════════════════════════════════════════════ */
-
-const DOMAINS = [
-  { code: "AR", name: "Abstract Reasoning", color: BRAND.cerulean },
-  { code: "LS", name: "Logical Sequencing", color: BRAND.cerulean },
-  { code: "PS", name: "Processing Speed", color: BRAND.cerulean },
-  { code: "MA", name: "Memory & Attention", color: BRAND.indigo },
-  { code: "EF", name: "Executive Functioning", color: BRAND.teal },
-  { code: "MR", name: "Metacognition", color: BRAND.teal },
-  { code: "CM", name: "Cognitive Confidence", color: BRAND.violet },
-  { code: "CD", name: "Creativity", color: BRAND.violet },
-];
-
-/* ══════════════════════════════════════════════════════════════
    MAIN COMPONENT
    ══════════════════════════════════════════════════════════════ */
 
