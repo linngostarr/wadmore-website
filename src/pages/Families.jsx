@@ -188,7 +188,7 @@ function Hero() {
               {[
                 { value: "8", label: "Cognitive Domains", desc: "Complete picture" },
                 { value: "15", label: "Developmental Bands", desc: "Growth journey" },
-                { value: "45min", label: "Assessment", desc: "Engaging, not stressful" },
+                { value: "360", label: "Unique Insights", desc: "Actionable guidance" },
                 { value: "24hrs", label: "Results", desc: "Fast insights" },
               ].map((stat) => (
                 <div key={stat.label} className="group">
@@ -590,7 +590,7 @@ function UseCasesSection() {
 function HowItWorksSection() {
   const steps = [
     { number: "1", title: "Purchase", description: "Choose individual or family package. Receive login credentials instantly." },
-    { number: "2", title: "Assess", description: "Your child completes the 45-minute adaptive assessment. Engaging, not stressful." },
+    { number: "2", title: "Assess", description: "Your child completes the adaptive assessment online. Engaging, not stressful." },
     { number: "3", title: "Receive", description: "Get your comprehensive profile within 24 hours. PDF and online access." },
     { number: "4", title: "Apply", description: "Use insights at home and school. Reassess annually to track growth." },
   ];
@@ -791,7 +791,7 @@ function FAQSection() {
     { question: "What ages is Wadmore suitable for?", answer: "Wadmore Families is designed for children aged 5-18. Our adaptive assessment automatically adjusts to your child's developmental level, ensuring an appropriate and engaging experience regardless of age." },
     { question: "Is this an IQ test?", answer: "No. Wadmore measures cognitive development across eight domains, it's not designed to produce a single IQ score. We focus on how thinking develops, not ranking children against each other." },
     { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information, their cognitive strengths and developmental areas, not subjective preferences." },
-    { question: "How long does the assessment take?", answer: "Most children complete the assessment in 45-60 minutes. It's designed to be completed in one sitting, but can be paused if needed. The assessment is adaptive, so the length varies." },
+    { question: "How long does the assessment take?", answer: "The assessment is designed to be completed in one session but can be paused if needed. Because it's adaptive and adjusts to your child's level, the length varies based on their responses." },
     { question: "Will my child find it stressful?", answer: "We've designed Wadmore to be engaging rather than stressful. There's no time pressure on individual items, the difficulty adjusts to your child's level, and we use varied formats to maintain engagement." },
     { question: "Can I share results with my child's school?", answer: "Absolutely. Your profile includes a school conversation guide specifically designed to help you discuss your child's cognitive profile with teachers in productive ways." },
   ];

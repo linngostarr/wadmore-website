@@ -276,7 +276,7 @@ function Hero() {
             { value: "8", label: "Cognitive Domains", sub: "Complete coverage" },
             { value: "15", label: "Developmental Bands", sub: "Growth continuum" },
             { value: "360", label: "Unique Constructs", sub: "Actionable precision" },
-            { value: "α≥0.85", label: "Reliability Target", sub: "Psychometric rigour" },
+            { value: "50+", label: "Research Sources", sub: "Evidence-grounded" },
           ].map((stat) => (
             <div key={stat.label} className="text-center py-1 min-w-0">
               <div className="text-xl md:text-3xl font-bold mb-0.5 truncate" style={{ color: BRAND.indigo }}>{stat.value}</div>
@@ -693,7 +693,7 @@ function DifferenceSection() {
         
         <div className="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           {[
-            { title: "Psychometrically rigorous", desc: "IRT/Rasch-aligned measurement with α≥0.85 reliability." },
+            { title: "Psychometrically rigorous", desc: "IRT/Rasch-aligned measurement with professional standards." },
             { title: "Designed for fairness", desc: "DIF testing, bias review, and EALD-friendly design." },
             { title: "Lifespan coverage", desc: "Early childhood through professional expertise." },
             { title: "Australian-built", desc: "Local support and data sovereignty." },

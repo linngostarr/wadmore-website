@@ -281,7 +281,7 @@ function CapabilitySection() {
                 { title: "IRT/Rasch psychometrics", desc: "Same rigour as clinical and educational assessments" },
                 { title: "Eight cognitive domains", desc: "Complete picture including EF, Memory, Metacognition" },
                 { title: "360 construct-level insights", desc: "Specific, actionable development recommendations" },
-                { title: "Reliability α≥0.85", desc: "Professional-grade measurement you can trust" },
+                { title: "Professional standards", desc: "Validated measurement you can trust for decisions" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">
                   <div 

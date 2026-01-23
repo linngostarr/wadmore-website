@@ -219,7 +219,7 @@ function Hero() {
                 { value: "8", label: "Cognitive Domains", desc: "Complete coverage" },
                 { value: "15", label: "Developmental Bands", desc: "Growth continuum" },
                 { value: "360", label: "Constructs", desc: "Actionable precision" },
-                { value: "α≥0.85", label: "Reliability", desc: "Psychometric rigour" },
+                { value: "50+", label: "Research Sources", desc: "Evidence-grounded" },
               ].map((stat, i) => (
                 <div 
                   key={stat.label}
