@@ -2,7 +2,6 @@
 // Wadmore Professional Learning - Expert development for cognitive assessment
 // Brand accent: Violet (#786CFF) - expertise, innovation, premium
 
-import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import SEO, { PAGE_SEO } from '../components/SEO';
@@ -612,61 +611,6 @@ function OutcomesSection() {
               Based on participant feedback from 2024 professional learning programs (n=847)
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ══════════════════════════════════════════════════════════════
-   TESTIMONIALS
-   ══════════════════════════════════════════════════════════════ */
-
-function TestimonialsSection() {
-  const testimonials = [
-    {
-      quote: "This was the most practical PD I've attended in years. I walked away with actual strategies I could use on Monday morning.",
-      author: "Year 4 Teacher",
-      org: "Independent Primary School, Melbourne",
-    },
-    {
-      quote: "The way Matt explained the cognitive science made it accessible without dumbing it down. Our whole team now has a shared understanding.",
-      author: "Head of Learning Support",
-      org: "Catholic Secondary College, Sydney",
-    },
-    {
-      quote: "We've done cognitive testing for years but never really knew how to use the data. This program changed that completely.",
-      author: "Deputy Principal",
-      org: "Public School, Regional QLD",
-    },
-  ];
-
-  return (
-    <section className="py-16 md:py-24" style={{ background: BRAND.cloud }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold" style={{ color: BRAND.slate }}>
-            What educators say
-          </h2>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="p-6 rounded-xl"
-              style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
-            >
-              <QuoteIcon color={`${BRAND.violet}20`} />
-              <p className="mt-4 mb-5" style={{ color: BRAND.slate }}>
-                "{testimonial.quote}"
-              </p>
-              <div>
-                <div className="font-medium text-sm" style={{ color: BRAND.slate }}>{testimonial.author}</div>
-                <div className="text-sm" style={{ color: BRAND.steel }}>{testimonial.org}</div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
