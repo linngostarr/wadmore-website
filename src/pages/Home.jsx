@@ -210,7 +210,7 @@ function Hero() {
             </h1>
             
             <p 
-              className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
+              className="leading-relaxed mb-2" 
               style={{ 
                 color: BRAND.steel,
                 fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
@@ -218,8 +218,16 @@ function Hero() {
             >
               How people <strong style={{ color: BRAND.slate }}>process</strong>.{" "}
               How they <strong style={{ color: BRAND.slate }}>regulate</strong>.{" "}
-              How they <strong style={{ color: BRAND.slate }}>create</strong>.{" "}
-              Finally visible. Actionable guidance for schools, families, and organisations.
+              How they <strong style={{ color: BRAND.slate }}>create</strong>.
+            </p>
+            <p 
+              className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
+              style={{ 
+                color: BRAND.steel,
+                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
+              }}
+            >
+              Actionable guidance for schools, families, and organisations.
             </p>
             
             {/* Mobile: stacked CTAs. Desktop: inline row */}
