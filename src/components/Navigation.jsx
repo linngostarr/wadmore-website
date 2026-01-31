@@ -1,5 +1,5 @@
 // src/components/Navigation.jsx
-// Wadmore Navigation - Brand Aligned (Coral-Free)
+// Wadmore Navigation - With Gifted & 2e Featured
 //
 // Brand Palette:
 // - Deep Indigo (#384275) - Primary anchor
@@ -23,6 +23,7 @@ const BRAND = {
   dove: "#E4E7EB",
   steel: "#6C7A96",
   white: "#ffffff",
+  violet: "#786CFF",
 };
 
 export default function Navigation() {
@@ -83,7 +84,7 @@ export default function Navigation() {
           <NavItem to="/families">Families</NavItem>
           <NavItem to="/schools">Schools</NavItem>
           <NavItem to="/professional">Professional</NavItem>
-          <NavItem to="/consulting">Consulting</NavItem>
+          <NavItemFeatured to="/gifted-2e">Gifted & 2e</NavItemFeatured>
           <NavItem to="/science">Science</NavItem>
           <NavItem to="/about">About</NavItem>
         </div>
@@ -152,9 +153,9 @@ export default function Navigation() {
             <MobileNavItem to="/professional" onClick={() => setMenuOpen(false)}>
               Professional
             </MobileNavItem>
-            <MobileNavItem to="/consulting" onClick={() => setMenuOpen(false)}>
-              Consulting
-            </MobileNavItem>
+            <MobileNavItemFeatured to="/gifted-2e" onClick={() => setMenuOpen(false)}>
+              Gifted & 2e
+            </MobileNavItemFeatured>
             <MobileNavItem to="/science" onClick={() => setMenuOpen(false)}>
               Science
             </MobileNavItem>
@@ -219,6 +220,43 @@ function NavItem({ to, children }) {
   );
 }
 
+function NavItemFeatured({ to, children }) {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) => `
+        relative px-4 py-2 text-sm font-medium rounded-lg transition-colors
+        ${isActive ? "font-semibold" : ""}
+      `}
+      style={({ isActive }) => ({
+        color: isActive ? BRAND.violet : BRAND.steel,
+        background: isActive ? `${BRAND.violet}08` : "transparent",
+      })}
+    >
+      {({ isActive }) => (
+        <span className="flex items-center gap-1.5">
+          {children}
+          <span 
+            className="text-xs px-1.5 py-0.5 rounded font-medium"
+            style={{ 
+              background: `${BRAND.violet}20`,
+              color: BRAND.violet
+            }}
+          >
+            New
+          </span>
+          {isActive && (
+            <span 
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
+              style={{ background: BRAND.violet }}
+            />
+          )}
+        </span>
+      )}
+    </NavLink>
+  );
+}
+
 function MobileNavItem({ to, onClick, children }) {
   return (
     <NavLink
@@ -232,6 +270,34 @@ function MobileNavItem({ to, onClick, children }) {
       })}
     >
       {children}
+    </NavLink>
+  );
+}
+
+function MobileNavItemFeatured({ to, onClick, children }) {
+  return (
+    <NavLink
+      to={to}
+      onClick={onClick}
+      className="py-3 text-base font-medium transition-colors"
+      style={({ isActive }) => ({
+        color: isActive ? BRAND.violet : BRAND.slate,
+        borderLeft: isActive ? `3px solid ${BRAND.violet}` : "3px solid transparent",
+        paddingLeft: "12px",
+      })}
+    >
+      <span className="flex items-center gap-2">
+        {children}
+        <span 
+          className="text-xs px-2 py-0.5 rounded font-medium"
+          style={{ 
+            background: `${BRAND.violet}20`,
+            color: BRAND.violet
+          }}
+        >
+          New
+        </span>
+      </span>
     </NavLink>
   );
 }

@@ -32,6 +32,47 @@ const BRAND = {
 export default function Footer() {
   return (
     <footer style={{ background: BRAND.indigo }}>
+      {/* ═══════════════════════════════════════════════════════
+          FEATURED: GIFTED & 2e
+          ═══════════════════════════════════════════════════════ */}
+      <div style={{ background: BRAND.indigoDark, borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 md:py-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left max-w-2xl">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                <SparkleIcon />
+                <h3 className="text-xl md:text-2xl font-semibold" style={{ color: BRAND.white }}>
+                  Gifted & Twice-Exceptional Learners
+                </h3>
+              </div>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                Assessment architecture designed for asynchronous development. 
+                See both exceptional strengths and specific support needs in complete clarity.
+              </p>
+            </div>
+            <Link 
+              to="/gifted-2e"
+              className="flex-shrink-0 px-6 py-3 rounded-lg font-semibold text-sm transition-all"
+              style={{ 
+                background: BRAND.violet,
+                color: BRAND.white,
+                boxShadow: `0 4px 14px ${BRAND.violet}40`
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = `0 6px 20px ${BRAND.violet}50`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = `0 4px 14px ${BRAND.violet}40`;
+              }}
+            >
+              Learn More →
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
@@ -92,6 +133,34 @@ export default function Footer() {
               <FooterLink to="/professional" color={BRAND.violet}>
                 Professional
               </FooterLink>
+              
+              {/* Featured: Gifted & 2e */}
+              <li className="pt-2">
+                <Link
+                  to="/gifted-2e"
+                  className="text-sm transition-colors inline-flex items-center gap-2"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                  onMouseEnter={(e) => e.target.style.color = BRAND.violet}
+                  onMouseLeave={(e) => e.target.style.color = "rgba(255,255,255,0.7)"}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+                      <circle cx="12" cy="12" r="2" fill="currentColor" />
+                    </svg>
+                    <span>Gifted & 2e</span>
+                  </span>
+                  <span 
+                    className="text-xs px-2 py-0.5 rounded-full font-medium"
+                    style={{ 
+                      background: `${BRAND.violet}30`,
+                      color: "rgba(255,255,255,0.9)"
+                    }}
+                  >
+                    New
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -265,5 +334,23 @@ function SocialLink({ href, label, children }) {
     >
       {children}
     </a>
+  );
+}
+
+function SparkleIcon() {
+  return (
+    <svg 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke={BRAND.violet} 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+      <circle cx="12" cy="12" r="3" fill={BRAND.violet} stroke="none" />
+    </svg>
   );
 }
