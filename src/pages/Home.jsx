@@ -320,10 +320,10 @@ function WhenInsightMattersSection() {
             When Insight Matters
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-            Not every question needs this level of detail.
+            Built for the questions that matter most.
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            But some do. Wadmore is built for the moments when understanding how someone thinks changes what you do next.
+            When understanding how someone processes, regulates, or creates changes what you do next.
           </p>
         </div>
 
