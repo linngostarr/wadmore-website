@@ -2,6 +2,7 @@
 // Wadmore About - Our story, mission, and values
 // Language: Cognitive development focus
 
+import { useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import SEO, { PAGE_SEO } from '../components/SEO';
@@ -30,6 +31,10 @@ const BRAND = {
    ══════════════════════════════════════════════════════════════ */
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About | Wadmore";
+  }, []);
+
   return (
     <Layout>
             <SEO {...PAGE_SEO.about} />
@@ -99,7 +104,7 @@ function Hero() {
               }}
             >
               Wadmore was founded on a belief: everyone deserves to understand 
-              their thinking development, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth, not labels</strong>.
+              how they think, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth, not labels</strong>.
             </p>
           </div>
           
@@ -114,7 +119,7 @@ function Hero() {
                 We're building cognitive profiling that reveals how thinking appears when people engage with structured tasks, with research-grounded guidance to support professional decisions.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["Strength-based", "Research-grounded", "Developmentally progressive"].map((tag) => (
+                {["Strength-based", "Research-grounded", "Actionable"].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium" style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}>
                     {tag}
                   </span>
@@ -201,12 +206,12 @@ function MissionSection() {
                 {
                   number: "01",
                   title: "Map",
-                  description: "Profile cognitive development across 8 domains with professional psychometric standards",
+                  description: "Profile how people process, regulate, and create across 8 cognitive domains",
                 },
                 {
                   number: "02",
                   title: "Understand",
-                  description: "Place development on a 15-band continuum, showing current capabilities and growth pathways",
+                  description: "Place capability on a 15-band continuum, showing current strengths and growth pathways",
                 },
                 {
                   number: "03",
@@ -273,25 +278,24 @@ function StorySection() {
             </p>
             
             <p className="text-lg leading-relaxed">
-              One question kept emerging: <em>what if we could map how thinking 
-              capability develops?</em> Traditional 
+              One question kept emerging: <em>what if we could make thinking 
+              visible?</em> Traditional 
               cognitive assessments produce percentile ranks. Useful for comparison, 
               but limited for development. Teachers would ask: "This student is at the 
               62nd percentile. Now what?" The assessments had no answer.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Wadmore takes a different approach. We profile cognitive development across 
+              Wadmore takes a different approach. We profile how people think across 
               eight domains, from abstract reasoning to executive functioning to 
-              metacognition, revealing how a person processes, regulates, and creates. 
+              metacognition, revealing how they process, regulate, and create. 
               And we show what growth looks like from wherever you are.
             </p>
             
             <p className="text-lg leading-relaxed">
-              The result is strength-based profiling that empowers development. Assessment 
+              The result is strength-based profiling that empowers growth. Assessment 
               designed for fairness from the start. Insights connected to research-grounded 
-              strategies. And a framework that spans the full developmental journey, from 
-              early childhood through professional expertise.
+              strategies. And a framework that spans foundation through expert, wherever you are on the journey.
             </p>
           </div>
         </div>
@@ -327,7 +331,7 @@ function ValuesSection() {
     {
       icon: FairnessIcon,
       title: "Fair by design",
-      description: "Bias testing, DIF analysis, and inclusive design built in from the start.",
+      description: "Bias testing and inclusive design built in from the start, not added later.",
       color: BRAND.indigo,
     },
     {
@@ -421,8 +425,8 @@ function CredentialsSection() {
             Built on rigorous foundations
           </h2>
           <p className="text-lg" style={{ color: BRAND.steel }}>
-            Wadmore combines deep psychometric expertise with modern technology 
-            to deliver assessment that maps thinking development with scientific rigour and genuine utility.
+            Wadmore combines deep assessment expertise with modern technology 
+            to reveal how people process, regulate, and create, with genuine utility.
           </p>
         </div>
         
@@ -441,7 +445,7 @@ function CredentialsSection() {
             {
               stat: "360",
               label: "Constructs",
-              desc: "Precise developmental descriptors",
+              desc: "Precise capability descriptors",
             },
             {
               stat: "15",
@@ -472,47 +476,6 @@ function CredentialsSection() {
             </div>
           ))}
         </div>
-        
-        {/* Psychometric standards */}
-        <div 
-          className="mt-12 p-8 rounded-2xl"
-          style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
-        >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 
-                className="text-xl font-semibold mb-4"
-                style={{ color: BRAND.slate }}
-              >
-                Professional psychometric standards
-              </h3>
-              <p className="text-base leading-relaxed" style={{ color: BRAND.steel }}>
-                Wadmore applies the same rigorous psychometric methodology used in 
-                high-stakes educational assessment. IRT/Rasch modelling, reliability 
-                analysis, DIF testing for fairness, and continuous calibration ensure 
-                every profile meets professional standards.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {[
-                "IRT/Rasch modelling",
-                "α ≥ 0.85 reliability",
-                "DIF analysis",
-                "Adaptive testing",
-                "Bias detection",
-                "Continuous calibration",
-              ].map((item) => (
-                <span 
-                  key={item}
-                  className="px-4 py-2 rounded-full text-sm font-medium"
-                  style={{ background: `${BRAND.indigo}08`, color: BRAND.indigo }}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -542,7 +505,7 @@ function CTASection() {
           className="text-3xl md:text-4xl font-semibold mb-5"
           style={{ color: BRAND.white }}
         >
-          Ready to understand cognitive development?
+          Ready to understand cognitive capability?
         </h2>
         <p 
           className="text-lg mb-10 opacity-90 max-w-2xl mx-auto"

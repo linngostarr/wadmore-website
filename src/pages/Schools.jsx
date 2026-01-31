@@ -3,7 +3,7 @@
 // World-class design: refined, academic, trustworthy
 // Brand accent: Cerulean (#5B8BF7)
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import SEO, { PAGE_SEO } from '../components/SEO';
@@ -35,6 +35,10 @@ const BRAND = {
    ══════════════════════════════════════════════════════════════ */
 
 export default function Schools() {
+  useEffect(() => {
+    document.title = "Schools | Wadmore";
+  }, []);
+
   return (
     <Layout>
       <SEO {...PAGE_SEO.schools} />
@@ -142,12 +146,9 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Not just grades, behaviour, or test scores. Wadmore reveals{" "}
-              <strong style={{ color: BRAND.slate }}>patterns of thinking</strong> across 
-              eight domains as students engage with structured cognitive tasks. 
-              Evidence to support informed differentiation, meaningful 
-              support conversations, and confident pathway decisions. Grounded in{" "}
-              <strong style={{ color: BRAND.slate }}>50+ peer-reviewed sources</strong>.
+              Processing, regulation, and creative thinking can all be{" "}
+              <strong style={{ color: BRAND.slate }}>understood, supported, and grown</strong>. 
+              Wadmore shows you where students are and what will help.
             </p>
             
             {/* CTAs */}
@@ -202,7 +203,7 @@ function Hero() {
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
                 { value: "8", label: "Cognitive Domains", desc: "Complete coverage" },
-                { value: "15", label: "Developmental Bands", desc: "Growth continuum" },
+                { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
                 { value: "360", label: "Constructs", desc: "Actionable precision" },
                 { value: "50+", label: "Research Sources", desc: "Evidence-grounded" },
               ].map((stat, i) => (
@@ -591,7 +592,7 @@ function UseCasesSection() {
     },
     { 
       title: "Parent Conversations", 
-      desc: "Transform parent-teacher meetings with objective, strength-based cognitive evidence. A shared language for discussing development.",
+      desc: "Transform parent-teacher meetings with objective, strength-based cognitive evidence. A shared language for discussing growth.",
       icon: ChatIcon
     },
   ];
@@ -1223,7 +1224,7 @@ function CTASection() {
           className="text-xl md:text-2xl mb-12 opacity-90 max-w-2xl mx-auto"
           style={{ color: BRAND.white }}
         >
-          Book a demo to see how Wadmore reveals cognitive development with precision and actionability.
+          Book a demo to see how Wadmore reveals cognitive capability with precision and actionability.
         </p>
         
         <div className="flex flex-wrap justify-center gap-4">

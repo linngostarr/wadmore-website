@@ -3,7 +3,7 @@
 // World-class design: modern, sophisticated, business-focused
 // Brand accent: Violet (#786CFF)
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import SEO, { PAGE_SEO } from '../components/SEO';
@@ -32,6 +32,10 @@ const BRAND = {
    ══════════════════════════════════════════════════════════════ */
 
 export default function Professional() {
+  useEffect(() => {
+    document.title = "Professional | Wadmore";
+  }, []);
+
   return (
     <Layout>
             <SEO {...PAGE_SEO.professional} />
@@ -101,12 +105,12 @@ function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Build{" "}
+              Great teams are built on{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.violet }}
               >
-                high-performing
+                understanding.
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
                   height="6" 
@@ -123,18 +127,16 @@ function Hero() {
                   />
                 </svg>
               </span>
-              {" "}teams.
             </h1>
             
             <p 
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Great teams aren't accidental. Wadmore reveals{" "}
-              <strong style={{ color: BRAND.slate }}>patterns of thinking</strong> under 
-              cognitive demand: how your people approach problems, adapt to change, and 
-              work through challenges. Evidence to support reflection, coaching, and team 
-              composition decisions. The same rigorous framework trusted in education.
+              Build better teams. Develop your people. Create environments where different 
+              thinkers thrive. Wadmore shows how people{" "}
+              <strong style={{ color: BRAND.slate }}>process, regulate, and create</strong>. So 
+              you can support their growth and unlock their potential.
             </p>
             
             {/* CTAs */}
@@ -189,7 +191,7 @@ function Hero() {
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
                 { value: "8", label: "Cognitive Domains", desc: "Complete capability picture" },
-                { value: "15", label: "Developmental Bands", desc: "Graduate to expert" },
+                { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
                 { value: "360", label: "Constructs", desc: "Granular insights" },
                 { value: "<1hr", label: "Assessment", desc: "Efficient, professional" },
               ].map((stat) => (

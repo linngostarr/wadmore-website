@@ -3,7 +3,7 @@
 // World-class design: warm, supportive, parent-friendly
 // Brand accent: Teal (#3CB7AC)
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 
@@ -31,6 +31,10 @@ const BRAND = {
    ══════════════════════════════════════════════════════════════ */
 
 export default function Families() {
+  useEffect(() => {
+    document.title = "Families | Wadmore";
+  }, []);
+
   return (
     <Layout>
       <div className="w-full max-w-full overflow-x-hidden">
@@ -101,12 +105,12 @@ function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Understand your child's{" "}
+              Understand how they{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.teal }}
               >
-                thinking.
+                think.
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
                   height="6" 
@@ -129,10 +133,10 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Wadmore describes how your child thinks as they engage with cognitive tasks. A{" "}
-              <strong style={{ color: BRAND.slate }}>strength-based profile</strong> across 
-              eight domains, with clear guidance you can use at 
-              home and in conversations with teachers.
+              When effort doesn't match outcomes. When support isn't landing. 
+              Wadmore shows you how your child{" "}
+              <strong style={{ color: BRAND.slate }}>processes, regulates, and creates</strong>. 
+              These are skills that can be understood, supported, and grown.
             </p>
             
             {/* CTAs */}
@@ -187,7 +191,7 @@ function Hero() {
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
                 { value: "8", label: "Cognitive Domains", desc: "Complete picture" },
-                { value: "15", label: "Developmental Bands", desc: "Growth journey" },
+                { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
                 { value: "360", label: "Unique Insights", desc: "Actionable guidance" },
                 { value: "24hrs", label: "Results", desc: "Fast insights" },
               ].map((stat) => (
@@ -254,15 +258,15 @@ function WhyItMattersSection() {
             className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
             style={{ color: BRAND.slate }}
           >
-            What understanding unlocks
+            Shared understanding changes everything
           </h2>
           <p 
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            When you understand your child's cognitive patterns, everything changes. 
-            Thinking patterns are observed in context. They describe how your child 
-            approaches cognitive challenges right now, not permanent traits.
+            When you and your child's school both understand how they think, everyone 
+            can support them more effectively. Same language, same picture, aligned strategies 
+            at home and in the classroom.
           </p>
         </div>
         
@@ -270,20 +274,20 @@ function WhyItMattersSection() {
           {[
             { 
               icon: HeartIcon, 
-              title: "Less frustration", 
+              title: "Support that fits", 
               description: "Stop guessing why homework is hard. Understand the cognitive factors at play and target support where it actually helps.",
               color: BRAND.teal
             },
             { 
               icon: ChatIcon, 
-              title: "Better conversations", 
-              description: "Walk into parent-teacher meetings with objective data. Create shared understanding and aligned support strategies.",
+              title: "Productive conversations", 
+              description: "A shared foundation for parent-teacher discussions. Same framework, same language, so conversations move forward together.",
               color: BRAND.cerulean
             },
             { 
               icon: StarIcon, 
-              title: "Targeted support", 
-              description: "Know exactly which activities and approaches match your child's developmental level in each domain.",
+              title: "Aligned strategies", 
+              description: "Know exactly which approaches work, and share that understanding with teachers so support is consistent everywhere.",
               color: BRAND.violet
             },
           ].map((item) => (
@@ -360,7 +364,7 @@ function EightDomainsSection() {
             className="text-lg"
             style={{ color: BRAND.steel }}
           >
-            Wadmore measures cognitive development across eight research-grounded 
+            Wadmore profiles cognitive capability across eight research-grounded 
             domains, giving you the complete picture, not just a single number.
           </p>
         </div>
@@ -438,14 +442,14 @@ function ProfilePreviewSection() {
               style={{ color: BRAND.steel }}
             >
               No jargon. No percentiles without context. Just clear, actionable 
-              understanding of your child's cognitive development, written in plain language you can use.
+              understanding of how your child thinks, written in plain language you can use.
             </p>
             
             <div className="space-y-4">
               {[
                 { title: "Strength spotlight", desc: "Every profile leads with what's working well" },
                 { title: "Growth opportunities", desc: "Areas for development framed positively" },
-                { title: "Try at home activities", desc: "15+ practical activities matched to developmental level" },
+                { title: "Try at home activities", desc: "15+ practical activities matched to your child's current level" },
                 { title: "School conversation guide", desc: "Talking points for productive parent-teacher meetings" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">
@@ -788,9 +792,9 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
   
   const faqs = [
-    { question: "What ages is Wadmore suitable for?", answer: "Wadmore Families is designed for children aged 5-18. Our adaptive assessment automatically adjusts to your child's developmental level, ensuring an appropriate and engaging experience regardless of age." },
-    { question: "Is this an IQ test?", answer: "No. Wadmore measures cognitive development across eight domains, it's not designed to produce a single IQ score. We focus on how thinking develops, not ranking children against each other." },
-    { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information, their cognitive strengths and developmental areas, not subjective preferences." },
+    { question: "What ages is Wadmore suitable for?", answer: "Wadmore Families is designed for children aged 5-18. Our adaptive assessment automatically adjusts to your child's level, ensuring an appropriate and engaging experience regardless of age." },
+    { question: "Is this an IQ test?", answer: "No. Wadmore profiles cognitive capability across eight domains. It's not designed to produce a single IQ score. We focus on understanding how your child thinks, not ranking children against each other." },
+    { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information, their cognitive strengths and growth areas, not subjective preferences." },
     { question: "How long does the assessment take?", answer: "The assessment is designed to be completed in one session but can be paused if needed. Because it's adaptive and adjusts to your child's level, the length varies based on their responses." },
     { question: "Will my child find it stressful?", answer: "We've designed Wadmore to be engaging rather than stressful. There's no time pressure on individual items, the difficulty adjusts to your child's level, and we use varied formats to maintain engagement." },
     { question: "Can I share results with my child's school?", answer: "Absolutely. Your profile includes a school conversation guide specifically designed to help you discuss your child's cognitive profile with teachers in productive ways." },
@@ -876,7 +880,7 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to understand your child's cognitive development?
+          Ready to understand how your child thinks?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90"

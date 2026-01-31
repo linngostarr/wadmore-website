@@ -2,7 +2,7 @@
 // Wadmore Science - Research foundation and methodology
 // Accurate citations from actual data, tightened claim language
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import SEO, { PAGE_SEO } from '../components/SEO';
@@ -23,6 +23,10 @@ const BRAND = {
 };
 
 export default function Science() {
+  useEffect(() => {
+    document.title = "The Science | Wadmore";
+  }, []);
+
   return (
     <Layout>
             <SEO {...PAGE_SEO.science} />
@@ -91,7 +95,7 @@ function Hero() {
               <div className="space-y-4">
                 {[
                   { value: "8", label: "Cognitive Domains", desc: "Complete coverage of thinking capability" },
-                  { value: "15", label: "Developmental Bands", desc: "Lifespan growth continuum" },
+                  { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
                   { value: "360", label: "Unique Constructs", desc: "Precise, actionable profiling" },
                 ].map((stat, i) => (
                   <div key={stat.label} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: i === 0 ? `${BRAND.indigo}08` : BRAND.cloud }}>
@@ -439,106 +443,106 @@ const BAND_TEXT = [
 const BANDS = [
   { 
     id: 1, 
-    name: "Foundational Development", 
+    name: "Foundational Capability", 
     description: "Cognitive capabilities are emerging and require substantial external support. Thinking is concrete, immediate, and context-dependent. Executive functions (impulse control, attention, task-switching) are just developing. Pattern recognition focuses on simple, visible attributes. Learning happens through play, exploration, and consistent routines with patient scaffolding.",
-    typical: "Early childhood",
+    typical: "Often seen in early childhood",
     keyCharacteristics: ["Concrete thinking", "External scaffolding required", "Emerging self-regulation", "Play-based learning"]
   },
   { 
     id: 2, 
-    name: "Early Operational Thinking", 
-    description: "Developing independence in familiar contexts as concrete operations emerge. Can classify by multiple attributes and recognise patterns across contexts. Impulse control improving, attention extending. Beginning to internalise cognitive strategies that were previously external. Responds well to visual supports, consistent routines, and explicit instruction.",
-    typical: "Early primary years",
-    keyCharacteristics: ["Concrete operations emerging", "Decreasing scaffolding needs", "Pattern recognition developing", "Strategy internalisation beginning"]
+    name: "Developing Systematic Thinking", 
+    description: "Developing independence in familiar contexts as systematic thinking emerges. Can classify by multiple attributes and recognise patterns across contexts. Impulse control improving, attention extending. Beginning to internalise cognitive strategies that were previously external. Responds well to visual supports, consistent routines, and explicit instruction.",
+    typical: "Often seen in early primary years",
+    keyCharacteristics: ["Systematic thinking emerging", "Decreasing scaffolding needs", "Pattern recognition developing", "Strategy internalisation beginning"]
   },
   { 
     id: 3, 
     name: "Consolidating Foundations", 
-    description: "Concrete operational thinking well-established with independent performance in familiar domains. Recognises complex patterns and logical relationships. Executive functions consolidating, follows rules consistently, maintains attention appropriately, switches tasks with minimal support. Beginning to transfer learned strategies across contexts.",
-    typical: "Primary school",
-    keyCharacteristics: ["Concrete operations consolidated", "Strategy transfer emerging", "Good self-regulation in familiar contexts", "Logical reasoning developing"]
+    description: "Systematic thinking well-established with independent performance in familiar domains. Recognises complex patterns and logical relationships. Executive functions consolidating: follows rules consistently, maintains attention appropriately, switches tasks with minimal support. Beginning to transfer learned strategies across contexts.",
+    typical: "Often seen in primary school",
+    keyCharacteristics: ["Systematic thinking consolidated", "Strategy transfer emerging", "Good self-regulation in familiar contexts", "Logical reasoning developing"]
   },
   { 
     id: 4, 
     name: "Transitional Complexity", 
     description: "Managing increased cognitive demands as abstract thinking emerges in supported contexts. Can follow multi-step instructions, plan simple projects with guidance, and use organisational systems when established. Strategic thinking developing. Still benefits from explicit scaffolding but requires less direct supervision than earlier bands.",
-    typical: "Upper primary",
+    typical: "Often seen in upper primary",
     keyCharacteristics: ["Abstract thinking emerging", "Multi-step planning with support", "Organisational skills developing", "Increasing independence"]
   },
   { 
     id: 5, 
     name: "Emerging Abstract Thinking", 
-    description: "Metacognitive awareness developing, beginning to monitor and regulate own thinking. Formal operational thinking emerging with capacity for hypothetical reasoning in familiar domains. Plans multi-day projects with decreasing support. Self-efficacy beliefs consolidating. Critical period for establishing organisational habits and growth mindset.",
-    typical: "Early secondary",
-    keyCharacteristics: ["Metacognition emerging", "Formal operations beginning", "Self-monitoring developing", "Motivational beliefs forming"]
+    description: "Metacognitive awareness developing, beginning to monitor and regulate own thinking. Capacity for hypothetical reasoning emerging in familiar domains. Plans multi-day projects with decreasing support. Self-efficacy beliefs consolidating. Critical period for establishing organisational habits and growth mindset.",
+    typical: "Often seen in early secondary",
+    keyCharacteristics: ["Metacognition emerging", "Hypothetical reasoning developing", "Self-monitoring developing", "Motivational beliefs forming"]
   },
   { 
     id: 6, 
-    name: "Early Formal Operations", 
+    name: "Established Abstract Reasoning", 
     description: "Independent abstract thinking established. Can identify patterns within familiar contexts and apply logical thinking to abstract concepts. Strategic self-regulation developing with increasing ability to plan, monitor, and adjust approaches. Shows cognitive flexibility when scaffolded. Ready for systematic instruction in advanced reasoning strategies.",
-    typical: "Secondary school",
+    typical: "Often seen in secondary school",
     keyCharacteristics: ["Abstract reasoning established", "Strategic self-regulation", "Cognitive flexibility developing", "Complex problem-solving emerging"]
   },
   { 
     id: 7, 
     name: "Advanced Abstract Thinking", 
-    description: "Sophisticated cognitive integration with transfer across domains. Meta-strategic thinking established, not just using strategies but selecting and adapting them based on task demands. Strong executive function approaching adult levels. Manages complex, long-term projects independently. Shows resilient self-efficacy and autonomous motivation.",
-    typical: "Senior secondary",
+    description: "Sophisticated cognitive integration with transfer across domains. Meta-strategic thinking established: not just using strategies but selecting and adapting them based on task demands. Strong executive function approaching adult levels. Manages complex, long-term projects independently. Shows resilient self-efficacy and autonomous motivation.",
+    typical: "Often seen in senior secondary",
     keyCharacteristics: ["Cross-domain transfer", "Meta-strategic thinking", "Strong executive function", "Autonomous motivation"]
   },
   { 
     id: 8, 
     name: "Cognitive Sophistication", 
     description: "Cross-domain integration with optimisation of cognitive processes. Advanced academic reasoning enabling sophisticated conceptual work. Mature executive function supporting complex independent demands. Well-developed metacognitive awareness and self-regulation. Ready for post-secondary challenges requiring sustained independent effort.",
-    typical: "Post-secondary",
+    typical: "Often seen in post-secondary",
     keyCharacteristics: ["Optimised cognitive processes", "Advanced reasoning", "Mature self-regulation", "Independent learning capability"]
   },
   { 
     id: 9, 
     name: "Advanced Reasoning", 
     description: "Systematic approaches to novel problems with integration of multiple knowledge domains. Strategic expertise developing through deliberate practice. Sophisticated creative thinking enabling innovation. Manages complex personal, academic, and professional responsibilities with minimal external support. Metacognitive strategies refined and personalised.",
-    typical: "Tertiary / early career",
+    typical: "Often seen in tertiary / early career",
     keyCharacteristics: ["Novel problem-solving", "Strategic expertise emerging", "Sophisticated creativity", "Personalised metacognition"]
   },
   { 
     id: 10, 
     name: "Applied Expertise", 
     description: "Professional-level capability with sophisticated application across contexts. Entry-level domain expertise built through sustained deliberate practice. Mature executive function supporting complex professional demands. Autonomous motivation drives continued development. Self-regulation effective under professional pressure.",
-    typical: "Professional entry",
+    typical: "Often seen at professional entry",
     keyCharacteristics: ["Professional capability", "Domain expertise emerging", "Effective under pressure", "Self-directed development"]
   },
   { 
     id: 11, 
     name: "Mastery", 
     description: "Multi-context sophistication reflecting advanced professional expertise. Leadership-level cognitive capability enabling complex organisational demands. Expert executive function supporting strategic thinking and adaptive planning. Creativity supports professional innovation. Wisdom beginning to inform decision-making.",
-    typical: "Experienced professional",
+    typical: "Often seen in experienced professionals",
     keyCharacteristics: ["Leadership capability", "Expert executive function", "Professional creativity", "Wisdom emerging"]
   },
   { 
     id: 12, 
     name: "Advanced Expertise", 
     description: "Innovative framework development with cross-disciplinary integration. Expert-level capability in domain of specialisation. Strategic self-regulation refined through years of professional practice. Creativity enables original contribution. Mentorship of others reflects depth of expertise and metacognitive sophistication.",
-    typical: "Senior professional",
+    typical: "Often seen in senior professionals",
     keyCharacteristics: ["Cross-disciplinary integration", "Original contribution", "Refined self-regulation", "Mentorship capability"]
   },
   { 
     id: 13, 
     name: "Specialised Excellence", 
     description: "Field-advancing capability with original contribution to domain knowledge. Thought leadership emerging through innovative approaches and paradigm-challenging insights. Deep expertise enables pattern recognition invisible to less experienced practitioners. Cognitive capabilities sustained through continued engagement with challenging material.",
-    typical: "Domain specialist",
+    typical: "Often seen in domain specialists",
     keyCharacteristics: ["Field-advancing contribution", "Thought leadership", "Expert pattern recognition", "Paradigm-challenging insight"]
   },
   { 
     id: 14, 
     name: "Paradigm-Advancing", 
     description: "Cross-disciplinary mastery with methodological innovation. Recognition as authority in specialised domains. Cognitive capabilities at the highest professional levels enable groundbreaking work. Wisdom-informed decision-making reflects integration of extensive experience with continued intellectual engagement.",
-    typical: "Recognised authority",
+    typical: "Often seen in recognised authorities",
     keyCharacteristics: ["Methodological innovation", "Recognised authority", "Wisdom-informed judgment", "Cross-disciplinary mastery"]
   },
   { 
     id: 15, 
     name: "Peak Capability", 
-    description: "Highest levels of human cognitive achievement with paradigm-shifting insight. Groundbreaking contribution that advances entire fields. Represents the upper bounds of measured capability, exceptional achievement reflecting both extensive expertise development and continued cognitive engagement at the frontier of human knowledge.",
+    description: "Highest levels of human cognitive achievement with paradigm-shifting insight. Groundbreaking contribution that advances entire fields. Represents the upper bounds of measured capability: exceptional achievement reflecting both extensive expertise development and continued cognitive engagement at the frontier of human knowledge.",
     typical: "Exceptional achievement",
     keyCharacteristics: ["Paradigm-shifting insight", "Groundbreaking contribution", "Frontier knowledge", "Exceptional achievement"]
   },
@@ -682,7 +686,7 @@ function DevelopmentalFrameworkSection() {
                 </div>
                 
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium" style={{ background: BRAND.cloud, color: BRAND.steel }}>
-                  <span style={{ color: BRAND.indigo }}>●</span> Typical context: {band.typical}
+                  <span style={{ color: BRAND.indigo }}>●</span> {band.typical}
                 </div>
               </div>
               
@@ -743,16 +747,16 @@ function DevelopmentalFrameworkSection() {
           ))}
         </div>
         
-        {/* Developmental stages grouping */}
+        {/* Band groupings */}
         <div className="p-6 md:p-8 rounded-2xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
-          <h3 className="font-semibold text-lg mb-5" style={{ color: BRAND.slate }}>Developmental Stages</h3>
+          <h3 className="font-semibold text-lg mb-5" style={{ color: BRAND.slate }}>Band Groupings</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { range: "1–3", name: "Foundation", desc: "Concrete thinking, external support", colors: [0, 1, 2], theory: "Pre-operational → Early concrete" },
-              { range: "4–6", name: "Functional", desc: "Emerging abstraction, strategic thinking", colors: [3, 4, 5], theory: "Concrete operational" },
-              { range: "7–9", name: "Advanced", desc: "Formal operations, cross-domain transfer", colors: [6, 7, 8], theory: "Formal operational" },
-              { range: "10–12", name: "Professional", desc: "Applied expertise, leadership capability", colors: [9, 10, 11], theory: "Post-formal / expertise" },
-              { range: "13–15", name: "Expert", desc: "Domain mastery, paradigm contribution", colors: [12, 13, 14], theory: "Expert performance" },
+              { range: "1–3", name: "Foundation", desc: "Concrete thinking, external support", colors: [0, 1, 2] },
+              { range: "4–6", name: "Functional", desc: "Emerging abstraction, strategic thinking", colors: [3, 4, 5] },
+              { range: "7–9", name: "Advanced", desc: "Sophisticated reasoning, cross-domain transfer", colors: [6, 7, 8] },
+              { range: "10–12", name: "Professional", desc: "Applied expertise, leadership capability", colors: [9, 10, 11] },
+              { range: "13–15", name: "Expert", desc: "Domain mastery, paradigm contribution", colors: [12, 13, 14] },
             ].map((stage) => (
               <div key={stage.range} className="p-4 rounded-xl" style={{ background: BRAND.white }}>
                 <div className="flex gap-1 mb-3">
@@ -762,8 +766,7 @@ function DevelopmentalFrameworkSection() {
                 </div>
                 <div className="text-xs font-bold mb-1" style={{ color: BRAND.indigo }}>Bands {stage.range}</div>
                 <div className="font-semibold text-sm mb-1" style={{ color: BRAND.slate }}>{stage.name}</div>
-                <div className="text-xs mb-2" style={{ color: BRAND.steel }}>{stage.desc}</div>
-                <div className="text-[10px] italic" style={{ color: BRAND.steel }}>{stage.theory}</div>
+                <div className="text-xs" style={{ color: BRAND.steel }}>{stage.desc}</div>
               </div>
             ))}
           </div>
@@ -951,7 +954,7 @@ function PsychometricSection() {
             },
             { 
               title: "Validation Protocols", 
-              desc: "Rigorous field testing and statistical validation aligned with international standards",
+              desc: "Rigorous field testing and validation approach aligned with international psychometric standards",
               Icon: () => (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -973,8 +976,8 @@ function PsychometricSection() {
               color: BRAND.cerulean
             },
             { 
-              title: "DIF and bias testing", 
-              desc: "Differential Item Functioning analysis identifies items that behave differently across groups. Bias review panels ensure cultural and linguistic fairness.",
+              title: "DIF-aware design", 
+              desc: "Built with Differential Item Functioning principles. Items designed for fairness across groups, with ongoing bias analysis.",
               Icon: BalanceIcon,
               color: BRAND.indigo
             },
@@ -1112,12 +1115,12 @@ function EvidenceLinkedSection() {
             </h2>
             <p className="text-base md:text-lg mb-5" style={{ color: BRAND.steel }}>
               Most assessments tell you <em>where</em> someone is. Wadmore profiles include{" "}
-              <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>, 
-              strategies matched to developmental position and linked to their evidence base.
+              <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>: 
+              strategies matched to current band level and linked to their evidence base.
             </p>
             <p className="text-sm mb-6" style={{ color: BRAND.steel }}>
               This isn't generic advice. Each of our 360 constructs (8 domains × 15 bands × 3 per cell) 
-              connects to specific strategies validated for that developmental stage.
+              connects to specific strategies validated for that level of capability.
             </p>
             
             <div className="p-4 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
