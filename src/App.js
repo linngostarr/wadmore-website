@@ -6,6 +6,7 @@ import Science from "./pages/Science";
 import Families from "./pages/Families";
 import Schools from "./pages/Schools";
 import Professional from "./pages/Professional";
+import Gifted2e from "./pages/Gifted2e";
 import Contact from "./pages/Contact";
 import Consulting from './pages/Consulting';
 import Privacy from './pages/Privacy';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/families" element={<Families />} />
         <Route path="/schools" element={<Schools />} />
         <Route path="/professional" element={<Professional />} />
+        <Route path="/gifted-2e" element={<Gifted2e />} />
         <Route path="/consulting" element={<Consulting />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Privacy" element={<Privacy />} />
