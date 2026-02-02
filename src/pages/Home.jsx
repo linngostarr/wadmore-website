@@ -227,14 +227,14 @@ function Hero() {
                 fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
               }}
             >
-              Actionable guidance for schools, families, and organisations.
+              Cognitive profiling with actionable guidance for schools, families, and organisations.
             </p>
             
             {/* Mobile: stacked CTAs. Desktop: inline row */}
             <div className="space-y-3 md:space-y-0 md:flex md:flex-wrap md:gap-3">
               {/* Primary CTA - full width on mobile */}
               <Link to="/about" className="group flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:py-3 rounded-full text-base md:text-sm font-semibold transition-all duration-300 hover:scale-[1.02] w-full md:w-auto" style={{ background: `linear-gradient(135deg, ${BRAND.indigo} 0%, ${BRAND.indigoDark} 100%)`, color: BRAND.white, boxShadow: `0 6px 20px ${BRAND.indigo}35` }}>
-                Discover Wadmore
+                Explore the assessment
                 <span className="transition-transform duration-300 group-hover:translate-x-1"><ArrowIcon /></span>
               </Link>
               {/* Secondary CTAs - row on mobile, inline on desktop */}
