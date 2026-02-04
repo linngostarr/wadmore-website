@@ -693,6 +693,8 @@ function PricingSection() {
               unit: "/child", 
               desc: "One-time assessment", 
               features: ["Complete 8-domain profile", "Strength & growth analysis", "15+ home activities", "School conversation guide", "PDF & online access"],
+              cta: "Register Interest",
+              ctaLink: "/contact",
             },
             { 
               tier: "Family Package", 
@@ -700,13 +702,16 @@ function PricingSection() {
               unit: "", 
               desc: "For 3 children", 
               features: ["Complete 8-domain profile for each child", "Family dynamics overview", "Sibling comparison insights", "Shared activities for all", "PDF & online access"],
+              cta: "Register Interest",
+              ctaLink: "/contact",
             },
             { 
               tier: "Reassessment", 
               price: "$69", 
               unit: "/child", 
               desc: "Track growth over time", 
-              features: ["Updated cognitive profile", "Growth comparison report", "New activity recommendations", "Progress celebration", "Recommended annually"],
+              features: ["Updated cognitive profile", "Growth comparison report", "New activity recommendations", "Longitudinal tracking", "Recommended annually"],
+              informational: true,
             },
           ].map((item) => (
             <div 
@@ -753,16 +758,28 @@ function PricingSection() {
                 ))}
               </ul>
               
-              <Link 
-                to="/contact"
-                className="block w-full text-center py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                style={{ 
-                  background: BRAND.teal,
-                  color: BRAND.white
-                }}
-              >
-                Register Interest
-              </Link>
+              {item.informational ? (
+                <div 
+                  className="block w-full text-center py-4 rounded-full text-sm font-medium"
+                  style={{ 
+                    background: `${BRAND.steel}08`,
+                    color: BRAND.steel,
+                  }}
+                >
+                  Available after initial assessment
+                </div>
+              ) : (
+                <Link 
+                  to={item.ctaLink}
+                  className="block w-full text-center py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{ 
+                    background: BRAND.teal,
+                    color: BRAND.white
+                  }}
+                >
+                  {item.cta}
+                </Link>
+              )}
             </div>
           ))}
         </div>
