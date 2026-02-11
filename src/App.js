@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Science from "./pages/Science";
 import Families from "./pages/Families";
+import Families1 from "./pages/Families1";
 import Schools from "./pages/Schools";
 import Professional from "./pages/Professional";
 import Gifted2e from "./pages/Gifted2e";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/science" element={<Science />} />
         <Route path="/families" element={<Families />} />
+        <Route path="/families1" element={<Families1 />} />
         <Route path="/schools" element={<Schools />} />
         <Route path="/professional" element={<Professional />} />
         <Route path="/gifted-2e" element={<Gifted2e />} />

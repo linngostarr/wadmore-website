@@ -1,10 +1,14 @@
 // src/pages/Success.jsx
-// Wadmore post-purchase confirmation page
-// Simple, warm, directs to email for next steps
+// Post-purchase success page — drives immediate action
+// Bridges marketing site → assessment platform onboarding
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams, Link } from "react-router-dom";
 import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+
+/* ══════════════════════════════════════════════════════════════
+   WADMORE BRAND COLOURS
+   ══════════════════════════════════════════════════════════════ */
 
 const BRAND = {
   indigo: "#384275",
@@ -17,73 +21,182 @@ const BRAND = {
   sage: "#A4D4AE",
 };
 
+/* ══════════════════════════════════════════════════════════════
+   MAIN COMPONENT
+   ══════════════════════════════════════════════════════════════ */
+
 export default function Success() {
+  const [searchParams] = useSearchParams();
+  const sessionId = searchParams.get("session_id");
+  const [purchaseInfo, setPurchaseInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    document.title = "You're in | Wadmore";
+    document.title = "Welcome to Wadmore";
   }, []);
+
+  // Fetch purchase info to determine individual vs family
+  useEffect(() => {
+    const fetchPurchaseInfo = async () => {
+      if (!sessionId) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const apiBase = import.meta.env.VITE_API_BASE_URL;
+        if (apiBase) {
+          const response = await fetch(`${apiBase}/api/stripe/session-info?session_id=${sessionId}`);
+          if (response.ok) {
+            const data = await response.json();
+            setPurchaseInfo(data);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch purchase info:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPurchaseInfo();
+  }, [sessionId]);
+
+  // Determine content based on purchase type
+  const isFamily = purchaseInfo?.product_type === "family";
+  const tokenCount = purchaseInfo?.token_count || (isFamily ? 3 : 1);
+
+  // Build onboard URL with session_id
+  const assessmentPlatformUrl = import.meta.env.VITE_ASSESSMENT_PLATFORM_URL || "https://app.wadmore.com.au";
+  const onboardUrl = sessionId 
+    ? `${assessmentPlatformUrl}/onboard?session_id=${sessionId}`
+    : assessmentPlatformUrl;
 
   return (
     <Layout>
-      <section 
-        className="min-h-[70vh] flex items-center justify-center py-28 md:py-36"
+      <div 
+        className="min-h-[80vh] flex items-center justify-center py-20"
         style={{ background: BRAND.cloud }}
       >
-        <div className="max-w-xl mx-auto px-6 md:px-8 text-center">
-          {/* Success icon */}
+        <div className="max-w-xl mx-auto px-6 text-center">
+          
+          {/* Success checkmark */}
           <div 
             className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8"
             style={{ background: `${BRAND.teal}15` }}
           >
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={BRAND.teal} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg 
+              width="40" 
+              height="40" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke={BRAND.teal}
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
 
+          {/* Headline */}
           <h1 
             className="text-4xl md:text-5xl font-semibold mb-4"
             style={{ color: BRAND.slate }}
           >
-            You're in.
+            Welcome to Wadmore
           </h1>
 
-          <p 
-            className="text-lg mb-8 leading-relaxed"
-            style={{ color: BRAND.steel }}
-          >
-            We've sent everything you need to get started to your email. 
-            Check your inbox for your Wadmore welcome email with a link to 
-            create your account and begin your child's assessment.
-          </p>
+          {/* Subheadline - varies by purchase type */}
+          {loading ? (
+            <p 
+              className="text-xl mb-8"
+              style={{ color: BRAND.steel }}
+            >
+              Loading your purchase details...
+            </p>
+          ) : isFamily ? (
+            <p 
+              className="text-xl mb-8"
+              style={{ color: BRAND.steel }}
+            >
+              You have <strong style={{ color: BRAND.slate }}>{tokenCount} assessments</strong> ready to go.
+              <br />
+              Set up your family account and create a profile for each child.
+            </p>
+          ) : (
+            <p 
+              className="text-xl mb-8"
+              style={{ color: BRAND.steel }}
+            >
+              Your assessment is ready. Let's set up your child's profile so they can get started.
+            </p>
+          )}
 
+          {/* Primary CTA */}
+          <a
+            href={onboardUrl}
+            className="inline-block px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
+            style={{ 
+              background: BRAND.teal, 
+              color: BRAND.white,
+            }}
+          >
+            {isFamily ? "Set Up Your Family Account" : "Set Up Your Child's Profile"} →
+          </a>
+
+          {/* Divider */}
           <div 
-            className="p-5 rounded-2xl mb-10"
+            className="w-16 h-px mx-auto my-10"
+            style={{ background: BRAND.dove }}
+          />
+
+          {/* Secondary note */}
+          <div 
+            className="rounded-2xl p-6 text-left"
             style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
           >
-            <p className="text-sm" style={{ color: BRAND.steel }}>
-              Didn't receive it? Check your spam folder, or contact{" "}
-              <a 
-                href="mailto:hello@wadmore.com.au" 
-                className="underline"
-                style={{ color: BRAND.teal }}
-              >
-                hello@wadmore.com.au
-              </a>
+            <p 
+              className="text-sm font-medium mb-2"
+              style={{ color: BRAND.slate }}
+            >
+              Not ready right now?
+            </p>
+            <p 
+              className="text-sm"
+              style={{ color: BRAND.steel }}
+            >
+              No problem. We've sent a link to your email — start anytime. 
+              Check your spam folder if you don't see it within a few minutes.
             </p>
           </div>
 
+          {/* Help link */}
+          <p 
+            className="mt-8 text-sm"
+            style={{ color: BRAND.steel }}
+          >
+            Questions?{" "}
+            <a 
+              href="mailto:hello@wadmore.com.au" 
+              className="underline"
+              style={{ color: BRAND.teal }}
+            >
+              hello@wadmore.com.au
+            </a>
+          </p>
+
+          {/* Home link */}
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-80"
-            style={{ color: BRAND.teal }}
+            className="inline-block mt-6 text-sm underline"
+            style={{ color: BRAND.steel }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12" />
-              <polyline points="12 19 5 12 12 5" />
-            </svg>
-            Back to Wadmore
+            Return to homepage
           </Link>
+
         </div>
-      </section>
+      </div>
     </Layout>
   );
 }
