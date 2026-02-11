@@ -664,7 +664,7 @@ function PricingSection() {
     setCheckoutError(null);
 
     try {
-      const apiBase = import.meta.env.VITE_API_BASE_URL;
+        const apiBase = process.env.REACT_APP_API_BASE_URL || 'https://api.wadmore.com.au';
       if (!apiBase) {
         // Fallback: no API configured yet — redirect to contact
         window.location.href = '/contact';
