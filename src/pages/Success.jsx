@@ -44,7 +44,7 @@ export default function Success() {
       }
 
       try {
-        const apiBase = import.meta.env.VITE_API_BASE_URL;
+        const apiBase = process.env.REACT_APP_API_BASE_URL || 'https://api.wadmore.com.au';
         if (apiBase) {
           const response = await fetch(`${apiBase}/api/stripe/session-info?session_id=${sessionId}`);
           if (response.ok) {
@@ -67,7 +67,7 @@ export default function Success() {
   const tokenCount = purchaseInfo?.token_count || (isFamily ? 3 : 1);
 
   // Build onboard URL with session_id
-  const assessmentPlatformUrl = import.meta.env.VITE_ASSESSMENT_PLATFORM_URL || "https://app.wadmore.com.au";
+  const assessmentPlatformUrl = process.env.REACT_APP_ASSESSMENT_PLATFORM_URL || "https://app.wadmore.com.au";
   const onboardUrl = sessionId 
     ? `${assessmentPlatformUrl}/onboard?session_id=${sessionId}`
     : assessmentPlatformUrl;
