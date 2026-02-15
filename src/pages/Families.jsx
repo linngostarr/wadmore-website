@@ -263,36 +263,34 @@ function WhyItMattersSection() {
             className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
             style={{ color: BRAND.slate }}
           >
-            Shared understanding changes everything
+            Understand your child. Support their growth.
           </h2>
           <p 
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            When you and your child's school share the same cognitive performance data, everyone 
-            can support them more effectively. Same language, same picture, aligned strategies 
-            at home and in the classroom.
+            A Wadmore Profile gives you a detailed picture of how your child performs cognitively, so you can make better decisions about how to support and extend them every day.
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {[
             { 
-              icon: HeartIcon, 
-              title: "Support that fits", 
-              description: "Stop guessing why homework is hard. Understand the cognitive factors at play and target support where it actually helps.",
+              icon: HomeIcon, 
+              title: "Support at home", 
+              description: "Research-grounded strategies matched to your child's profile. Know which approaches help, and why.",
               color: BRAND.teal
             },
             { 
-              icon: ChatIcon, 
-              title: "Productive conversations", 
-              description: "A shared foundation for parent-teacher discussions. Same framework, same language, so conversations move forward together.",
+              icon: CompassIcon, 
+              title: "Guide their enrichment", 
+              description: "Choose activities, resources, and experiences that match cognitive strengths and stretch growth areas.",
               color: BRAND.cerulean
             },
             { 
-              icon: StarIcon, 
-              title: "Aligned strategies", 
-              description: "Know exactly which approaches work, and share that understanding with teachers so support is consistent everywhere.",
+              icon: ChatIcon, 
+              title: "Inform school conversations", 
+              description: "When you do meet with teachers, you have shared evidence and shared language. Conversations move forward.",
               color: BRAND.violet
             },
           ].map((item) => (
@@ -540,6 +538,45 @@ function ProfilePreviewSection() {
    ══════════════════════════════════════════════════════════════ */
 
 function UseCasesSection() {
+  const useCases = [
+    { 
+      icon: PuzzleIcon, 
+      title: "Understand daily patterns", 
+      desc: "See why some tasks flow and others stall. Strategies matched to the cognitive factors at play.",
+      color: BRAND.teal 
+    },
+    { 
+      icon: CompassIcon, 
+      title: "Choose the right activities", 
+      desc: "Match tutoring, enrichment, and extracurriculars to cognitive strengths and growth areas.",
+      color: BRAND.cerulean 
+    },
+    { 
+      icon: SparkIcon, 
+      title: "Build on strengths", 
+      desc: "Lead with what's working. Strategies pitched at the right level to build confidence and momentum.",
+      color: BRAND.violet 
+    },
+    { 
+      icon: UsersIcon, 
+      title: "Understand sibling differences", 
+      desc: "See why different children need different approaches. Not comparison, just clarity.",
+      color: BRAND.teal 
+    },
+    { 
+      icon: ChatBubbleIcon, 
+      title: "Inform school conversations", 
+      desc: "Shared evidence and shared language when you meet with teachers. One benefit of many.",
+      color: BRAND.cerulean 
+    },
+    { 
+      icon: TrendUpIcon, 
+      title: "Track growth over time", 
+      desc: "Reassess annually. Celebrate progress, adjust strategies, see how the profile evolves.",
+      color: BRAND.violet 
+    },
+  ];
+
   return (
     <section 
       className="py-28 md:py-36"
@@ -551,32 +588,31 @@ function UseCasesSection() {
             className="text-sm font-semibold uppercase tracking-widest mb-5"
             style={{ color: BRAND.teal }}
           >
-            Real Applications
+            In Practice
           </p>
           <h2 
             className="text-4xl md:text-5xl font-semibold mb-6"
             style={{ color: BRAND.slate }}
           >
-            Families use Wadmore for...
+            What families do with a Wadmore Profile
           </h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { title: "Homework struggles", desc: "Understand why homework is hard and find approaches that actually work for your child's cognitive profile." },
-            { title: "School conversations", desc: "Transform parent-teacher meetings with objective cognitive data and shared vocabulary." },
-            { title: "Sibling differences", desc: "See why different children need different approaches, no comparison, just understanding." },
-            { title: "Activity matching", desc: "Choose extracurriculars, games, and learning activities that match cognitive strengths." },
-            { title: "Building confidence", desc: "Build cognitive confidence with activities pitched at exactly the right level." },
-            { title: "Tracking growth", desc: "Reassess annually to celebrate progress and adjust support strategies over time." },
-          ].map((item, i) => (
+          {useCases.map((item) => (
             <div 
               key={item.title}
               className="group p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
             >
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                style={{ background: `${item.color}10` }}
+              >
+                <item.icon color={item.color} />
+              </div>
               <h3 
-                className="font-semibold text-xl mb-3"
+                className="font-semibold text-lg mb-2"
                 style={{ color: BRAND.slate }}
               >
                 {item.title}
@@ -994,10 +1030,74 @@ function ChatIcon({ color }) {
   );
 }
 
-function StarIcon({ color }) {
+function HomeIcon({ color }) {
   return (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  );
+}
+
+function GrowthIcon({ color }) {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+    </svg>
+  );
+}
+
+function PuzzleIcon({ color }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 01-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 10-3.214 3.214c.446.166.855.497.925.968a.979.979 0 01-.276.837l-1.61 1.61a2.404 2.404 0 01-1.705.707 2.402 2.402 0 01-1.704-.706l-1.568-1.568a1.026 1.026 0 00-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 11-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 00-.289-.877l-1.568-1.568A2.402 2.402 0 011.998 12c0-.617.236-1.234.706-1.704L4.315 8.685a.98.98 0 01.837-.276c.47.07.802.48.968.925a2.501 2.501 0 103.214-3.214c-.446-.166-.855-.497-.925-.968a.979.979 0 01.276-.837l1.61-1.61a2.404 2.404 0 011.705-.707c.618 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.969a2.5 2.5 0 113.237 3.237c-.464.18-.894.527-.967 1.02z" />
+    </svg>
+  );
+}
+
+function ChatBubbleIcon({ color }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M7.9 20A9 9 0 104 16.1L2 22z" />
+    </svg>
+  );
+}
+
+function UsersIcon({ color }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 00-3-3.87" />
+      <path d="M16 3.13a4 4 0 010 7.75" />
+    </svg>
+  );
+}
+
+function CompassIcon({ color }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+    </svg>
+  );
+}
+
+function SparkIcon({ color }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9.937 15.5A2 2 0 0012 17.5a2 2 0 002.063-2A6.002 6.002 0 0020 10c0-3.314-3.582-6-8-6s-8 2.686-8 6a6.002 6.002 0 005.937 5.5z" />
+      <path d="M12 17.5V22" />
+      <path d="M8 21h8" />
+    </svg>
+  );
+}
+
+function TrendUpIcon({ color }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+      <polyline points="16 7 22 7 22 13" />
     </svg>
   );
 }
