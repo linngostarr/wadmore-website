@@ -58,7 +58,7 @@ export default function Families() {
 
 function Hero() {
   return (
-    <section className="min-h-[70vh] flex items-center relative overflow-hidden">
+    <section className="min-h-[60vh] flex items-center relative overflow-hidden">
       {/* Warm gradient background */}
       <div 
         className="absolute inset-0"
@@ -87,7 +87,7 @@ function Hero() {
           <div>
             {/* Eyebrow badge */}
             <div 
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium mb-10 backdrop-blur-sm"
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium mb-8 backdrop-blur-sm"
               style={{ 
                 background: `${BRAND.white}90`, 
                 border: `1px solid ${BRAND.teal}25`,
@@ -105,12 +105,12 @@ function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Understand how they{" "}
+              Know your child beyond their{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.teal }}
               >
-                think.
+                grades.
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
                   height="6" 
@@ -130,13 +130,18 @@ function Hero() {
             </h1>
             
             <p 
-              className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
+              className="text-lg md:text-xl leading-relaxed mb-3 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              When effort doesn't match outcomes. When support isn't landing. 
-              Wadmore shows you how your child{" "}
-              <strong style={{ color: BRAND.slate }}>processes, regulates, and creates</strong>. 
-              These are skills that can be understood, supported, and grown.
+              Grades capture outcomes, but not the cognitive performance producing them.
+            </p>
+            <p 
+              className="text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+              style={{ color: BRAND.steel }}
+            >
+              A Wadmore Profile reveals how your child performs across{" "}
+              <strong style={{ color: BRAND.slate }}>eight cognitive domains</strong>, 
+              with practical guidance for home and school. Whether they're building confidence, finding their stride, or racing ahead.
             </p>
             
             {/* CTAs */}
@@ -264,7 +269,7 @@ function WhyItMattersSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            When you and your child's school both understand how they think, everyone 
+            When you and your child's school share the same cognitive performance data, everyone 
             can support them more effectively. Same language, same picture, aligned strategies 
             at home and in the classroom.
           </p>
@@ -441,8 +446,8 @@ function ProfilePreviewSection() {
               className="text-xl mb-8 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              No jargon. No percentiles without context. Just clear, actionable 
-              understanding of how your child thinks, written in plain language you can use.
+              No jargon. No percentiles without context. Just a clear, actionable 
+              picture of your child's cognitive performance, written in plain language you can use.
             </p>
             
             <div className="space-y-4">
@@ -810,7 +815,7 @@ function FAQSection() {
   
   const faqs = [
     { question: "What ages is Wadmore suitable for?", answer: "Wadmore Families is designed for children aged 5-18. Our adaptive assessment automatically adjusts to your child's level, ensuring an appropriate and engaging experience regardless of age." },
-    { question: "Is this an IQ test?", answer: "No. Wadmore profiles cognitive capability across eight domains. It's not designed to produce a single IQ score. We focus on understanding how your child thinks, not ranking children against each other." },
+    { question: "Is this an IQ test?", answer: "No. Wadmore profiles cognitive performance across eight domains. It's not designed to produce a single IQ score. We focus on building a detailed picture of cognitive capability, not ranking children against each other." },
     { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information, their cognitive strengths and growth areas, not subjective preferences." },
     { question: "How long does the assessment take?", answer: "The assessment is designed to be completed in one session but can be paused if needed. Because it's adaptive and adjusts to your child's level, the length varies based on their responses." },
     { question: "Will my child find it stressful?", answer: "We've designed Wadmore to be engaging rather than stressful. There's no time pressure on individual items, the difficulty adjusts to your child's level, and we use varied formats to maintain engagement." },
@@ -897,13 +902,13 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to understand how your child thinks?
+          Ready to know your child beyond their grades?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90"
           style={{ color: BRAND.white }}
         >
-          Launching March 2026. Register now for early access and launch pricing.
+          Be among the first families with a Wadmore Profile. Launching March 2026.
         </p>
         
         <div className="flex flex-wrap justify-center gap-5">

@@ -132,28 +132,28 @@ const AUDIENCES = {
   schools: {
     label: "Schools",
     color: BRAND.cerulean,
-    headline: "See the whole student.",
-    subhead: "Beyond grades, behaviour, or test scores.",
-    body: "Wadmore provides precise cognitive performance across 8 domains with research-grounded pathways forward, supporting professional decisions about differentiation, support planning, and extension.",
-    points: ["Precise cognitive performance", "Clear next steps for support", "NCCD documentation evidence", "Cohort-level analytics"],
+    headline: "Every student has a cognitive profile. Wadmore makes it visible.",
+    subhead: "Evidence for differentiation, support, and extension.",
+    body: "Wadmore measures cognitive performance across eight domains, from reasoning and memory to self-regulation and creative thinking, giving teachers evidence for differentiation, targeted support, and meaningful extension. Not a ranking. A profile that leads to action.",
+    points: ["Cognitive performance across eight domains", "Strategies matched to current capability", "NCCD documentation from assessment evidence", "Cohort-level cognitive intelligence"],
     link: "/schools",
   },
   families: {
     label: "Families",
     color: BRAND.teal,
-    headline: "Understand your child's thinking.",
-    subhead: "Patterns that can change with experience and support.",
-    body: "Wadmore describes how your child thinks as they engage with cognitive tasks, with clear guidance you can use at home and in conversations with teachers. Current patterns, not fixed labels.",
-    points: ["Strength-based profiles", "Plain language explanations", "Practical home activities", "School conversation guides"],
+    headline: "Know your child beyond their grades.",
+    subhead: "A clear picture of cognitive performance, with practical guidance.",
+    body: "Grades tell you outcomes. A Wadmore Profile shows you the cognitive performance driving them, across eight measurable domains, with practical guidance for home and school. Whether your child is building confidence, finding their stride, or racing ahead.",
+    points: ["Strength-based cognitive profiles", "Plain language explanations", "Practical home strategies", "School conversation guides"],
     link: "/families",
   },
   professional: {
     label: "Professional",
     color: BRAND.violet,
-    headline: "Understand how your team thinks.",
-    subhead: "Evidence for decisions, not predictions.",
-    body: "Wadmore reveals patterns in how your people approach complexity, collaboration, and change under cognitive demand. Supports reflection, coaching, and development planning.",
-    points: ["Individual cognitive profiles", "Team cognitive maps", "Collaboration insights", "Development priorities"],
+    headline: "People decisions, backed by cognitive evidence.",
+    subhead: "Cognitive performance data for hiring, development, and team composition.",
+    body: "Personality tools measure preference. Wadmore measures cognitive performance. See how your people handle complexity, regulate under pressure, and approach novel problems, then use that intelligence for hiring, development, and team composition.",
+    points: ["Individual cognitive performance profiles", "Team cognitive maps", "Evidence-based development priorities", "Cognitive diversity insights"],
     link: "/professional",
   },
 };
@@ -210,24 +210,24 @@ function Hero() {
             </h1>
             
             <p 
-              className="leading-relaxed mb-2" 
+              className="leading-relaxed mb-3" 
               style={{ 
                 color: BRAND.steel,
-                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
+                fontSize: "clamp(1rem, 1.1vw + 0.5rem, 1.3rem)"
               }}
             >
-              How people <strong style={{ color: BRAND.slate }}>process</strong>.{" "}
-              How they <strong style={{ color: BRAND.slate }}>regulate</strong>.{" "}
-              How they <strong style={{ color: BRAND.slate }}>create</strong>.
+              Grades show <strong style={{ color: BRAND.slate }}>achievement</strong>.{" "}
+              Personality tools show <strong style={{ color: BRAND.slate }}>preference</strong>.{" "}
+              Neither shows you the cognitive performance underneath.
             </p>
             <p 
               className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
               style={{ 
                 color: BRAND.steel,
-                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
+                fontSize: "clamp(0.9rem, 0.9vw + 0.4rem, 1.1rem)"
               }}
             >
-              Cognitive profiling with actionable guidance for schools, families, and organisations.
+              Wadmore delivers cognitive intelligence: detailed performance data across eight domains, with research-grounded strategies for growth.
             </p>
             
             {/* Mobile: stacked CTAs. Desktop: inline row */}
@@ -325,13 +325,13 @@ function WhenInsightMattersSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.indigo }}>
-            When Insight Matters
+            Cognitive Intelligence
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-            Built for the questions that matter most.
+            A new layer of evidence for every decision.
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            When understanding how someone processes, regulates, or creates changes what you do next.
+            You measure achievement. You observe behaviour. You might measure personality. But you've never measured cognitive performance. That's the layer Wadmore adds.
           </p>
         </div>
 
@@ -428,7 +428,7 @@ function CognitiveFrameworkSection() {
             Eight domains of thinking
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore makes thinking visible through structured tasks, identifying patterns 
+            Wadmore measures cognitive performance through structured tasks, identifying patterns 
             across eight research-grounded domains organised into three clusters.
           </p>
         </div>
@@ -774,8 +774,8 @@ function DifferenceSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>Why Wadmore</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Assessment that serves understanding.</h2>
-          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Wadmore was built to make thinking visible, not to predict outcomes.</p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>Assessment that delivers intelligence, not just scores.</h2>
+          <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>Most assessments end with a number. Wadmore starts with one. Every profile connects cognitive performance data to specific, research-grounded strategies for support, differentiation, and extension.</p>
         </div>
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
@@ -822,9 +822,9 @@ function CTASection() {
       <div className="absolute inset-0 pointer-events-none opacity-10" style={{ backgroundImage: `radial-gradient(circle at 30% 70%, ${BRAND.teal} 1px, transparent 1px), radial-gradient(circle at 70% 30%, ${BRAND.violet} 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
       
       <div className="max-w-4xl mx-auto px-5 md:px-8 text-center relative z-10">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 md:mb-6 leading-tight" style={{ color: BRAND.white }}>Ready to make thinking visible?</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 md:mb-6 leading-tight" style={{ color: BRAND.white }}>Cognitive intelligence. Available March 2026.</h2>
         <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 opacity-85 max-w-2xl mx-auto" style={{ color: BRAND.white }}>
-          Launching March 2026. Register now for early access.
+          Be among the first schools, families, and organisations with a Wadmore Profile.
         </p>
         
         {/* Mobile: stacked full-width. Desktop: inline row */}

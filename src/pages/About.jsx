@@ -87,9 +87,9 @@ function Hero() {
                 fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
               }}
             >
-              Understanding{" "}
+              Built from decades in{" "}
               <span className="relative inline-block" style={{ color: BRAND.indigo }}>
-                thinking.
+                assessment.
                 <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 200 8" preserveAspectRatio="none">
                   <path d="M0 6 Q50 1, 100 4 T200 3" fill="none" stroke={BRAND.indigo} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
                 </svg>
@@ -97,14 +97,22 @@ function Hero() {
             </h1>
             
             <p 
+              className="leading-relaxed mb-3"
+              style={{ 
+                color: BRAND.steel,
+                fontSize: "clamp(1rem, 1vw + 0.5rem, 1.2rem)"
+              }}
+            >
+              After years working across some of the world's largest testing programmes, one question kept returning:
+            </p>
+            <p 
               className="leading-relaxed"
               style={{ 
                 color: BRAND.steel,
-                fontSize: "clamp(1.1rem, 1vw + 0.5rem, 1.25rem)"
+                fontSize: "clamp(1.05rem, 1.1vw + 0.5rem, 1.25rem)"
               }}
             >
-              Wadmore was founded on a belief: everyone deserves to understand 
-              how they think, and that understanding should lead to <strong style={{ color: BRAND.slate }}>growth, not labels</strong>.
+              The assessment tells us where they rank. But it never tells us <strong style={{ color: BRAND.slate }}>what to do next</strong>.
             </p>
           </div>
           
@@ -116,7 +124,7 @@ function Hero() {
                 Evidence that informs decisions.
               </p>
               <p className="text-sm leading-relaxed mb-5" style={{ color: BRAND.steel }}>
-                We're building cognitive profiling that reveals how thinking appears when people engage with structured tasks, with research-grounded guidance to support professional decisions.
+                We're building a cognitive intelligence platform that maps performance across eight domains, with research-grounded strategies for support, differentiation, and extension.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Strength-based", "Research-grounded", "Actionable"].map((tag) => (
@@ -165,35 +173,34 @@ function MissionSection() {
                 borderLeft: `4px solid ${BRAND.indigo}`
               }}
             >
-              Our aim is not to predict outcomes, but to make thinking visible enough 
-              to support better decisions.
+              Our aim is not to predict outcomes, but to deliver cognitive intelligence 
+              that supports better decisions.
             </p>
             
             <p 
               className="text-lg mb-5 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              We're building a cognitive profiling platform that reveals how people 
-              think as they engage with structured tasks. Our framework maps 
-              patterns across eight domains and fifteen bands, creating 360 constructs 
-              that describe cognitive capability with genuine precision.
+              Existing assessments measure achievement well. But they don't reveal cognitive 
+              performance across domains: the processing, regulation, and creative thinking 
+              patterns underneath results. And they rarely connect data to strategies for growth.
             </p>
             <p 
               className="text-lg mb-5 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              Where traditional assessments rank and compare, Wadmore profiles and guides. 
-              Our strength-based approach celebrates cognitive diversity and provides 
-              genuinely actionable insights for schools, families, and organisations.
+              The world didn't need another achievement test. It needed a way to make cognitive 
+              performance visible, and actionable. That's what Wadmore delivers, across 
+              eight domains and fifteen developmental bands.
             </p>
             <p 
               className="text-lg leading-relaxed"
               style={{ color: BRAND.steel }}
             >
               Every profile includes{" "}
-              <strong style={{ color: BRAND.indigo }}>research-grounded guidance</strong>, 
-              strategies linked to over 50 peer-reviewed sources across cognitive science 
-              and learning research. Because understanding thinking should lead to growth.
+              <strong style={{ color: BRAND.indigo }}>research-grounded strategies</strong>, 
+              linked to over 50 peer-reviewed sources across cognitive science 
+              and learning research. For support, differentiation, and extension.
             </p>
           </div>
           
@@ -206,7 +213,7 @@ function MissionSection() {
                 {
                   number: "01",
                   title: "Map",
-                  description: "Profile how people process, regulate, and create across 8 cognitive domains",
+                  description: "Measure cognitive performance across 8 domains: processing, regulation, and creative thinking",
                 },
                 {
                   number: "02",
@@ -286,9 +293,9 @@ function StorySection() {
             </p>
             
             <p className="text-lg leading-relaxed">
-              Wadmore takes a different approach. We profile how people think across 
+              Wadmore takes a different approach. We measure cognitive performance across 
               eight domains, from abstract reasoning to executive functioning to 
-              metacognition, revealing how they process, regulate, and create. 
+              metacognition, covering processing, regulation, and creative thinking. 
               And we show what growth looks like from wherever you are.
             </p>
             
@@ -426,7 +433,7 @@ function CredentialsSection() {
           </h2>
           <p className="text-lg" style={{ color: BRAND.steel }}>
             Wadmore combines deep assessment expertise with modern technology 
-            to reveal how people process, regulate, and create, with genuine utility.
+            to deliver cognitive intelligence across processing, regulation, and creative thinking.
           </p>
         </div>
         

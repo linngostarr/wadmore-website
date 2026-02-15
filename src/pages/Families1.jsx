@@ -105,12 +105,12 @@ function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Understand how they{" "}
+              Know your child beyond their{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.teal }}
               >
-                think.
+                grades.
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
                   height="6" 
@@ -133,10 +133,9 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              When effort doesn't match outcomes. When support isn't landing. 
-              Wadmore shows you how your child{" "}
-              <strong style={{ color: BRAND.slate }}>processes, regulates, and creates</strong>. 
-              These are skills that can be understood, supported, and grown.
+              Your child's mind is unique. Grades capture outcomes, but not the cognitive performance producing them. A Wadmore Profile reveals how your child performs across{" "}
+              <strong style={{ color: BRAND.slate }}>eight cognitive domains</strong>, 
+              so you can support their growth with clarity, whether they're building confidence, finding their stride, or racing ahead.
             </p>
             
             {/* CTAs */}
@@ -264,7 +263,7 @@ function WhyItMattersSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            When you and your child's school both understand how they think, everyone 
+            When you and your child's school share the same cognitive performance data, everyone 
             can support them more effectively. Same language, same picture, aligned strategies 
             at home and in the classroom.
           </p>
@@ -441,8 +440,8 @@ function ProfilePreviewSection() {
               className="text-xl mb-8 leading-relaxed"
               style={{ color: BRAND.steel }}
             >
-              No jargon. No percentiles without context. Just clear, actionable 
-              understanding of how your child thinks, written in plain language you can use.
+              No jargon. No percentiles without context. Just a clear, actionable 
+              picture of your child's cognitive performance, written in plain language you can use.
             </p>
             
             <div className="space-y-4">
@@ -654,119 +653,15 @@ function HowItWorksSection() {
    ══════════════════════════════════════════════════════════════ */
 
 function PricingSection() {
-  const [checkoutLoading, setCheckoutLoading] = useState(null);
-  const [checkoutError, setCheckoutError] = useState(null);
-  const [confirmModal, setConfirmModal] = useState(null); // 'individual' | 'family' | null
-
-  const proceedToCheckout = async (productType) => {
-    setConfirmModal(null);
-    setCheckoutLoading(productType);
-    setCheckoutError(null);
-
-    try {
-        const apiBase = process.env.REACT_APP_API_BASE_URL || 'https://api.wadmore.com.au';
-      if (!apiBase) {
-        // Fallback: no API configured yet — redirect to contact
-        window.location.href = '/contact';
-        return;
-      }
-
-      const response = await fetch(`${apiBase}/api/stripe/create-checkout-session`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ product_type: productType }),
-      });
-
-      if (!response.ok) throw new Error('Checkout unavailable');
-
-      const { url } = await response.json();
-      window.location.href = url;
-    } catch (error) {
-      console.error('Checkout error:', error);
-      setCheckoutError('Something went wrong. Please try again or contact hello@wadmore.com.au');
-      setCheckoutLoading(null);
-    }
-  };
-
-  const handleGetStarted = (productType) => {
-    setConfirmModal(productType);
-  };
-
-  const pricingData = [
-    { 
-      tier: "Individual", 
-      regularPrice: "$149",
-      launchPrice: "$99",
-      savings: "$50",
-      unit: "/child", 
-      desc: "One-time assessment", 
-      features: ["Complete 8-domain profile", "Strength & growth analysis", "15+ home activities", "School conversation guide", "PDF & online access"],
-      cta: "Get Started",
-      productType: "individual",
-    },
-    { 
-      tier: "Family Package", 
-      regularPrice: "$349",
-      launchPrice: "$249",
-      savings: "$100",
-      unit: "", 
-      desc: "For 3 children", 
-      features: ["Complete 8-domain profile for each child", "Family dynamics overview", "Sibling comparison insights", "Shared activities for all", "PDF & online access"],
-      cta: "Get Started",
-      productType: "family",
-      popular: true,
-    },
-    { 
-      tier: "Reassessment", 
-      regularPrice: "$99",
-      launchPrice: "$69",
-      savings: "$30",
-      unit: "/child", 
-      desc: "Track growth over time", 
-      features: ["Updated cognitive profile", "Growth comparison report", "New activity recommendations", "Longitudinal tracking", "Recommended annually"],
-      informational: true,
-    },
-  ];
-
-  const modalContent = {
-    individual: {
-      title: "Individual Profile",
-      price: "$99",
-      regularPrice: "$149",
-      subtitle: "One child, complete insights",
-      features: [
-        "Complete 8-domain cognitive profile",
-        "Personalised strength & growth analysis",
-        "15+ tailored home activities",
-        "School conversation guide",
-        "PDF report + online dashboard",
-      ],
-    },
-    family: {
-      title: "Family Package",
-      price: "$249",
-      regularPrice: "$349",
-      subtitle: "Up to 3 children",
-      savings: "Save $100 vs individual",
-      features: [
-        "Complete profile for each child",
-        "Family dynamics overview",
-        "Sibling comparison insights",
-        "Shared activities for all",
-        "PDF reports + family dashboard",
-      ],
-    },
-  };
-
   return (
-    <section id="pricing" className="py-28 md:py-36" style={{ background: BRAND.cloud }}>
+    <section className="py-28 md:py-36" style={{ background: BRAND.cloud }}>
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p 
             className="text-sm font-semibold uppercase tracking-widest mb-5"
             style={{ color: BRAND.teal }}
           >
-            Founding Families Pricing
+            Launch Pricing
           </p>
           <h2 
             className="text-4xl md:text-5xl font-semibold mb-6"
@@ -782,33 +677,50 @@ function PricingSection() {
           </p>
           <p 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-            style={{ background: `${BRAND.teal}15`, color: BRAND.teal }}
+            style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}
           >
-            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.teal }} />
-            Launch pricing ends soon
+            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
+            Available March 2026
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
-          {pricingData.map((item) => (
+          {[
+            { 
+              tier: "Individual", 
+              price: "$99", 
+              unit: "/child", 
+              desc: "One-time assessment", 
+              features: ["Complete 8-domain profile", "Strength & growth analysis", "15+ home activities", "School conversation guide", "PDF & online access"],
+              cta: "Register Interest",
+              ctaLink: "/contact",
+            },
+            { 
+              tier: "Family Package", 
+              price: "$249", 
+              unit: "", 
+              desc: "For 3 children", 
+              features: ["Complete 8-domain profile for each child", "Family dynamics overview", "Sibling comparison insights", "Shared activities for all", "PDF & online access"],
+              cta: "Register Interest",
+              ctaLink: "/contact",
+            },
+            { 
+              tier: "Reassessment", 
+              price: "$69", 
+              unit: "/child", 
+              desc: "Track growth over time", 
+              features: ["Updated cognitive profile", "Growth comparison report", "New activity recommendations", "Longitudinal tracking", "Recommended annually"],
+              informational: true,
+            },
+          ].map((item) => (
             <div 
               key={item.tier}
               className="rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               style={{ 
                 background: BRAND.white,
-                border: item.popular ? `2px solid ${BRAND.teal}` : `1px solid ${BRAND.dove}`,
+                border: `1px solid ${BRAND.dove}`,
               }}
             >
-              {/* Popular badge */}
-              {item.popular && (
-                <div 
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider"
-                  style={{ background: BRAND.teal, color: BRAND.white }}
-                >
-                  Most Popular
-                </div>
-              )}
-
               <div 
                 className="text-sm font-semibold uppercase tracking-wider mb-4"
                 style={{ color: BRAND.teal }}
@@ -816,30 +728,13 @@ function PricingSection() {
                 {item.tier}
               </div>
               
-              {/* Price display with strikethrough regular price */}
-              <div className="mb-2">
-                <div className="flex items-baseline gap-2">
-                  <span 
-                    className="text-2xl line-through" 
-                    style={{ color: BRAND.steel }}
-                  >
-                    {item.regularPrice}
-                  </span>
-                  <span 
-                    className="text-xs font-medium px-2 py-0.5 rounded-full"
-                    style={{ background: `${BRAND.teal}15`, color: BRAND.teal }}
-                  >
-                    Save {item.savings}
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-1 mt-1">
-                  <span className="text-5xl font-bold" style={{ color: BRAND.slate }}>
-                    {item.launchPrice}
-                  </span>
-                  <span className="text-xl" style={{ color: BRAND.steel }}>
-                    {item.unit}
-                  </span>
-                </div>
+              <div className="flex items-baseline gap-1 mb-2">
+                <span className="text-5xl font-bold" style={{ color: BRAND.slate }}>
+                  {item.price}
+                </span>
+                <span className="text-xl" style={{ color: BRAND.steel }}>
+                  {item.unit}
+                </span>
               </div>
               
               <p className="text-sm mb-8" style={{ color: BRAND.steel }}>
@@ -873,31 +768,20 @@ function PricingSection() {
                   Available after initial assessment
                 </div>
               ) : (
-                <button 
-                  onClick={() => handleGetStarted(item.productType)}
-                  disabled={checkoutLoading === item.productType}
-                  className="block w-full text-center py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-wait"
+                <Link 
+                  to={item.ctaLink}
+                  className="block w-full text-center py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
                   style={{ 
                     background: BRAND.teal,
                     color: BRAND.white
                   }}
                 >
-                  {checkoutLoading === item.productType ? 'Redirecting…' : item.cta}
-                </button>
+                  {item.cta}
+                </Link>
               )}
             </div>
           ))}
         </div>
-
-        {/* Error message */}
-        {checkoutError && (
-          <div 
-            className="mt-6 p-4 rounded-xl text-center text-sm"
-            style={{ background: '#FEE2E2', color: '#991B1B' }}
-          >
-            {checkoutError}
-          </div>
-        )}
         
         {/* Guarantee */}
         <div 
@@ -912,142 +796,6 @@ function PricingSection() {
           </p>
         </div>
       </div>
-
-      {/* Confirmation Modal */}
-      {confirmModal && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: 'rgba(44, 45, 51, 0.6)', backdropFilter: 'blur(4px)' }}
-          onClick={() => setConfirmModal(null)}
-        >
-          <div 
-            className="relative w-full max-w-md rounded-2xl shadow-2xl"
-            style={{ background: BRAND.white }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header with price */}
-            <div 
-              className="p-6 pb-5 rounded-t-2xl"
-              style={{ background: `linear-gradient(135deg, ${BRAND.cloud} 0%, #E8F6F5 100%)` }}
-            >
-              {/* Close button */}
-              <button
-                onClick={() => setConfirmModal(null)}
-                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full transition-all hover:scale-110"
-                style={{ background: BRAND.white }}
-                aria-label="Close"
-              >
-                <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                  <path d="M1 1L13 13M1 13L13 1" stroke={BRAND.steel} strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </button>
-
-              <h3 
-                className="text-xl font-semibold mb-1"
-                style={{ color: BRAND.slate }}
-              >
-                {modalContent[confirmModal].title}
-              </h3>
-              <p className="text-sm mb-4" style={{ color: BRAND.steel }}>
-                {modalContent[confirmModal].subtitle}
-              </p>
-              
-              <div className="flex items-baseline gap-2">
-                <span 
-                  className="text-lg line-through"
-                  style={{ color: BRAND.steel }}
-                >
-                  {modalContent[confirmModal].regularPrice}
-                </span>
-                <span 
-                  className="text-4xl font-bold"
-                  style={{ color: BRAND.slate }}
-                >
-                  {modalContent[confirmModal].price}
-                </span>
-                {modalContent[confirmModal].savings && (
-                  <span 
-                    className="text-xs font-medium px-2 py-1 rounded-full"
-                    style={{ background: BRAND.white, color: BRAND.teal }}
-                  >
-                    {modalContent[confirmModal].savings}
-                  </span>
-                )}
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="p-6 pt-5">
-              <p 
-                className="text-xs font-semibold uppercase tracking-wider mb-3"
-                style={{ color: BRAND.teal }}
-              >
-                What's included
-              </p>
-              <ul className="space-y-2.5 mb-5">
-                {modalContent[confirmModal].features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <div 
-                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${BRAND.teal}12` }}
-                    >
-                      <CheckIcon color={BRAND.teal} size={10} />
-                    </div>
-                    <span className="text-sm" style={{ color: BRAND.slate }}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Assessment info - compact */}
-              <div 
-                className="flex items-center gap-4 text-xs py-3 px-4 rounded-xl mb-5"
-                style={{ background: BRAND.cloud, color: BRAND.steel }}
-              >
-                <span className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={BRAND.teal} strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                  </svg>
-                  45-60 min
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={BRAND.teal} strokeWidth="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                  </svg>
-                  Ages 5-18
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={BRAND.teal} strokeWidth="2">
-                    <rect x="6" y="4" width="4" height="16" rx="1"/>
-                    <rect x="14" y="4" width="4" height="16" rx="1"/>
-                  </svg>
-                  Pause anytime
-                </span>
-              </div>
-
-              {/* CTA */}
-              <button
-                onClick={() => proceedToCheckout(confirmModal)}
-                disabled={checkoutLoading}
-                className="w-full py-3.5 rounded-full text-base font-semibold transition-all duration-200 hover:shadow-lg disabled:opacity-70"
-                style={{ background: BRAND.teal, color: BRAND.white }}
-              >
-                {checkoutLoading ? 'Redirecting…' : `Continue to Payment`}
-              </button>
-
-              <p 
-                className="text-center text-xs mt-3"
-                style={{ color: BRAND.steel }}
-              >
-                Secure checkout powered by Stripe
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
@@ -1061,7 +809,7 @@ function FAQSection() {
   
   const faqs = [
     { question: "What ages is Wadmore suitable for?", answer: "Wadmore Families is designed for children aged 5-18. Our adaptive assessment automatically adjusts to your child's level, ensuring an appropriate and engaging experience regardless of age." },
-    { question: "Is this an IQ test?", answer: "No. Wadmore profiles cognitive capability across eight domains. It's not designed to produce a single IQ score. We focus on understanding how your child thinks, not ranking children against each other." },
+    { question: "Is this an IQ test?", answer: "No. Wadmore profiles cognitive performance across eight domains. It's not designed to produce a single IQ score. We focus on building a detailed picture of cognitive capability, not ranking children against each other." },
     { question: "Is this about 'learning styles'?", answer: "No. 'Learning styles' (visual, auditory, kinaesthetic) have been debunked by educational research. Wadmore measures how your child actually processes information, their cognitive strengths and growth areas, not subjective preferences." },
     { question: "How long does the assessment take?", answer: "The assessment is designed to be completed in one session but can be paused if needed. Because it's adaptive and adjusts to your child's level, the length varies based on their responses." },
     { question: "Will my child find it stressful?", answer: "We've designed Wadmore to be engaging rather than stressful. There's no time pressure on individual items, the difficulty adjusts to your child's level, and we use varied formats to maintain engagement." },
@@ -1148,13 +896,13 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to understand how your child thinks?
+          Ready to know your child beyond their grades?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90"
           style={{ color: BRAND.white }}
         >
-          Launching March 2026. Register now for early access and launch pricing.
+          Be among the first families with a Wadmore Profile. Launching March 2026.
         </p>
         
         <div className="flex flex-wrap justify-center gap-5">

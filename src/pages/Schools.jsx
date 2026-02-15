@@ -64,7 +64,7 @@ export default function Schools() {
 
 function Hero() {
   return (
-    <section className="min-h-[70vh] flex items-center relative overflow-hidden">
+    <section className="min-h-[60vh] flex items-center relative overflow-hidden">
       {/* Rich gradient background */}
       <div 
         className="absolute inset-0"
@@ -97,7 +97,7 @@ function Hero() {
           <div>
             {/* Eyebrow badge */}
             <div 
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium mb-10 backdrop-blur-sm"
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium mb-8 backdrop-blur-sm"
               style={{ 
                 background: `${BRAND.white}90`, 
                 border: `1px solid ${BRAND.cerulean}30`,
@@ -113,15 +113,15 @@ function Hero() {
             
             {/* Headline */}
             <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              See the{" "}
+              Cognitive{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.cerulean }}
               >
-                whole
+                intelligence
                 {/* Underline accent */}
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
@@ -139,16 +139,20 @@ function Hero() {
                   />
                 </svg>
               </span>
-              {" "}student.
+              {" "}for every student.
             </h1>
             
             <p 
-              className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
+              className="text-lg md:text-xl leading-relaxed mb-3 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Processing, regulation, and creative thinking can all be{" "}
-              <strong style={{ color: BRAND.slate }}>understood, supported, and grown</strong>. 
-              Wadmore shows you where students are and what will help.
+              You measure achievement. You observe behaviour. But you've never had a structured picture of cognitive performance across your cohort.
+            </p>
+            <p 
+              className="text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+              style={{ color: BRAND.steel }}
+            >
+              Wadmore delivers it: <strong style={{ color: BRAND.slate }}>eight domains</strong>, with strategies matched to every student's current capability.
             </p>
             
             {/* CTAs */}
@@ -335,15 +339,14 @@ function WhyComprehensiveSection() {
               className="text-4xl md:text-5xl font-semibold leading-tight mb-8"
               style={{ color: BRAND.slate }}
             >
-              Why comprehensive assessment matters
+              Why cognitive intelligence matters for schools
             </h2>
             <p 
               className="text-xl leading-relaxed mb-8"
               style={{ color: BRAND.steel }}
             >
-              You know the pattern. Strong reasoning on standardised tests. 
-              But still struggling in class. Grades that don't match potential.{" "}
-              <strong style={{ color: BRAND.slate }}>What's missing?</strong>
+              Achievement data tells you who is struggling. Cognitive intelligence tells you why.{" "}
+              <strong style={{ color: BRAND.slate }}>And what to do about it.</strong>
             </p>
             <p 
               className="text-lg leading-relaxed mb-10"
@@ -1218,13 +1221,13 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to see the whole student?
+          Ready to give every teacher cognitive intelligence?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90 max-w-2xl mx-auto"
           style={{ color: BRAND.white }}
         >
-          Book a demo to see how Wadmore reveals cognitive capability with precision and actionability.
+          Wadmore's 2026 pilot programme is open to a limited cohort of schools. Be among the first to see what changes when teachers have structured cognitive performance data, with strategies they can act on immediately.
         </p>
         
         <div className="flex flex-wrap justify-center gap-4">

@@ -60,32 +60,41 @@ function Hero() {
             </div>
             
             <h1 
-              className="font-semibold leading-[0.95] tracking-tight mb-4 md:mb-[clamp(1rem,2vh,1.5rem)]" 
+              className="font-semibold leading-[1.15] tracking-tight mb-5 md:mb-6" 
               style={{ 
                 color: BRAND.slate,
-                fontSize: "clamp(2rem, 5vw + 0.5rem, 3.5rem)"
+                fontSize: "clamp(2rem, 4vw + 0.5rem, 3rem)"
               }}
             >
-              The whole picture,
-              <br />
+              The most{" "}
               <span className="relative inline-block" style={{ color: BRAND.violet }}>
-                finally visible.
-                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 300 8" preserveAspectRatio="none">
-                  <path d="M0 6 Q75 1, 150 4 T300 3" fill="none" stroke={BRAND.violet} strokeWidth="2.5" strokeLinecap="round" opacity="0.25" />
+                holistic
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 200 8" preserveAspectRatio="none">
+                  <path d="M0 6 Q50 1, 100 4 T200 3" fill="none" stroke={BRAND.violet} strokeWidth="2.5" strokeLinecap="round" opacity="0.25" />
                 </svg>
               </span>
+              {" "}assessment
+              <br />
+              for gifted and 2e learners.
             </h1>
             
+            <p 
+              className="leading-relaxed mb-3" 
+              style={{ 
+                color: BRAND.steel,
+                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.15rem)"
+              }}
+            >
+              Eight cognitive domains, profiled separately. No averaging. No single score that hides the unevenness defining your child's experience.
+            </p>
             <p 
               className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
               style={{ 
                 color: BRAND.steel,
-                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.25rem)"
+                fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.15rem)"
               }}
             >
-              Traditional assessments average strengths and challenges into single scores that hide the real picture. 
-              Wadmore reveals <strong style={{ color: BRAND.slate }}>uneven cognitive profiles</strong> precisely, 
-              showing exactly where capability is advanced and where support is needed.
+              Evidence you can take to school, to a psychologist, to anyone who needs to see the full picture.
             </p>
             
             <div className="space-y-3 md:space-y-0 md:flex md:flex-wrap md:gap-3 mb-8">
@@ -172,11 +181,11 @@ function RecognitionSection() {
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: BRAND.violet }}>Recognition</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-5" style={{ color: BRAND.slate }}>
-            You know your child is brilliant.
-            <br />But something doesn't add up.
+            The results say one thing.
+            <br />Your experience says another.
           </h2>
           <p className="text-lg md:text-xl" style={{ color: BRAND.steel }}>
-            The inconsistency is exhausting. Traditional assessment tools don't capture the complexity.
+            Strong scores in some areas, real struggles in others, and an overall picture that doesn't quite capture either. That's not a contradiction. It's an uneven cognitive profile, and most assessments weren't built to show it.
           </p>
         </div>
         
@@ -431,7 +440,7 @@ function WhyTraditionalFails() {
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.cerulean }}>The Problem</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-            Why traditional assessments fail gifted and 2e learners
+            Traditional assessments weren't built for minds like your child's
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
             They weren't designed for uneven profiles. They were designed assuming even capability.
@@ -640,7 +649,7 @@ function CTASection() {
             fontSize: "clamp(1.75rem, 4vw + 0.5rem, 3rem)"
           }}
         >
-          Ready to see the complete picture?
+          Ready to see the full picture?
         </h2>
         <p 
           className="mb-8 md:mb-10 opacity-90 max-w-2xl mx-auto" 
@@ -649,7 +658,7 @@ function CTASection() {
             fontSize: "clamp(1rem, 2vw + 0.25rem, 1.25rem)"
           }}
         >
-          Wadmore launches March 2026. Register now for early access and gifted/2e updates.
+          Eight domains, profiled separately. Evidence for advocacy, support planning, and extension. Launching March 2026.
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4">

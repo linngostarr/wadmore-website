@@ -73,25 +73,35 @@ function Hero() {
                 fontSize: "clamp(2.25rem, 4vw + 1rem, 3.5rem)"
               }}
             >
-              Build capability in{" "}
+              Your team has the data.
+              <br />
+              Do they know{" "}
               <span className="relative inline-block" style={{ color: BRAND.violet }}>
-                cognitive assessment.
-                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 380 8" preserveAspectRatio="none">
-                  <path d="M0 6 Q95 1, 190 4 T380 3" fill="none" stroke={BRAND.violet} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
+                what to do with it?
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 300 8" preserveAspectRatio="none">
+                  <path d="M0 6 Q75 1, 150 4 T300 3" fill="none" stroke={BRAND.violet} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
                 </svg>
               </span>
             </h1>
             
             <p 
-              className="leading-relaxed mb-5"
+              className="leading-relaxed mb-3"
               style={{ 
                 color: BRAND.steel,
                 fontSize: "clamp(1.05rem, 1vw + 0.5rem, 1.25rem)"
               }}
             >
-              Build capability in interpreting cognitive evidence and translating 
-              profiles into informed professional decisions. Research-grounded, 
-              practically focused professional learning.
+              A Wadmore Profile only drives change when the people reading it know how to act.
+            </p>
+            <p 
+              className="leading-relaxed mb-5"
+              style={{ 
+                color: BRAND.steel,
+                fontSize: "clamp(0.95rem, 0.9vw + 0.4rem, 1.1rem)"
+              }}
+            >
+              Our professional learning programmes build the capability to interpret cognitive 
+              performance data and turn it into differentiated practice: for support, differentiation, and extension.
             </p>
             
             {/* v1.1: Safeguard statement */}
@@ -204,7 +214,7 @@ function AudienceSection() {
     },
     {
       title: "School Leaders",
-      description: "Build whole-school capability in cognitive assessment and use data to inform strategic decisions.",
+      description: "Build whole-school capability in cognitive intelligence and use data to inform strategic decisions.",
       outcomes: ["Lead professional learning in cognitive assessment", "Use cohort data for resource allocation", "Build a culture of cognitive diversity appreciation"],
     },
     {
@@ -640,7 +650,7 @@ function CTASection() {
           className="text-3xl md:text-4xl font-semibold mb-5"
           style={{ color: BRAND.white }}
         >
-          Ready to build capability in cognitive assessment?
+          Ready to turn cognitive intelligence into classroom practice?
         </h2>
         <p 
           className="text-lg mb-10 opacity-90"

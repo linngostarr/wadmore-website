@@ -58,7 +58,7 @@ export default function Professional() {
 
 function Hero() {
   return (
-    <section className="min-h-[70vh] flex items-center relative overflow-hidden">
+    <section className="min-h-[60vh] flex items-center relative overflow-hidden">
       {/* Sophisticated gradient background */}
       <div 
         className="absolute inset-0"
@@ -87,7 +87,7 @@ function Hero() {
           <div>
             {/* Eyebrow badge */}
             <div 
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium mb-10 backdrop-blur-sm"
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium mb-8 backdrop-blur-sm"
               style={{ 
                 background: `${BRAND.white}90`, 
                 border: `1px solid ${BRAND.violet}25`,
@@ -105,12 +105,12 @@ function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Great teams are built on{" "}
+              People decisions, backed by{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.violet }}
               >
-                understanding.
+                cognitive evidence.
                 <svg 
                   className="absolute -bottom-1 left-0 w-full" 
                   height="6" 
@@ -130,13 +130,17 @@ function Hero() {
             </h1>
             
             <p 
-              className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl"
+              className="text-lg md:text-xl leading-relaxed mb-3 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Build better teams. Develop your people. Create environments where different 
-              thinkers thrive. Wadmore shows how people{" "}
-              <strong style={{ color: BRAND.slate }}>process, regulate, and create</strong>. So 
-              you can support their growth and unlock their potential.
+              MBTI tells you preferences. DISC tells you style. Neither measures{" "}
+              <strong style={{ color: BRAND.slate }}>cognitive performance</strong>.
+            </p>
+            <p 
+              className="text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+              style={{ color: BRAND.steel }}
+            >
+              Wadmore does. Eight domains of cognitive performance data for hiring, development, and team composition that no personality tool can provide.
             </p>
             
             {/* CTAs */}
@@ -829,13 +833,13 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to build high-performing teams?
+          Ready to add cognitive intelligence to your people decisions?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90"
           style={{ color: BRAND.white }}
         >
-          Launching March 2026. Register now for early access.
+          Wadmore Professional launches March 2026. Register now for early access.
         </p>
         
         <div className="flex flex-wrap justify-center gap-5">
