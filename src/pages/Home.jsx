@@ -218,7 +218,7 @@ function Hero() {
             >
               Grades show <strong style={{ color: BRAND.slate }}>achievement</strong>.{" "}
               Personality tools show <strong style={{ color: BRAND.slate }}>preference</strong>.{" "}
-              Neither shows you the holisitc cognitive performance underneath.
+              Neither shows you the holistic cognitive performance underneath.
             </p>
             <p 
               className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
