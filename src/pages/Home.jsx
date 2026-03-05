@@ -170,7 +170,6 @@ export default function Home() {
         <WhenInsightMattersSection />
         <CognitiveFrameworkSection />
         <BandsSection />
-        <ActionableSection />
         <SampleProfile 
           compact 
           eyebrow="See It In Action"
@@ -621,88 +620,6 @@ function BandsSection() {
               <p className="text-xs md:text-sm" style={{ color: BRAND.steel }}>{item.desc}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ActionableSection() {
-  return (
-    <section className="py-12 md:py-20 lg:py-28" style={{ background: BRAND.cloud }}>
-      <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left: Content */}
-          <div className="min-w-0">
-            <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3 md:mb-4" style={{ color: BRAND.indigo }}>
-              From Profile to Practice
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 md:mb-4" style={{ color: BRAND.slate }}>
-              Evidence that informs decisions
-            </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-5 md:mb-6" style={{ color: BRAND.steel }}>
-              Understanding cognitive patterns matters most when it informs professional decisions. 
-              Every Wadmore profile translates evidence into <strong style={{ color: BRAND.slate }}>research-grounded guidance</strong>: 
-              strategies linked to established learning science, matched to current performance.
-            </p>
-            
-            <div className="space-y-4 mb-6">
-              {[
-                { title: "Performance-matched strategies", desc: "Guidance matched to current capability, not generic advice", color: BRAND.teal },
-                { title: "Evidence-linked", desc: "Every recommendation connected to peer-reviewed research", color: BRAND.cerulean },
-                { title: "Context-appropriate", desc: "Different guidance for teachers, parents, and learners", color: BRAND.violet },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: `${item.color}15` }}>
-                    <CheckIcon color={item.color} size={12} />
-                  </div>
-                  <div className="min-w-0">
-                    <span className="font-semibold text-sm" style={{ color: BRAND.slate }}>{item.title}:</span>{" "}
-                    <span className="text-sm" style={{ color: BRAND.steel }}>{item.desc}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <Link to="/science" className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{ color: BRAND.indigo }}>
-              Explore the research foundation <ArrowIcon />
-            </Link>
-          </div>
-          
-          {/* Right: Example guidance card */}
-          <div className="rounded-2xl overflow-hidden min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 15px 40px ${BRAND.indigo}06` }}>
-            <div className="px-4 md:px-6 py-4 flex items-center gap-3" style={{ background: `${BRAND.indigo}08`, borderBottom: `1px solid ${BRAND.dove}` }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: BRAND.indigo }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: BRAND.indigo }}>Sample Profile Guidance</p>
-                <p className="text-xs" style={{ color: BRAND.steel }}>Executive Functioning · Band 5</p>
-              </div>
-            </div>
-            
-            <div className="p-4 md:p-6 space-y-4">
-              <div className="p-4 rounded-xl" style={{ background: BRAND.cloud }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.teal }}>Current Capabilities</p>
-                <p className="text-sm" style={{ color: BRAND.slate }}>Plans multi-step projects with emerging independence; benefits from milestone scaffolding</p>
-              </div>
-              
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.cerulean }}>Recommended Strategies</p>
-                <p className="text-sm" style={{ color: BRAND.steel }}>Provide project templates with pre-set milestones. Model planning through think-alouds. Gradually fade scaffolds as independence develops.</p>
-              </div>
-              
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: BRAND.violet }}>Research Base</p>
-                <p className="text-sm" style={{ color: BRAND.steel }}>External planning structures support internalisation through guided practice (Diamond, 2013). Reducing extraneous cognitive load through visible structure supports complex task performance (Sweller, 2019).</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

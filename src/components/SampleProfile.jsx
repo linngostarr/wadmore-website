@@ -128,7 +128,7 @@ function RadarChart() {
       <text x="108" y="110" textAnchor="end" fontSize="11" fontWeight="700" fill={BRAND.slate}>Creativity</text>
 
       <text x="250" y="488" textAnchor="middle" fontSize="8.5" fill={BRAND.steel} fontStyle="italic">
-        Eight cognitive domains – measured independently, profiled together
+        Eight cognitive domains, measured independently, profiled together
       </text>
     </svg>
   );
@@ -224,7 +224,7 @@ function LongitudinalStrip() {
             Longitudinal Growth Tracking
           </div>
           <div className="text-[10px] mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
-            At the student, cohort, and school level – Year-Over-Year
+            At the student, cohort, and school level. Year-Over-Year
           </div>
         </div>
         <div className="flex gap-4 items-center">
@@ -296,9 +296,16 @@ function DetailCards() {
           <div className="h-1 rounded-full mb-3" style={{ background: "#EEF0F3" }}>
             <div className="h-full rounded-full" style={{ width: "53%", background: BRAND.teal }} />
           </div>
-          <p className="text-sm leading-relaxed mb-3" style={{ color: BRAND.steel }}>
-            Exceptional pattern recognition and relational reasoning — well above developmental expectation. Identifies transformation rules across visual and conceptual formats, applying analogical thinking to novel problems with minimal scaffolding.
-          </p>
+          
+          {/* Current capabilities */}
+          <div className="rounded-lg p-3 mb-3" style={{ background: BRAND.cloud }}>
+            <div className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: BRAND.teal }}>Current Capabilities</div>
+            <p className="text-sm leading-relaxed m-0" style={{ color: BRAND.slate }}>
+              Identifies complex transformation rules across visual and conceptual formats. Applies analogical thinking to novel problems with minimal scaffolding. Reasons abstractly well beyond age expectation.
+            </p>
+          </div>
+          
+          {/* Strategies */}
           <div className="rounded-xl p-3.5" style={{ background: "#F0FBF9", borderLeft: `3px solid ${BRAND.teal}` }}>
             <div className="text-[10px] font-extrabold uppercase tracking-wider mb-1.5" style={{ color: BRAND.teal }}>
               Teacher · Enrichment
@@ -308,6 +315,12 @@ function DetailCards() {
               <li>Multi-step pattern challenges with increasing complexity sustain engagement.</li>
               <li>Cross-domain transfer tasks leverage this strength productively.</li>
             </ul>
+            <div className="mt-2.5 pt-2" style={{ borderTop: `1px solid ${BRAND.teal}15` }}>
+              <p className="text-xs leading-relaxed m-0" style={{ color: BRAND.steel }}>
+                <span className="font-semibold" style={{ color: BRAND.teal }}>Research: </span>
+                Transfer of abstract reasoning improves with explicit cross-domain practice (Holyoak &amp; Thagard, 1995). Challenge-matched enrichment sustains intrinsic motivation in high-ability learners (Csikszentmihalyi, 1990).
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -338,18 +351,31 @@ function DetailCards() {
           <div className="h-1 rounded-full mb-3" style={{ background: "#EEF0F3" }}>
             <div className="h-full rounded-full" style={{ width: "27%", background: BRAND.golden }} />
           </div>
-          <p className="text-sm leading-relaxed mb-3" style={{ color: BRAND.steel }}>
-            Consolidating planning and cognitive flexibility skills. May start tasks confidently but lose track across multiple steps. This is a developmental opportunity – not a deficit.
-          </p>
+          
+          {/* Current capabilities */}
+          <div className="rounded-lg p-3 mb-3" style={{ background: BRAND.cloud }}>
+            <div className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: BRAND.goldenDark }}>Current Capabilities</div>
+            <p className="text-sm leading-relaxed m-0" style={{ color: BRAND.slate }}>
+              Plans multi-step projects with emerging independence. Benefits from milestone scaffolding. May start tasks confidently but lose track across multiple steps. This is a developmental opportunity, not a deficit.
+            </p>
+          </div>
+          
+          {/* Strategies */}
           <div className="rounded-xl p-3.5" style={{ background: "#FEFAED", borderLeft: `3px solid ${BRAND.golden}` }}>
             <div className="text-[10px] font-extrabold uppercase tracking-wider mb-1.5" style={{ color: BRAND.goldenDark }}>
               Parent · Home Support
             </div>
             <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1" style={{ color: BRAND.slate }}>
               <li>Use visual task breakdowns with checkboxes for multi-step activities at home.</li>
-              <li>Cooking projects work well – they require holding instructions in mind whilst monitoring progress.</li>
+              <li>Cooking projects work well. They require holding instructions in mind whilst monitoring progress.</li>
               <li>Celebrate completing each step, not just the final outcome.</li>
             </ul>
+            <div className="mt-2.5 pt-2" style={{ borderTop: `1px solid ${BRAND.golden}15` }}>
+              <p className="text-xs leading-relaxed m-0" style={{ color: BRAND.steel }}>
+                <span className="font-semibold" style={{ color: BRAND.goldenDark }}>Research: </span>
+                External planning structures support internalisation through guided practice (Diamond, 2013). Reducing extraneous cognitive load through visible structure supports complex task performance (Sweller, 2019).
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -367,7 +393,7 @@ export default function SampleProfile({
   compact = false,
   eyebrow = "Inside a Wadmore Profile",
   heading = "What your school receives.",
-  subheading = "Illustrative student profile — every student assessed receives this level of cognitive intelligence.",
+  subheading = "Illustrative student profile. Every student assessed receives this level of cognitive intelligence.",
 }) {
   return (
     <section className="py-20 md:py-28" style={{ background: BRAND.cloud }}>
@@ -425,7 +451,7 @@ export default function SampleProfile({
               <div className="text-xl font-bold mb-1" style={{ color: BRAND.slate }}>Abstract Reasoning</div>
               <div className="inline-block px-2 py-0.5 rounded text-xs font-bold" style={{ background: `${BRAND.cerulean}15`, color: BRAND.cerulean }}>Band 8</div>
               <p className="text-xs mt-2 leading-relaxed" style={{ color: BRAND.steel }}>
-                Well above the developmental cluster — a clear cognitive strength with strategies for extension.
+                Well above the developmental cluster. A clear cognitive strength with strategies for extension.
               </p>
             </div>
 
