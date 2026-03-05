@@ -310,7 +310,7 @@ function DetailCards() {
             <div className="text-[10px] font-extrabold uppercase tracking-wider mb-1.5" style={{ color: BRAND.teal }}>
               Teacher · Enrichment
             </div>
-            <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1" style={{ color: BRAND.slate }}>
+            <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1 list-disc" style={{ color: BRAND.slate }}>
               <li>Introduce open-ended problems where rules must be inferred, not given.</li>
               <li>Multi-step pattern challenges with increasing complexity sustain engagement.</li>
               <li>Cross-domain transfer tasks leverage this strength productively.</li>
@@ -365,7 +365,7 @@ function DetailCards() {
             <div className="text-[10px] font-extrabold uppercase tracking-wider mb-1.5" style={{ color: BRAND.goldenDark }}>
               Parent · Home Support
             </div>
-            <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1" style={{ color: BRAND.slate }}>
+            <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1 list-disc" style={{ color: BRAND.slate }}>
               <li>Use visual task breakdowns with checkboxes for multi-step activities at home.</li>
               <li>Cooking projects work well. They require holding instructions in mind whilst monitoring progress.</li>
               <li>Celebrate completing each step, not just the final outcome.</li>
