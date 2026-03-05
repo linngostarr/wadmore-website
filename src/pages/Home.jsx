@@ -2,10 +2,12 @@
 // Wadmore Landing Page - World-class design
 // Language: Cognitive development focus (not "thinking styles")
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 import PersonaGallery from "../components/PersonaGallery";
+import SampleProfile from "../components/SampleProfile";
 
 const BRAND = {
   indigo: "#384275",
@@ -159,12 +161,9 @@ const AUDIENCES = {
 };
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Wadmore | Thinking, understood.";
-  }, []);
-
   return (
     <Layout>
+      <SEO {...PAGE_SEO.home} />
       {/* Prevent horizontal overflow on mobile - max-w-full ensures content doesn't exceed viewport */}
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
@@ -172,6 +171,12 @@ export default function Home() {
         <CognitiveFrameworkSection />
         <BandsSection />
         <ActionableSection />
+        <SampleProfile 
+          compact 
+          eyebrow="See It In Action"
+          heading="What a Wadmore profile looks like."
+          subheading="Every person assessed receives a full cognitive profile across all eight domains — with strategies attached at every level."
+        />
         <AudienceSection />
         <DifferenceSection />
         <CTASection />
@@ -284,36 +289,36 @@ function WhenInsightMattersSection() {
     {
       label: "Schools",
       color: BRAND.cerulean,
+      desc: "Cognitive profiles for every student, with strategies teachers can use immediately.",
       points: [
-        "Students whose capability doesn't match performance",
-        "Differentiation based on cognitive evidence, not guesswork",
-        "Support planning that targets the right cognitive process",
-        "Pathway decisions grounded in individual profiles",
-        "Evidence that supports productive conversations with families",
+        "Eight domains of cognitive evidence per student",
+        "Strategies matched to current capability level",
+        "NCCD-ready documentation from assessment data",
+        "Cohort patterns visible at a glance",
       ],
       link: "/schools",
     },
     {
       label: "Families",
       color: BRAND.teal,
+      desc: "See how your child thinks, and get practical guidance for home and school.",
       points: [
-        "When effort and outcomes don't align",
-        "When support strategies aren't having impact",
-        "Exceptional in some domains, struggling in others",
-        "Informed decisions about tutoring, enrichment, school choice",
-        "A shared evidence base for school conversations",
+        "Strengths and growth areas across eight domains",
+        "Activities matched to how your child thinks",
+        "Evidence that strengthens school conversations",
+        "Track cognitive development over time",
       ],
       link: "/families",
     },
     {
       label: "Professional",
       color: BRAND.violet,
+      desc: "Cognitive performance data for hiring, team formation, and leadership development.",
       points: [
-        "Building teams with genuine cognitive diversity",
-        "Development planning based on individual profiles",
-        "Identifying untapped capability in talented people",
-        "Understanding what drives effective collaboration",
-        "Development investment targeted where it matters",
+        "Individual profiles across eight domains",
+        "Team cognitive diversity mapped",
+        "Development priorities grounded in evidence",
+        "Capability insights no personality tool can provide",
       ],
       link: "/professional",
     },
@@ -325,13 +330,13 @@ function WhenInsightMattersSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.indigo }}>
-            Cognitive Intelligence
+            Three Platforms, One Framework
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-            A new layer of evidence for every decision.
+            Cognitive intelligence for every context.
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            You measure achievement. You observe behaviour. You might measure personality. But you've never measured cognitive performance. That's the layer Wadmore adds.
+            The same rigorous assessment, adapted for the people who use it. Eight domains of cognitive performance, with guidance designed for how you actually work.
           </p>
         </div>
 
@@ -345,7 +350,7 @@ function WhenInsightMattersSection() {
               style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
             >
               {/* Label */}
-              <div className="flex items-center gap-3 mb-5">
+              <div className="flex items-center gap-3 mb-3">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                   style={{ background: `${aud.color}15` }}
@@ -354,6 +359,11 @@ function WhenInsightMattersSection() {
                 </div>
                 <span className="text-lg font-semibold" style={{ color: BRAND.slate }}>{aud.label}</span>
               </div>
+              
+              {/* Description */}
+              <p className="text-sm leading-relaxed mb-5" style={{ color: BRAND.steel }}>
+                {aud.desc}
+              </p>
 
               {/* Points */}
               <ul className="space-y-3 mb-6">
@@ -363,9 +373,9 @@ function WhenInsightMattersSection() {
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{ background: `${aud.color}12` }}
                     >
-                      <div className="w-1.5 h-1.5 rounded-full" style={{ background: aud.color }} />
+                      <CheckIcon color={aud.color} size={10} />
                     </div>
-                    <span className="text-sm" style={{ color: BRAND.steel }}>{point}</span>
+                    <span className="text-sm" style={{ color: BRAND.slate }}>{point}</span>
                   </li>
                 ))}
               </ul>
@@ -375,19 +385,11 @@ function WhenInsightMattersSection() {
                 className="flex items-center gap-2 text-sm font-semibold transition-all duration-300 group-hover:gap-3"
                 style={{ color: aud.color }}
               >
-                Learn more
+                Explore Wadmore for {aud.label}
                 <ArrowIcon />
               </div>
             </Link>
           ))}
-        </div>
-
-        {/* Bottom line */}
-        <div className="text-center mt-10 md:mt-12">
-          <p className="text-sm md:text-base font-semibold" style={{ color: BRAND.slate }}>
-            Eight domains. Fifteen developmental bands. 360 constructs.{" "}
-            <span style={{ color: BRAND.indigo }}>Every insight connected to actionable guidance.</span>
-          </p>
         </div>
       </div>
     </section>

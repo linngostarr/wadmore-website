@@ -87,6 +87,7 @@ export default function Navigation() {
           <NavItemFeatured to="/gifted-2e">Gifted & 2e</NavItemFeatured>
           <NavItem to="/science">Science</NavItem>
           <NavItem to="/about">About</NavItem>
+          <NavItem to="/consulting">PD</NavItem>
         </div>
 
         {/* ═══════════════════════════════════════════════════════
@@ -161,6 +162,9 @@ export default function Navigation() {
             </MobileNavItem>
             <MobileNavItem to="/about" onClick={() => setMenuOpen(false)}>
               About
+            </MobileNavItem>
+            <MobileNavItem to="/consulting" onClick={() => setMenuOpen(false)}>
+              PD
             </MobileNavItem>
 
             {/* Mobile CTAs */}

@@ -2,9 +2,11 @@
 // Wadmore Gifted & Twice-Exceptional Learners
 // REDESIGNED - Professional icons, interactive features, world-class design
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
+import SampleProfile from '../components/SampleProfile';
 
 const BRAND = {
   indigo: "#384275",
@@ -23,12 +25,9 @@ const BRAND = {
 };
 
 export default function Gifted2e() {
-  useEffect(() => {
-    document.title = "Gifted & 2e | Wadmore";
-  }, []);
-
   return (
     <Layout>
+      <SEO {...PAGE_SEO.gifted2e} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <TrustBar />
@@ -36,6 +35,12 @@ export default function Gifted2e() {
         <VisualComparison />
         <WhyTraditionalFails />
         <HowWadmoreHelps />
+        <SampleProfile 
+          compact 
+          eyebrow="A Twice-Exceptional Profile"
+          heading="What this looks like in Wadmore."
+          subheading="AR at Band 8, EF at Band 4 — high capability and genuine support needs, visible in a single profile. This is exactly what traditional assessments miss."
+        />
         <ProfileExamples />
         <ResearchBacking />
         <CTASection />

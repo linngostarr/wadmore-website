@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 const SITE_NAME = 'Wadmore';
 const SITE_URL = 'https://wadmore.com.au';
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
-const TWITTER_HANDLE = '@wadmore';
+const TWITTER_HANDLE = ''; // Create @wadmore account then add here
 
 /**
  * SEO Component - React 19 compatible
@@ -264,6 +264,22 @@ export const PAGE_SEO = {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
       name: 'Contact Wadmore',
+    },
+  },
+
+  gifted2e: {
+    title: 'Gifted & Twice-Exceptional',
+    description: 'The most holistic assessment for gifted and twice-exceptional learners. See both exceptional strengths and specific support needs across eight cognitive domains.',
+    path: '/gifted-2e',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Wadmore for Gifted & 2e Learners',
+      description: 'Cognitive profiling designed for asynchronous development in gifted and twice-exceptional learners',
+      provider: {
+        '@type': 'Organization',
+        name: 'Wadmore',
+      },
     },
   },
 };

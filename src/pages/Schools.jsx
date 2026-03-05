@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import SEO, { PAGE_SEO } from '../components/SEO';
+import SampleProfile from '../components/SampleProfile';
 /* ══════════════════════════════════════════════════════════════
    WADMORE BRAND COLOURS
    ══════════════════════════════════════════════════════════════ */
@@ -49,6 +50,7 @@ export default function Schools() {
         <DomainsShowcase />
         <UseCasesSection />
         <ForEducatorsSection />
+        <SampleProfile />
         <ActionabilitySection />
         <EALDSection />
         <PricingSection />
@@ -294,9 +296,9 @@ function PilotBanner() {
               <SparkleIcon />
             </div>
             <p className="text-sm" style={{ color: BRAND.slate }}>
-              <strong>2026 Pilot Program:</strong>{" "}
+              <strong>2026 Founding School Programme:</strong>{" "}
               <span style={{ color: BRAND.steel }}>
-                Early adopter schools receive $15/student pricing and complimentary PD.
+                Limited places for early adopters. Reduced rates + complimentary PD.
               </span>
             </p>
           </div>
@@ -1057,8 +1059,8 @@ function EALDSection() {
 function PricingSection() {
   return (
     <section className="py-28 md:py-36" style={{ background: BRAND.white }}>
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-4xl mx-auto px-6 md:px-8">
+        <div className="text-center mb-12">
           <p 
             className="text-sm font-semibold uppercase tracking-widest mb-4"
             style={{ color: BRAND.cerulean }}
@@ -1069,7 +1071,7 @@ function PricingSection() {
             className="text-4xl md:text-5xl font-semibold mb-4"
             style={{ color: BRAND.slate }}
           >
-            Simple, transparent pricing
+            Invest in cognitive intelligence
           </h2>
           <p 
             className="text-xl"
@@ -1079,116 +1081,111 @@ function PricingSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { 
-              tier: "Small School", 
-              price: "$25", 
-              unit: "/student", 
-              desc: "Up to 200 students", 
-              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Priority support"],
-            },
-            { 
-              tier: "Medium School", 
-              price: "$22", 
-              unit: "/student", 
-              desc: "201–500 students", 
-              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "Cohort analytics", "Priority support"],
-            },
-            { 
-              tier: "Large / System", 
-              price: "$18", 
-              unit: "/student", 
-              desc: "500+ students", 
-              features: ["Full 8-domain assessment", "Individual student profiles", "Teacher dashboard access", "System-wide analytics", "Dedicated account manager", "Priority support"],
-            },
-          ].map((item) => (
-            <div 
-              key={item.tier}
-              className="rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              style={{ 
-                background: BRAND.white,
-                border: `1px solid ${BRAND.dove}`,
-              }}
-            >
-              <div 
-                className="text-sm font-semibold uppercase tracking-wider mb-4"
-                style={{ color: BRAND.cerulean }}
-              >
-                {item.tier}
-              </div>
-              
-              <div className="flex items-baseline gap-1 mb-2">
-                <span 
-                  className="text-5xl font-bold"
-                  style={{ color: BRAND.slate }}
-                >
-                  {item.price}
-                </span>
-                <span 
-                  className="text-xl"
-                  style={{ color: BRAND.steel }}
-                >
-                  {item.unit}
-                </span>
-              </div>
-              
-              <p 
-                className="text-sm mb-8"
-                style={{ color: BRAND.steel }}
-              >
-                {item.desc}
-              </p>
-              
-              <ul className="space-y-4">
-                {item.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <div 
-                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${BRAND.cerulean}15` }}
-                    >
-                      <CheckIcon color={BRAND.cerulean} size={10} />
-                    </div>
-                    <span className="text-sm" style={{ color: BRAND.slate }}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        
-        {/* Pilot banner */}
+        {/* Price anchor */}
         <div 
-          className="mt-12 p-6 rounded-2xl text-center"
+          className="rounded-2xl p-8 md:p-10 mb-6 text-center relative overflow-hidden"
           style={{ 
-            background: `linear-gradient(135deg, ${BRAND.golden}15, ${BRAND.golden}08)`,
-            border: `1px solid ${BRAND.golden}30`
+            background: BRAND.cloud,
+            border: `1px solid ${BRAND.dove}`,
           }}
         >
-          <p className="text-sm" style={{ color: BRAND.slate }}>
-            <strong>2026 Pilot Program:</strong>{" "}
-            <span style={{ color: BRAND.steel }}>
-              Early adopter schools receive <strong style={{ color: BRAND.slate }}>$15/student</strong> and 
-              complimentary professional development.
-            </span>
+          <div 
+            className="absolute top-0 left-0 w-full h-1"
+            style={{ background: `linear-gradient(90deg, ${BRAND.cerulean}, ${BRAND.teal})` }}
+          />
+          <div 
+            className="text-xs font-semibold uppercase tracking-widest mb-3"
+            style={{ color: BRAND.cerulean }}
+          >
+            Per-Student Licensing
+          </div>
+          <div className="flex items-baseline justify-center gap-1.5 mb-3">
+            <span className="text-6xl md:text-7xl font-bold" style={{ color: BRAND.slate }}>$35</span>
+            <span className="text-xl" style={{ color: BRAND.steel }}>/student</span>
+          </div>
+          <p className="text-base mb-6 max-w-md mx-auto" style={{ color: BRAND.steel }}>
+            Complete 8-domain cognitive profiling with construct-level strategies, teacher dashboards, and cohort analytics.
           </p>
-        </div>
-        
-        <div className="text-center mt-10">
+          
           <Link 
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
             style={{ 
               background: `linear-gradient(135deg, ${BRAND.cerulean} 0%, ${BRAND.ceruleanDark} 100%)`,
               color: BRAND.white,
-              boxShadow: `0 8px 30px ${BRAND.cerulean}30`
+              boxShadow: `0 6px 20px ${BRAND.cerulean}30`
             }}
           >
-            Register Interest
+            Request a Quote
             <ArrowIcon />
           </Link>
+          
+          <p className="mt-4 text-sm" style={{ color: BRAND.steel }}>
+            Volume and multi-year rates available on request.
+          </p>
+        </div>
+        
+        {/* Two supporting cards */}
+        <div className="grid md:grid-cols-2 gap-5">
+          {/* Founding */}
+          <div 
+            className="rounded-2xl p-6"
+            style={{ 
+              background: `linear-gradient(135deg, ${BRAND.golden}08, ${BRAND.golden}04)`,
+              border: `1px solid ${BRAND.golden}30`
+            }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div 
+                className="w-9 h-9 rounded-lg flex items-center justify-center"
+                style={{ background: BRAND.golden }}
+              >
+                <SparkleIcon />
+              </div>
+              <h3 className="font-semibold text-base" style={{ color: BRAND.slate }}>
+                2026 Founding Schools
+              </h3>
+            </div>
+            <p className="text-sm leading-relaxed mb-1" style={{ color: BRAND.steel }}>
+              Significantly reduced founding rates plus complimentary PD, in exchange for case study participation.{" "}
+              <strong style={{ color: BRAND.slate }}>Limited to 15 schools.</strong>
+            </p>
+            <Link 
+              to="/contact"
+              className="inline-flex items-center gap-2 text-sm font-semibold mt-3 transition-colors hover:opacity-80"
+              style={{ color: BRAND.cerulean }}
+            >
+              Express interest <ArrowIcon />
+            </Link>
+          </div>
+          
+          {/* PD */}
+          <div 
+            className="rounded-2xl p-6"
+            style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div 
+                className="w-9 h-9 rounded-lg flex items-center justify-center"
+                style={{ background: `${BRAND.teal}15` }}
+              >
+                <div className="w-2 h-2 rounded-full" style={{ background: BRAND.teal }} />
+              </div>
+              <h3 className="font-semibold text-base" style={{ color: BRAND.slate }}>
+                Professional Development
+              </h3>
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: BRAND.steel }}>
+              Optional PD for interpreting cognitive profiles and translating insights into classroom practice.
+            </p>
+            <Link 
+              to="/consulting"
+              className="inline-flex items-center gap-2 text-sm font-semibold mt-3 transition-colors hover:opacity-80"
+              style={{ color: BRAND.cerulean }}
+            >
+              Learn more <ArrowIcon />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

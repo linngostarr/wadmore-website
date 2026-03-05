@@ -3,9 +3,10 @@
 // World-class design: warm, supportive, parent-friendly
 // Brand accent: Teal (#3CB7AC)
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import SEO, { PAGE_SEO } from '../components/SEO';
 
 /* ══════════════════════════════════════════════════════════════
    WADMORE BRAND COLOURS
@@ -31,12 +32,9 @@ const BRAND = {
    ══════════════════════════════════════════════════════════════ */
 
 export default function Families() {
-  useEffect(() => {
-    document.title = "Families | Wadmore";
-  }, []);
-
   return (
     <Layout>
+      <SEO {...PAGE_SEO.families} />
       <div className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <WhyItMattersSection />
@@ -715,14 +713,14 @@ function PricingSection() {
             className="text-xl mb-4"
             style={{ color: BRAND.steel }}
           >
-            No subscriptions. No hidden fees. Just understanding.
+            No subscriptions. No hidden fees. Founding rates available at launch.
           </p>
           <p 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
             style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}
           >
             <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
-            Available March 2026
+            Founding rates end June 2026
           </p>
         </div>
         
@@ -730,25 +728,25 @@ function PricingSection() {
           {[
             { 
               tier: "Individual", 
-              price: "$99", 
+              price: "$129", 
               unit: "/child", 
-              desc: "One-time assessment", 
+              desc: "Founding rate (one-time)", 
               features: ["Complete 8-domain profile", "Strength & growth analysis", "15+ home activities", "School conversation guide", "PDF & online access"],
               cta: "Register Interest",
               ctaLink: "/contact",
             },
             { 
               tier: "Family Package", 
-              price: "$249", 
+              price: "$299", 
               unit: "", 
-              desc: "For 3 children", 
+              desc: "Up to 3 children (founding rate)", 
               features: ["Complete 8-domain profile for each child", "Family dynamics overview", "Sibling comparison insights", "Shared activities for all", "PDF & online access"],
               cta: "Register Interest",
               ctaLink: "/contact",
             },
             { 
               tier: "Reassessment", 
-              price: "$69", 
+              price: "$79", 
               unit: "/child", 
               desc: "Track growth over time", 
               features: ["Updated cognitive profile", "Growth comparison report", "New activity recommendations", "Longitudinal tracking", "Recommended annually"],
