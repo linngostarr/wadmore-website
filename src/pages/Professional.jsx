@@ -700,108 +700,103 @@ function LifespanSection() {
 function PricingSection() {
   return (
     <section className="py-28 md:py-36" style={{ background: BRAND.white }}>
-      <div className="max-w-5xl mx-auto px-6 md:px-8">
+      <div className="max-w-4xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p 
             className="text-sm font-semibold uppercase tracking-widest mb-5"
             style={{ color: BRAND.violet }}
           >
-            Launch Pricing
+            Coming Soon
           </p>
           <h2 
             className="text-4xl md:text-5xl font-semibold mb-6"
             style={{ color: BRAND.slate }}
           >
-            Pricing that scales with your needs
+            Wadmore Professional is in development
           </h2>
           <p 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-            style={{ background: `${BRAND.indigo}10`, color: BRAND.indigo }}
+            className="text-xl leading-relaxed mb-4"
+            style={{ color: BRAND.steel }}
           >
-            <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
-            Available March 2026
+            We're building Wadmore Professional on the same rigorous cognitive 
+            framework trusted by schools and families. Individual, team, and 
+            enterprise options will be available later in 2026.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { 
-              tier: "Individual", 
-              price: "$199", 
-              unit: "/person", 
-              desc: "One-time assessment", 
-              features: ["Complete 8-domain profile", "Individual development plan", "PDF & dashboard access", "Email support"],
-            },
-            { 
-              tier: "Team", 
-              price: "$149", 
-              unit: "/person", 
-              desc: "5–25 people", 
-              features: ["Complete 8-domain profile", "Individual development plan", "Team cognitive map", "Collaboration insights", "Priority support"],
-            },
-            { 
-              tier: "Enterprise", 
-              price: "Custom", 
-              unit: "", 
-              desc: "25+ people", 
-              features: ["Complete 8-domain profile", "Individual development plan", "Organisation-wide analytics", "Dedicated account manager", "Custom integrations"],
-            },
-          ].map((item) => (
-            <div 
-              key={item.tier}
-              className="rounded-3xl p-8 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+        <div 
+          className="rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
+          style={{ 
+            background: BRAND.cloud,
+            border: `1px solid ${BRAND.dove}`,
+            boxShadow: `0 20px 50px ${BRAND.indigo}05`
+          }}
+        >
+          {/* Decorative accent */}
+          <div 
+            className="absolute top-0 left-0 w-full h-1.5"
+            style={{ background: `linear-gradient(90deg, ${BRAND.violet}, ${BRAND.cerulean})` }}
+          />
+          
+          <div className="max-w-xl mx-auto">
+            <h3 
+              className="text-2xl font-semibold mb-4"
+              style={{ color: BRAND.slate }}
+            >
+              Register your interest
+            </h3>
+            <p 
+              className="text-base leading-relaxed mb-8"
+              style={{ color: BRAND.steel }}
+            >
+              Be among the first organisations to access Wadmore Professional. 
+              Early registrants will receive priority access, pilot pricing, 
+              and input into feature development.
+            </p>
+            
+            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+              {[
+                { label: "Individual Profiles", desc: "8-domain cognitive assessment" },
+                { label: "Team Maps", desc: "Cognitive diversity analysis" },
+                { label: "Enterprise Analytics", desc: "Organisation-wide intelligence" },
+              ].map((item) => (
+                <div 
+                  key={item.label}
+                  className="p-4 rounded-xl"
+                  style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}
+                >
+                  <div className="text-sm font-semibold mb-1" style={{ color: BRAND.slate }}>
+                    {item.label}
+                  </div>
+                  <div className="text-xs" style={{ color: BRAND.steel }}>
+                    {item.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <Link 
+              to="/contact"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               style={{ 
-                background: BRAND.white,
-                border: `1px solid ${BRAND.dove}`,
+                background: `linear-gradient(135deg, ${BRAND.violet} 0%, ${BRAND.violetDark} 100%)`,
+                color: BRAND.white,
+                boxShadow: `0 8px 30px ${BRAND.violet}35`
               }}
             >
-              <div 
-                className="text-sm font-semibold uppercase tracking-wider mb-4"
-                style={{ color: BRAND.violet }}
-              >
-                {item.tier}
-              </div>
-              
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-5xl font-bold" style={{ color: BRAND.slate }}>
-                  {item.price}
-                </span>
-                <span className="text-xl" style={{ color: BRAND.steel }}>
-                  {item.unit}
-                </span>
-              </div>
-              
-              <p className="text-sm mb-8" style={{ color: BRAND.steel }}>
-                {item.desc}
-              </p>
-              
-              <ul className="space-y-4">
-                {item.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <div 
-                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${BRAND.violet}15` }}
-                    >
-                      <CheckIcon color={BRAND.violet} size={10} />
-                    </div>
-                    <span className="text-sm" style={{ color: BRAND.slate }}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              
-              {item.tier === "Enterprise" && (
-                <Link 
-                  to="/contact"
-                  className="mt-8 block w-full text-center py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                  style={{ background: BRAND.violet, color: BRAND.white }}
-                >
-                  Register Interest
-                </Link>
-              )}
-            </div>
-          ))}
+              Register Interest
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                <ArrowIcon />
+              </span>
+            </Link>
+            
+            <p 
+              className="mt-6 text-sm"
+              style={{ color: BRAND.steel }}
+            >
+              Pricing available on request. No commitment required.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -839,7 +834,7 @@ function CTASection() {
           className="text-xl md:text-2xl mb-12 opacity-90"
           style={{ color: BRAND.white }}
         >
-          Wadmore Professional launches March 2026. Register now for early access.
+          Wadmore Professional is coming in 2026. Register now for priority access and pilot pricing.
         </p>
         
         <div className="flex flex-wrap justify-center gap-5">
