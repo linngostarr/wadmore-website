@@ -171,10 +171,9 @@ export default function Home() {
         <CognitiveFrameworkSection />
         <BandsSection />
         <SampleProfile 
-          compact 
           eyebrow="See It In Action"
           heading="What a Wadmore profile looks like."
-          subheading="Every person assessed receives a full cognitive profile across all eight domains — with strategies attached at every level."
+          subheading="Every person assessed receives a full cognitive profile across all eight domains, with strategies attached at every level."
         />
         <AudienceSection />
         <DifferenceSection />
