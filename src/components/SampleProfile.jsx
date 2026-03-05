@@ -310,10 +310,10 @@ function DetailCards() {
             <div className="text-[10px] font-extrabold uppercase tracking-wider mb-1.5" style={{ color: BRAND.teal }}>
               Teacher · Enrichment
             </div>
-            <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1 list-disc" style={{ color: BRAND.slate }}>
-              <li>Introduce open-ended problems where rules must be inferred, not given.</li>
-              <li>Multi-step pattern challenges with increasing complexity sustain engagement.</li>
-              <li>Cross-domain transfer tasks leverage this strength productively.</li>
+            <ul className="text-sm leading-relaxed pl-5 m-0 space-y-1 list-disc" style={{ color: BRAND.slate }}>
+              <li style={{ color: BRAND.teal }}><span style={{ color: BRAND.slate }}>Introduce open-ended problems where rules must be inferred, not given.</span></li>
+              <li style={{ color: BRAND.teal }}><span style={{ color: BRAND.slate }}>Multi-step pattern challenges with increasing complexity sustain engagement.</span></li>
+              <li style={{ color: BRAND.teal }}><span style={{ color: BRAND.slate }}>Cross-domain transfer tasks leverage this strength productively.</span></li>
             </ul>
             <div className="mt-2.5 pt-2" style={{ borderTop: `1px solid ${BRAND.teal}15` }}>
               <p className="text-xs leading-relaxed m-0" style={{ color: BRAND.steel }}>
@@ -365,10 +365,10 @@ function DetailCards() {
             <div className="text-[10px] font-extrabold uppercase tracking-wider mb-1.5" style={{ color: BRAND.goldenDark }}>
               Parent · Home Support
             </div>
-            <ul className="text-sm leading-relaxed pl-4 m-0 space-y-1 list-disc" style={{ color: BRAND.slate }}>
-              <li>Use visual task breakdowns with checkboxes for multi-step activities at home.</li>
-              <li>Cooking projects work well. They require holding instructions in mind whilst monitoring progress.</li>
-              <li>Celebrate completing each step, not just the final outcome.</li>
+            <ul className="text-sm leading-relaxed pl-5 m-0 space-y-1 list-disc" style={{ color: BRAND.slate }}>
+              <li style={{ color: BRAND.golden }}><span style={{ color: BRAND.slate }}>Use visual task breakdowns with checkboxes for multi-step activities at home.</span></li>
+              <li style={{ color: BRAND.golden }}><span style={{ color: BRAND.slate }}>Cooking projects work well. They require holding instructions in mind whilst monitoring progress.</span></li>
+              <li style={{ color: BRAND.golden }}><span style={{ color: BRAND.slate }}>Celebrate completing each step, not just the final outcome.</span></li>
             </ul>
             <div className="mt-2.5 pt-2" style={{ borderTop: `1px solid ${BRAND.golden}15` }}>
               <p className="text-xs leading-relaxed m-0" style={{ color: BRAND.steel }}>
