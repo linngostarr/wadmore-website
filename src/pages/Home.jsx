@@ -336,7 +336,7 @@ function WhenInsightMattersSection() {
             Cognitive intelligence for every context.
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            The same rigorous assessment, adapted for the people who use it. Eight domains of cognitive performance, with guidance designed for how you actually work.
+            One lifelong assessment architecture. Three distinct platforms, each built for how that audience makes decisions. Different dashboards, different strategies, different reporting depth.
           </p>
         </div>
 
