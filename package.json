@@ -28,7 +28,6 @@
   "reactSnap": {
     "source": "build",
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-    "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     "skipThirdPartyRequests": true,
     "include": [
       "/", "/schools", "/families", "/professional",
@@ -54,11 +53,6 @@
       "last 1 safari version"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.14",
     "autoprefixer": "^10.4.21",
