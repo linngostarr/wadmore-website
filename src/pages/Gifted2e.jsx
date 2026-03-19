@@ -39,7 +39,7 @@ export default function Gifted2e() {
           compact 
           eyebrow="A Twice-Exceptional Profile"
           heading="What this looks like in Wadmore."
-          subheading="AR at Band 8, EF at Band 4 — high capability and genuine support needs, visible in a single profile. This is exactly what traditional assessments miss."
+          subheading="AR at Band 8, EF at Band 4 — exceptional capability and genuine support needs, visible in a single profile. This is exactly what composite-score assessments miss."
         />
         <ProfileExamples />
         <ResearchBacking />
@@ -90,7 +90,7 @@ function Hero() {
                 fontSize: "clamp(0.95rem, 1vw + 0.5rem, 1.15rem)"
               }}
             >
-              Eight cognitive domains, profiled separately. No averaging. No single score that hides the unevenness defining your child's experience.
+              Eight cognitive domains, measured and reported independently. No composite score. No averaging that masks the asynchronous development defining your child's experience.
             </p>
             <p 
               className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
@@ -506,7 +506,7 @@ function HowWadmoreHelps() {
     },
     {
       title: "Uneven profiles expected",
-      desc: "Our 15-band framework expects wide variation. Large spreads between domains are normal, not concerning. It's how capable minds often work.",
+      desc: "Our 15-band developmental framework expects asynchronous development. Wide variation between domains is documented, not averaged. It's how capable minds often work.",
       color: BRAND.cerulean,
       icon: <TrendingIcon color={BRAND.cerulean} />,
     },

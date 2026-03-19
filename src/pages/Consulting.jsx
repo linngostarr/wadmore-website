@@ -101,7 +101,7 @@ function Hero() {
               }}
             >
               Our professional learning programmes build the capability to interpret cognitive 
-              performance data and turn it into differentiated practice: for support, differentiation, and extension.
+              performance evidence and turn it into differentiated practice: for support, differentiation, and extension.
             </p>
             
             {/* v1.1: Safeguard statement */}
@@ -292,15 +292,15 @@ function ProgramsSection() {
     {
       title: "Foundation Program",
       duration: "Half-day (3 hours)",
-      description: "An introduction to Wadmore's cognitive development framework and how to read profiles.",
+      description: "An introduction to Wadmore's cognitive profiling framework and how to interpret Cognitive Intelligence Profiles.",
       ideal: "New users, whole-staff introduction",
-      topics: ["The 8 domains of cognitive development", "Reading and interpreting profiles", "Strength-based language", "Next steps for action"],
+      topics: ["The 8 domains of cognitive performance", "Reading and interpreting Cognitive Intelligence Profiles", "Strength-based language", "Next steps for action"],
       color: BRAND.teal,
     },
     {
       title: "Practitioner Program",
       duration: "Full day (6 hours)",
-      description: "Deep dive into cognitive profiles and practical strategies for classroom application.",
+      description: "Deep dive into Cognitive Intelligence Profiles and practical strategies for classroom application.",
       ideal: "Classroom teachers, learning support",
       topics: ["Deep domain exploration", "Case study analysis", "Differentiation strategies", "Action planning workshop"],
       color: BRAND.cerulean,
@@ -308,9 +308,9 @@ function ProgramsSection() {
     {
       title: "Leadership Program",
       duration: "2 x half-days",
-      description: "Strategic use of cognitive data for school improvement and capability building.",
+      description: "Strategic use of cognitive performance evidence for school improvement and capability building.",
       ideal: "Principals, heads of department, coordinators",
-      topics: ["Cohort-level data analysis", "Building PL capability", "Strategic planning with cognitive data", "Leading culture change"],
+      topics: ["Cohort-level cognitive performance analysis", "Building PL capability", "Strategic planning with cognitive evidence", "Leading culture change"],
       color: BRAND.violet,
     },
   ];
@@ -401,8 +401,8 @@ function WorkshopTopicsSection() {
     { title: "Cognitive Confidence & Mindset", desc: "Building resilient learners" },
     { title: "Differentiation Through Cognitive Profiles", desc: "Practical strategies for mixed-ability classrooms" },
     { title: "NCCD Evidence & Documentation", desc: "Using Wadmore for disability adjustment evidence" },
-    { title: "Parent Conversations", desc: "Communicating cognitive profiles to families" },
-    { title: "Gifted & Talented Identification", desc: "Using cognitive data for extension programs" },
+    { title: "Parent Conversations", desc: "Communicating Cognitive Intelligence Profiles to families" },
+    { title: "Gifted & Talented Identification", desc: "Using cognitive performance evidence for extension programmes" },
   ];
 
   return (

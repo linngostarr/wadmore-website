@@ -81,9 +81,9 @@ function Hero() {
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl leading-relaxed" style={{ color: BRAND.steel }}>
-              Wadmore profiles how people think as they engage with{" "}
-              <strong style={{ color: BRAND.slate }}>structured cognitive tasks</strong>:
-              the processes through which they reason, plan, adapt, and reflect. Our framework draws on 
+              Wadmore measures cognitive performance through{" "}
+              <strong style={{ color: BRAND.slate }}>structured assessment tasks</strong>{" "}
+              designed to isolate specific cognitive processes. Our framework draws on 
               50+ peer-reviewed sources across cognitive science, developmental psychology, and learning research.
             </p>
           </div>
@@ -94,9 +94,9 @@ function Hero() {
               <div className="text-xs font-bold uppercase tracking-wider mb-5" style={{ color: BRAND.indigo }}>Framework at a glance</div>
               <div className="space-y-4">
                 {[
-                  { value: "8", label: "Cognitive Domains", desc: "Complete coverage of thinking capability" },
-                  { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
-                  { value: "360", label: "Unique Constructs", desc: "Precise, actionable profiling" },
+                  { value: "8", label: "Cognitive Domains", desc: "Independently measured cognitive processes" },
+                  { value: "15", label: "Developmental Bands", desc: "IRT-calibrated progression" },
+                  { value: "360", label: "Construct Indicators", desc: "Diagnostic precision at construct level" },
                 ].map((stat, i) => (
                   <div key={stat.label} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: i === 0 ? `${BRAND.indigo}08` : BRAND.cloud }}>
                     <div className="text-2xl font-bold w-12 text-center" style={{ color: BRAND.indigo }}>{stat.value}</div>
@@ -752,11 +752,11 @@ function DevelopmentalFrameworkSection() {
           <h3 className="font-semibold text-lg mb-5" style={{ color: BRAND.slate }}>Band Groupings</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { range: "1–3", name: "Foundation", desc: "Concrete thinking, external support", colors: [0, 1, 2] },
-              { range: "4–6", name: "Functional", desc: "Emerging abstraction, strategic thinking", colors: [3, 4, 5] },
-              { range: "7–9", name: "Advanced", desc: "Sophisticated reasoning, cross-domain transfer", colors: [6, 7, 8] },
-              { range: "10–12", name: "Professional", desc: "Applied expertise, leadership capability", colors: [9, 10, 11] },
-              { range: "13–15", name: "Expert", desc: "Domain mastery, paradigm contribution", colors: [12, 13, 14] },
+              { range: "1-3", name: "Foundation", desc: "Concrete thinking, external support", colors: [0, 1, 2] },
+              { range: "4-6", name: "Functional", desc: "Emerging abstraction, strategic thinking", colors: [3, 4, 5] },
+              { range: "7-9", name: "Advanced", desc: "Sophisticated reasoning, cross-domain transfer", colors: [6, 7, 8] },
+              { range: "10-12", name: "Professional", desc: "Applied expertise, leadership capability", colors: [9, 10, 11] },
+              { range: "13-15", name: "Expert", desc: "Domain mastery, paradigm contribution", colors: [12, 13, 14] },
             ].map((stage) => (
               <div key={stage.range} className="p-4 rounded-xl" style={{ background: BRAND.white }}>
                 <div className="flex gap-1 mb-3">
@@ -971,7 +971,7 @@ function PsychometricSection() {
             },
             { 
               title: "Partial credit scoring", 
-              desc: "Multi-level rubrics (2–4 levels per item) capture nuanced responses. More information per item means fewer items needed for reliable measurement.",
+              desc: "Multi-level rubrics (2-4 levels per item) capture nuanced responses. More information per item means fewer items needed for reliable measurement.",
               Icon: RubricIcon,
               color: BRAND.cerulean
             },

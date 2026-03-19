@@ -136,26 +136,26 @@ const AUDIENCES = {
     color: BRAND.cerulean,
     headline: "Every student has a cognitive profile. Wadmore makes it visible.",
     subhead: "Evidence for differentiation, support, and extension.",
-    body: "Wadmore measures cognitive performance across eight domains, from reasoning and memory to self-regulation and creative thinking, giving teachers evidence for differentiation, targeted support, and meaningful extension. Not a ranking. A profile that leads to action.",
-    points: ["Cognitive performance across eight domains", "Strategies matched to current capability", "NCCD documentation from assessment evidence", "Cohort-level cognitive intelligence"],
+    body: "Eight independently-scored cognitive domains give teachers diagnostic evidence for differentiation, targeted intervention, and extension. Not a ranking. A Cognitive Intelligence Profile that leads to action.",
+    points: ["Eight independently-measured cognitive domains", "Strategies matched to current developmental level", "NCCD documentation from assessment evidence", "Cohort-level cognitive intelligence"],
     link: "/schools",
   },
   families: {
     label: "Families",
     color: BRAND.teal,
-    headline: "Know your child beyond their grades.",
-    subhead: "A clear picture of cognitive performance, with practical guidance.",
-    body: "Grades tell you outcomes. A Wadmore Profile shows you the cognitive performance driving them, across eight measurable domains, with practical guidance for home and school. Whether your child is building confidence, finding their stride, or racing ahead.",
-    points: ["Strength-based cognitive profiles", "Plain language explanations", "Practical home strategies", "School conversation guides"],
+    headline: "Know how your child thinks, not just what they've learned.",
+    subhead: "Cognitive performance mapped, with practical developmental guidance.",
+    body: "Grades tell you outcomes. A Wadmore Cognitive Intelligence Profile reveals the cognitive performance producing them, across eight domains, with practical strategies for home and school.",
+    points: ["Strength-based cognitive profiles", "Plain language with clinical precision", "Practical home strategies", "School conversation guides"],
     link: "/families",
   },
   professional: {
     label: "Professional",
     color: BRAND.violet,
     headline: "People decisions, backed by cognitive evidence.",
-    subhead: "Cognitive performance data for hiring, development, and team composition.",
-    body: "Personality tools measure preference. Wadmore measures cognitive performance. See how your people handle complexity, regulate under pressure, and approach novel problems, then use that intelligence for hiring, development, and team composition.",
-    points: ["Individual cognitive performance profiles", "Team cognitive maps", "Evidence-based development priorities", "Cognitive diversity insights"],
+    subhead: "Cognitive performance evidence for hiring, development, and team composition.",
+    body: "Personality tools measure preference. Wadmore measures demonstrated cognitive performance. See how your people handle complexity, regulate under pressure, and approach novel problems, then use that intelligence for hiring, development, and team composition.",
+    points: ["Individual cognitive performance profiles", "Team cognitive diversity mapped", "Evidence-based development priorities", "Demonstrated capability, not self-reported preference"],
     link: "/professional",
   },
 };
@@ -172,8 +172,8 @@ export default function Home() {
         <BandsSection />
         <SampleProfile 
           eyebrow="See It In Action"
-          heading="What a Wadmore profile looks like."
-          subheading="Every person assessed receives a full cognitive profile across all eight domains, with strategies attached at every level."
+          heading="A Cognitive Intelligence Profile."
+          subheading="Every person assessed receives a full profile across all eight domains, with developmental strategies attached at every level."
         />
         <AudienceSection />
         <DifferenceSection />
@@ -219,9 +219,9 @@ function Hero() {
                 fontSize: "clamp(1rem, 1.1vw + 0.5rem, 1.3rem)"
               }}
             >
-              Grades show <strong style={{ color: BRAND.slate }}>achievement</strong>.{" "}
-              Personality tools show <strong style={{ color: BRAND.slate }}>preference</strong>.{" "}
-              Neither shows you the holistic cognitive performance underneath.
+              Grades measure <strong style={{ color: BRAND.slate }}>what students have learned</strong>.{" "}
+              Personality tools describe <strong style={{ color: BRAND.slate }}>preference</strong>.{" "}
+              Neither measures the cognitive processes underneath.
             </p>
             <p 
               className="leading-relaxed mb-6 md:mb-[clamp(1.25rem,3vh,2rem)]" 
@@ -230,7 +230,7 @@ function Hero() {
                 fontSize: "clamp(0.9rem, 0.9vw + 0.4rem, 1.1rem)"
               }}
             >
-              Wadmore delivers cognitive intelligence: detailed performance data across eight domains, with research-grounded strategies for growth.
+              Wadmore delivers cognitive intelligence: precision measurement across eight domains, with developmental strategies mapped to each individual's profile.
             </p>
             
             {/* Mobile: stacked CTAs. Desktop: inline row */}
@@ -261,10 +261,10 @@ function Hero() {
           style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}`, boxShadow: `0 12px 35px ${BRAND.indigo}05` }}
         >
           {[
-            { value: "8", label: "Cognitive Domains", sub: "Complete coverage" },
-            { value: "15", label: "Developmental Bands", sub: "Foundation through expert" },
-            { value: "360", label: "Unique Constructs", sub: "Actionable precision" },
-            { value: "50+", label: "Research Sources", sub: "Evidence-grounded" },
+            { value: "8", label: "Cognitive Domains", sub: "Independent measurement" },
+            { value: "15", label: "Developmental Bands", sub: "IRT-calibrated progression" },
+            { value: "360", label: "Construct Indicators", sub: "Diagnostic precision" },
+            { value: "50+", label: "Peer-Reviewed Sources", sub: "Evidence-grounded" },
           ].map((stat) => (
             <div key={stat.label} className="text-center py-1 min-w-0">
               <div className="text-xl md:text-3xl font-bold mb-0.5 truncate" style={{ color: BRAND.indigo }}>{stat.value}</div>
@@ -299,10 +299,10 @@ function WhenInsightMattersSection() {
     {
       label: "Families",
       color: BRAND.teal,
-      desc: "See how your child thinks, and get practical guidance for home and school.",
+      desc: "Understand your child's cognitive performance across eight domains, with practical strategies for home and school.",
       points: [
-        "Strengths and growth areas across eight domains",
-        "Activities matched to how your child thinks",
+        "Strengths and growth areas independently measured",
+        "Developmental strategies matched to your child's profile",
         "Evidence that strengthens school conversations",
         "Track cognitive development over time",
       ],
@@ -311,12 +311,12 @@ function WhenInsightMattersSection() {
     {
       label: "Professional",
       color: BRAND.violet,
-      desc: "Cognitive performance data for hiring, team formation, and leadership development.",
+      desc: "Cognitive performance evidence for hiring, team formation, and leadership development.",
       points: [
         "Individual profiles across eight domains",
         "Team cognitive diversity mapped",
         "Development priorities grounded in evidence",
-        "Capability insights no personality tool can provide",
+        "Demonstrated capability, not self-reported preference",
       ],
       link: "/professional",
     },
@@ -396,14 +396,14 @@ function WhenInsightMattersSection() {
 
 function CognitiveFrameworkSection() {
   const domains = [
-    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems without relying on prior knowledge", cluster: "processing" },
-    { code: "LS", name: "Logical Sequencing", desc: "Following chains of reasoning and cause-effect relationships", cluster: "processing" },
-    { code: "PS", name: "Processing Speed", desc: "Taking in information quickly and responding efficiently", cluster: "processing" },
-    { code: "MA", name: "Memory & Attention", desc: "Holding information in mind while working with it", cluster: "processing" },
-    { code: "EF", name: "Executive Functioning", desc: "Planning, staying focused, and adapting when needed", cluster: "regulation" },
-    { code: "MR", name: "Metacognition", desc: "Awareness of your own thinking and ability to choose effective strategies", cluster: "regulation" },
-    { code: "CM", name: "Cognitive Confidence", desc: "Persisting through difficulty and believing you can improve", cluster: "regulation" },
-    { code: "CD", name: "Creativity", desc: "Generating original ideas and seeing unexpected connections", cluster: "creative" },
+    { code: "AR", name: "Abstract Reasoning", desc: "Identifying patterns, rules, and relationships in novel problems independent of learned content", cluster: "processing" },
+    { code: "LS", name: "Logical Sequencing", desc: "Detecting sequential relationships and applying logical rules across multi-step problems", cluster: "processing" },
+    { code: "PS", name: "Processing Speed", desc: "Encoding and responding to information rapidly under timed conditions", cluster: "processing" },
+    { code: "MA", name: "Memory & Attention", desc: "Encoding, maintaining, and manipulating information in working memory under cognitive load", cluster: "processing" },
+    { code: "EF", name: "Executive Functioning", desc: "Coordinating cognitive resources: planning, inhibiting automatic responses, and shifting strategies under changing demands", cluster: "regulation" },
+    { code: "MR", name: "Metacognition", desc: "Monitoring cognitive performance in real time and selecting, evaluating, and adjusting strategies during task execution", cluster: "regulation" },
+    { code: "CM", name: "Cognitive Confidence", desc: "Sustaining cognitive effort under difficulty and calibrating confidence relative to actual performance", cluster: "regulation" },
+    { code: "CD", name: "Creativity", desc: "Producing divergent responses, restructuring problems, and generating ideas beyond conventional approaches", cluster: "creative" },
   ];
 
   const clusterColors = {
@@ -425,11 +425,11 @@ function CognitiveFrameworkSection() {
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: BRAND.indigo }}>The Cognitive Framework</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4" style={{ color: BRAND.slate }}>
-            Eight domains of thinking
+            Eight domains of cognition
           </h2>
           <p className="text-base md:text-lg" style={{ color: BRAND.steel }}>
-            Wadmore measures cognitive performance through structured tasks, identifying patterns 
-            across eight research-grounded domains organised into three clusters.
+            Wadmore measures cognitive performance through structured assessment tasks, identifying patterns 
+            across eight independently-measured domains organised into three clusters.
           </p>
         </div>
 
@@ -609,7 +609,7 @@ function BandsSection() {
           {[
             { title: "Capability, not comparison", desc: "Bands describe what someone can do, not how they rank against peers.", color: BRAND.teal },
             { title: "Pathways for growth", desc: "Every band shows current capability and clarifies specific next steps for development.", color: BRAND.cerulean },
-            { title: "Research-grounded", desc: "Framework informed by developmental science, cognitive psychology, and learning research.", color: BRAND.violet },
+            { title: "Research-grounded", desc: "Framework informed by developmental science, cognitive psychology, and peer-reviewed learning research.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="p-4 md:p-5 rounded-xl" style={{ background: BRAND.cloud, border: `1px solid ${BRAND.dove}` }}>
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style={{ background: `${item.color}15` }}>
@@ -698,10 +698,10 @@ function DifferenceSection() {
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {[
-            { title: "Strength-based", desc: "Profiles lead with what's working. Growth areas framed as opportunities.", color: BRAND.teal },
-            { title: "Developmental", desc: "Shows where someone is now, with clear pathways forward. Progression through learning, not fixed stages.", color: BRAND.cerulean },
-            { title: "Evidence-based", desc: "360 constructs connect to specific, research-grounded guidance.", color: BRAND.indigo },
-            { title: "Research-aligned", desc: "Built on current cognitive science. Memory, self-regulation, and reasoning.", color: BRAND.violet },
+            { title: "Psychometrically rigorous", desc: "IRT/Rasch-calibrated adaptive measurement with professional-standard reliability.", color: BRAND.teal },
+            { title: "Evidence-grounded", desc: "360 construct indicators, each connected to peer-reviewed research and practical guidance.", color: BRAND.cerulean },
+            { title: "Strength-based", desc: "Profiles lead with demonstrated capability. Growth areas framed as opportunities with strategies attached.", color: BRAND.indigo },
+            { title: "Developmental", desc: "Fifteen-band progression from early childhood through expert. Current performance, not fixed capacity.", color: BRAND.violet },
           ].map((item) => (
             <div key={item.title} className="group p-4 md:p-6 rounded-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl min-w-0" style={{ background: BRAND.white, border: `1px solid ${BRAND.dove}` }}>
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-5 transition-transform duration-300 group-hover:scale-110" style={{ background: `${item.color}12` }}>
@@ -715,10 +715,10 @@ function DifferenceSection() {
         
         <div className="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           {[
-            { title: "Psychometrically rigorous", desc: "IRT/Rasch-aligned measurement with professional standards." },
-            { title: "Designed for fairness", desc: "DIF testing, bias review, and EALD-friendly design." },
-            { title: "Lifespan coverage", desc: "Early childhood through professional expertise." },
-            { title: "Australian-built", desc: "Local support and data sovereignty." },
+            { title: "Research-aligned", desc: "Built on 50+ peer-reviewed sources across cognitive science and developmental psychology." },
+            { title: "Designed for fairness", desc: "DIF testing, systematic bias review, and EALD-accessible item design." },
+            { title: "Lifespan architecture", desc: "Band 1 through Band 15. Assessment grows with the individual." },
+            { title: "Australian-built", desc: "Data sovereignty maintained. Local support and school-year alignment." },
           ].map((item) => (
             <div key={item.title} className="flex gap-3 min-w-0">
               <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: BRAND.sage }} />

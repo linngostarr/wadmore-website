@@ -109,7 +109,7 @@ export default function SEO({
 export const PAGE_SEO = {
   home: {
     title: null,
-    description: 'Wadmore profiles how people think across eight cognitive domains. Strength-based assessment for schools, families, and organisations. Australian-built cognitive profiling platform.',
+    description: 'Wadmore delivers adaptive cognitive profiling across eight domains using IRT/Rasch psychometrics. Strength-based developmental assessment for schools, families, and organisations. Australian-built.',
     path: '/',
     schema: {
       '@context': 'https://schema.org',
@@ -130,7 +130,7 @@ export const PAGE_SEO = {
 
   schools: {
     title: 'Schools',
-    description: 'Cognitive profiling for educators. Understand how students think across eight domains. Evidence for differentiation, NCCD documentation, and pathway planning.',
+    description: 'Adaptive cognitive assessment for schools. Eight-domain profiling with classroom strategies, NCCD evidence, and cohort analytics. IRT-calibrated, strength-based, Australian-built.',
     path: '/schools',
     schema: {
       '@context': 'https://schema.org',
@@ -150,7 +150,7 @@ export const PAGE_SEO = {
 
   families: {
     title: 'Families',
-    description: "Understand your child's thinking patterns. Strength-based profiles across eight cognitive domains with practical guidance for home support. Current patterns, not fixed labels.",
+    description: "Comprehensive cognitive assessment for children and families. Eight independently-measured domains with developmental strategies. Strength-based profiling using adaptive psychometrics. Available online.",
     path: '/families',
     schema: {
       '@context': 'https://schema.org',
@@ -166,7 +166,7 @@ export const PAGE_SEO = {
 
   professional: {
     title: 'Professional',
-    description: 'Cognitive profiling for teams and organisations. Understand how your people think under cognitive demand. Evidence for team composition and leadership development.',
+    description: 'Cognitive performance assessment for organisations. Eight-domain profiling that measures demonstrated capability, not self-reported preference. Evidence for hiring, team formation, and leadership development.',
     path: '/professional',
     schema: {
       '@context': 'https://schema.org',
@@ -182,7 +182,7 @@ export const PAGE_SEO = {
 
   science: {
     title: 'The Science',
-    description: 'Research foundation behind Wadmore. Eight cognitive domains, fifteen developmental bands, IRT/Rasch psychometrics. Grounded in 50+ peer-reviewed sources.',
+    description: 'Psychometric methodology and research foundation. Eight cognitive domains, fifteen developmental bands, IRT/Rasch-calibrated adaptive measurement. Grounded in 50+ peer-reviewed sources.',
     path: '/science',
     schema: {
       '@context': 'https://schema.org',
@@ -194,7 +194,7 @@ export const PAGE_SEO = {
 
   about: {
     title: 'About',
-    description: 'Wadmore was founded to make thinking visible. Australian-built cognitive profiling platform. Evidence that informs decisions, not predictions.',
+    description: 'Founded by Matt Linn, with 17+ years in educational assessment including Head of Global Assessment at Janison. Australian-built cognitive profiling platform. Evidence that informs decisions, not predictions.',
     path: '/about',
     schema: {
       '@context': 'https://schema.org',
@@ -206,7 +206,7 @@ export const PAGE_SEO = {
 
   consulting: {
     title: 'Professional Learning',
-    description: 'Build capability in cognitive assessment. Professional development for educators, leaders, and support staff. Research-grounded, practically focused.',
+    description: 'Build capability in cognitive assessment interpretation and application. Professional development for educators, leaders, and support staff. Research-grounded, practically focused.',
     path: '/consulting',
     schema: {
       '@context': 'https://schema.org',
@@ -233,7 +233,7 @@ export const PAGE_SEO = {
           name: 'What is Wadmore?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Wadmore is a cognitive profiling platform that reveals how thinking appears when people engage with structured cognitive tasks.',
+            text: 'Wadmore is a cognitive profiling platform that measures performance across eight independently-scored cognitive domains using adaptive psychometrics.',
           },
         },
         {
@@ -241,7 +241,7 @@ export const PAGE_SEO = {
           name: 'How is Wadmore different from IQ tests?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Traditional assessments produce a single score. Wadmore describes patterns of thinking across multiple cognitive domains with research-grounded guidance.',
+            text: 'Traditional assessments produce a single composite score. Wadmore measures eight cognitive domains independently and connects each to specific developmental strategies grounded in peer-reviewed research.',
           },
         },
         {
@@ -269,7 +269,7 @@ export const PAGE_SEO = {
 
   gifted2e: {
     title: 'Gifted & Twice-Exceptional',
-    description: 'The most holistic assessment for gifted and twice-exceptional learners. See both exceptional strengths and specific support needs across eight cognitive domains.',
+    description: 'Cognitive profiling designed for asynchronous development. Eight domains measured independently. No composite scores masking the uneven profiles that define gifted and twice-exceptional learners.',
     path: '/gifted-2e',
     schema: {
       '@context': 'https://schema.org',

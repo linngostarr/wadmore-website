@@ -278,31 +278,31 @@ function StorySection() {
           
           <div className="space-y-5" style={{ color: BRAND.steel }}>
             <p className="text-lg leading-relaxed">
-              The Wadmore team brings decades of experience in cognitive assessment, 
-              having worked across some of the world's largest testing programmes. 
-              From national examinations to international assessments reaching millions 
-              of students, we've seen what works and what doesn't.
+              Wadmore was founded by Matt Linn, with 17+ years in educational assessment, 
+              including Head of Global Assessment at Janison. That experience revealed both 
+              the power and the limitations of traditional assessment.
             </p>
             
             <p className="text-lg leading-relaxed">
-              One question kept emerging: <em>what if we could make thinking 
+              One question kept emerging: <em>what if we could make cognitive performance 
               visible?</em> Traditional 
-              cognitive assessments produce percentile ranks. Useful for comparison, 
+              assessments produce percentile ranks. Useful for comparison, 
               but limited for development. Teachers would ask: "This student is at the 
               62nd percentile. Now what?" The assessments had no answer.
             </p>
             
             <p className="text-lg leading-relaxed">
-              Wadmore takes a different approach. We measure cognitive performance across 
-              eight domains, from abstract reasoning to executive functioning to 
-              metacognition, covering processing, regulation, and creative thinking. 
+              Wadmore takes a different approach. Eight independently-scored cognitive 
+              domains, from abstract reasoning to executive functioning to 
+              metacognition, using IRT/Rasch-calibrated adaptive psychometrics. 
               And we show what growth looks like from wherever you are.
             </p>
             
             <p className="text-lg leading-relaxed">
               The result is strength-based profiling that empowers growth. Assessment 
-              designed for fairness from the start. Insights connected to research-grounded 
-              strategies. And a framework that spans foundation through expert, wherever you are on the journey.
+              designed for fairness from the start. Every construct indicator connected to peer-reviewed 
+              research and practical strategies. And a developmental framework that spans early childhood 
+              through professional expertise.
             </p>
           </div>
         </div>
@@ -326,7 +326,7 @@ function ValuesSection() {
     {
       icon: ScienceIcon,
       title: "Research-grounded",
-      description: "Over 50 peer-reviewed sources. Every recommendation linked to established science.",
+      description: "Over 50 peer-reviewed sources. Every construct indicator linked to established cognitive science.",
       color: BRAND.cerulean,
     },
     {
@@ -344,7 +344,7 @@ function ValuesSection() {
     {
       icon: ActionIcon,
       title: "Actionable",
-      description: "360 constructs connect to specific strategies, not generic advice.",
+      description: "360 construct indicators connect to specific developmental strategies, not generic advice.",
       color: BRAND.golden,
     },
     {

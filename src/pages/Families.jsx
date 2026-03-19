@@ -103,7 +103,7 @@ function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight mb-6"
               style={{ color: BRAND.slate }}
             >
-              Know your child beyond their{" "}
+              See beyond your child's{" "}
               <span 
                 className="relative inline-block"
                 style={{ color: BRAND.teal }}
@@ -131,15 +131,15 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-3 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Grades capture outcomes, but not the cognitive performance producing them.
+              Grades capture learning outcomes, not the cognitive processes producing them.
             </p>
             <p 
               className="text-base md:text-lg leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              A Wadmore Profile reveals how your child performs across{" "}
+              A Wadmore Cognitive Intelligence Profile maps your child's performance across{" "}
               <strong style={{ color: BRAND.slate }}>eight cognitive domains</strong>, 
-              with practical guidance for home and school. Whether they're building confidence, finding their stride, or racing ahead.
+              with developmental strategies tailored to their strengths and growth areas.
             </p>
             
             {/* CTAs */}
@@ -193,10 +193,10 @@ function Hero() {
             
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
-                { value: "8", label: "Cognitive Domains", desc: "Complete picture" },
+                { value: "8", label: "Cognitive Domains", desc: "Independently measured" },
                 { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
-                { value: "360", label: "Unique Insights", desc: "Actionable guidance" },
-                { value: "24hrs", label: "Results", desc: "Fast insights" },
+                { value: "360", label: "Construct Indicators", desc: "Mapped to developmental strategies" },
+                { value: "24hrs", label: "Results", desc: "Delivered within 24 hours" },
               ].map((stat) => (
                 <div key={stat.label} className="group">
                   <div 
@@ -267,7 +267,7 @@ function WhyItMattersSection() {
             className="text-xl"
             style={{ color: BRAND.steel }}
           >
-            A Wadmore Profile gives you a detailed picture of how your child performs cognitively, so you can make better decisions about how to support and extend them every day.
+            A Wadmore Cognitive Intelligence Profile maps your child's cognitive performance across eight domains, so you can make better decisions about how to support and extend them every day.
           </p>
         </div>
         
@@ -332,14 +332,14 @@ function EightDomainsSection() {
   };
 
   const domains = [
-    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems", cluster: "processing" },
-    { code: "LS", name: "Logical Sequencing", desc: "Step-by-step thinking", cluster: "processing" },
-    { code: "PS", name: "Processing Speed", desc: "Quick, accurate thinking", cluster: "processing" },
-    { code: "MA", name: "Memory & Attention", desc: "Holding information while working", cluster: "processing" },
-    { code: "EF", name: "Executive Functioning", desc: "Planning and organisation", cluster: "regulation" },
-    { code: "MR", name: "Metacognition", desc: "Awareness of thinking", cluster: "regulation" },
-    { code: "CM", name: "Cognitive Confidence", desc: "Persisting through challenge", cluster: "regulation" },
-    { code: "CD", name: "Creativity", desc: "Original ideas", cluster: "creative" },
+    { code: "AR", name: "Abstract Reasoning", desc: "Solving novel problems without learned content", cluster: "processing" },
+    { code: "LS", name: "Logical Sequencing", desc: "Multi-step reasoning and logical rules", cluster: "processing" },
+    { code: "PS", name: "Processing Speed", desc: "Rapid, accurate information processing", cluster: "processing" },
+    { code: "MA", name: "Memory & Attention", desc: "Working memory under cognitive load", cluster: "processing" },
+    { code: "EF", name: "Executive Functioning", desc: "Planning, inhibition, and cognitive flexibility", cluster: "regulation" },
+    { code: "MR", name: "Metacognition", desc: "Monitoring and adjusting thinking strategies", cluster: "regulation" },
+    { code: "CM", name: "Cognitive Confidence", desc: "Effort under difficulty and accurate self-assessment", cluster: "regulation" },
+    { code: "CD", name: "Creativity", desc: "Divergent thinking and original ideas", cluster: "creative" },
   ];
 
   return (
@@ -359,14 +359,14 @@ function EightDomainsSection() {
             className="text-3xl md:text-4xl font-semibold leading-tight mb-5"
             style={{ color: BRAND.slate }}
           >
-            Eight domains of thinking
+            Eight domains of cognition
           </h2>
           <p 
             className="text-lg"
             style={{ color: BRAND.steel }}
           >
-            Wadmore profiles cognitive capability across eight research-grounded 
-            domains, giving you the complete picture, not just a single number.
+            Wadmore measures cognitive performance across eight independently-scored 
+            domains, giving you diagnostic precision, not just a single number.
           </p>
         </div>
         
@@ -722,6 +722,12 @@ function PricingSection() {
             <span className="w-2 h-2 rounded-full" style={{ background: BRAND.indigo }} />
             Founding rates end June 2026
           </p>
+          <p 
+            className="text-sm mt-6 max-w-2xl mx-auto leading-relaxed"
+            style={{ color: BRAND.steel }}
+          >
+            A comprehensive cognitive assessment with an educational psychologist typically costs $800-$1,500 and involves a 3-6 month waitlist. Wadmore delivers an adaptive, psychometrically-calibrated Cognitive Intelligence Profile using comparable measurement principles. Available now.
+          </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
@@ -936,7 +942,7 @@ function CTASection() {
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           style={{ color: BRAND.white }}
         >
-          Ready to know your child beyond their grades?
+          Ready to understand your child's cognitive profile?
         </h2>
         <p 
           className="text-xl md:text-2xl mb-12 opacity-90"

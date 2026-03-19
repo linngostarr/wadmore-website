@@ -25,15 +25,15 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: "What is Wadmore?",
-        a: "Wadmore is a cognitive profiling platform that reveals how thinking appears when people engage with structured cognitive tasks. Unlike traditional tests that rank and compare, Wadmore provides strength-based profiles designed to support decisions in schools, families, and organisations."
+        a: "Wadmore is a cognitive profiling platform that measures performance across eight independently-scored cognitive domains using adaptive psychometrics. Unlike traditional tests that rank and compare, Wadmore provides strength-based Cognitive Intelligence Profiles designed to support decisions in schools, families, and organisations."
       },
       {
         q: "How is Wadmore different from IQ tests or other cognitive assessments?",
-        a: "Traditional assessments like IQ tests produce a single score or percentile ranking. Wadmore takes a developmental approach: we describe patterns of thinking across multiple cognitive domains, and provide research-grounded guidance to inform decisions. We focus on strengths and current capabilities, not deficits or predictions."
+        a: "Traditional assessments like IQ tests produce a single composite score or percentile ranking. Wadmore measures eight cognitive domains independently using IRT/Rasch-calibrated adaptive psychometrics, and connects each domain to specific developmental strategies grounded in peer-reviewed research. We focus on demonstrated capability and developmental pathways, not deficits or fixed rankings."
       },
       {
         q: "What are the eight cognitive domains?",
-        a: "Wadmore examines thinking across eight domains: how Abstract Reasoning appears in pattern recognition tasks, how Logical Sequencing manifests in structured reasoning, how Processing Speed is demonstrated under time constraints, how Memory & Attention function during complex tasks, how Executive Functioning shows in planning and adaptation, how Metacognition appears in strategy selection, how Cognitive Confidence influences approach to challenge, and how Creativity emerges in idea generation."
+        a: "Wadmore measures cognitive performance across eight domains: Abstract Reasoning (pattern recognition and novel problem-solving), Logical Sequencing (multi-step reasoning and logical rules), Processing Speed (rapid information processing under timed conditions), Memory & Attention (working memory under cognitive load), Executive Functioning (planning, inhibition, and cognitive flexibility), Metacognition (strategy monitoring and adjustment), Cognitive Confidence (effort calibration and accurate self-assessment), and Creativity (divergent thinking and original idea generation)."
       },
       {
         q: "What are developmental bands?",
@@ -64,7 +64,7 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "What do I get after the assessment?",
-        a: "You'll receive a comprehensive cognitive profile showing strengths and growth areas across all eight domains, your developmental band in each area, and practical guidance for supporting development at home. These patterns describe how your child approaches thinking tasks right now, and they can change with experience and support."
+        a: "You'll receive a comprehensive Cognitive Intelligence Profile showing strengths and growth areas across all eight independently-measured domains, your developmental band placement in each area, and evidence-based strategies for supporting development at home and school. These profiles describe current cognitive performance and can change with experience, instruction, and targeted support."
       },
       {
         q: "Can I share the results with my child's school?",
@@ -118,7 +118,7 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "Is this like a personality test?",
-        a: "No. Personality tests describe preferences and traits. Wadmore examines how cognitive patterns appear when people engage with specific tasks: how they process information, solve problems, regulate their thinking, and generate ideas. This provides evidence to inform decisions about team effectiveness and development."
+        a: "No. Personality tests describe self-reported preferences and traits. Wadmore measures demonstrated cognitive performance through structured assessment tasks: how people process information, solve novel problems, regulate their thinking under demand, and generate original ideas. This provides objective evidence for decisions about team effectiveness and development, not self-perception."
       },
       {
         q: "How long does the professional assessment take?",

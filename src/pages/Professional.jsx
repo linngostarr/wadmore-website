@@ -140,7 +140,7 @@ function Hero() {
               className="text-base md:text-lg leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Wadmore does. Eight domains of cognitive performance data for hiring, development, and team composition that no personality tool can provide.
+              Wadmore does. Eight domains of demonstrated cognitive performance for hiring, development, and team composition.
             </p>
             
             {/* CTAs */}
@@ -194,10 +194,10 @@ function Hero() {
             
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
-                { value: "8", label: "Cognitive Domains", desc: "Complete capability picture" },
+                { value: "8", label: "Cognitive Domains", desc: "Independently measured" },
                 { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
-                { value: "360", label: "Constructs", desc: "Granular insights" },
-                { value: "<1hr", label: "Assessment", desc: "Efficient, professional" },
+                { value: "360", label: "Construct Indicators", desc: "Diagnostic precision" },
+                { value: "<1hr", label: "Assessment", desc: "Adaptive, efficient" },
               ].map((stat) => (
                 <div key={stat.label} className="group">
                   <div 
@@ -229,10 +229,10 @@ function Hero() {
               </div>
               <div>
                 <div className="font-semibold text-sm" style={{ color: BRAND.slate }}>
-                  Measures capability
+                  Measures demonstrated cognitive performance
                 </div>
                 <div className="text-xs" style={{ color: BRAND.steel }}>
-                  Not just preferences or self-perception
+                  Not self-reported preference or perception
                 </div>
               </div>
             </div>
@@ -271,7 +271,8 @@ function CapabilitySection() {
             >
               Many tools measure how people <em>describe</em> themselves. But 
               self-perception isn't performance. Wadmore measures how people actually 
-              process information, solve problems, and adapt to complexity.
+              perform under cognitive demand: how they process information, solve novel problems, 
+              and adapt to complexity.
             </p>
             <p 
               className="text-lg mb-8 leading-relaxed"
@@ -286,7 +287,7 @@ function CapabilitySection() {
               {[
                 { title: "IRT/Rasch psychometrics", desc: "Same rigour as clinical and educational assessments" },
                 { title: "Eight cognitive domains", desc: "Complete picture including EF, Memory, Metacognition" },
-                { title: "360 construct-level insights", desc: "Specific, actionable development recommendations" },
+                { title: "360 construct-level indicators", desc: "Specific, evidence-based development recommendations" },
                 { title: "Professional standards", desc: "Validated measurement you can trust for decisions" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">

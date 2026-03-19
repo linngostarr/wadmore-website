@@ -147,13 +147,13 @@ function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-3 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              You measure achievement. You observe behaviour. But you've never had a structured picture of cognitive performance across your cohort.
+              You measure achievement. You observe behaviour. But until now, you've had no structured, psychometrically-valid picture of cognitive performance across your cohort.
             </p>
             <p 
               className="text-base md:text-lg leading-relaxed mb-8 max-w-xl"
               style={{ color: BRAND.steel }}
             >
-              Wadmore delivers it: <strong style={{ color: BRAND.slate }}>eight domains</strong>, with strategies matched to every student's current capability.
+              Wadmore delivers it: <strong style={{ color: BRAND.slate }}>eight independently-measured domains</strong>, with classroom strategies matched to each student's developmental level.
             </p>
             
             {/* CTAs */}
@@ -207,10 +207,10 @@ function Hero() {
             
             <div className="grid grid-cols-2 gap-8 relative z-10">
               {[
-                { value: "8", label: "Cognitive Domains", desc: "Complete coverage" },
-                { value: "15", label: "Developmental Bands", desc: "Foundation through expert" },
-                { value: "360", label: "Constructs", desc: "Actionable precision" },
-                { value: "50+", label: "Research Sources", desc: "Evidence-grounded" },
+                { value: "8", label: "Cognitive Domains", desc: "Independently measured" },
+                { value: "15", label: "Developmental Bands", desc: "IRT-calibrated progression" },
+                { value: "360", label: "Construct Indicators", desc: "Diagnostic precision" },
+                { value: "50+", label: "Peer-Reviewed Sources", desc: "Evidence-grounded" },
               ].map((stat, i) => (
                 <div 
                   key={stat.label}
@@ -875,16 +875,17 @@ function EALDSection() {
               style={{ color: BRAND.steel }}
             >
               Cognitive assessments can confuse language proficiency with cognitive ability. 
-              A student developing English may show lower verbal scores not because of cognitive 
-              limitations, but because of language background.
+              Wadmore items are systematically reviewed for linguistic accessibility. Where possible, 
+              cognitive measurement is independent of English language proficiency, ensuring EAL/D 
+              students are assessed on cognitive capability, not language comprehension.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {[
-                "Reduced language load in non-verbal domains",
-                "DIF analysis on every item for fairness",
-                "Interpretation guidance for verbal-spatial patterns",
-                "EALD-friendly readability standards"
+                "Content-free measurement in non-verbal domains",
+                "Differential Item Functioning (DIF) analysis on every item",
+                "Interpretation guidance for verbal-spatial discrepancies",
+                "EALD-accessible readability standards throughout"
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <div 
