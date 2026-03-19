@@ -21,7 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
+    "postbuild": "react-snap || echo 'react-snap skipped (CI environment)'",
+    "build:prerender": "PUPPETEER_EXECUTABLE_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
