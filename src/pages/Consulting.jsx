@@ -85,15 +85,6 @@ function Hero() {
             </h1>
             
             <p 
-              className="leading-relaxed mb-3"
-              style={{ 
-                color: BRAND.steel,
-                fontSize: "clamp(1.05rem, 1vw + 0.5rem, 1.25rem)"
-              }}
-            >
-              A Wadmore Profile only drives change when the people reading it know how to act.
-            </p>
-            <p 
               className="leading-relaxed mb-5"
               style={{ 
                 color: BRAND.steel,
