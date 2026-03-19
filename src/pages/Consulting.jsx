@@ -75,9 +75,9 @@ function Hero() {
             >
               Your team has the data.
               <br />
-              Do they know{" "}
+              Let's{" "}
               <span className="relative inline-block" style={{ color: BRAND.violet }}>
-                what to do with it?
+                empower them.
                 <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 300 8" preserveAspectRatio="none">
                   <path d="M0 6 Q75 1, 150 4 T300 3" fill="none" stroke={BRAND.violet} strokeWidth="2.5" strokeLinecap="round" opacity="0.3" />
                 </svg>
