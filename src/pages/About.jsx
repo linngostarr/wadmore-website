@@ -278,9 +278,9 @@ function StorySection() {
           
           <div className="space-y-5" style={{ color: BRAND.steel }}>
             <p className="text-lg leading-relaxed">
-              Wadmore was founded by Matt Linn, with 17+ years in educational assessment, 
-              including Head of Global Assessment at Janison. That experience revealed both 
-              the power and the limitations of traditional assessment.
+              The Wadmore team brings decades of experience in educational assessment, 
+              having worked across some of the world's largest testing programmes. That 
+              experience revealed both the power and the limitations of traditional assessment.
             </p>
             
             <p className="text-lg leading-relaxed">

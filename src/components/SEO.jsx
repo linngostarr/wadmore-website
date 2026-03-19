@@ -194,7 +194,7 @@ export const PAGE_SEO = {
 
   about: {
     title: 'About',
-    description: 'Founded by Matt Linn, with 17+ years in educational assessment including Head of Global Assessment at Janison. Australian-built cognitive profiling platform. Evidence that informs decisions, not predictions.',
+    description: 'Wadmore was built from decades of experience in educational assessment. Australian-built cognitive profiling platform. Evidence that informs decisions, not predictions.',
     path: '/about',
     schema: {
       '@context': 'https://schema.org',
